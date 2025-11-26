@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!--
+    Este archivo permite suprimir falsos positivos en el análisis de OWASP Dependency-Check.
+    
+    Ejemplo de supresión:
+    <suppress>
+       <notes><![CDATA[
+       CVE falso positivo para la librería X
+       ]]></notes>
+       <cve>CVE-2021-12345</cve>
+    </suppress>
+    
+    También puede suprimir por GAV (GroupId, ArtifactId, Version):
+    <suppress>
+       <notes><![CDATA[
+       Librería legacy que no se puede actualizar
+       ]]></notes>
+       <gav regex="true">^org\.example:.*:.*$</gav>
+    </suppress>
+    -->
+</suppressions>

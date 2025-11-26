@@ -74,9 +74,20 @@ mvn package
 
 ## Comandos Maven Útiles
 
+### Construcción y Empaquetado
 - `mvn clean`: Limpia el directorio target
 - `mvn compile`: Compila el código fuente
 - `mvn test`: Ejecuta las pruebas
 - `mvn package`: Empaqueta el proyecto en un JAR
 - `mvn install`: Instala el JAR en el repositorio local
 - `mvn verify`: Ejecuta todas las verificaciones
+
+### Herramientas de Calidad y Seguridad (Fase 1)
+- `mvn jacoco:report`: Genera reporte de cobertura de código
+- `mvn dependency-check:check`: Audita vulnerabilidades (CVEs)
+- `mvn pmd:check`: Análisis estático de código (Code Smells)
+- `mvn checkstyle:check`: Valida estilo de código
+- `mvn spotbugs:check`: Detecta bugs y vulnerabilidades de seguridad
+- `mvn site`: Genera todos los reportes en `target/site/`
+
+**Ver guía completa:** [CALIDAD_SEGURIDAD.md](CALIDAD_SEGURIDAD.md)
