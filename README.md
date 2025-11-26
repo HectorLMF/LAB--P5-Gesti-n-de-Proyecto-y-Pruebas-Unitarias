@@ -64,6 +64,13 @@ mvn package
 - **Mockito**: Framework para crear mocks en pruebas
 - **AssertJ**: Librería para assertions más expresivas
 - **JaCoCo**: Plugin para cobertura de código
+- **JExcel API**: Librería para leer archivos Excel (utilizada en MetricasMultiobjetivo)
+
+## Notas Técnicas
+
+- El proyecto utiliza codificación **ISO-8859-1** debido a caracteres especiales en español en los comentarios del código fuente
+- Compilado con **Java 11** como versión mínima
+- El JAR generado se encuentra en `target/biciam-1.0.0.jar` después de ejecutar `mvn package`
 
 ## Comandos Maven Útiles
 
