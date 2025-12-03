@@ -20,7 +20,7 @@
         <junit.version>5.10.1</junit.version>
         
         <!-- Propiedades de SonarCloud -->
-        <sonar.organization>HectorLMF</sonar.organization>
+        <sonar.organization>hectorlmf</sonar.organization>
         <sonar.projectKey>HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias</sonar.projectKey>
         <sonar.projectName>BiCIAM</sonar.projectName>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
