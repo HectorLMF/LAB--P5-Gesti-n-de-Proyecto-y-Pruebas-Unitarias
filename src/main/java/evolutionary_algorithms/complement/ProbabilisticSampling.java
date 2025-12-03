@@ -1,20 +1,17 @@
 package evolutionary_algorithms.complement;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
+import config.SecureRandomGenerator;
 import metaheurictics.strategy.Strategy;
 import metaheuristics.generators.GeneratorType;
-
 import problem.definition.State;
-
 
 public class ProbabilisticSampling extends Sampling {
 
 	@Override
 	public List<State> sampling(List<State> fathers, int countInd) {
-		// TODO Auto-generated method stub
 		int cantV = fathers.get(0).getCode().size();
 		List<State> staList = listState(countInd);
 		for (int i = 0; i < cantV; i++) {
@@ -35,7 +32,7 @@ public class ProbabilisticSampling extends Sampling {
 			while (k < arrtemp.length) {
 				int count = 0;
 				for (int j = 0; j < values.length; j++) {
-					if((Integer)values[j] != -1 && values[j] == arrtemp[k]){ //
+					if ((Integer) values[j] != -1 && values[j] == arrtemp[k]) { //
 						count++;
 						values[j] = -1;
 					}
@@ -47,35 +44,37 @@ public class ProbabilisticSampling extends Sampling {
 			for (int l = 0; l < countInd; l++) {
 				boolean find = false;
 				int p = 0;
-				int random = (int)(Math.random() * (double)(sum)) + 1;
-				while (p < arrOcc.length && find == false) {
+				int random = SecureRandomGenerator.nextInt(Math.max(1, sum)) + 1;
+				while (p < arrOcc.length && !find) {
 					random = random - arrOcc[p];
-					if(random <= 0){
+					if (random <= 0) {
 						staList.get(l).getCode().add(arrtemp[p]);
 						find = true;
+					} else {
+						p++;
 					}
-					else p++;
 				}
-				if(find == false){
-					int value = new Integer((int)(Math.random() * (double)(Strategy.getStrategy().getProblem().getCodification().getVariableCount() * 10)));
+				if (!find) {
+					int bound = Math.max(1, Strategy.getStrategy().getProblem().getCodification().getVariableCount() * 10);
+					int value = SecureRandomGenerator.nextInt(bound);
 					staList.get(l).getCode().add(value);
 				}
-				
+
 			}
 		}
 		return staList;
 	}
-	
+
 	// inicializa la lista de individuos
-		public List<State> listState(int countInd) {
-			List<State> staList = new ArrayList<State>(countInd);
-			for (int i = 0; i < countInd; i++) {
-				State state = new State();
-				state.setCode(new ArrayList<Object>());
-				state.setNumber(Strategy.getStrategy().getCountCurrent());
-				state.setTypeGenerator(GeneratorType.DistributionEstimationAlgorithm);
-				staList.add(state);
-			}
-			return staList;
+	public List<State> listState(int countInd) {
+		List<State> staList = new ArrayList<State>(countInd);
+		for (int i = 0; i < countInd; i++) {
+			State state = new State();
+			state.setCode(new ArrayList<Object>());
+			state.setNumber(Strategy.getStrategy().getCountCurrent());
+			state.setTypeGenerator(GeneratorType.DistributionEstimationAlgorithm);
+			staList.add(state);
 		}
+		return staList;
+	}
 }

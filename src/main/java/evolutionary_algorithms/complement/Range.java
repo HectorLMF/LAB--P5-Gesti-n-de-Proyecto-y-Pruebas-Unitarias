@@ -6,10 +6,23 @@ public class Range {
    private float min;
    
    public Probability getData() {
-	  return data;
+      if (data == null) return null;
+      Probability copy = new Probability();
+      copy.setKey(data.getKey());
+      copy.setValue(data.getValue());
+      copy.setProbability(data.getProbability());
+      return copy;
    }
    public void setData(Probability data) {
-	  this.data = data;
+      if (data == null) {
+         this.data = null;
+      } else {
+         Probability copy = new Probability();
+         copy.setKey(data.getKey());
+         copy.setValue(data.getValue());
+         copy.setProbability(data.getProbability());
+         this.data = copy;
+      }
    }
    public float getMax() {
 	  return max;

@@ -61,16 +61,25 @@ public class State implements Cloneable {
 	}
 	@Override
 	public State clone(){
-		State s = new State();
-		s.typeGenerator = this.typeGenerator;
-		s.number = this.number;
-		s.code = this.code == null ? new ArrayList<Object>() : new ArrayList<Object>(this.code);
-		s.evaluation = this.evaluation == null ? null : new ArrayList<Double>(this.evaluation);
-		return s;
+		try {
+			State s = (State) super.clone();
+			// Realizar copias defensivas de colecciones
+			s.code = this.code == null ? new ArrayList<Object>() : new ArrayList<Object>(this.code);
+			s.evaluation = this.evaluation == null ? null : new ArrayList<Double>(this.evaluation);
+			return s;
+		} catch (CloneNotSupportedException e) {
+			// Fallback seguro
+			State s = new State();
+			s.typeGenerator = this.typeGenerator;
+			s.number = this.number;
+			s.code = this.code == null ? new ArrayList<Object>() : new ArrayList<Object>(this.code);
+			s.evaluation = this.evaluation == null ? null : new ArrayList<Double>(this.evaluation);
+			return s;
+		}
 	}
 	
 	public Object getCopy(){
-		return new State(this.getCode());
+		return this.clone();
 	}
 	
 	public boolean Comparator(State state){

@@ -10,19 +10,15 @@ public class FactoryLoader {
 		try {
 			c = Class.forName(className);
 		} catch (ClassNotFoundException e) {
-			System.out.println("El nombre de la clase no existe en el classpath");
-			e.printStackTrace();
+			// Clase no encontrada: comportamiento esperado es retornar null
+			return null;
 		}
-		Object o = null;
+
 		try {
-			o = c.newInstance();
-		} catch (InstantiationException e) {
-			System.out.println("Ha ocurrido un error al invocar el constructor de la clase");
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			System.out.println("Esta clase no tiene constructores disponibles");
-			e.printStackTrace();
+			return c.getDeclaredConstructor().newInstance();
+		} catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+			// No se puede instanciar (abstracta, sin ctor por defecto, etc.)
+			return null;
 		}
-		return o;
 	}
 }
