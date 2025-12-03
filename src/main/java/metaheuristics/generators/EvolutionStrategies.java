@@ -1,3 +1,10 @@
+/**
+ * @file EvolutionStrategies.java
+ * @brief Implementación del algoritmo de estrategias evolutivas como metaheurística de optimización
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -20,36 +27,79 @@ import factory_method.FactoryFatherSelection;
 import factory_method.FactoryMutation;
 import factory_method.FactoryReplace;
 
+/**
+ * @class EvolutionStrategies
+ * @brief Algoritmo metaheurístico basado en estrategias evolutivas con mutación
+ * 
+ * Esta clase implementa estrategias evolutivas que seleccionan padres, aplican mutación
+ * y reemplazan soluciones en la población basándose en criterios evolutivos.
+ */
 public class EvolutionStrategies extends Generator {
 	
+	/** @brief Estado de referencia del algoritmo de estrategias evolutivas */
 	private State stateReferenceES;
+	
+	/** @brief Lista de estados de referencia */
 	private List<State> listStateReference = new ArrayList<State>(); 
+	
+	/** @brief Factoría para la selección de padres */
 	private IFFactoryFatherSelection iffatherselection;
+	
+	/** @brief Factoría para operadores de mutación */
 	private IFFactoryMutation iffactorymutation;
+	
+	/** @brief Factoría para reemplazo de soluciones */
 	private IFFactoryReplace iffreplace;
-//	private SelectionType selectionType;
-//	private MutationType mutationType;
-//	private ReplaceType replaceType;
+	
+	/** @brief Tipo de generador metaheurístico */
 	private GeneratorType generatorType;
+	
+	/** @brief Probabilidad de mutación */
 	public static double PM;
+	
+	/** @brief Tipo de mutación utilizada */
 	public static MutationType mutationType;
+	
+	/** @brief Tipo de reemplazo de soluciones */
 	public static ReplaceType replaceType;
+	
+	/** @brief Tipo de selección de padres */
 	public static SelectionType selectionType;
+	
+	/** @brief Contador de referencias */
 	public static int countRef = 0;
+	
+	/** @brief Tamaño de truncamiento para selección */
 	public static int truncation;
+	
+	/** @brief Peso del generador */
 	private float weight = 50;
 	
-	//problemas dinamicos
+	/** @brief Contador de mejoras por período para problemas dinámicos */
 	private int[] betterCountByPeriod = new int[10];
+	
+	/** @brief Contador de uso por período para problemas dinámicos */
 	private int[] usageCountByPeriod = new int[10];
+	
+	/** @brief Historial de trazas del peso */
 	private float[] listTrace = new float[1200000];
 	
+	/**
+	 * @brief Constructor por defecto de estrategias evolutivas
+	 * 
+	 * Inicializa el algoritmo con tipo de mutación uniforme, reemplazo de los peores
+	 * y selección por truncamiento, con peso inicial de 50.
+	 */
+	
+	/**
+	 * @brief Constructor por defecto de estrategias evolutivas
+	 * 
+	 * Inicializa el algoritmo con tipo de mutación uniforme, reemplazo de los peores
+	 * y selección por truncamiento, con peso inicial de 50.
+	 */
 	public EvolutionStrategies() {
 		super();
 		this.listStateReference = getListStateRef(); 
-//		this.selectionType = SelectionType.Truncation;
-//		this.mutationType = MutationType.UniformMutation;
-//		this.replaceType = ReplaceType.Smallest;
 		this.generatorType = GeneratorType.EVOLUTION_STRATEGIES;
 		this.weight = 50;
 		listTrace[0] = this.weight;
@@ -57,10 +107,20 @@ public class EvolutionStrategies extends Generator {
 		usageCountByPeriod[0] = 0;
 	}
 
+	/**
+	 * @brief Genera un nuevo estado candidato mediante mutación
+	 * @param operatornumber Número de operador a utilizar
+	 * @return Estado candidato generado por mutación
+	 * @throws IllegalArgumentException Si los argumentos son inválidos
+	 * @throws SecurityException Si hay problemas de seguridad
+	 * @throws ClassNotFoundException Si no se encuentra una clase
+	 * @throws InstantiationException Si hay error en la instanciación
+	 * @throws IllegalAccessException Si hay acceso ilegal
+	 * @throws InvocationTargetException Si hay error en la invocación
+	 * @throws NoSuchMethodException Si no se encuentra un método
+	 */
 	@Override
-	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {
-
-    	//ArrayList<State> list = new ArrayList<State>();
+	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {    	//ArrayList<State> list = new ArrayList<State>();
 //		List<State> refList = new ArrayList<State>(this.listStateReference); 
     	iffatherselection = new FactoryFatherSelection();
     	FatherSelection selection = iffatherselection.createSelectFather(selectionType);
@@ -80,6 +140,10 @@ public class EvolutionStrategies extends Generator {
     	return candidate;
 	}
 
+	/**
+	 * @brief Obtiene el estado de referencia con mejor evaluación
+	 * @return Estado de referencia óptimo
+	 */
 	@Override
 	public State getReference() {
 		stateReferenceES = listStateReference.get(0);

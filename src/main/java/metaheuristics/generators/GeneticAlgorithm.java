@@ -1,3 +1,10 @@
+/**
+ * @file GeneticAlgorithm.java
+ * @brief Implementación del algoritmo genético como metaheurística de optimización
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -26,36 +33,78 @@ import factory_method.FactoryFatherSelection;
 import factory_method.FactoryMutation;
 import factory_method.FactoryReplace;
 
+/**
+ * @class GeneticAlgorithm
+ * @brief Algoritmo genético con selección, cruzamiento, mutación y reemplazo
+ * 
+ * Esta clase implementa un algoritmo genético clásico que evoluciona poblaciones de
+ * soluciones mediante operadores genéticos de selección, cruzamiento y mutación.
+ */
 public class GeneticAlgorithm extends Generator {
 
+	/** @brief Estado de referencia del algoritmo genético */
 	private State stateReferenceGA;
+	
+	/** @brief Lista de estados de la población */
 	private List<State> listState = new ArrayList<State>(); 
+	
+	/** @brief Factoría para la selección de padres */
 	private IFFactoryFatherSelection iffatherselection;
+	
+	/** @brief Factoría para el operador de cruzamiento */
 	private IFFactoryCrossover iffactorycrossover;
+	
+	/** @brief Factoría para el operador de mutación */
 	private IFFactoryMutation iffactorymutation;
+	
+	/** @brief Factoría para el reemplazo de soluciones */
 	private IFFactoryReplace iffreplace;
 	
+	/** @brief Tipo de mutación utilizada */
 	public static MutationType mutationType;
+	
+	/** @brief Tipo de cruzamiento utilizado */
 	public static CrossoverType crossoverType;
+	
+	/** @brief Tipo de reemplazo de soluciones */
 	public static ReplaceType replaceType;
+	
+	/** @brief Tipo de selección de padres */
 	public static SelectionType selectionType;
 	
-//	private SelectionType selectionType;
-//	private CrossoverType crossoverType;
-//	private MutationType mutationType;
-//	private ReplaceType replaceType;
+	/** @brief Tipo de generador metaheurístico */
 	private GeneratorType generatorType;
+	
+	/** @brief Probabilidad de cruzamiento */
 	public static double PC;
+	
+	/** @brief Probabilidad de mutación */
 	public static double PM;
+	
+	/** @brief Contador de referencias */
 	public static int countRef = 0;
+	
+	/** @brief Tamaño de truncamiento para selección */
 	public static int truncation;
+	
+	/** @brief Peso del generador */
 	private float weight;
 	
-	//problemas dinamicos
+	/** @brief Contador de mejoras por período para problemas dinámicos */
 	private int[] betterCountByPeriod = new int[10];
+	
+	/** @brief Contador de uso por período para problemas dinámicos */
 	private int[] usageCountByPeriod = new int[10];
+	
+	/** @brief Historial de trazas del peso */
 	private float[] listTrace = new float[1200000];
 	
+	/**
+	 * @brief Constructor por defecto del algoritmo genético
+	 * 
+	 * Inicializa el algoritmo con cruzamiento uniforme, mutación uniforme,
+	 * reemplazo de los peores y selección por truncamiento, con peso inicial de 50.
+	 */
     public GeneticAlgorithm() {
 		super();
 		this.listState = getListStateRef(); // llamada al m�todo que devuelve la lista. 
@@ -70,6 +119,18 @@ public class GeneticAlgorithm extends Generator {
 		usageCountByPeriod[0] = 0;
 	}
     
+	/**
+	 * @brief Genera un nuevo estado mediante selección, cruzamiento y mutación
+	 * @param operatornumber Número de operador a utilizar
+	 * @return Estado candidato generado por operadores genéticos
+	 * @throws IllegalArgumentException Si los argumentos son inválidos
+	 * @throws SecurityException Si hay problemas de seguridad
+	 * @throws ClassNotFoundException Si no se encuentra una clase
+	 * @throws InstantiationException Si hay error en la instanciación
+	 * @throws IllegalAccessException Si hay acceso ilegal
+	 * @throws InvocationTargetException Si hay error en la invocación
+	 * @throws NoSuchMethodException Si no se encuentra un método
+	 */
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     	

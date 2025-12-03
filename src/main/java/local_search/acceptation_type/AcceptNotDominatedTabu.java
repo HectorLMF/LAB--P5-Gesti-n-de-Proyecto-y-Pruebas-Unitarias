@@ -1,3 +1,11 @@
+/**
+ * @file AcceptNotDominatedTabu.java
+ * @brief Implementación de aceptación basada en dominancia con lista tabú
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
+
 package local_search.acceptation_type;
 
 import java.util.List;
@@ -6,8 +14,22 @@ import metaheurictics.strategy.Strategy;
 
 import problem.definition.State;
 
+/**
+ * @class AcceptNotDominatedTabu
+ * @brief Clase que mantiene un frente de Pareto con estrategia tabú
+ * 
+ * Esta clase implementa una estrategia de aceptación para problemas multiobjetivo
+ * que mantiene y actualiza el frente de Pareto de soluciones no dominadas,
+ * incorporando el concepto de búsqueda tabú.
+ */
 public class AcceptNotDominatedTabu extends AcceptableCandidate {
 
+	/**
+	 * @brief Actualiza el frente de Pareto con soluciones no dominadas
+	 * @param stateCurrent Estado actual de la búsqueda
+	 * @param stateCandidate Estado candidato a evaluar
+	 * @return Boolean Siempre retorna true después de actualizar el frente
+	 */
 	@Override
 	public Boolean acceptCandidate(State stateCurrent, State stateCandidate) {
 		List<State> list = Strategy.getStrategy().listRefPoblacFinal;

@@ -1,3 +1,10 @@
+/**
+ * @file HillClimbing.java
+ * @brief Implementación del algoritmo Hill Climbing (Ascenso de Colina)
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -20,24 +27,57 @@ import problem.definition.Problem.ProblemType;
 import factory_interface.IFFactoryAcceptCandidate;
 import factory_method.FactoryAcceptCandidate;
 
-
+/**
+ * @class HillClimbing
+ * @brief Algoritmo de búsqueda local Hill Climbing (Ascenso de Colina)
+ * 
+ * Esta clase implementa el algoritmo de búsqueda local Hill Climbing que explora
+ * el vecindario de la solución actual y se mueve hacia mejores soluciones.
+ */
 public class HillClimbing extends Generator{
 
+	/** @brief Seleccionador de candidatos del vecindario */
     protected CandidateValue candidatevalue;
+	
+	/** @brief Tipo de aceptación de soluciones */
 	protected AcceptType typeAcceptation;
+	
+	/** @brief Tipo de estrategia de búsqueda */
 	protected StrategyType strategy;
+	
+	/** @brief Tipo de candidato a seleccionar */
 	protected CandidateType typeCandidate;
+	
+	/** @brief Estado de referencia del Hill Climbing */
 	protected State stateReferenceHC;
+	
+	/** @brief Factoría para crear aceptadores de candidatos */
 	protected IFFactoryAcceptCandidate ifacceptCandidate;
+	
+	/** @brief Tipo de generador metaheurístico */
 	protected GeneratorType Generatortype;
+	
+	/** @brief Lista de estados de referencia */
 	protected List<State> listStateReference = new ArrayList<State>(); 
+	
+	/** @brief Peso del generador */
 	protected float weight;
 	
-	//problemas dinamicos
+	/** @brief Contador de mejoras por período para problemas dinámicos */
 	private int[] betterCountByPeriod = new int[10];
+	
+	/** @brief Contador de uso por período para problemas dinámicos */
 	private int[] usageCountByPeriod = new int[10];
+	
+	/** @brief Historial de trazas del peso */
 	private float[] listTrace = new float[1200000];
 	
+	/**
+	 * @brief Constructor por defecto del Hill Climbing
+	 * 
+	 * Inicializa el algoritmo con aceptación del mejor candidato y estrategia normal.
+	 * El tipo de candidato se determina según el tipo de problema (maximización o minimización).
+	 */
 	public HillClimbing() {
 		super();
 		this.typeAcceptation = AcceptType.AcceptBest;

@@ -1,3 +1,10 @@
+/**
+ * @file ParticleSwarmOptimization.java
+ * @brief Implementación del algoritmo de optimización por enjambre de partículas (PSO)
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -11,6 +18,14 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 
+/**
+ * @class ParticleSwarmOptimization
+ * @brief Algoritmo PSO que simula el comportamiento social de enjambres
+ * 
+ * Esta clase implementa el algoritmo PSO que utiliza una población de partículas
+ * que se mueven en el espacio de búsqueda influenciadas por su mejor posición personal
+ * y la mejor posición global del enjambre.
+ */
 public class ParticleSwarmOptimization extends Generator {
 	
 	private State stateReferencePSO;

@@ -1,3 +1,10 @@
+/**
+ * @file RandomSearch.java
+ * @brief Implementación del algoritmo de búsqueda aleatoria
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -16,25 +23,57 @@ import problem.definition.State;
 import factory_interface.IFFactoryAcceptCandidate;
 import factory_method.FactoryAcceptCandidate;
 
+/**
+ * @class RandomSearch
+ * @brief Algoritmo de búsqueda completamente aleatoria
+ * 
+ * Esta clase implementa un algoritmo de búsqueda que genera soluciones de forma
+ * aleatoria, sirviendo como línea base para comparar con otras metaheurísticas.
+ */
 public class RandomSearch extends Generator {
 
+	/** @brief Seleccionador de valores candidatos */
 	private CandidateValue candidatevalue;
+	
+	/** @brief Tipo de aceptación de soluciones */
 	private AcceptType typeAcceptation;
+	
+	/** @brief Tipo de estrategia utilizada */
 	private StrategyType strategy;
+	
+	/** @brief Tipo de candidato a generar */
 	private CandidateType typeCandidate;
+	
+	/** @brief Estado de referencia actual */
 	private State stateReferenceRS;
+	
+	/** @brief Factoría para crear aceptadores de candidatos */
     private IFFactoryAcceptCandidate ifacceptCandidate;
+	
+	/** @brief Tipo de generador */
     private GeneratorType typeGenerator;
 
+	/** @brief Peso del generador */
     private float weight;
-    //para acceder desde los algoritmos basados en poblaciones de puntos
+	
+	/** @brief Lista de estados de referencia para acceso desde algoritmos basados en poblaciones */
 	public static List<State> listStateReference = new ArrayList<State>();
 	
-	//problemas dinamicos
+	/** @brief Contador de mejoras por período para problemas dinámicos */
 	private int[] betterCountByPeriod = new int[10];
+	
+	/** @brief Contador de uso por período para problemas dinámicos */
 	private int[] usageCountByPeriod = new int[10];
+	
+	/** @brief Historial de trazas del peso */
     private float[] listTrace = new float[1200000];
 	
+	/**
+	 * @brief Constructor por defecto de búsqueda aleatoria
+	 * 
+	 * Inicializa el algoritmo con aceptación del mejor, estrategia normal y
+	 * generación de candidatos aleatoria, con peso inicial de 50.
+	 */
 	public RandomSearch() {
 		super();
 		this.typeAcceptation = AcceptType.AcceptBest;

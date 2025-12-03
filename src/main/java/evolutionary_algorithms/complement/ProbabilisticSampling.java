@@ -1,3 +1,10 @@
+/**
+ * @file ProbabilisticSampling.java
+ * @brief Implementación de muestreo probabilístico
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 import java.util.ArrayList;
@@ -8,8 +15,20 @@ import metaheurictics.strategy.Strategy;
 import metaheuristics.generators.GeneratorType;
 import problem.definition.State;
 
+/**
+ * @class ProbabilisticSampling
+ * @brief Clase que implementa el operador de muestreo probabilístico
+ * 
+ * Genera nuevos individuos basándose en la distribución de probabilidad de los padres.
+ */
 public class ProbabilisticSampling extends Sampling {
 
+	/**
+	 * @brief Realiza el muestreo probabilístico de los padres
+	 * @param fathers Lista de estados padres
+	 * @param countInd Número de individuos a generar
+	 * @return Lista de estados generados
+	 */
 	@Override
 	public List<State> sampling(List<State> fathers, int countInd) {
 		int cantV = fathers.get(0).getCode().size();
@@ -65,7 +84,11 @@ public class ProbabilisticSampling extends Sampling {
 		return staList;
 	}
 
-	// inicializa la lista de individuos
+	/**
+	 * @brief Inicializa la lista de individuos
+	 * @param countInd Número de individuos a crear
+	 * @return Lista de estados inicializados
+	 */
 	public List<State> listState(int countInd) {
 		List<State> staList = new ArrayList<State>(countInd);
 		for (int i = 0; i < countInd; i++) {

@@ -1,3 +1,10 @@
+/**
+ * @file Univariate.java
+ * @brief Implementación de distribución univariada
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 import java.util.ArrayList;
@@ -8,8 +15,19 @@ import problem.definition.State;
 
 
 
+/**
+ * @class Univariate
+ * @brief Clase que implementa la distribución univariada
+ * 
+ * Calcula la distribución de probabilidad para cada variable independientemente.
+ */
 public class Univariate extends Distribution {
 
+	/**
+	 * @brief Calcula la distribución univariada de probabilidad
+	 * @param fathers Lista de estados padres
+	 * @return Lista de probabilidades calculadas para cada variable
+	 */
 	@Override
 	public List<Probability> distribution(List<State> fathers) {
 
@@ -48,6 +66,11 @@ public class Univariate extends Distribution {
 		return ListProbability;
 	}
 
+	/**
+	 * @brief Extrae las claves de un mapa ordenado
+	 * @param map Mapa ordenado de String a Object
+	 * @return Lista de claves como strings
+	 */
 	public List<String> getListKey(SortedMap<String, Object> map){
 		List<String> listKey = new ArrayList<String>();
 		String key = map.keySet().toString();

@@ -1,3 +1,11 @@
+/**
+ * @file AcceptMulticase.java
+ * @brief Implementación de estrategia de aceptación multiobjetivo con Simulated Annealing
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
+
 package local_search.acceptation_type;
 
 import metaheuristics.generators.*;
@@ -8,10 +16,25 @@ import java.util.Random;
 
 import problem.definition.State;
 
+/**
+ * @class AcceptMulticase
+ * @brief Clase que implementa aceptación multiobjetivo basada en dominancia y temperatura
+ * 
+ * Esta clase utiliza conceptos de dominancia de Pareto y Simulated Annealing para
+ * decidir la aceptación de soluciones candidatas en problemas multiobjetivo. Considera
+ * el rango de dominancia y aplica criterios probabilísticos basados en temperatura.
+ */
 public class AcceptMulticase extends AcceptableCandidate {
 
+	/** @brief Generador de números aleatorios para decisiones probabilísticas */
 	private static final Random RNG = new Random();
 
+	/**
+	 * @brief Acepta candidatos basándose en dominancia de Pareto y criterios de temperatura
+	 * @param stateCurrent Estado actual de la búsqueda
+	 * @param stateCandidate Estado candidato a evaluar
+	 * @return Boolean true si el candidato es aceptado, false en caso contrario
+	 */
 	@Override
 	public Boolean acceptCandidate(State stateCurrent, State stateCandidate) {
 		// TODO Auto-generated method stub
@@ -82,7 +105,13 @@ public class AcceptMulticase extends AcceptableCandidate {
 	}
 
 
-	private int DominanceCounter(State stateCandidate, List<State> list) { //chequea el n�mero de soluciones de Pareto que son dominados por la nueva soluci�n
+	/**
+	 * @brief Cuenta el número de soluciones dominadas por el candidato
+	 * @param stateCandidate Estado candidato que se evalúa
+	 * @param list Lista de soluciones del frente de Pareto
+	 * @return int Número de soluciones dominadas por el candidato
+	 */
+	private int DominanceCounter(State stateCandidate, List<State> list) { //chequea el número de soluciones de Pareto que son dominados por la nueva solución
 		int counter = 0;
 		for (int i = 0; i < list.size(); i++) {
 			State solution = list.get(i);
@@ -93,7 +122,13 @@ public class AcceptMulticase extends AcceptableCandidate {
 		return counter;
 	}
 
-	private int DominanceRank(State stateCandidate, List<State> list) { //calculando el n�mero de soluciones en el conjunto de Pareto que dominan a la soluci�n
+	/**
+	 * @brief Calcula el rango de dominancia del candidato
+	 * @param stateCandidate Estado candidato que se evalúa
+	 * @param list Lista de soluciones del frente de Pareto
+	 * @return int Número de soluciones que dominan al candidato
+	 */
+	private int DominanceRank(State stateCandidate, List<State> list) { //calculando el número de soluciones en el conjunto de Pareto que dominan a la solución
 		int rank = 0;
 		for (int i = 0; i < list.size(); i++) {
 			State solution = list.get(i);

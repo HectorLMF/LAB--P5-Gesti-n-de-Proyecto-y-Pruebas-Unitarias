@@ -1,3 +1,11 @@
+/**
+ * @file Dominance.java
+ * @brief Implementación de operaciones de dominancia de Pareto
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
+
 package local_search.acceptation_type;
 
 import java.util.List;
@@ -8,11 +16,26 @@ import metaheuristics.generators.MultiobjectiveHillClimbingDistance;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 
+/**
+ * @class Dominance
+ * @brief Clase que gestiona operaciones de dominancia de Pareto multiobjetivo
+ * 
+ * Esta clase proporciona métodos para evaluar relaciones de dominancia entre
+ * soluciones en problemas de optimización multiobjetivo, incluyendo la gestión
+ * del frente de Pareto de soluciones no dominadas.
+ */
 public class Dominance {
 
-	//---------------------------------M�todos que se utilizan en los algoritmos multiobjetivo-------------------------------------------------------//
-	//Funci�n que determina si la soluci�n X domina a alguna de las soluciones no dominadas de una lista
-	//Devuelve la lista actualizada y true si fue adicionada a la lista o false de lo contrario
+	//---------------------------------Métodos que se utilizan en los algoritmos multiobjetivo-------------------------------------------------------//
+	/**
+	 * @brief Determina si una solución domina a alguna del frente de Pareto
+	 * @param solutionX Solución candidata a evaluar
+	 * @param list Lista de soluciones del frente de Pareto actual
+	 * @return boolean true si la solución fue agregada al frente, false en caso contrario
+	 * 
+	 * Este método verifica si solutionX domina a alguna solución de la lista,
+	 * eliminando las dominadas y agregando solutionX si no está dominada.
+	 */
 	public boolean ListDominance(State solutionX, List<State> list){
 		boolean domain = false;
 		for (int i = 0; i < list.size() && domain == false; i++) {
@@ -93,7 +116,15 @@ public class Dominance {
 	}
 
 
-	//Funci�n que devuelve true si solutionX domina a solutionY
+	/**
+	 * @brief Verifica si solutionX domina a solutionY según criterio de Pareto
+	 * @param solutionX Primera solución a comparar
+	 * @param solutionY Segunda solución a comparar
+	 * @return boolean true si solutionX domina a solutionY, false en caso contrario
+	 * 
+	 * Una solución X domina a Y si es al menos igual en todos los objetivos
+	 * y estrictamente mejor en al menos uno.
+	 */
 	public boolean dominance(State solutionX,  State solutionY)	{
 		boolean dominance = false;
 		int countBest = 0;

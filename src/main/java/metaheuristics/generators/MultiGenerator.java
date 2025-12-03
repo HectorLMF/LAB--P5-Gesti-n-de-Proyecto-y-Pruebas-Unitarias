@@ -1,3 +1,10 @@
+/**
+ * @file MultiGenerator.java
+ * @brief Implementación de un generador múltiple que combina varios algoritmos
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -11,6 +18,14 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 
+/**
+ * @class MultiGenerator
+ * @brief Generador híbrido que combina múltiples metaheurísticas
+ * 
+ * Esta clase implementa un selector de generadores que utiliza un método de ruleta
+ * basado en pesos adaptativos para seleccionar dinámicamente qué metaheurística
+ * aplicar en cada iteración, basado en su rendimiento previo.
+ */
 public class MultiGenerator extends Generator {
 
 	private GeneratorType Generatortype;

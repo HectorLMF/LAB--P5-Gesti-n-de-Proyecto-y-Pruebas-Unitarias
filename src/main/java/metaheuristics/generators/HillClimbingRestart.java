@@ -1,3 +1,10 @@
+/**
+ * @file HillClimbingRestart.java
+ * @brief Implementación del algoritmo Hill Climbing con reinicio
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -17,6 +24,13 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.State;
 import problem.definition.Problem.ProblemType;
 
+/**
+ * @class HillClimbingRestart
+ * @brief Algoritmo Hill Climbing con reinicio periódico
+ * 
+ * Esta clase implementa Hill Climbing que reinicia la búsqueda desde una
+ * solución aleatoria después de un número determinado de iteraciones.
+ */
 public class HillClimbingRestart extends Generator{
 
 	public static int count;

@@ -1,3 +1,10 @@
+/**
+ * @file RouletteSelection.java
+ * @brief Implementación del operador de selección por ruleta
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 import java.util.ArrayList;
@@ -7,8 +14,20 @@ import metaheuristics.generators.LimitRoulette;
 
 import problem.definition.State;
 
+/**
+ * @class RouletteSelection
+ * @brief Clase que implementa el operador de selección por ruleta
+ * 
+ * Selecciona individuos proporcionalmente a su aptitud usando el método de la ruleta.
+ */
 public class RouletteSelection extends FatherSelection {
 
+	/**
+	 * @brief Selecciona padres usando el método de la ruleta
+	 * @param listState Lista de estados de la población
+	 * @param truncation Parámetro de truncamiento (no usado en esta implementación)
+	 * @return Lista de estados seleccionados como padres
+	 */
 	@Override
 	public List<State> selection(List<State> listState, int truncation) {/*
 		List<State> fatherList = new ArrayList<State>();

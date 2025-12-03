@@ -1,3 +1,11 @@
+/**
+ * @file AcceptNotDominated.java
+ * @brief Implementación de aceptación basada en dominancia de Pareto
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
+
 package local_search.acceptation_type;
 
 
@@ -6,8 +14,22 @@ import metaheurictics.strategy.Strategy;
 
 import problem.definition.State;
 
+/**
+ * @class AcceptNotDominated
+ * @brief Clase que acepta candidatos no dominados según criterio de Pareto
+ * 
+ * Esta clase implementa una estrategia de aceptación para problemas multiobjetivo
+ * basada en el concepto de dominancia de Pareto. Un candidato es aceptado si no es
+ * dominado por la solución actual y domina a alguna solución del frente de Pareto.
+ */
 public class AcceptNotDominated extends AcceptableCandidate {
 	
+	/**
+	 * @brief Acepta candidatos no dominados según criterio de Pareto
+	 * @param stateCurrent Estado actual de la búsqueda
+	 * @param stateCandidate Estado candidato a evaluar
+	 * @return Boolean true si el candidato no está dominado y domina a alguna solución
+	 */
 	@Override
 	public Boolean acceptCandidate(State stateCurrent, State stateCandidate) {
 		Boolean accept = false;

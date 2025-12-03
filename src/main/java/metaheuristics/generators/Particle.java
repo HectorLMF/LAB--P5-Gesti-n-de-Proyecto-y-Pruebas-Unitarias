@@ -1,3 +1,10 @@
+/**
+ * @file Particle.java
+ * @brief Implementación de una partícula para el algoritmo PSO
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -10,13 +17,29 @@ import problem.definition.Problem.ProblemType;
 import problem.definition.State;
 import config.SecureRandomGenerator;
 
+/**
+ * @class Particle
+ * @brief Representa una partícula individual en el algoritmo PSO
+ * 
+ * Esta clase encapsula el comportamiento de una partícula con su posición actual,
+ * mejor posición personal y velocidad, actualizando su movimiento en el espacio de búsqueda.
+ */
 public class Particle extends Generator {
 
+	/** @brief Mejor posición personal (pBest) de la partícula */
 	private State statePBest;
+	
+	/** @brief Posición actual de la partícula */
 	private State stateActual;
+	
+	/** @brief Vector de velocidad de la partícula */
 	private ArrayList<Object> velocity;
 	
-	
+	/**
+	 * @brief Constructor por defecto de la partícula
+	 * 
+	 * Inicializa una partícula con estados y velocidad vacíos.
+	 */
 	public Particle() {
 		super();
 		this.stateActual = new State();
@@ -24,6 +47,12 @@ public class Particle extends Generator {
 		this.velocity = new ArrayList<Object>();
 	}
 	
+	/**
+	 * @brief Constructor parametrizado de la partícula
+	 * @param statePBest Mejor posición personal
+	 * @param stateActual Posición actual
+	 * @param velocity Vector de velocidad
+	 */
 	public Particle(State statePBest, State stateActual, ArrayList<Object> velocity) {
 		super();
 		this.statePBest = statePBest;
@@ -31,30 +60,66 @@ public class Particle extends Generator {
 		this.velocity = velocity;
 	}
 
+	/**
+	 * @brief Obtiene el vector de velocidad
+	 * @return Vector de velocidad de la partícula
+	 */
 	public ArrayList<Object> getVelocity() {
 		return velocity;
 	}
 
+	/**
+	 * @brief Establece el vector de velocidad
+	 * @param velocity Nuevo vector de velocidad
+	 */
 	public void setVelocity(ArrayList<Object> velocity) {
 		this.velocity = velocity;
 	}
 
+	/**
+	 * @brief Obtiene la mejor posición personal
+	 * @return Estado pBest de la partícula
+	 */
 	public State getStatePBest() {
 		return statePBest;
 	}
 
+	/**
+	 * @brief Establece la mejor posición personal
+	 * @param statePBest Nueva mejor posición personal
+	 */
 	public void setStatePBest(State statePBest) {
 		this.statePBest = statePBest;
 	}
 
+	/**
+	 * @brief Obtiene la posición actual
+	 * @return Estado actual de la partícula
+	 */
 	public State getStateActual() {
 		return stateActual;
 	}
 
+	/**
+	 * @brief Establece la posición actual
+	 * @param stateActual Nueva posición actual
+	 */
 	public void setStateActual(State stateActual) {
 		this.stateActual = stateActual;
 	}
 
+	/**
+	 * @brief Actualiza la velocidad y posición de la partícula
+	 * @param operatornumber Número de operador (no utilizado)
+	 * @return null (la posición se actualiza en stateActual)
+	 * @throws IllegalArgumentException Si los argumentos son inválidos
+	 * @throws SecurityException Si hay problemas de seguridad
+	 * @throws ClassNotFoundException Si no se encuentra una clase
+	 * @throws InstantiationException Si hay error en la instanciación
+	 * @throws IllegalAccessException Si hay acceso ilegal
+	 * @throws InvocationTargetException Si hay error en la invocación
+	 * @throws NoSuchMethodException Si no se encuentra un método
+	 */
 	@Override
 	public State generate(Integer operatornumber)
 			throws IllegalArgumentException, SecurityException,

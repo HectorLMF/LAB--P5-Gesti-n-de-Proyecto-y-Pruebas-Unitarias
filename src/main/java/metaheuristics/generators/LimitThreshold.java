@@ -1,3 +1,10 @@
+/**
+ * @file LimitThreshold.java
+ * @brief Implementación del algoritmo de búsqueda con umbral límite
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -20,7 +27,13 @@ import problem.definition.Problem.ProblemType;
 import factory_interface.IFFactoryAcceptCandidate;
 import factory_method.FactoryAcceptCandidate;
 
-
+/**
+ * @class LimitThreshold
+ * @brief Algoritmo de búsqueda local con umbral de aceptación
+ * 
+ * Esta clase implementa un algoritmo de búsqueda que acepta soluciones
+ * que no son significativamente peores que la actual, usando un umbral.
+ */
 public class LimitThreshold extends Generator{
 	
 	private CandidateValue candidatevalue;

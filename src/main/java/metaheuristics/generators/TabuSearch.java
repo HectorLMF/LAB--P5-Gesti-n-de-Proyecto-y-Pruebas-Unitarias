@@ -1,3 +1,10 @@
+/**
+ * @file TabuSearch.java
+ * @brief Implementación del algoritmo de búsqueda tabú
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -21,6 +28,13 @@ import problem.definition.Problem.ProblemType;
 import factory_interface.IFFactoryAcceptCandidate;
 import factory_method.FactoryAcceptCandidate;
 
+/**
+ * @class TabuSearch
+ * @brief Algoritmo de búsqueda tabú con memoria de soluciones visitadas
+ * 
+ * Esta clase implementa el algoritmo de búsqueda tabú que mantiene una lista
+ * de soluciones tabú (prohibidas) para evitar ciclos y mejorar la exploración.
+ */
 public class TabuSearch extends Generator {
 
 	private CandidateValue candidatevalue;

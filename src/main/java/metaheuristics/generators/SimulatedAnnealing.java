@@ -1,3 +1,10 @@
+/**
+ * @file SimulatedAnnealing.java
+ * @brief Implementación del algoritmo de recocido simulado
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -16,26 +23,64 @@ import problem.definition.State;
 import factory_interface.IFFactoryAcceptCandidate;
 import factory_method.FactoryAcceptCandidate;
 
+/**
+ * @class SimulatedAnnealing
+ * @brief Algoritmo de recocido simulado con temperatura decreciente
+ * 
+ * Esta clase implementa el algoritmo de recocido simulado que acepta soluciones
+ * peores con probabilidad decreciente según un esquema de temperatura.
+ */
 public class SimulatedAnnealing extends Generator {
 
+	/** @brief Seleccionador de valores candidatos */
 	private CandidateValue candidatevalue;
+	
+	/** @brief Tipo de aceptación de soluciones */
 	private AcceptType typeAcceptation;
+	
+	/** @brief Tipo de estrategia de búsqueda */
 	private StrategyType strategy;
+	
+	/** @brief Tipo de candidato a seleccionar */
 	private CandidateType typeCandidate;
+	
+	/** @brief Estado de referencia del recocido simulado */
 	private State stateReferenceSA;
+	
+	/** @brief Factoría para crear aceptadores de candidatos */
     private IFFactoryAcceptCandidate ifacceptCandidate;
+	
+	/** @brief Factor de enfriamiento (alpha) */
     public static Double alpha;
+	
+	/** @brief Temperatura inicial */
     public static Double tinitial;
+	
+	/** @brief Temperatura final */
     public static Double tfinal;
+	
+	/** @brief Número de iteraciones por temperatura */
     public static int countIterationsT;
+	
+	/** @brief Contador de repeticiones */
     private int countRept;
+	
+	/** @brief Tipo de generador */
     private GeneratorType typeGenerator;
+	
+	/** @brief Lista de estados de referencia */
     private List<State> listStateReference = new ArrayList<State>();
+	
+	/** @brief Peso del generador */
     private float weight;
 
-	//problemas dinamicos
+	/** @brief Contador de mejoras por período para problemas dinámicos */
 	private int[] betterCountByPeriod = new int[10];
+	
+	/** @brief Contador de uso por período para problemas dinámicos */
 	private int[] usageCountByPeriod = new int[10];
+	
+	/** @brief Historial de trazas del peso */
     private float[] listTrace = new float[1200000];
 
 

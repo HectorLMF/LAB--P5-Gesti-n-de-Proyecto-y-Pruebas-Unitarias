@@ -1,3 +1,10 @@
+/**
+ * @file AIOMutation.java
+ * @brief Implementación de mutación AIOM (All In One Mutation) para TSP
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 import java.util.ArrayList;
@@ -9,11 +16,26 @@ import metaheurictics.strategy.Strategy;
 
 import problem.definition.State;
 
+/**
+ * @class AIOMutation
+ * @brief Clase que implementa el operador de mutación AIOM para el problema TSP
+ * 
+ * Esta clase extiende Mutation y proporciona una estrategia de mutación específica
+ * que invierte un segmento del camino seleccionado aleatoriamente.
+ */
 public class AIOMutation extends Mutation {
 	
-	
+	/**
+	 * @brief Lista que almacena el camino ordenado durante la mutación
+	 */
 	public static ArrayList<Object> path = new ArrayList<Object>();
 
+	/**
+	 * @brief Aplica la mutación AIOM al estado dado
+	 * @param state Estado a mutar
+	 * @param PM Probabilidad de mutación
+	 * @return Estado mutado
+	 */
 	@Override
 	public State mutation(State state, double PM) {
 		// TODO Auto-generated method stub
@@ -46,6 +68,10 @@ public class AIOMutation extends Mutation {
 		return state;
 	}
 	
+	/**
+	 * @brief Ordena el camino por valor
+	 * @param state Estado cuyo código será ordenado
+	 */
 	public void sortedPathValue(State state) {
 		for(int k = 0; k < state.getCode().size(); k++){
 			path.add( state.getCode().get(k));
@@ -63,6 +89,9 @@ public class AIOMutation extends Mutation {
 	
 	}
 
+	/**
+	 * @brief Inicializa el camino con índices secuenciales
+	 */
 	public static void fillPath() {
 		for(int k = 0; k < Strategy.getStrategy().getProblem().getCodification().getVariableCount(); k++){
 			path.add(k);

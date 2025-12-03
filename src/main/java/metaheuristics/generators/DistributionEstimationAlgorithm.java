@@ -1,3 +1,10 @@
+/**
+ * @file DistributionEstimationAlgorithm.java
+ * @brief Implementación del algoritmo de estimación de distribuciones (EDA) como metaheurística de optimización
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -23,33 +30,72 @@ import factory_method.FactoryFatherSelection;
 import factory_method.FactoryReplace;
 import factory_method.FactorySampling;
 
+/**
+ * @class DistributionEstimationAlgorithm
+ * @brief Algoritmo metaheurístico basado en estimación de distribuciones de probabilidad
+ * 
+ * Esta clase implementa el algoritmo EDA que genera nuevas soluciones mediante la estimación
+ * de distribuciones de probabilidad a partir de un conjunto de soluciones prometedoras.
+ */
 public class DistributionEstimationAlgorithm extends Generator {
 
+	/** @brief Estado de referencia del algoritmo de estimación de distribuciones */
 	private State stateReferenceDA;
+	
+	/** @brief Lista de estados de referencia para la estimación de distribuciones */
 	private List<State> referenceList = new ArrayList<State>(); 
+	
+	/** @brief Lista de estados hijos generados */
 	public static List<State> sonList = new ArrayList<State>(); 
+	
+	/** @brief Factoría para la selección de padres */
 	private IFFactoryFatherSelection iffatherselection;
+	
+	/** @brief Factoría para el muestreo de soluciones */
 	private IFFSampling iffsampling;
+	
+	/** @brief Factoría para el reemplazo de soluciones */
 	private IFFactoryReplace iffreplace;
+	
+	/** @brief Tipo de distribución utilizada */
 	private DistributionType distributionType;
+	
+	/** @brief Tipo de muestreo utilizado */
 	private SamplingType Samplingtype;
 	
-//	private ReplaceType replaceType;
+	/** @brief Tipo de reemplazo de soluciones */
 	public static ReplaceType replaceType;
+	
+	/** @brief Tipo de selección de padres */
 	public static SelectionType selectionType;
 	
+	/** @brief Tipo de generador metaheurístico */
 	private GeneratorType generatorType;
-	//private ProblemState candidate;
+	
+	/** @brief Tamaño de truncamiento para la selección */
 	public static int truncation;
+	
+	/** @brief Contador de referencias */
 	public static int countRef = 0;
+	
+	/** @brief Peso del generador */
 	private float weight;
 	
-	//problemas dinamicos
+	/** @brief Contador de mejoras por período para problemas dinámicos */
 	private int[] betterCountByPeriod = new int[10];
+	
+	/** @brief Contador de uso por período para problemas dinámicos */
 	private int[] usageCountByPeriod = new int[10];
+	
+	/** @brief Historial de trazas del peso */
 	private float[] listTrace = new float[1200000];
 	
-	
+	/**
+	 * @brief Constructor por defecto del algoritmo de estimación de distribuciones
+	 * 
+	 * Inicializa el algoritmo con los parámetros por defecto, incluyendo tipo de distribución
+	 * univariada, muestreo probabilístico y peso inicial de 50.
+	 */
 	public DistributionEstimationAlgorithm() {
 		super();
 		this.referenceList = getListStateRef(); // llamada al m�todo que devuelve la lista. 
@@ -65,6 +111,11 @@ public class DistributionEstimationAlgorithm extends Generator {
 		usageCountByPeriod[0] = 0;
 	}
 	
+	/**
+	 * @brief Obtiene el estado con el valor máximo de evaluación
+	 * @param listInd Lista de estados a evaluar
+	 * @return Estado con la mejor evaluación
+	 */
 	public State MaxValue (List<State> listInd){
 		State state = new State(listInd.get(0));
 		double max = state.getEvaluation().get(0);
@@ -77,6 +128,18 @@ public class DistributionEstimationAlgorithm extends Generator {
 		return state;
 	}
 	
+	/**
+	 * @brief Genera un nuevo estado candidato mediante estimación de distribuciones
+	 * @param operatornumber Número de operador a utilizar
+	 * @return Estado candidato generado
+	 * @throws IllegalArgumentException Si los argumentos son inválidos
+	 * @throws SecurityException Si hay problemas de seguridad
+	 * @throws ClassNotFoundException Si no se encuentra una clase
+	 * @throws InstantiationException Si hay error en la instanciación
+	 * @throws IllegalAccessException Si hay acceso ilegal
+	 * @throws InvocationTargetException Si hay error en la invocación
+	 * @throws NoSuchMethodException Si no se encuentra un método
+	 */
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {
 		//********************selection*****************************
@@ -126,6 +189,10 @@ public class DistributionEstimationAlgorithm extends Generator {
     	
     }
     		
+	/**
+	 * @brief Obtiene el estado de referencia con mejor evaluación
+	 * @return Estado de referencia óptimo de la lista
+	 */
 	@Override
 	public State getReference() {
 		stateReferenceDA = referenceList.get(0);
@@ -144,6 +211,10 @@ public class DistributionEstimationAlgorithm extends Generator {
 		return stateReferenceDA;
 	}
 
+	/**
+	 * @brief Obtiene una copia de la lista de referencias
+	 * @return Lista de estados de referencia
+	 */
 	@Override
 	public List<State> getReferenceList() {
 		List<State> ReferenceList = new ArrayList<State>();
@@ -154,16 +225,36 @@ public class DistributionEstimationAlgorithm extends Generator {
 		return ReferenceList;
 	}
 
+	/**
+	 * @brief Obtiene el tipo de generador
+	 * @return Tipo de generador DISTRIBUTION_ESTIMATION_ALGORITHM
+	 */
 	@Override
 	public GeneratorType getType() {
 		return this.generatorType;
 	}
 
+	/**
+	 * @brief Establece el estado de referencia inicial
+	 * @param stateInitialRef Estado de referencia inicial
+	 */
 	@Override
 	public void setInitialReference(State stateInitialRef) {
 		this.stateReferenceDA = stateInitialRef;
 	}
 
+	/**
+	 * @brief Actualiza la lista de referencias con un nuevo candidato
+	 * @param stateCandidate Estado candidato a evaluar
+	 * @param countIterationsCurrent Iteración actual
+	 * @throws IllegalArgumentException Si los argumentos son inválidos
+	 * @throws SecurityException Si hay problemas de seguridad
+	 * @throws ClassNotFoundException Si no se encuentra una clase
+	 * @throws InstantiationException Si hay error en la instanciación
+	 * @throws IllegalAccessException Si hay acceso ilegal
+	 * @throws InvocationTargetException Si hay error en la invocación
+	 * @throws NoSuchMethodException Si no se encuentra un método
+	 */
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {
 		iffreplace = new FactoryReplace();
@@ -171,6 +262,10 @@ public class DistributionEstimationAlgorithm extends Generator {
 		referenceList = replace.replace(stateCandidate, referenceList);
 	}
 	
+	/**
+	 * @brief Obtiene la lista de estados de referencia desde la estrategia
+	 * @return Lista de estados de referencia
+	 */
 	public List<State> getListStateRef(){
 		Boolean found = false;
 		List<String> key = Strategy.getStrategy().getListKey();
@@ -204,22 +299,49 @@ public class DistributionEstimationAlgorithm extends Generator {
 		return referenceList;
 	}
 
+	/**
+	 * @brief Obtiene la lista de referencias
+	 * @return Lista de estados de referencia
+	 */
 	public List<State> getListReference() {
 		return referenceList;
 	}
 
+	/**
+	 * @brief Establece la lista de referencias
+	 * @param listReference Nueva lista de estados de referencia
+	 */
 	public void setListReference(List<State> listReference) {
 		referenceList = listReference;
 	}
 
+	/**
+	 * @brief Obtiene el tipo de generador
+	 * @return Tipo de generador
+	 */
 	public GeneratorType getGeneratorType() {
 		return generatorType;
 	}
 
+	/**
+	 * @brief Establece el tipo de generador
+	 * @param generatorType Nuevo tipo de generador
+	 */
 	public void setGeneratorType(GeneratorType generatorType) {
 		this.generatorType = generatorType;
 	}
 
+	/**
+	 * @brief Obtiene la lista de padres seleccionados
+	 * @return Lista de estados padres seleccionados
+	 * @throws IllegalArgumentException Si los argumentos son inválidos
+	 * @throws SecurityException Si hay problemas de seguridad
+	 * @throws ClassNotFoundException Si no se encuentra una clase
+	 * @throws InstantiationException Si hay error en la instanciación
+	 * @throws IllegalAccessException Si hay acceso ilegal
+	 * @throws InvocationTargetException Si hay error en la invocación
+	 * @throws NoSuchMethodException Si no se encuentra un método
+	 */
 	public List<State> getfathersList() throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		List<State> refList = new ArrayList<State>(this.referenceList); 
     	iffatherselection = new FactoryFatherSelection();
@@ -233,6 +355,11 @@ public class DistributionEstimationAlgorithm extends Generator {
 		return sonList;
 	}
 
+	/**
+	 * @brief Verifica si el candidato está en la lista de referencias
+	 * @param stateCandidate Estado candidato a verificar
+	 * @return true si el candidato está en las referencias, false en caso contrario
+	 */
 	public boolean awardUpdateREF(State stateCandidate) {
 		boolean find = false;
 		int i = 0;
@@ -256,10 +383,18 @@ public class DistributionEstimationAlgorithm extends Generator {
 		
 	}
 
+	/**
+	 * @brief Obtiene el tipo de distribución
+	 * @return Tipo de distribución utilizada
+	 */
 	public DistributionType getDistributionType() {
 		return distributionType;
 	}
 
+	/**
+	 * @brief Establece el tipo de distribución
+	 * @param distributionType Nuevo tipo de distribución
+	 */
 	public void setDistributionType(DistributionType distributionType) {
 		this.distributionType = distributionType;
 	}

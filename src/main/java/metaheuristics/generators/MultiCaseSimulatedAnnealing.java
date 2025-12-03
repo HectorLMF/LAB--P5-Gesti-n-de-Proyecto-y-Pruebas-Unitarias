@@ -1,3 +1,10 @@
+/**
+ * @file MultiCaseSimulatedAnnealing.java
+ * @brief Implementación del algoritmo de recocido simulado multicaso
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package metaheuristics.generators;
 
 import java.lang.reflect.InvocationTargetException;
@@ -15,7 +22,13 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.Problem;
 import problem.definition.State;
 
-
+/**
+ * @class MultiCaseSimulatedAnnealing
+ * @brief Algoritmo de recocido simulado adaptado para problemas multicaso
+ * 
+ * Esta clase implementa una variante del recocido simulado que acepta soluciones
+ * múltiples usando un criterio de aceptación multicaso con temperatura decreciente.
+ */
 public class MultiCaseSimulatedAnnealing extends Generator {
 
 	private CandidateValue candidatevalue;

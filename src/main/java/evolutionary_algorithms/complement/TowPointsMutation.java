@@ -1,8 +1,22 @@
+/**
+ * @file TowPointsMutation.java
+ * @brief Implementación del operador de mutación de dos puntos
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 
 import metaheurictics.strategy.Strategy;
 import problem.definition.State;
+
+/**
+ * @class TowPointsMutation
+ * @brief Clase que implementa el operador de mutación de dos puntos
+ * 
+ * Intercambia los valores de dos genes seleccionados aleatoriamente.
+ */
 public class TowPointsMutation extends Mutation {
 
 	/*@Override
@@ -19,6 +33,12 @@ public class TowPointsMutation extends Mutation {
 		return newind;
 	}*/
 
+	/**
+	 * @brief Aplica mutación de dos puntos al estado dado
+	 * @param newind Estado a mutar
+	 * @param PM Probabilidad de mutación
+	 * @return Estado mutado
+	 */
 	@Override
 	public State mutation(State newind, double PM) {
 		Object key1 = Strategy.getStrategy().getProblem().getCodification().getAleatoryKey();

@@ -1,3 +1,10 @@
+/**
+ * @file OnePointCrossover.java
+ * @brief Implementación del operador de cruce de un punto
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 import java.util.ArrayList;
@@ -7,8 +14,21 @@ import config.SecureRandomGenerator;
 import metaheurictics.strategy.Strategy;
 import problem.definition.State;
 
+/**
+ * @class OnePointCrossover
+ * @brief Clase que implementa el operador de cruce de un punto
+ * 
+ * Selecciona un punto de corte aleatorio y combina las partes de los dos padres.
+ */
 public class OnePointCrossover extends Crossover {
 
+	/**
+	 * @brief Realiza el cruce de un punto entre dos estados padres
+	 * @param father1 Primer estado padre
+	 * @param father2 Segundo estado padre
+	 * @param PC Probabilidad de cruce
+	 * @return Estado hijo resultado del cruce
+	 */
 	@Override
 	public State crossover(State father1, State father2, double PC) {
 		State newInd = (State) father1.getCopy();

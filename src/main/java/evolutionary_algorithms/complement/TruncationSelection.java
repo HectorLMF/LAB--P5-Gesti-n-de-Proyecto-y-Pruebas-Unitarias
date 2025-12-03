@@ -1,3 +1,10 @@
+/**
+ * @file TruncationSelection.java
+ * @brief Implementación del operador de selección por truncamiento
+ * @author BiCIAM
+ * @version 1.0
+ * @date 2025
+ */
 package evolutionary_algorithms.complement;
 
 
@@ -9,8 +16,19 @@ import metaheurictics.strategy.Strategy;
 import problem.definition.State;
 import problem.definition.Problem.ProblemType;
 
+/**
+ * @class TruncationSelection
+ * @brief Clase que implementa el operador de selección por truncamiento
+ * 
+ * Selecciona los mejores individuos de la población según un umbral de truncamiento.
+ */
 public class TruncationSelection extends FatherSelection {
 	
+	/**
+	 * @brief Ordena la lista de estados en orden descendente (mejor a peor)
+	 * @param listState Lista de estados a ordenar
+	 * @return Lista de estados ordenada descendentemente
+	 */
 	public List<State> OrderBetter (List<State> listState){
 		State var = null;
 		for (int i = 0; i < listState.size()- 1; i++) {
@@ -25,6 +43,11 @@ public class TruncationSelection extends FatherSelection {
 		return listState;
 	}
 	
+	/**
+	 * @brief Ordena la lista de estados en orden ascendente (mejor a peor para minimización)
+	 * @param listState Lista de estados a ordenar
+	 * @return Lista de estados ordenada ascendentemente
+	 */
 	public List<State> ascOrderBetter (List<State> listState){
 		State var = null;
 		for (int i = 0; i < listState.size()- 1; i++) {
@@ -39,6 +62,12 @@ public class TruncationSelection extends FatherSelection {
 		return listState;
 	}
     
+	/**
+	 * @brief Selecciona los mejores individuos por truncamiento
+	 * @param listState Lista de estados de la población
+	 * @param truncation Número de individuos a seleccionar
+	 * @return Lista de estados seleccionados
+	 */
 	@Override
 	public List<State> selection(List<State> listState, int truncation) {
 		List<State> AuxList = new ArrayList<State>();
