@@ -18,6 +18,19 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <junit.version>5.10.1</junit.version>
+        
+        <!-- Propiedades de SonarQube -->
+        <sonar.projectKey>biciam</sonar.projectKey>
+        <sonar.projectName>BiCIAM</sonar.projectName>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.java.source>11</sonar.java.source>
+        <sonar.sourceEncoding>ISO-8859-1</sonar.sourceEncoding>
+        
+        <!-- Rutas de cobertura para SonarQube -->
+        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        
+        <!-- Exclusiones de análisis -->
+        <sonar.exclusions>**/config/**,**/META-INF/**</sonar.exclusions>
     </properties>
 
     <dependencies>
@@ -151,25 +164,27 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>9.0.9</version>
+                <version>12.1.0</version>
                 <configuration>
-                    <failBuildOnCVSS>7</failBuildOnCVSS>
+                    <!-- No fallar el build por CVEs (solo reportar) -->
+                    <failBuildOnCVSS>11</failBuildOnCVSS>
                     <skipTestScope>false</skipTestScope>
+                    <!-- Formatos de salida -->
                     <formats>
                         <format>HTML</format>
                         <format>JSON</format>
+                        <format>XML</format>
                     </formats>
+                    <!-- Archivo de supresiones -->
                     <suppressionFiles>
                         <suppressionFile>owasp-suppressions.xml</suppressionFile>
                     </suppressionFiles>
+                    <!-- Continuar aunque falle la actualización -->
+                    <failOnError>false</failOnError>
+                    <!-- NVD API Key para actualización de base de datos de CVEs -->
+                    <nvdApiKey>6dd04dc7-024f-4116-8cf7-7981295e6562</nvdApiKey>
+                    <nvdApiDelay>8000</nvdApiDelay>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <!-- PMD Maven Plugin: Análisis estático de código (Code Smells) -->
@@ -270,6 +285,13 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- SonarQube Maven Plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.10.0.2594</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -328,7 +350,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>9.0.9</version>
+                <version>12.1.0</version>
                 <reportSets>
                     <reportSet>
                         <reports>

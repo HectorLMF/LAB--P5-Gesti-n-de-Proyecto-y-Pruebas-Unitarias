@@ -84,10 +84,28 @@ mvn package
 
 ### Herramientas de Calidad y Seguridad (Fase 1)
 - `mvn jacoco:report`: Genera reporte de cobertura de código
-- `mvn dependency-check:check`: Audita vulnerabilidades (CVEs)
+- `mvn dependency-check:check`: Audita vulnerabilidades (CVEs) - **Requiere NVD API Key**
 - `mvn pmd:check`: Análisis estático de código (Code Smells)
 - `mvn checkstyle:check`: Valida estilo de código
-- `mvn spotbugs:check`: Detecta bugs y vulnerabilidades de seguridad
+- `mvn spotbugs:check`: Detecta bugs y vulnerabilidades de seguridad ✅ **413 issues encontrados**
 - `mvn site`: Genera todos los reportes en `target/site/`
 
 **Ver guía completa:** [CALIDAD_SEGURIDAD.md](CALIDAD_SEGURIDAD.md)
+
+**Nota OWASP:** Para usar OWASP Dependency-Check necesitas una API key gratuita de NVD:
+1. Regístrate en: https://nvd.nist.gov/developers/request-an-api-key
+2. Agrega a `pom.xml`: `<nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>`
+3. Variable de entorno: `$env:NVD_API_KEY="tu-api-key"`
+
+### SonarQube - Análisis Integral de Calidad
+```bash
+# Análisis completo con SonarQube
+mvn clean verify sonar:sonar
+
+# O con token en línea de comandos
+mvn clean verify sonar:sonar -Dsonar.token=TU_TOKEN_AQUI
+```
+
+**Dashboard:** http://localhost:9000  
+**Ver guía completa de instalación y configuración:** [SONARQUBE_SETUP.md](SONARQUBE_SETUP.md)
+

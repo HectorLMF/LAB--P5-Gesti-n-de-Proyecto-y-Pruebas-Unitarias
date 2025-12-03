@@ -11,6 +11,7 @@ import metaheuristics.generators.SimulatedAnnealing;
 import problem.definition.Problem;
 import problem.definition.State;
 import problem.definition.Problem.ProblemType;
+import config.SecureRandomGenerator;
 
 public class AcceptNotBadT extends AcceptableCandidate{
 
@@ -30,7 +31,7 @@ public class AcceptNotBadT extends AcceptableCandidate{
 		} else {
 			double result_min = (stateCandidate.getEvaluation().get(0) - stateCurrent.getEvaluation().get(0)) / SimulatedAnnealing.tinitial;
 			if ((stateCandidate.getEvaluation().get(0) <= stateCurrent.getEvaluation().get(0))
-					|| (Math.random() < Math.exp(result_min)))
+					|| (SecureRandomGenerator.nextDouble() < Math.exp(result_min)))
 				accept = true;
 			else
 				accept = false;
