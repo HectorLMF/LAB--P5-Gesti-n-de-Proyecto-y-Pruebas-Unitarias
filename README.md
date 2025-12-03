@@ -2,6 +2,9 @@
 
 Proyecto de algoritmos metaheurísticos y evolutivos para la resolución de problemas de optimización.
 
+### Documentacion doxygen en Github Pages:
+https://hectorlmf.github.io/LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias/html/index.html
+
 ## Estructura del Proyecto
 
 El proyecto ahora sigue la estructura estándar de Maven:
