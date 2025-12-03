@@ -9,13 +9,13 @@ import problem.extension.TypeSolutionMethod;
 import factory_method.FactorySolutionMethod;
 
 public class ProblemSettersExtraTest {
-    @Test
-    void setFactoryAndTypeSolutionMethod() {
-        Problem p = new Problem();
-        p.setTypeSolutionMethod(TypeSolutionMethod.FactoresPonderados);
-        assertEquals(TypeSolutionMethod.FactoresPonderados, p.getTypeSolutionMethod());
+	@Test
+	void setFactoryAndTypeSolutionMethod() {
+		Problem p = new Problem();
+		p.setTypeSolutionMethod(TypeSolutionMethod.FACTORES_PONDERADOS);
+		assertEquals(TypeSolutionMethod.FACTORES_PONDERADOS, p.getTypeSolutionMethod());
 
-        FactorySolutionMethod fsm = new FactorySolutionMethod();
+		FactorySolutionMethod fsm = new FactorySolutionMethod();
         p.setFactorySolutionMethod(fsm);
         assertSame(fsm, p.getFactorySolutionMethod());
     }

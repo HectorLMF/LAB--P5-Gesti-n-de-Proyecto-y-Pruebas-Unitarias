@@ -22,7 +22,7 @@ public class DominanceMinTest {
     @Test
     public void xDominatesYInMinimization() {
         Problem p = new Problem();
-        p.setTypeProblem(Problem.ProblemType.Minimizar);
+        p.setTypeProblem(Problem.ProblemType.MINIMIZAR);
         Strategy.getStrategy().setProblem(p);
 
         Dominance d = new Dominance();

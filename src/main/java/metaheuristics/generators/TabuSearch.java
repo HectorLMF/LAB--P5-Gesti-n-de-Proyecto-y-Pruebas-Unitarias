@@ -63,17 +63,17 @@ public class TabuSearch extends Generator {
 
 	public TabuSearch() {
     	super();
-		this.typeAcceptation = AcceptType.AcceptAnyone;
+		this.typeAcceptation = AcceptType.ACCEPT_ANYONE;
 		this.strategy = StrategyType.TABU;
 		
 		
 		Problem problem = Strategy.getStrategy().getProblem();
 
-		if(problem.getTypeProblem().equals(ProblemType.Maximizar)) {
-			this.typeCandidate = CandidateType.GreaterCandidate;
+		if(problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
 		}
 		else{
-			this.typeCandidate = CandidateType.SmallerCandidate;
+			this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
 		}
 
 		this.candidatevalue = new CandidateValue();

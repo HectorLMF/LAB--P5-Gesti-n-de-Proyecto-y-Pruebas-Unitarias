@@ -34,7 +34,7 @@ public class AcceptNotBad extends AcceptableCandidate{
 		Boolean accept = null;
 		Problem problem = Strategy.getStrategy().getProblem();
 		for (int i = 0; i < problem.getFunction().size(); i++) {
-		if (problem.getTypeProblem().equals(ProblemType.Maximizar)) {
+		if (problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
 			if (stateCandidate.getEvaluation().get(0) >= stateCurrent.getEvaluation().get(0)) {
 				accept = true;
 			} else {

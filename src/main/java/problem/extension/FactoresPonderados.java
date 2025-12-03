@@ -41,8 +41,8 @@ public class FactoresPonderados extends SolutionMethod {
 		for (int i = 0; i < Strategy.getStrategy().getProblem().getFunction().size(); i++) {
 
 			tempWeight = 0;
-			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
-				if(Strategy.getStrategy().getProblem().getFunction().get(i).getTypeProblem().equals(ProblemType.Maximizar)){
+			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
+				if(Strategy.getStrategy().getProblem().getFunction().get(i).getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 					tempWeight = Strategy.getStrategy().getProblem().getFunction().get(i).Evaluation(state);
 					tempWeight = tempWeight * Strategy.getStrategy().getProblem().getFunction().get(i).getWeight();
 				}
@@ -52,7 +52,7 @@ public class FactoresPonderados extends SolutionMethod {
 				}
 			}
 			else{
-				if(Strategy.getStrategy().getProblem().getFunction().get(i).getTypeProblem().equals(ProblemType.Maximizar)){
+				if(Strategy.getStrategy().getProblem().getFunction().get(i).getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 					tempWeight = 1 - Strategy.getStrategy().getProblem().getFunction().get(i).Evaluation(state);
 					tempWeight = tempWeight * Strategy.getStrategy().getProblem().getFunction().get(i).getWeight();
 				}

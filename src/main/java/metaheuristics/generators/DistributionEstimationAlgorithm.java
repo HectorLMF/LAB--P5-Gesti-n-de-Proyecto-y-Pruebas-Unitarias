@@ -103,8 +103,8 @@ public class DistributionEstimationAlgorithm extends Generator {
 		//this.replaceType = ReplaceType.Generational;
 //		this.replaceType = ReplaceType.Smallest;
 		this.generatorType = GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM;
-		this.distributionType = DistributionType.Univariate;
-		this.Samplingtype = SamplingType.ProbabilisticSampling;
+		this.distributionType = DistributionType.UNIVARIATE;
+		this.Samplingtype = SamplingType.PROBABILISTIC_SAMPLING;
 		this.weight = 50;
 		listTrace[0] = weight;
 		betterCountByPeriod[0] = 0;
@@ -196,7 +196,7 @@ public class DistributionEstimationAlgorithm extends Generator {
 	@Override
 	public State getReference() {
 		stateReferenceDA = referenceList.get(0);
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 			for (int i = 1; i < referenceList.size(); i++) {
 				if(stateReferenceDA.getEvaluation().get(0) < referenceList.get(i).getEvaluation().get(0))
 					stateReferenceDA = referenceList.get(i);

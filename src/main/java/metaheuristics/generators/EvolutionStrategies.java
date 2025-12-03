@@ -147,7 +147,7 @@ public class EvolutionStrategies extends Generator {
 	@Override
 	public State getReference() {
 		stateReferenceES = listStateReference.get(0);
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 			for (int i = 1; i < listStateReference.size(); i++) {
 				if(stateReferenceES.getEvaluation().get(0) < listStateReference.get(i).getEvaluation().get(0))
 					stateReferenceES = listStateReference.get(i);

@@ -172,7 +172,7 @@ public class GeneticAlgorithm extends Generator {
 	@Override
 	public State getReference() {
 		stateReferenceGA = listState.get(0);
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 			for (int i = 1; i < listState.size(); i++) {
 				if(stateReferenceGA.getEvaluation().get(0) < listState.get(i).getEvaluation().get(0))
 					stateReferenceGA = listState.get(i);

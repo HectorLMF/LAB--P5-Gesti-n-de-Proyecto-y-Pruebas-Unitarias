@@ -13,5 +13,5 @@ package evolutionary_algorithms.complement;
  */
 public enum SamplingType {
     /** Muestreo probabilístico */
-    ProbabilisticSampling;
+    PROBABILISTIC_SAMPLING;
 }

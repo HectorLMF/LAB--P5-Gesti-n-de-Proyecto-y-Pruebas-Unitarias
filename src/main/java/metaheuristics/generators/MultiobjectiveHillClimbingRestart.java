@@ -68,10 +68,10 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	public MultiobjectiveHillClimbingRestart() {
 		super();
-		this.typeAcceptation = AcceptType.AcceptNotDominated;
+		this.typeAcceptation = AcceptType.ACCEPT_NOT_DOMINATED;
 		this.strategy = StrategyType.NORMAL;
 		//Problem problem = Strategy.getStrategy().getProblem();
-		this.typeCandidate = CandidateType.NotDominatedCandidate;
+		this.typeCandidate = CandidateType.NOT_DOMINATED_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.Generatortype = GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_RESTART;
 		this.weight = 50;

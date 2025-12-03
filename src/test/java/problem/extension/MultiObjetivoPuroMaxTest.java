@@ -14,14 +14,14 @@ public class MultiObjetivoPuroMaxTest {
 
     private Problem buildProblem() {
         Problem p = new Problem();
-        p.setTypeProblem(Problem.ProblemType.Maximizar);
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
         ObjetiveFunction f1 = new ObjetiveFunction() {
-            { setTypeProblem(Problem.ProblemType.Maximizar); }
+            { setTypeProblem(Problem.ProblemType.MAXIMIZAR); }
             @Override public Double Evaluation(State state) { return 0.4; }
         };
         ObjetiveFunction f2 = new ObjetiveFunction() {
-            { setTypeProblem(Problem.ProblemType.Minimizar); }
+            { setTypeProblem(Problem.ProblemType.MINIMIZAR); }
             @Override public Double Evaluation(State state) { return 0.7; }
         };
         functions.add(f1);

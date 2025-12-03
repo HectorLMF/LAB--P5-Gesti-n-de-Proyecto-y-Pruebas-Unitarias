@@ -13,7 +13,7 @@ package evolutionary_algorithms.complement;
  */
 public enum ReplaceType {
 	/** Reemplazo de estado estacionario */
-	SteadyStateReplace,
+	STEADY_STATE_REPLACE,
 	/** Reemplazo generacional */
-	GenerationalReplace;
+	GENERATIONAL_REPLACE;
 }

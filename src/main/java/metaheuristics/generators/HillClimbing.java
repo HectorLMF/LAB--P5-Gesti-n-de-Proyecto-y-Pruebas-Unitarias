@@ -80,13 +80,13 @@ public class HillClimbing extends Generator{
 	 */
 	public HillClimbing() {
 		super();
-		this.typeAcceptation = AcceptType.AcceptBest;
+		this.typeAcceptation = AcceptType.ACCEPT_BEST;
 		this.strategy = StrategyType.NORMAL;
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)) {
-			this.typeCandidate = CandidateType.GreaterCandidate;
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
 		}
 		else{
-			this.typeCandidate = CandidateType.SmallerCandidate;
+			this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
 		}
 		this.candidatevalue = new CandidateValue();
 		this.Generatortype = GeneratorType.HILL_CLIMBING;

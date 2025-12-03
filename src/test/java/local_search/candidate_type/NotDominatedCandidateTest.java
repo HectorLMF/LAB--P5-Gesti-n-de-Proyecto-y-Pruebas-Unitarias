@@ -24,11 +24,11 @@ public class NotDominatedCandidateTest {
     public void returnsNonDominatedFirst() throws Exception {
         // Prepare strategy with type Maximize
         Problem p = new Problem();
-        p.setTypeProblem(Problem.ProblemType.Maximizar);
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
         // Minimal objective to allow Problem.Evaluate to work
         ArrayList<problem.definition.ObjetiveFunction> functions = new ArrayList<>();
         functions.add(new problem.definition.ObjetiveFunction() {
-            { setTypeProblem(Problem.ProblemType.Maximizar); setWeight(1.0f); }
+            { setTypeProblem(Problem.ProblemType.MAXIMIZAR); setWeight(1.0f); }
             @Override public Double Evaluation(State state) {
                 // Preserve the first value from current evaluation if present
                 return state.getEvaluation() == null || state.getEvaluation().isEmpty() ? 0.0 : state.getEvaluation().get(0);

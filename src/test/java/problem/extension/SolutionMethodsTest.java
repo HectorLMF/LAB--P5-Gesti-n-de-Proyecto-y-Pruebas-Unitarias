@@ -18,12 +18,12 @@ public class SolutionMethodsTest {
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
         // f1: returns 0.2
         ObjetiveFunction f1 = new ObjetiveFunction() {
-            { setTypeProblem(Problem.ProblemType.Maximizar); setWeight(0.5f); }
+            { setTypeProblem(Problem.ProblemType.MAXIMIZAR); setWeight(0.5f); }
             @Override public Double Evaluation(State state) { return 0.2; }
         };
         // f2: returns 0.6
         ObjetiveFunction f2 = new ObjetiveFunction() {
-            { setTypeProblem(Problem.ProblemType.Minimizar); setWeight(0.5f); }
+            { setTypeProblem(Problem.ProblemType.MINIMIZAR); setWeight(0.5f); }
             @Override public Double Evaluation(State state) { return 0.6; }
         };
         functions.add(f1);
@@ -34,7 +34,7 @@ public class SolutionMethodsTest {
 
     @Test
     public void factoresPonderadosProducesSingleAggregatedValue() {
-        Strategy.getStrategy().setProblem(buildProblem(Problem.ProblemType.Maximizar));
+        Strategy.getStrategy().setProblem(buildProblem(Problem.ProblemType.MAXIMIZAR));
         State s = new State();
         FactoresPonderados fp = new FactoresPonderados();
         fp.evaluationState(s);
@@ -46,7 +46,7 @@ public class SolutionMethodsTest {
 
     @Test
     public void factoresPonderadosMinimizarBranch() {
-        Strategy.getStrategy().setProblem(buildProblem(Problem.ProblemType.Minimizar));
+        Strategy.getStrategy().setProblem(buildProblem(Problem.ProblemType.MINIMIZAR));
         State s = new State();
         FactoresPonderados fp = new FactoresPonderados();
         fp.evaluationState(s);
@@ -58,7 +58,7 @@ public class SolutionMethodsTest {
 
     @Test
     public void multiObjetivoPuroProducesPerObjectiveValues() {
-        Strategy.getStrategy().setProblem(buildProblem(Problem.ProblemType.Minimizar));
+        Strategy.getStrategy().setProblem(buildProblem(Problem.ProblemType.MINIMIZAR));
         State s = new State();
         MultiObjetivoPuro mo = new MultiObjetivoPuro();
         mo.evaluationState(s);

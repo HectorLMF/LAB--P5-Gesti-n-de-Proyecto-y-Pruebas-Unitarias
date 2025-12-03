@@ -57,9 +57,9 @@ public class MultiCaseSimulatedAnnealing extends Generator {
 
 	public MultiCaseSimulatedAnnealing(){
     	super();
-    	this.typeAcceptation = AcceptType.AcceptMulticase;
+    	this.typeAcceptation = AcceptType.ACCEPT_MULTICASE;
 		this.strategy = StrategyType.NORMAL;
-		this.typeCandidate = CandidateType.RandomCandidate;
+		this.typeCandidate = CandidateType.RANDOM_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.typeGenerator = GeneratorType.MULTI_CASE_SIMULATED_ANNEALING;
 		this.weight = 50;

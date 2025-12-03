@@ -42,7 +42,7 @@ public class FactorySolutionMethod implements IFFactorySolutionMethod {
 	 */
 	@Override
 	public SolutionMethod createdSolutionMethod(TypeSolutionMethod method) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		String className = "problem.extension." + method.toString();
+		String className = "problem.extension." + method.toClassName();
 		solutionMethod = (SolutionMethod) FactoryLoader.getInstance(className);
 		return solutionMethod;
 	}

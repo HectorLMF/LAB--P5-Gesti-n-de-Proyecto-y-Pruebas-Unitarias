@@ -67,9 +67,9 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 	 */
 	public MultiobjectiveHillClimbingDistance() {
 		super();
-		this.typeAcceptation = AcceptType.AcceptNotDominated;
+		this.typeAcceptation = AcceptType.ACCEPT_NOT_DOMINATED;
 		this.strategy = StrategyType.NORMAL;
-		this.typeCandidate = CandidateType.NotDominatedCandidate;
+		this.typeCandidate = CandidateType.NOT_DOMINATED_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.Generatortype = GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_DISTANCE;
 		this.weight = 50;

@@ -23,7 +23,7 @@ class ProblemCoverageTest {
         assertSame(s, p.getState());
 
         // type problem
-        Problem.ProblemType type = Problem.ProblemType.Maximizar;
+        Problem.ProblemType type = Problem.ProblemType.MAXIMIZAR;
         p.setTypeProblem(type);
         assertEquals(type, p.getTypeProblem());
 

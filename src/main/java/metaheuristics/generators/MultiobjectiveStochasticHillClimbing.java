@@ -59,9 +59,9 @@ public class MultiobjectiveStochasticHillClimbing extends Generator{
 	 */
 	public MultiobjectiveStochasticHillClimbing() {
 		super();
-		this.typeAcceptation = AcceptType.AcceptNotDominated;
+		this.typeAcceptation = AcceptType.ACCEPT_NOT_DOMINATED;
 		this.strategy = StrategyType.NORMAL;
-		this.typeCandidate = CandidateType.NotDominatedCandidate;
+		this.typeCandidate = CandidateType.NOT_DOMINATED_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.Generatortype = GeneratorType.MULTIOBJECTIVE_STOCHASTIC_HILL_CLIMBING;
 		this.weight = 50;

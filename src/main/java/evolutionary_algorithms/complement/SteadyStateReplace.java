@@ -31,7 +31,7 @@ public class SteadyStateReplace extends Replace {
 	@Override
 	public List<State> replace(State stateCandidate, List<State> listState) {
 		State stateREP = null;
-		if (Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)) {
+		if (Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
 			stateREP = MinValue(listState);
 			if(stateCandidate.getEvaluation().get(0) >= stateREP.getEvaluation().get(0)){
 				Boolean find = false;
@@ -46,8 +46,8 @@ public class SteadyStateReplace extends Replace {
 				}
 			}
 		}
-		else {
-			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Minimizar)){
+		else{
+			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MINIMIZAR)){
 				stateREP = MaxValue(listState);
 				if(stateCandidate.getEvaluation().get(0) <= stateREP.getEvaluation().get(0)){
 					Boolean find = false;

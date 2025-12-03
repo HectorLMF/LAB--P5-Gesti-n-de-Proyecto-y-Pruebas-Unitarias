@@ -214,7 +214,7 @@ public class Particle extends Generator {
 			IllegalAccessException, InvocationTargetException,
 			NoSuchMethodException {
 		// TODO Auto-generated method stub
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 			if(stateActual.getEvaluation().get(0) > statePBest.getEvaluation().get(0)){
 				statePBest.setCode(new ArrayList<Object>(stateActual.getCode()));
 				statePBest.setEvaluation(stateActual.getEvaluation());

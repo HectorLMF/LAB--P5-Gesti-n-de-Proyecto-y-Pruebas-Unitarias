@@ -47,10 +47,6 @@ public class LimitThreshold extends Generator{
 	private float weight;
 	
 	//problemas dinamicos
-	public static int usageCount = 0;
-	public static int improvementCount = 0;
-	private int[] improvementCountHistory = new int[10];
-	private int[] usageCountHistory = new int[10];
 	private float[] listTrace = new float[1200000];
 	
 	public GeneratorType getTypeGenerator() {
@@ -63,25 +59,27 @@ public class LimitThreshold extends Generator{
 
 	public LimitThreshold() {
 		super();
-		this.typeAcceptation = AcceptType.AcceptNotBadU;
+		this.typeAcceptation = AcceptType.ACCEPT_NOT_BAD_U;
 		this.strategy = StrategyType.NORMAL;
 
 
 		Problem problem = Strategy.getStrategy().getProblem();
 
-		if(problem.getTypeProblem().equals(ProblemType.Maximizar)) {
-			this.typeCandidate = CandidateType.GreaterCandidate;
+		if(problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
 		}
 		else{
-			this.typeCandidate = CandidateType.SmallerCandidate;
+			this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
 		}
 
 		this.candidatevalue = new CandidateValue();
 		this.typeGenerator = GeneratorType.LIMIT_THRESHOLD;
 		this.weight = (float) 50.0;
 		listTrace[0] = weight;
-		improvementCountHistory[0] = 0;
-		usageCountHistory[0] = 0;
+		this.listCountBetterGender = new int[10];
+		this.listCountBetterGender[0] = 0;
+		this.countGender = 0;
+		this.countBetterGender = 0;
 
 	}
 	@Override
@@ -159,12 +157,14 @@ public class LimitThreshold extends Generator{
 
 	@Override
 	public int[] getListCountBetterGender() {
-		return this.improvementCountHistory;
+		return this.listCountBetterGender;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		return this.usageCountHistory;
+		int[] listCountGender = new int[10];
+		listCountGender[0] = this.countGender;
+		return listCountGender;
 	}
 
 	@Override

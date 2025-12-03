@@ -13,19 +13,19 @@ class FactorySolutionMethodTest {
         FactorySolutionMethod factory = new FactorySolutionMethod();
         // Pick an enum value that exists as a class in problem.extension
         // e.g., MultiObjetivoPuro or FactoresPonderados depending on enum names
-        TypeSolutionMethod type = TypeSolutionMethod.MultiObjetivoPuro;
+        TypeSolutionMethod type = TypeSolutionMethod.MULTI_OBJETIVO_PURO;
         SolutionMethod sm = factory.createdSolutionMethod(type);
         assertNotNull(sm);
-        assertEquals("problem.extension." + type.toString(), sm.getClass().getName());
+        assertEquals("problem.extension." + type.toClassName(), sm.getClass().getName());
     }
 
     @Test
     void createValidSolutionMethodFactoresPonderados() throws Exception {
         FactorySolutionMethod factory = new FactorySolutionMethod();
-        TypeSolutionMethod type = TypeSolutionMethod.FactoresPonderados;
+        TypeSolutionMethod type = TypeSolutionMethod.FACTORES_PONDERADOS;
         SolutionMethod sm = factory.createdSolutionMethod(type);
         assertNotNull(sm);
-        assertEquals("problem.extension." + type.toString(), sm.getClass().getName());
+        assertEquals("problem.extension." + type.toClassName(), sm.getClass().getName());
     }
 
     @Test

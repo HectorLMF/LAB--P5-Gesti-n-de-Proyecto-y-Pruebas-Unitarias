@@ -76,9 +76,9 @@ public class RandomSearch extends Generator {
 	 */
 	public RandomSearch() {
 		super();
-		this.typeAcceptation = AcceptType.AcceptBest;
+		this.typeAcceptation = AcceptType.ACCEPT_BEST;
 		this.strategy = StrategyType.NORMAL;
-		this.typeCandidate = CandidateType.RandomCandidate;
+		this.typeCandidate = CandidateType.RANDOM_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.typeGenerator = GeneratorType.RANDOM_SEARCH;
 		this.weight = 50;

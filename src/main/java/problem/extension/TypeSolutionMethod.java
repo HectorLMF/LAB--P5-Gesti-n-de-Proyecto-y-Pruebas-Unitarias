@@ -14,8 +14,22 @@ package problem.extension;
 public enum TypeSolutionMethod {
 
 	/** @brief Método de factores ponderados */
-	FactoresPonderados,
+	FACTORES_PONDERADOS,
 	
 	/** @brief Método de optimización multiobjetivo puro */
-	MultiObjetivoPuro; //OrdenamientoLexicografico,
+	MULTI_OBJETIVO_PURO; //OrdenamientoLexicografico,
+	
+	/**
+	 * @brief Convierte el nombre del enum al nombre de la clase correspondiente.
+	 * @return Nombre de la clase en formato PascalCase
+	 */
+	public String toClassName() {
+		String[] words = this.name().split("_");
+		StringBuilder className = new StringBuilder();
+		for (String word : words) {
+			className.append(Character.toUpperCase(word.charAt(0)));
+			className.append(word.substring(1).toLowerCase());
+		}
+		return className.toString();
+	}
 }

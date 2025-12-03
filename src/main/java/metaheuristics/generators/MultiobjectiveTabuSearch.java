@@ -95,11 +95,11 @@ public class MultiobjectiveTabuSearch extends Generator {
 	 */
 	public MultiobjectiveTabuSearch() {
     	super();
-		this.typeAcceptation = AcceptType.AcceptNotDominatedTabu;
+		this.typeAcceptation = AcceptType.ACCEPT_NOT_DOMINATED_TABU;
 		this.strategy = StrategyType.TABU;
 		@SuppressWarnings("unused")
 		Problem problem = Strategy.getStrategy().getProblem();
-		this.typeCandidate = CandidateType.RandomCandidate;
+		this.typeCandidate = CandidateType.RANDOM_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.typeGenerator = GeneratorType.MULTIOBJECTIVE_TABU_SEARCH;
 		this.weight = 50;

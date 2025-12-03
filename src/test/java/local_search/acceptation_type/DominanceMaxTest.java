@@ -22,7 +22,7 @@ public class DominanceMaxTest {
     @Test
     public void xDominatesYInMaximization() {
         Problem p = new Problem();
-        p.setTypeProblem(Problem.ProblemType.Maximizar);
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
         Strategy.getStrategy().setProblem(p);
 
         Dominance d = new Dominance();

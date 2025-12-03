@@ -13,7 +13,7 @@ package evolutionary_algorithms.complement;
  */
 public enum CrossoverType {
 	/** Cruce de un punto */
-	OnePointCrossover,
+	ONE_POINT_CROSSOVER,
 	/** Cruce uniforme */
-	UniformCrossover;
+	UNIFORM_CROSSOVER;
 }

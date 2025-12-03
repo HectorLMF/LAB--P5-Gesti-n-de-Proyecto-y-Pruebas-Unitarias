@@ -271,10 +271,10 @@ public class Strategy {
 				//actualizar el mejor estado encontrado solo tiene sentido para algoritmos monoobjetivos
 				
 				//actualizar el mejor estado encontrado solo tiene sentido para algoritmos monoobjetivos
-				if ((getProblem().getTypeProblem().equals(ProblemType.Maximizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) < stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
+				if ((getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) < stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
 					bestState = stateCandidate;
 				}
-				if ((problem.getTypeProblem().equals(ProblemType.Minimizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) > stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
+				if ((problem.getTypeProblem().equals(ProblemType.MINIMIZAR)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) > stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
 					bestState = stateCandidate;
 				}
 				//					System.out.println("Evaluacion: "+ bestState.getEvaluation());
@@ -318,10 +318,10 @@ public class Strategy {
 				}
 				countCurrent = UpdateParameter.updateParameter(countCurrent);
 				//actualizar el mejor estado encontrado solo tiene sentido para algoritmos monoobjetivos
-				if ((getProblem().getTypeProblem().equals(ProblemType.Maximizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) < stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
+				if ((getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) < stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
 					bestState = stateCandidate;
 				}
-				if ((problem.getTypeProblem().equals(ProblemType.Minimizar)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) > stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
+				if ((problem.getTypeProblem().equals(ProblemType.MINIMIZAR)) && bestState.getEvaluation().get(bestState.getEvaluation().size() - 1) > stateCandidate.getEvaluation().get(bestState.getEvaluation().size() - 1)) {
 					bestState = stateCandidate;
 				}
 				//					System.out.println("Evaluacion: "+ bestState.getEvaluation());

@@ -130,7 +130,7 @@ public class Dominance {
 		int countBest = 0;
 		int countEquals = 0;
 		//Si solutionX domina a solutionY
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)) {
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
 			//Recorriendo las evaluaciones de las funciones objetivo
 			for (int i = 0; i < solutionX.getEvaluation().size(); i++) {
 				if(solutionX.getEvaluation().get(i).floatValue() > solutionY.getEvaluation().get(i).floatValue()){

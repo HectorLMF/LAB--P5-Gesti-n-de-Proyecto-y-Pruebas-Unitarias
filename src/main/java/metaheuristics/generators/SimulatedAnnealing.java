@@ -100,9 +100,9 @@ public class SimulatedAnnealing extends Generator {
     	SimulatedAnnealing.tfinal = 41.66;
     	SimulatedAnnealing.countIterationsT = 50;*/
 
-    	this.typeAcceptation = AcceptType.AcceptNotBadT;
+    	this.typeAcceptation = AcceptType.ACCEPT_NOT_BAD_T;
 		this.strategy = StrategyType.NORMAL;
-		this.typeCandidate = CandidateType.RandomCandidate;
+		this.typeCandidate = CandidateType.RANDOM_CANDIDATE;
 		this.candidatevalue = new CandidateValue();
 		this.typeGenerator = GeneratorType.SIMULATED_ANNEALING;
 		this.weight = 50;

@@ -13,9 +13,9 @@ package evolutionary_algorithms.complement;
  */
 public enum MutationType {
 	/** Mutación de dos puntos */
-	TowPointsMutation,
+	TWO_POINTS_MUTATION,
 	/** Mutación de un punto */
-	OnePointMutation,
+	ONE_POINT_MUTATION,
 	/** Mutación AIOM */
-	AIOMutation;    
+	AIOM_MUTATION;    
 }

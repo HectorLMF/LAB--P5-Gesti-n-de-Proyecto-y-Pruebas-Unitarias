@@ -46,10 +46,6 @@ public class ParticleSwarmOptimization extends Generator {
 	public static State gBest;
 	public static int countCurrentIterPSO;
 	//problemas dinamicos
-	public static int usageCount = 0;
-	public static int improvementCount = 0;
-	private int[] improvementCountHistory = new int[10];
-	private int[] usageCountHistory = new int[10];
     private float[] listTrace = new float[1200000];
 			
 	public ParticleSwarmOptimization(){
@@ -67,8 +63,10 @@ public class ParticleSwarmOptimization extends Generator {
 		}
 		countParticle = 0;
 		listTrace[0] = this.weight;
-		improvementCountHistory[0] = 0;
-		usageCountHistory[0] = 0;
+		this.listCountBetterGender = new int[10];
+		this.listCountBetterGender[0] = 0;
+		this.countGender = 0;
+		this.countBetterGender = 0;
 	}
 
 	@Override
@@ -85,7 +83,7 @@ public class ParticleSwarmOptimization extends Generator {
 			State reference = new State();
 			reference = listParticle.get(countParticle).getStatePBest();
 			int iterator = countParticleBySwarm + countParticle;
-			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 				for (int i = countParticle; i < iterator; i++) {
 					if (listParticle.get(i).getStatePBest().getEvaluation().get(0) > reference.getEvaluation().get(0))
 						reference = listParticle.get(i).getStatePBest();
@@ -201,7 +199,7 @@ public class ParticleSwarmOptimization extends Generator {
 		Particle particle = new Particle();
 		particle = listParticle.get(countParticle);
 		int swarm = countParticle/countParticleBySwarm;
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 			if ((lBest[swarm]).getEvaluation().get(0) < particle.getStatePBest().getEvaluation().get(0)){
 				lBest[swarm] = particle.getStatePBest();
 				if(lBest[swarm].getEvaluation().get(0) > getReferenceList().get(getReferenceList().size() - 1).getEvaluation().get(0)){
@@ -232,7 +230,7 @@ public class ParticleSwarmOptimization extends Generator {
 	public State gBestInicial (){
 		State stateBest = lBest[0];
 		for (int i = 1; i < lBest.length; i++) {
-			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
+			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
 				if (lBest[i].getEvaluation().get(0) > stateBest.getEvaluation().get(0)){
 					stateBest = lBest[i];
 				}
@@ -290,12 +288,14 @@ public class ParticleSwarmOptimization extends Generator {
 
 	@Override
 	public int[] getListCountBetterGender() {
-		return this.improvementCountHistory;
+		return this.listCountBetterGender;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		return this.usageCountHistory;
+		int[] listCountGender = new int[10];
+		listCountGender[0] = this.countGender;
+		return listCountGender;
 	}
 
 	@Override

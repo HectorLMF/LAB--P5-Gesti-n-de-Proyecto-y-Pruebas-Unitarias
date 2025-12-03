@@ -13,5 +13,5 @@ package evolutionary_algorithms.complement;
  */
 public enum DistributionType {
      /** Distribución univariada */
-     Univariate;
+     UNIVARIATE;
 }

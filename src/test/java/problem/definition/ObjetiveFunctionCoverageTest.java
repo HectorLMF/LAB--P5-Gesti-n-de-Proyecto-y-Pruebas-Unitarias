@@ -13,8 +13,8 @@ class ObjetiveFunctionCoverageTest {
             assertEquals(2.5f, of.getWeight());
 
         // type problem
-            of.setTypeProblem(Problem.ProblemType.Minimizar);
-            assertEquals(Problem.ProblemType.Minimizar, of.getTypeProblem());
+            of.setTypeProblem(Problem.ProblemType.MINIMIZAR);
+            assertEquals(Problem.ProblemType.MINIMIZAR, of.getTypeProblem());
     }
 }
 

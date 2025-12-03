@@ -18,20 +18,20 @@ package local_search.acceptation_type;
 public enum AcceptType
 {
 	/** @brief Acepta solo mejores soluciones */
-	AcceptBest,
+	ACCEPT_BEST,
 	/** @brief Acepta cualquier solución */
-	AcceptAnyone,
+	ACCEPT_ANYONE,
 	/** @brief Acepta soluciones con criterio de temperatura */
-	AcceptNotBadT,
+	ACCEPT_NOT_BAD_T,
 	/** @brief Acepta soluciones dentro de un umbral */
-	AcceptNotBadU,
+	ACCEPT_NOT_BAD_U,
 	/** @brief Acepta soluciones no dominadas (Pareto) */
-	AcceptNotDominated,
+	ACCEPT_NOT_DOMINATED,
 	/** @brief Acepta soluciones no dominadas con lista tabú */
-	AcceptNotDominatedTabu,
+	ACCEPT_NOT_DOMINATED_TABU,
 	/** @brief Acepta soluciones que no empeoran */
-	AcceptNotBad,
+	ACCEPT_NOT_BAD,
 	/** @brief Acepta soluciones con criterio multiobjetivo */
-	AcceptMulticase;
+	ACCEPT_MULTICASE;
 	
 }

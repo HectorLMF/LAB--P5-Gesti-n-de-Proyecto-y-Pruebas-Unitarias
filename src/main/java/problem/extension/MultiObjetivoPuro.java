@@ -40,8 +40,8 @@ public class MultiObjetivoPuro extends SolutionMethod {
 		for (int i = 0; i < Strategy.getStrategy().getProblem().getFunction().size(); i++)
 		{
 			ObjetiveFunction objfunction = (ObjetiveFunction)Strategy.getStrategy().getProblem().getFunction().get(i);
-			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)){
-				if(objfunction.getTypeProblem().equals(ProblemType.Maximizar))
+			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
+				if(objfunction.getTypeProblem().equals(ProblemType.MAXIMIZAR))
 				{
 					tempEval = objfunction.Evaluation(state);
 				}
@@ -50,7 +50,7 @@ public class MultiObjetivoPuro extends SolutionMethod {
 				}
 			}
 			else{
-				if(objfunction.getTypeProblem().equals(ProblemType.Maximizar))
+				if(objfunction.getTypeProblem().equals(ProblemType.MAXIMIZAR))
 				{
 					tempEval = 1-objfunction.Evaluation(state);
 				}

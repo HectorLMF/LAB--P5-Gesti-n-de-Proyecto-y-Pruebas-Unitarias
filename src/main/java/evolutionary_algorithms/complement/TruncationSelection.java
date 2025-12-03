@@ -71,10 +71,10 @@ public class TruncationSelection extends FatherSelection {
 	@Override
 	public List<State> selection(List<State> listState, int truncation) {
 		List<State> AuxList = new ArrayList<State>();
-		if (Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)) {
+		if (Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
 			listState = OrderBetter(listState);
 		} else {
-			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Minimizar))
+			if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MINIMIZAR))
 				listState = ascOrderBetter(listState);
 		}
 		int i = 0;

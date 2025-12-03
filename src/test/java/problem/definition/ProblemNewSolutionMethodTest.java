@@ -13,7 +13,7 @@ public class ProblemNewSolutionMethodTest {
     @Test
     void newSolutionMethodReturnsInstance() throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         Problem p = new Problem();
-        SolutionMethod sm = p.newSolutionMethod(TypeSolutionMethod.FactoresPonderados);
+        SolutionMethod sm = p.newSolutionMethod(TypeSolutionMethod.FACTORES_PONDERADOS);
         assertNotNull(sm);
     }
 }

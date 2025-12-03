@@ -32,7 +32,7 @@ public class Problem {
 	 * @enum ProblemType
 	 * @brief Tipo de problema: maximización o minimización.
 	 */
-	public enum ProblemType {Maximizar,Minimizar;}
+	public enum ProblemType {MAXIMIZAR,MINIMIZAR;}
 
 	/** Lista de funciones objetivo del problema */
 	private ArrayList<ObjetiveFunction> function;

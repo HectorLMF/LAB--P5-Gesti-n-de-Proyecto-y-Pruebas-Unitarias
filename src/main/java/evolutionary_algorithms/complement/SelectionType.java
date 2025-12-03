@@ -13,7 +13,7 @@ package evolutionary_algorithms.complement;
  */
 public enum SelectionType {
 	/** Selección por ruleta */
-	RouletteSelection,
+	ROULETTE_SELECTION,
 	/** Selección por truncamiento */
-	TruncationSelection;
+	TRUNCATION_SELECTION;
 }

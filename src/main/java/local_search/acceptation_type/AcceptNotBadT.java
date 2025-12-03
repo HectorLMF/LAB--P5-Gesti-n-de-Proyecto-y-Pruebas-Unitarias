@@ -44,7 +44,7 @@ public class AcceptNotBadT extends AcceptableCandidate{
 	public Boolean acceptCandidate(State stateCurrent, State stateCandidate) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		Boolean accept = null;
 		Problem problem = Strategy.getStrategy().getProblem();
-		if (problem.getTypeProblem().equals(ProblemType.Maximizar)) {
+		if (problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
 			double result = (stateCandidate.getEvaluation().get(0) - stateCurrent.getEvaluation().get(0)) / SimulatedAnnealing.tinitial;
 			double probaleatory = Math.random();
 			double exp = Math.exp(result);

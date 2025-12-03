@@ -47,11 +47,6 @@ public class HillClimbingRestart extends Generator{
 	protected float weight;
 	
 	//problemas dinamicos
-	// Rename fields to avoid confusion with Generator's fields
-	public static int usageCount = 0;
-	public static int improvementCount = 0;
-	private int[] improvementCountHistory = new int[10];
-	private int[] usageCountHistory = new int[10];
 	private float[] listTrace = new float[1200000];
 
 	public HillClimbingRestart() {
@@ -59,20 +54,22 @@ public class HillClimbingRestart extends Generator{
 //		countIterations = Strategy.getStrategy().getCountCurrent();
 //		countSame = 1;
 		countCurrent = count;
-		this.typeAcceptation = AcceptType.AcceptBest;
+		this.typeAcceptation = AcceptType.ACCEPT_BEST;
 		this.strategy = StrategyType.NORMAL;
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.Maximizar)) {
-			this.typeCandidate = CandidateType.GreaterCandidate;
+		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
 		}
 		else{
-			this.typeCandidate = CandidateType.SmallerCandidate;
+			this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
 		}
 		this.candidatevalue = new CandidateValue();
 		this.Generatortype = GeneratorType.HILL_CLIMBING_RESTART;
 		this.weight = 50;
 		listTrace[0] = this.weight;
-		improvementCountHistory[0] = 0;
-		usageCountHistory[0] = 0;
+		this.listCountBetterGender = new int[10];
+		this.listCountBetterGender[0] = 0;
+		this.countGender = 0;
+		this.countBetterGender = 0;
 	}
 
 
@@ -196,13 +193,14 @@ public class HillClimbingRestart extends Generator{
 	
 	@Override
 	public int[] getListCountBetterGender() {
-		// Backward-compatible getter returns renamed field
-		return this.improvementCountHistory;
+		return this.listCountBetterGender;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		return this.usageCountHistory;
+		int[] listCountGender = new int[10];
+		listCountGender[0] = this.countGender;
+		return listCountGender;
 	}
 
 	@Override
