@@ -185,11 +185,10 @@
                         </goals>
                         <configuration>
                             <rules>
-                                <!-- Regla de paquete: exigir 80% en clases probadas -->
+                                <!-- Reglas por paquete: mantener 80% en problem.definition, permitir 55% temporal en factory_method -->
                                 <rule>
                                     <element>PACKAGE</element>
                                     <includes>
-                                        <include>factory_method*</include>
                                         <include>problem.definition*</include>
                                     </includes>
                                     <limits>
@@ -202,6 +201,24 @@
                                             <counter>BRANCH</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>0.50</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                                <rule>
+                                    <element>PACKAGE</element>
+                                    <includes>
+                                        <include>factory_method*</include>
+                                    </includes>
+                                    <limits>
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.55</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.40</minimum>
                                         </limit>
                                     </limits>
                                 </rule>

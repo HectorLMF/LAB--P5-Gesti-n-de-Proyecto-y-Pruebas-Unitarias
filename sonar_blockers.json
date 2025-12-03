@@ -1,0 +1,1570 @@
+﻿{
+    "total":  34,
+    "p":  1,
+    "ps":  500,
+    "paging":  {
+                   "pageIndex":  1,
+                   "pageSize":  500,
+                   "total":  34
+               },
+    "effortTotal":  230,
+    "debtTotal":  230,
+    "issues":  [
+                   {
+                       "key":  "AZrlEKy27WEa3SFvNIvO",
+                       "rule":  "java:S2699",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/test/java/problem/definition/ProblemEvaluateWithMethodTest.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  15,
+                       "hash":  "b709efb4aea926b17aa096443b21b93a",
+                       "textRange":  {
+                                         "startLine":  15,
+                                         "endLine":  15,
+                                         "startOffset":  9,
+                                         "endOffset":  41
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "Add at least one assertion to this test case.",
+                       "effort":  "10min",
+                       "debt":  "10min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "junit",
+                                    "tests"
+                                ],
+                       "creationDate":  "2025-12-03T16:33:44+0000",
+                       "updateDate":  "2025-12-03T17:05:46+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "TESTED",
+                       "cleanCodeAttributeCategory":  "ADAPTABLE",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrk1VAuILjDKgc-2e4U",
+                       "rule":  "java:S2699",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/test/java/factory_method/FactoryReplaceExtraTest.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  23,
+                       "hash":  "981d2eacc45f1414cc409f383bbeb2c0",
+                       "textRange":  {
+                                         "startLine":  23,
+                                         "endLine":  23,
+                                         "startOffset":  9,
+                                         "endOffset":  31
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "Add at least one assertion to this test case.",
+                       "effort":  "10min",
+                       "debt":  "10min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "junit",
+                                    "tests"
+                                ],
+                       "creationDate":  "2025-12-03T15:29:09+0000",
+                       "updateDate":  "2025-12-03T15:29:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "TESTED",
+                       "cleanCodeAttributeCategory":  "ADAPTABLE",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouv8WIuLA5E5I6sU",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  48,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  48,
+                                         "endLine":  48,
+                                         "startOffset":  19,
+                                         "endOffset":  30
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouv8WIuLA5E5I6sV",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  49,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  49,
+                                         "endLine":  49,
+                                         "startOffset":  19,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouv8WIuLA5E5I6sW",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  50,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  50,
+                                         "endLine":  50,
+                                         "startOffset":  15,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouwfWIuLA5E5I6tL",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/EvolutionStrategies.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  44,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  44,
+                                         "endLine":  44,
+                                         "startOffset":  19,
+                                         "endOffset":  30
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouwfWIuLA5E5I6tM",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/EvolutionStrategies.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  45,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  45,
+                                         "endLine":  45,
+                                         "startOffset":  19,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouwfWIuLA5E5I6tN",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/EvolutionStrategies.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  46,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  46,
+                                         "endLine":  46,
+                                         "startOffset":  15,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouvnWIuLA5E5I6rb",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/GeneticAlgorithm.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  55,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  55,
+                                         "endLine":  55,
+                                         "startOffset":  19,
+                                         "endOffset":  30
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouvnWIuLA5E5I6rc",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/GeneticAlgorithm.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  56,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  56,
+                                         "endLine":  56,
+                                         "startOffset":  19,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouvnWIuLA5E5I6rd",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/GeneticAlgorithm.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  57,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  57,
+                                         "endLine":  57,
+                                         "startOffset":  15,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouvxWIuLA5E5I6r3",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbing.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  37,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  37,
+                                         "endLine":  37,
+                                         "startOffset":  19,
+                                         "endOffset":  30
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouvxWIuLA5E5I6r4",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbing.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  38,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  38,
+                                         "endLine":  38,
+                                         "startOffset":  19,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouvxWIuLA5E5I6r5",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbing.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  39,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  39,
+                                         "endLine":  39,
+                                         "startOffset":  15,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouukWIuLA5E5I6ob",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbingRestart.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  36,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  36,
+                                         "endLine":  36,
+                                         "startOffset":  19,
+                                         "endOffset":  30
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouukWIuLA5E5I6oc",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbingRestart.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  37,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  37,
+                                         "endLine":  37,
+                                         "startOffset":  19,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouukWIuLA5E5I6od",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbingRestart.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  38,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  38,
+                                         "endLine":  38,
+                                         "startOffset":  15,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouw8WIuLA5E5I6t8",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/LimitThreshold.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  37,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  37,
+                                         "endLine":  37,
+                                         "startOffset":  19,
+                                         "endOffset":  30
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouw8WIuLA5E5I6t9",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/LimitThreshold.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  38,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  38,
+                                         "endLine":  38,
+                                         "startOffset":  19,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouw8WIuLA5E5I6t-",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/LimitThreshold.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  39,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  39,
+                                         "endLine":  39,
+                                         "startOffset":  15,
+                                         "endOffset":  36
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouu6WIuLA5E5I6px",
+                       "rule":  "java:S2975",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/MultiGenerator.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  364,
+                       "hash":  "85f26ebdf4ea5bef8adaf862b2348076",
+                       "textRange":  {
+                                         "startLine":  364,
+                                         "endLine":  364,
+                                         "startOffset":  15,
+                                         "endOffset":  20
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "Remove this \"clone\" implementation; use a copy constructor or copy factory instead.",
+                       "effort":  "30min",
+                       "debt":  "30min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "suspicious"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CONVENTIONAL",
+                       "cleanCodeAttributeCategory":  "CONSISTENT",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouxHWIuLA5E5I6uo",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/ParticleSwarmOptimization.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  34,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  34,
+                                         "endLine":  34,
+                                         "startOffset":  22,
+                                         "endOffset":  33
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouxHWIuLA5E5I6up",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/ParticleSwarmOptimization.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  35,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  35,
+                                         "endLine":  35,
+                                         "startOffset":  22,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouxHWIuLA5E5I6uq",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/ParticleSwarmOptimization.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  36,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  36,
+                                         "endLine":  36,
+                                         "startOffset":  18,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouuuWIuLA5E5I6o0",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/RandomSearch.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  34,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  34,
+                                         "endLine":  34,
+                                         "startOffset":  22,
+                                         "endOffset":  33
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouuuWIuLA5E5I6o1",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/RandomSearch.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  35,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  35,
+                                         "endLine":  35,
+                                         "startOffset":  22,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouuuWIuLA5E5I6o2",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/RandomSearch.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  36,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  36,
+                                         "endLine":  36,
+                                         "startOffset":  18,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouuOWIuLA5E5I6na",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/SimulatedAnnealing.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  37,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  37,
+                                         "endLine":  37,
+                                         "startOffset":  22,
+                                         "endOffset":  33
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouuOWIuLA5E5I6nb",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/SimulatedAnnealing.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  38,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  38,
+                                         "endLine":  38,
+                                         "startOffset":  22,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouuOWIuLA5E5I6nc",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/SimulatedAnnealing.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  39,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  39,
+                                         "endLine":  39,
+                                         "startOffset":  18,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouwqWIuLA5E5I6tj",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/TabuSearch.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  37,
+                       "hash":  "a99583ed0b482a6631643c8f6234eb14",
+                       "textRange":  {
+                                         "startLine":  37,
+                                         "endLine":  37,
+                                         "startOffset":  22,
+                                         "endOffset":  33
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouwqWIuLA5E5I6tk",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/TabuSearch.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  38,
+                       "hash":  "42424a41676befb48407a232adaffee5",
+                       "textRange":  {
+                                         "startLine":  38,
+                                         "endLine":  38,
+                                         "startOffset":  22,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"countBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkouwqWIuLA5E5I6tl",
+                       "rule":  "java:S2387",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/TabuSearch.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  39,
+                       "hash":  "e423ebb7dabcf45bdead81f0b33f0807",
+                       "textRange":  {
+                                         "startLine":  39,
+                                         "endLine":  39,
+                                         "startOffset":  18,
+                                         "endOffset":  39
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "\"listCountBetterGender\" is the name of a field in \"Generator\".",
+                       "effort":  "5min",
+                       "debt":  "5min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "confusing"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CLEAR",
+                       "cleanCodeAttributeCategory":  "INTENTIONAL",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   },
+                   {
+                       "key":  "AZrkou1bWIuLA5E5I6xY",
+                       "rule":  "java:S2975",
+                       "severity":  "BLOCKER",
+                       "component":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/problem/definition/State.java",
+                       "project":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                       "line":  63,
+                       "hash":  "32854c45912e5ca155d3b4afbabc69f2",
+                       "textRange":  {
+                                         "startLine":  63,
+                                         "endLine":  63,
+                                         "startOffset":  14,
+                                         "endOffset":  19
+                                     },
+                       "flows":  [
+
+                                 ],
+                       "status":  "OPEN",
+                       "message":  "Remove this \"clone\" implementation; use a copy constructor or copy factory instead.",
+                       "effort":  "30min",
+                       "debt":  "30min",
+                       "assignee":  "HectorLMF-tj3gc@github",
+                       "author":  "alu0100595604@ull.edu.es",
+                       "tags":  [
+                                    "suspicious"
+                                ],
+                       "creationDate":  "2025-11-26T15:50:20+0000",
+                       "updateDate":  "2025-12-03T14:34:20+0000",
+                       "type":  "CODE_SMELL",
+                       "organization":  "hectorlmf",
+                       "cleanCodeAttribute":  "CONVENTIONAL",
+                       "cleanCodeAttributeCategory":  "CONSISTENT",
+                       "impacts":  [
+                                       {
+                                           "softwareQuality":  "MAINTAINABILITY",
+                                           "severity":  "BLOCKER"
+                                       }
+                                   ],
+                       "issueStatus":  "OPEN",
+                       "projectName":  "BiCIAM"
+                   }
+               ],
+    "components":  [
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/TabuSearch.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6k2",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "TabuSearch.java",
+                           "longName":  "src/main/java/metaheuristics/generators/TabuSearch.java",
+                           "path":  "src/main/java/metaheuristics/generators/TabuSearch.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/MultiGenerator.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6kr",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "MultiGenerator.java",
+                           "longName":  "src/main/java/metaheuristics/generators/MultiGenerator.java",
+                           "path":  "src/main/java/metaheuristics/generators/MultiGenerator.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/EvolutionStrategies.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6k1",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "EvolutionStrategies.java",
+                           "longName":  "src/main/java/metaheuristics/generators/EvolutionStrategies.java",
+                           "path":  "src/main/java/metaheuristics/generators/EvolutionStrategies.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/RandomSearch.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6kq",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "RandomSearch.java",
+                           "longName":  "src/main/java/metaheuristics/generators/RandomSearch.java",
+                           "path":  "src/main/java/metaheuristics/generators/RandomSearch.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbingRestart.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6ko",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "HillClimbingRestart.java",
+                           "longName":  "src/main/java/metaheuristics/generators/HillClimbingRestart.java",
+                           "path":  "src/main/java/metaheuristics/generators/HillClimbingRestart.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/GeneticAlgorithm.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6kv",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "GeneticAlgorithm.java",
+                           "longName":  "src/main/java/metaheuristics/generators/GeneticAlgorithm.java",
+                           "path":  "src/main/java/metaheuristics/generators/GeneticAlgorithm.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/test/java/problem/definition/ProblemEvaluateWithMethodTest.java",
+                           "uuid":  "AZrlEKPS7WEa3SFvNIvD",
+                           "enabled":  true,
+                           "qualifier":  "UTS",
+                           "name":  "ProblemEvaluateWithMethodTest.java",
+                           "longName":  "src/test/java/problem/definition/ProblemEvaluateWithMethodTest.java",
+                           "path":  "src/test/java/problem/definition/ProblemEvaluateWithMethodTest.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/ParticleSwarmOptimization.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6k5",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "ParticleSwarmOptimization.java",
+                           "longName":  "src/main/java/metaheuristics/generators/ParticleSwarmOptimization.java",
+                           "path":  "src/main/java/metaheuristics/generators/ParticleSwarmOptimization.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/LimitThreshold.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6k4",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "LimitThreshold.java",
+                           "longName":  "src/main/java/metaheuristics/generators/LimitThreshold.java",
+                           "path":  "src/main/java/metaheuristics/generators/LimitThreshold.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/SimulatedAnnealing.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6km",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "SimulatedAnnealing.java",
+                           "longName":  "src/main/java/metaheuristics/generators/SimulatedAnnealing.java",
+                           "path":  "src/main/java/metaheuristics/generators/SimulatedAnnealing.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias",
+                           "uuid":  "AZrkopGYPrsx6yG2WNn_",
+                           "enabled":  true,
+                           "qualifier":  "TRK",
+                           "name":  "BiCIAM",
+                           "longName":  "BiCIAM"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/problem/definition/State.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6lz",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "State.java",
+                           "longName":  "src/main/java/problem/definition/State.java",
+                           "path":  "src/main/java/problem/definition/State.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6kx",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "DistributionEstimationAlgorithm.java",
+                           "longName":  "src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java",
+                           "path":  "src/main/java/metaheuristics/generators/DistributionEstimationAlgorithm.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/main/java/metaheuristics/generators/HillClimbing.java",
+                           "uuid":  "AZrkouOQWIuLA5E5I6kw",
+                           "enabled":  true,
+                           "qualifier":  "FIL",
+                           "name":  "HillClimbing.java",
+                           "longName":  "src/main/java/metaheuristics/generators/HillClimbing.java",
+                           "path":  "src/main/java/metaheuristics/generators/HillClimbing.java"
+                       },
+                       {
+                           "organization":  "hectorlmf",
+                           "key":  "HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias:src/test/java/factory_method/FactoryReplaceExtraTest.java",
+                           "uuid":  "AZrk1UphILjDKgc-2e4R",
+                           "enabled":  true,
+                           "qualifier":  "UTS",
+                           "name":  "FactoryReplaceExtraTest.java",
+                           "longName":  "src/test/java/factory_method/FactoryReplaceExtraTest.java",
+                           "path":  "src/test/java/factory_method/FactoryReplaceExtraTest.java"
+                       }
+                   ],
+    "organizations":  [
+                          {
+                              "key":  "hectorlmf",
+                              "name":  "HÃ©ctor LuÃ­s MariÃ±o FernÃ¡ndez"
+                          }
+                      ],
+    "facets":  [
+
+               ]
+}

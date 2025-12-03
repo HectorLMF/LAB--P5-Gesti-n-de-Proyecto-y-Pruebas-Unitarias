@@ -1,6 +1,7 @@
 package metaheuristics.generators;
 
 import factory_method.FactoryGenerator;
+import metaheuristics.generators.MultiGenerator;
 
 public class InstanceEE implements Runnable {
 
@@ -10,7 +11,7 @@ public class InstanceEE implements Runnable {
 		FactoryGenerator ifFactoryGenerator = new FactoryGenerator();
 		Generator generatorEE = null;
 		try {
-			generatorEE = ifFactoryGenerator.createGenerator(GeneratorType.EvolutionStrategies);
+			generatorEE = ifFactoryGenerator.createGenerator(GeneratorType.EVOLUTION_STRATEGIES);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -18,7 +19,7 @@ public class InstanceEE implements Runnable {
 		boolean find = false;
 		int i = 0;
 		while (find == false) {
-			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.EvolutionStrategies)){
+			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.EVOLUTION_STRATEGIES)){
 				MultiGenerator.getListGenerators()[i] = generatorEE;
 				find = true;
 			}

@@ -33,10 +33,11 @@ public class HillClimbingRestart extends Generator{
 	protected float weight;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
-	private int[] listCountBetterGender = new int[10];
-	private int[] listCountGender = new int[10];
+	// Rename fields to avoid confusion with Generator's fields
+	public static int usageCount = 0;
+	public static int improvementCount = 0;
+	private int[] improvementCountHistory = new int[10];
+	private int[] usageCountHistory = new int[10];
 	private float[] listTrace = new float[1200000];
 
 	public HillClimbingRestart() {
@@ -53,11 +54,11 @@ public class HillClimbingRestart extends Generator{
 			this.typeCandidate = CandidateType.SmallerCandidate;
 		}
 		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.HillClimbing;
+		this.Generatortype = GeneratorType.HILL_CLIMBING_RESTART;
 		this.weight = 50;
 		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		improvementCountHistory[0] = 0;
+		usageCountHistory[0] = 0;
 	}
 
 
@@ -181,14 +182,13 @@ public class HillClimbingRestart extends Generator{
 	
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		// Backward-compatible getter returns renamed field
+		return this.improvementCountHistory;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountHistory;
 	}
 
 	@Override

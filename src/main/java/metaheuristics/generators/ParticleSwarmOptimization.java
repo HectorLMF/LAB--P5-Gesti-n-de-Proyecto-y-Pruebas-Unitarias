@@ -31,10 +31,10 @@ public class ParticleSwarmOptimization extends Generator {
 	public static State gBest;
 	public static int countCurrentIterPSO;
 	//problemas dinamicos
-    public static int countGender = 0;
-    public static int countBetterGender = 0;
-    private int[] listCountBetterGender = new int[10];
-    private int[] listCountGender = new int[10];
+	public static int usageCount = 0;
+	public static int improvementCount = 0;
+	private int[] improvementCountHistory = new int[10];
+	private int[] usageCountHistory = new int[10];
     private float[] listTrace = new float[1200000];
 			
 	public ParticleSwarmOptimization(){
@@ -42,7 +42,7 @@ public class ParticleSwarmOptimization extends Generator {
 		countRef = coutSwarm * countParticleBySwarm;
 		this.setListParticle(getListStateRef()); 
 //		listStateReference = new ArrayList<State>(Strategy.getStrategy().listBest);
-		this.generatorType = GeneratorType.ParticleSwarmOptimization;
+		this.generatorType = GeneratorType.PARTICLE_SWARM_OPTIMIZATION;
 		this.weight = 50;
 		lBest = new State[coutSwarm];
 		if(!listParticle.isEmpty()){
@@ -52,8 +52,8 @@ public class ParticleSwarmOptimization extends Generator {
 		}
 		countParticle = 0;
 		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		improvementCountHistory[0] = 0;
+		usageCountHistory[0] = 0;
 	}
 
 	@Override
@@ -104,7 +104,7 @@ public class ParticleSwarmOptimization extends Generator {
 		}
 		while((found.equals(false)) && (Strategy.getStrategy().mapGenerators.size() > count)){
 			//recorrer la lista de generadores, hasta que encuentre el PSO
-			if(key.get(count).equals(GeneratorType.ParticleSwarmOptimization.toString())){
+			if(key.get(count).equals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION.toString())){
 				//creo el generador PSO, y si su lista de particulas esta vacia entonces es la primera vez que lo estoy creando, y cada estado lo convierto en particulas
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				ParticleSwarmOptimization generator = (ParticleSwarmOptimization) Strategy.getStrategy().mapGenerators.get(keyGenerator);
@@ -275,14 +275,12 @@ public class ParticleSwarmOptimization extends Generator {
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.improvementCountHistory;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountHistory;
 	}
 
 	@Override

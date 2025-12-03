@@ -25,7 +25,7 @@ public class MultiGenerator extends Generator {
 
 	public MultiGenerator(){
 		super();
-		this.Generatortype = GeneratorType.MultiGenerator;
+		this.Generatortype = GeneratorType.MULTI_GENERATOR;
 	}
 	
 
@@ -55,7 +55,7 @@ public class MultiGenerator extends Generator {
 		State stateREF = new State(Strategy.getStrategy().getProblem().getState());
 		listStateReference.add(stateREF);
 		for (int i = 0; i < listGenerators.length; i++) {
-			if ((listGenerators[i].getType().equals(GeneratorType.HillClimbing)) || (listGenerators[i].getType().equals(GeneratorType.RandomSearch)) || (listGenerators[i].getType().equals(GeneratorType.TabuSearch)) || (listGenerators[i].getType().equals(GeneratorType.SimulatedAnnealing) || (listGenerators[i].getType().equals(GeneratorType.LimitThreshold)))){
+			if ((listGenerators[i].getType().equals(GeneratorType.HILL_CLIMBING)) || (listGenerators[i].getType().equals(GeneratorType.RANDOM_SEARCH)) || (listGenerators[i].getType().equals(GeneratorType.TABU_SEARCH)) || (listGenerators[i].getType().equals(GeneratorType.SIMULATED_ANNEALING) || (listGenerators[i].getType().equals(GeneratorType.LIMIT_THRESHOLD)))){
 				listGenerators[i].setInitialReference(stateREF);
 			}
 		}
@@ -63,22 +63,22 @@ public class MultiGenerator extends Generator {
 		Strategy.getStrategy().listStates = MultiGenerator.getListGeneratedPP();
 		
 		FactoryGenerator ifFactoryGeneratorEE = new FactoryGenerator();
-		Generator generatorEE = ifFactoryGeneratorEE.createGenerator(GeneratorType.EvolutionStrategies);
+		Generator generatorEE = ifFactoryGeneratorEE.createGenerator(GeneratorType.EVOLUTION_STRATEGIES);
 		
 		FactoryGenerator ifFactoryGeneratorGA = new FactoryGenerator();
-		Generator generatorGA = ifFactoryGeneratorGA.createGenerator(GeneratorType.GeneticAlgorithm);
+		Generator generatorGA = ifFactoryGeneratorGA.createGenerator(GeneratorType.GENETIC_ALGORITHM);
 		
 		FactoryGenerator ifFactoryGeneratorEDA = new FactoryGenerator();
-		Generator generatorEDA = ifFactoryGeneratorEDA.createGenerator(GeneratorType.DistributionEstimationAlgorithm);
+		Generator generatorEDA = ifFactoryGeneratorEDA.createGenerator(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM);
 		
 		for (int i = 0; i < MultiGenerator.getListGenerators().length; i++) {
-			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.EvolutionStrategies)){
+			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.EVOLUTION_STRATEGIES)){
 				MultiGenerator.getListGenerators()[i] = generatorEE;
 			}
-			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.GeneticAlgorithm)){
+			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.GENETIC_ALGORITHM)){
 				MultiGenerator.getListGenerators()[i] = generatorGA;
 			}
-			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.DistributionEstimationAlgorithm)){
+			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM)){
 				MultiGenerator.getListGenerators()[i] = generatorEDA;
 			}
 		}
@@ -315,9 +315,9 @@ public class MultiGenerator extends Generator {
 			if(listGenerators[i].equals(activeGenerator))
 				activeGenerator.getTrace()[Strategy.getStrategy().getCountCurrent()] = weightUpdate;
 			else{
-				if(!listGenerators[i].getType().equals(Generatortype.MultiGenerator)){
-					float trace = listGenerators[i].getWeight();
-					listGenerators[i].getTrace() [Strategy.getStrategy().getCountCurrent()] = trace;
+			if(!listGenerators[i].getType().equals(GeneratorType.MULTI_GENERATOR)){
+				float trace = listGenerators[i].getWeight();
+				listGenerators[i].getTrace() [Strategy.getStrategy().getCountCurrent()] = trace;
 				}
 			}
 		}
@@ -333,7 +333,7 @@ public class MultiGenerator extends Generator {
 			if(listGenerators[i].equals(activeGenerator))
 				activeGenerator.getTrace()[Strategy.getStrategy().getCountCurrent()] = weightUpdate;
 			else{
-				if(!listGenerators[i].getType().equals(Generatortype.MultiGenerator)){
+				if(!listGenerators[i].getType().equals(GeneratorType.MULTI_GENERATOR)){
 					float trace = listGenerators[i].getWeight();
 					listGenerators[i].getTrace() [Strategy.getStrategy().getCountCurrent()] = trace;
 				}
@@ -356,13 +356,16 @@ public class MultiGenerator extends Generator {
 	public void tournament(State stateCandidate,Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		State stateTem = new State(stateCandidate);
 		for (int i = 0; i < MultiGenerator.getListGenerators().length; i++) {
-			if(!listGenerators[i].getType().equals(Generatortype.MultiGenerator))
+			if(!listGenerators[i].getType().equals(GeneratorType.MULTI_GENERATOR))
 				MultiGenerator.getListGenerators()[i].updateReference(stateTem, countIterationsCurrent);
 		}
 	}
 	
-	public Object clone(){
-		return this;
+	public MultiGenerator copy(){
+		MultiGenerator mg = new MultiGenerator();
+		mg.setGeneratortype(this.Generatortype);
+		// Do not copy static/shared lists; rely on initialization flow
+		return mg;
 	}
 
 	@Override

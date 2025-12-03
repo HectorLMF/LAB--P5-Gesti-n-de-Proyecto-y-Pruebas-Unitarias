@@ -23,11 +23,7 @@ public class FactoryReplaceExtraTest {
     void createReplace_allEnums() {
         FactoryReplace fr = new FactoryReplace();
         for (ReplaceType rt : ReplaceType.values()) {
-            try {
-                fr.createReplace(rt);
-            } catch (Exception ex) {
-                // acceptable: some types may not be supported
-            }
+            assertDoesNotThrow(() -> fr.createReplace(rt));
         }
     }
 }

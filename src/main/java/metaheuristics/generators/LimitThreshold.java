@@ -34,10 +34,10 @@ public class LimitThreshold extends Generator{
 	private float weight;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
-	private int[] listCountBetterGender = new int[10];
-	private int[] listCountGender = new int[10];
+	public static int usageCount = 0;
+	public static int improvementCount = 0;
+	private int[] improvementCountHistory = new int[10];
+	private int[] usageCountHistory = new int[10];
 	private float[] listTrace = new float[1200000];
 	
 	public GeneratorType getTypeGenerator() {
@@ -64,11 +64,11 @@ public class LimitThreshold extends Generator{
 		}
 
 		this.candidatevalue = new CandidateValue();
-		this.typeGenerator = GeneratorType.LimitThreshold;
+		this.typeGenerator = GeneratorType.LIMIT_THRESHOLD;
 		this.weight = (float) 50.0;
 		listTrace[0] = weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		improvementCountHistory[0] = 0;
+		usageCountHistory[0] = 0;
 
 	}
 	@Override
@@ -146,14 +146,12 @@ public class LimitThreshold extends Generator{
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.improvementCountHistory;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountHistory;
 	}
 
 	@Override

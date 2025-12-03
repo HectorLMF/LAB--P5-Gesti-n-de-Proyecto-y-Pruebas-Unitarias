@@ -43,7 +43,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 		//Problem problem = Strategy.getStrategy().getProblem();
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.MultiobjectiveHillClimbingRestart;
+		this.Generatortype = GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_RESTART;
 		this.weight = 50;
 		listTrace.add(weight);
 	}
@@ -58,10 +58,10 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		//Agregando la primera solución a la lista de soluciones no dominadas
+		//Agregando la primera soluciï¿½n a la lista de soluciones no dominadas
 
 		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
-			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());
+			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.getCopy());
 		}
 
 		ifacceptCandidate = new FactoryAcceptCandidate();
@@ -71,12 +71,12 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, sizeNeighbors);
 		int i= 0;
 
-		Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
+		Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.getCopy());
 
 		if(accept.equals(true)){
-			stateReferenceHC = stateCandidate.clone();
+			stateReferenceHC = stateCandidate.getCopy();
 			visitedState = new ArrayList<State>();
-			lastState = stateCandidate.clone();
+			lastState = stateCandidate.getCopy();
 			//tomar xc q pertenesca a la vecindad de xa
 		}
 		else{
@@ -86,7 +86,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 					stateCandidate = neighborhood.get(i);
 					Strategy.getStrategy().getProblem().Evaluate(stateCandidate);  
 					visitedState.add(stateCandidate);
-					accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
+					accept = candidate.acceptCandidate(lastState, stateCandidate.getCopy());
 					stop=true;
 				}
 				i++;
@@ -96,14 +96,14 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 				if (Contain(stateCandidate)==false) {
 					Strategy.getStrategy().getProblem().Evaluate(stateCandidate);  
 					stop=true;
-					accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
+					accept = candidate.acceptCandidate(lastState, stateCandidate.getCopy());
 
 				}
 			}
 			if(accept.equals(true)){
-				stateReferenceHC = stateCandidate.clone();
+				stateReferenceHC = stateCandidate.getCopy();
 				visitedState = new ArrayList<State>();
-				lastState = stateCandidate.clone();
+				lastState = stateCandidate.getCopy();
 				//tomar xc q pertenesca a la vecindad de xa
 			}
 		}
@@ -114,7 +114,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceHC.clone());
+		listStateReference.add(stateReferenceHC.getCopy());
 		return listStateReference;
 	}
 

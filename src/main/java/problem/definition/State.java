@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import metaheuristics.generators.GeneratorType;
 
-public class State implements Cloneable {
+public class State {
 	
 	protected GeneratorType typeGenerator;
 	protected ArrayList<Double> evaluation;
@@ -59,27 +59,13 @@ public class State implements Cloneable {
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	@Override
-	public State clone(){
-		try {
-			State s = (State) super.clone();
-			// Realizar copias defensivas de colecciones
-			s.code = this.code == null ? new ArrayList<Object>() : new ArrayList<Object>(this.code);
-			s.evaluation = this.evaluation == null ? null : new ArrayList<Double>(this.evaluation);
-			return s;
-		} catch (CloneNotSupportedException e) {
-			// Fallback seguro
-			State s = new State();
-			s.typeGenerator = this.typeGenerator;
-			s.number = this.number;
-			s.code = this.code == null ? new ArrayList<Object>() : new ArrayList<Object>(this.code);
-			s.evaluation = this.evaluation == null ? null : new ArrayList<Double>(this.evaluation);
-			return s;
-		}
-	}
-	
-	public Object getCopy(){
-		return this.clone();
+	public State getCopy(){
+		State s = new State();
+		s.typeGenerator = this.typeGenerator;
+		s.number = this.number;
+		s.code = this.code == null ? new ArrayList<Object>() : new ArrayList<Object>(this.code);
+		s.evaluation = this.evaluation == null ? null : new ArrayList<Double>(this.evaluation);
+		return s;
 	}
 	
 	public boolean Comparator(State state){

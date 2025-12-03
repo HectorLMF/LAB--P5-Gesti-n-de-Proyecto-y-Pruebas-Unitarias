@@ -72,7 +72,7 @@ public class ProbabilisticSampling extends Sampling {
 			State state = new State();
 			state.setCode(new ArrayList<Object>());
 			state.setNumber(Strategy.getStrategy().getCountCurrent());
-			state.setTypeGenerator(GeneratorType.DistributionEstimationAlgorithm);
+			state.setTypeGenerator(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM);
 			staList.add(state);
 		}
 		return staList;

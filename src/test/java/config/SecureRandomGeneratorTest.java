@@ -70,18 +70,24 @@ class SecureRandomGeneratorTest {
     @Test
     @DisplayName("Constructor debe lanzar UnsupportedOperationException")
     void testConstructorThrowsException() {
-        Exception exception = assertThrows(Exception.class, () -> {
-            java.lang.reflect.Constructor<SecureRandomGenerator> constructor = 
-                SecureRandomGenerator.class.getDeclaredConstructor();
+        // Preparar el constructor fuera de la lambda para evitar múltiples
+        // invocaciones dentro del mismo bloque que puedan lanzar la misma excepción
+        java.lang.reflect.Constructor<SecureRandomGenerator> constructor;
+        try {
+            constructor = SecureRandomGenerator.class.getDeclaredConstructor();
             constructor.setAccessible(true);
-            constructor.newInstance();
-        });
-        // La excepción real está envuelta en InvocationTargetException
-        assertTrue(exception instanceof java.lang.reflect.InvocationTargetException,
-            "Debe lanzar InvocationTargetException");
+        } catch (NoSuchMethodException e) {
+            fail("No se encontró el constructor esperado");
+            return; // por completar flujo
+        }
+
+        java.lang.reflect.InvocationTargetException exception = assertThrows(
+                java.lang.reflect.InvocationTargetException.class,
+                () -> constructor.newInstance());
+
         Throwable cause = exception.getCause();
         assertInstanceOf(UnsupportedOperationException.class, cause,
-            "La causa debe ser UnsupportedOperationException");
+                "La causa debe ser UnsupportedOperationException");
     }
 
     @Test

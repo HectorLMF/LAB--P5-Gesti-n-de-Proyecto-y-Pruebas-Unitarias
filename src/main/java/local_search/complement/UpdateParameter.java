@@ -22,25 +22,25 @@ public class UpdateParameter {
 		//		Here update parameter for update and change generator.
 		if(countIterationsCurrent.equals(GeneticAlgorithm.countRef - 1)){
 			ifFactoryGenerator = new FactoryGenerator();
-			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.GeneticAlgorithm);
+			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.GENETIC_ALGORITHM);
 		}
 		else{
 			if(countIterationsCurrent.equals(EvolutionStrategies.countRef - 1)){
 				ifFactoryGenerator = new FactoryGenerator();
-				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.EvolutionStrategies);
+				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.EVOLUTION_STRATEGIES);
 			}			
 			if(countIterationsCurrent.equals(DistributionEstimationAlgorithm.countRef - 1)){
 				ifFactoryGenerator = new FactoryGenerator();
-				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.DistributionEstimationAlgorithm);
+				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM);
 			}
 			if(countIterationsCurrent.equals(ParticleSwarmOptimization.countRef - 1)){
 				ifFactoryGenerator = new FactoryGenerator();
-				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.ParticleSwarmOptimization);
+				Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.PARTICLE_SWARM_OPTIMIZATION);
 			}
 		}
 		return countIterationsCurrent;
 	}
 }
-	
+
 
 

@@ -30,7 +30,7 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 	protected List<Float> listTrace = new ArrayList<Float>();
 	private List<State> visitedState = new ArrayList<State>();
 	public static int sizeNeighbors;
-	//Lista que contiene las distancias de cada solución del frente de Pareto estimado
+	//Lista que contiene las distancias de cada soluciï¿½n del frente de Pareto estimado
 	public static List<Double> distanceSolution = new ArrayList<Double>();
 
 
@@ -40,7 +40,7 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 		this.strategy = StrategyType.NORMAL;
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.MultiobjectiveHillClimbingDistance;
+		this.Generatortype = GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_DISTANCE;
 		this.weight = 50;
 		listTrace.add(weight);
 	}
@@ -56,9 +56,9 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, 
 	InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		//Agregando la primera solución a la lista de soluciones no dominadas
+		//Agregando la primera soluciï¿½n a la lista de soluciones no dominadas
 		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
-			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.clone());
+			Strategy.getStrategy().listRefPoblacFinal.add(stateReferenceHC.getCopy());
 			distanceSolution.add(new Double(0));
 		}
 		ifacceptCandidate = new FactoryAcceptCandidate();
@@ -70,11 +70,11 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 //		Boolean restart= true;
 
 //		while (restart==true) {
-			Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
+			Boolean accept = candidate.acceptCandidate(lastState, stateCandidate.getCopy());
 			if(accept.equals(true)){
-				stateReferenceHC = stateCandidate.clone();
+				stateReferenceHC = stateCandidate.getCopy();
 				visitedState = new ArrayList<State>();
-				lastState=stateReferenceHC.clone();
+				lastState=stateReferenceHC.getCopy();
 //				restart=false;
 			}
 
@@ -86,7 +86,7 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 						stateReferenceHC = SolutionMoreDistance(Strategy.getStrategy().listRefPoblacFinal, distanceSolution);
 						visitedState.add(stateReferenceHC);
 						stop=true;
-						lastState=stateReferenceHC.clone();
+						lastState=stateReferenceHC.getCopy();
 //						restart=false;
 					}
 					i++;
@@ -99,13 +99,13 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 						visitedState.add(stateCandidate);
 						stop=true;
 						coutrestart++;
-						accept = candidate.acceptCandidate(lastState, stateCandidate.clone());
+						accept = candidate.acceptCandidate(lastState, stateCandidate.getCopy());
 					}
 				}
 				if(accept.equals(true)){
-					stateReferenceHC = stateCandidate.clone();
+					stateReferenceHC = stateCandidate.getCopy();
 					visitedState = new ArrayList<State>();
-					lastState = stateReferenceHC.clone();
+					lastState = stateReferenceHC.getCopy();
 					//tomar xc q pertenesca a la vecindad de xa
 				}
 			}
@@ -133,7 +133,7 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceHC.clone());
+		listStateReference.add(stateReferenceHC.getCopy());
 		return listStateReference;
 	}
 
@@ -183,7 +183,7 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 //			distanceSolution.set(k, distanceSolution.get(k) + distance);
 		}
 		distance = 0.0;
-		//Calculando la distancia del último elemento (elemento insertado) respecto al resto de los elementos
+		//Calculando la distancia del ï¿½ltimo elemento (elemento insertado) respecto al resto de los elementos
 		if (solutions.length==1) {
 			return distanceSolution;
 		

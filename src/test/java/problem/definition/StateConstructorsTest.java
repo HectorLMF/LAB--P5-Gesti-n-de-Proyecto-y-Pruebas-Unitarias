@@ -33,7 +33,7 @@ public class StateConstructorsTest {
         code.add(1);
         original.setCode(code);
         original.setNumber(5);
-        original.setTypeGenerator(GeneratorType.GeneticAlgorithm);
+        original.setTypeGenerator(GeneratorType.GENETIC_ALGORITHM);
         
         ArrayList<Double> eval = new ArrayList<>();
         eval.add(10.0);
@@ -42,7 +42,7 @@ public class StateConstructorsTest {
         State copy = new State(original);
         assertEquals(1, copy.getCode().size());
         assertEquals(5, copy.getNumber());
-        assertEquals(GeneratorType.GeneticAlgorithm, copy.getTypeGenerator());
+        assertEquals(GeneratorType.GENETIC_ALGORITHM, copy.getTypeGenerator());
         assertEquals(1, copy.getEvaluation().size());
     }
 }

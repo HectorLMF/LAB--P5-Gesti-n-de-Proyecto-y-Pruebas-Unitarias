@@ -34,7 +34,7 @@ public class MultiobjectiveStochasticHillClimbing extends Generator{
 		this.strategy = StrategyType.NORMAL;
 		this.typeCandidate = CandidateType.NotDominatedCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.Generatortype = GeneratorType.MultiobjectiveStochasticHillClimbing;
+		this.Generatortype = GeneratorType.MULTIOBJECTIVE_STOCHASTIC_HILL_CLIMBING;
 		this.weight = 50;
 		listTrace.add(weight);
 	}
@@ -53,13 +53,13 @@ public class MultiobjectiveStochasticHillClimbing extends Generator{
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
 		Boolean accept = candidate.acceptCandidate(stateReferenceHC, stateCandidate);
 		if(accept.equals(true))
-		  stateReferenceHC = stateCandidate.clone();
+		  stateReferenceHC = stateCandidate.getCopy();
 		getReferenceList();
 	}
 	
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add( stateReferenceHC.clone());
+		listStateReference.add( stateReferenceHC.getCopy());
 		return listStateReference;
 	}
 

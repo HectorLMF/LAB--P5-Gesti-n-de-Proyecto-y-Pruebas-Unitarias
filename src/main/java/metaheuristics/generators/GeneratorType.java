@@ -1,8 +1,20 @@
 package metaheuristics.generators;
 
 public enum GeneratorType {
-	HillClimbing, TabuSearch, SimulatedAnnealing, RandomSearch, LimitThreshold, HillClimbingRestart, //un punto
-	GeneticAlgorithm, EvolutionStrategies, DistributionEstimationAlgorithm, ParticleSwarmOptimization, //poblaciones de puntos
-	MultiGenerator, 
-	MultiobjectiveTabuSearch, MultiobjectiveStochasticHillClimbing,MultiCaseSimulatedAnnealing, MultiobjectiveHillClimbingRestart, MultiobjectiveHillClimbingDistance; //mutiobjetivos
+	HILL_CLIMBING,
+	TABU_SEARCH,
+	SIMULATED_ANNEALING,
+	RANDOM_SEARCH,
+	LIMIT_THRESHOLD,
+	HILL_CLIMBING_RESTART,
+	GENETIC_ALGORITHM,
+	EVOLUTION_STRATEGIES,
+	DISTRIBUTION_ESTIMATION_ALGORITHM,
+	PARTICLE_SWARM_OPTIMIZATION,
+	MULTI_GENERATOR,
+	MULTIOBJECTIVE_TABU_SEARCH,
+	MULTIOBJECTIVE_STOCHASTIC_HILL_CLIMBING,
+	MULTI_CASE_SIMULATED_ANNEALING,
+	MULTIOBJECTIVE_HILL_CLIMBING_RESTART,
+	MULTIOBJECTIVE_HILL_CLIMBING_DISTANCE;
 }

@@ -1,6 +1,7 @@
 package metaheuristics.generators;
 
 import factory_method.FactoryGenerator;
+import metaheuristics.generators.MultiGenerator;
 
 
 public class InstanceDE implements Runnable {
@@ -11,14 +12,14 @@ public class InstanceDE implements Runnable {
 		FactoryGenerator ifFactoryGenerator = new FactoryGenerator();
 		Generator generatorDE = null;
 		try {
-			generatorDE = ifFactoryGenerator.createGenerator(GeneratorType.DistributionEstimationAlgorithm);
+			generatorDE = ifFactoryGenerator.createGenerator(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		boolean find = false;
 		int i = 0;
 		while (find == false) {
-			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.DistributionEstimationAlgorithm)){
+			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM)){
 				MultiGenerator.getListGenerators()[i] = generatorDE;
 				find = true;
 			}

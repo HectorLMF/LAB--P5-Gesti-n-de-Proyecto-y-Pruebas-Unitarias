@@ -48,7 +48,7 @@ public class MultiCaseSimulatedAnnealing extends Generator {
 		this.strategy = StrategyType.NORMAL;
 		this.typeCandidate = CandidateType.RandomCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.typeGenerator = GeneratorType.MultiCaseSimulatedAnnealing;
+		this.typeGenerator = GeneratorType.MULTI_CASE_SIMULATED_ANNEALING;
 		this.weight = 50;
 		listTrace.add(weight);
     }
@@ -83,7 +83,7 @@ public class MultiCaseSimulatedAnnealing extends Generator {
 		AcceptableCandidate candidate = ifacceptCandidate.createAcceptCandidate(typeAcceptation);
 		Boolean accept = candidate.acceptCandidate(stateReferenceSA, stateCandidate);
 		if(accept.equals(true))
-		  stateReferenceSA = stateCandidate.clone();
+		  stateReferenceSA = stateCandidate.getCopy();
 		if(countIterationsCurrent.equals(countIterationsT)){
 			tinitial = tinitial * alpha;
 			//Variante Fast MOSA
@@ -110,7 +110,7 @@ public class MultiCaseSimulatedAnnealing extends Generator {
 
 	@Override
 	public List<State> getReferenceList() {
-		listStateReference.add(stateReferenceSA.clone());
+		listStateReference.add(stateReferenceSA.getCopy());
 		return listStateReference;
 	}
 

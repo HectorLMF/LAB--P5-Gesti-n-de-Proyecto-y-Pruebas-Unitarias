@@ -50,6 +50,31 @@ mvn test jacoco:report
 
 El reporte se generará en `target/site/jacoco/index.html`
 
+## Estado de Cobertura (actual)
+
+- Cobertura global (líneas) según JaCoCo: `~88%` sobre los módulos cubiertos por tests.
+- Clases con cobertura de líneas mayor o igual al 80%:
+	- `config.SecureRandomGenerator` (≈100%)
+	- `problem.definition.Operator` (≈100%)
+	- `problem.definition.ObjetiveFunction` (≈100%)
+	- `problem.definition.Codification` (≈100%)
+	- `problem.definition.Problem` (≈95%)
+	- `problem.definition.State` (≈84%)
+	- `problem.extension.FactoresPonderados` (≈100%)
+	- `problem.extension.MultiObjetivoPuro` (≈100%)
+	- `problem.extension.MetricasMultiobjetivo` (≈98%)
+	- `problem.extension.SolutionMethod` (≈100%)
+	- `problem.extension.TypeSolutionMethod` (≈100%)
+
+Para regenerar el informe y verificar números exactos:
+
+```powershell
+mvn clean test jacoco:report
+Start-Process "target/site/jacoco/index.html"
+```
+
+Nota: Los porcentajes anteriores se obtienen del archivo `target/site/jacoco/jacoco.xml` generado por JaCoCo en el último `mvn verify`.
+
 ## Empaquetar el Proyecto
 
 Para crear el archivo JAR:

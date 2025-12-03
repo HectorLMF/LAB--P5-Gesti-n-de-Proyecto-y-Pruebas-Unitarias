@@ -1,6 +1,7 @@
 package metaheuristics.generators;
 
 import factory_method.FactoryGenerator;
+import metaheuristics.generators.MultiGenerator;
 
 
 public class InstanceGA implements Runnable {
@@ -11,14 +12,14 @@ public class InstanceGA implements Runnable {
 		FactoryGenerator ifFactoryGenerator = new FactoryGenerator();
 		Generator generatorGA = null;
 		try {
-			generatorGA = ifFactoryGenerator.createGenerator(GeneratorType.GeneticAlgorithm);
+			generatorGA = ifFactoryGenerator.createGenerator(GeneratorType.GENETIC_ALGORITHM);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		boolean find = false;
 		int i = 0;
 		while (find == false) {
-			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.GeneticAlgorithm)){
+			if(MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.GENETIC_ALGORITHM)){
 				MultiGenerator.getListGenerators()[i] = generatorGA;
 				find = true;
 			}

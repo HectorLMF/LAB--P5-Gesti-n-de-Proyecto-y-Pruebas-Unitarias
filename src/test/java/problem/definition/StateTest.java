@@ -27,7 +27,7 @@ class StateTest {
         evaluation.add(20.3);
         
         state = new State(code);
-        state.setTypeGenerator(GeneratorType.EvolutionStrategies);
+        state.setTypeGenerator(GeneratorType.EVOLUTION_STRATEGIES);
         state.setEvaluation(evaluation);
         state.setNumber(42);
     }
@@ -60,7 +60,7 @@ class StateTest {
     @DisplayName("Constructor de copia debe copiar todos los atributos")
     void testCopyConstructor() {
         // Create a new state using the copy constructor pattern
-        State copiedState = state.clone();
+        State copiedState = state.getCopy();
         assertNotSame(state, copiedState);
         assertEquals(state.getTypeGenerator(), copiedState.getTypeGenerator());
         assertEquals(state.getEvaluation(), copiedState.getEvaluation());
@@ -99,14 +99,14 @@ class StateTest {
     @Test
     @DisplayName("getTypeGenerator() debe retornar el tipo correcto")
     void testGetTypeGenerator() {
-        assertEquals(GeneratorType.EvolutionStrategies, state.getTypeGenerator());
+        assertEquals(GeneratorType.EVOLUTION_STRATEGIES, state.getTypeGenerator());
     }
 
     @Test
     @DisplayName("setTypeGenerator() debe establecer el tipo correctamente")
     void testSetTypeGenerator() {
-        state.setTypeGenerator(GeneratorType.GeneticAlgorithm);
-        assertEquals(GeneratorType.GeneticAlgorithm, state.getTypeGenerator());
+        state.setTypeGenerator(GeneratorType.GENETIC_ALGORITHM);
+        assertEquals(GeneratorType.GENETIC_ALGORITHM, state.getTypeGenerator());
     }
 
     @Test
@@ -151,7 +151,7 @@ class StateTest {
     @Test
     @DisplayName("clone() debe crear una copia exacta")
     void testClone() {
-        State clonedState = state.clone();
+        State clonedState = state.getCopy();
         assertNotSame(state, clonedState);
         assertEquals(state.getTypeGenerator(), clonedState.getTypeGenerator());
         assertEquals(state.getNumber(), clonedState.getNumber());
@@ -163,7 +163,7 @@ class StateTest {
     @DisplayName("clone() con código null debe crear lista vacía")
     void testCloneWithNullCode() {
         State emptyState = new State();
-        State clonedState = emptyState.clone();
+        State clonedState = emptyState.getCopy();
         assertNotNull(clonedState.getCode());
         assertTrue(clonedState.getCode().isEmpty());
     }
@@ -173,7 +173,7 @@ class StateTest {
     void testCloneWithNullEvaluation() {
         State stateWithNullEval = new State();
         stateWithNullEval.setEvaluation(null);
-        State clonedState = stateWithNullEval.clone();
+        State clonedState = stateWithNullEval.getCopy();
         assertNull(clonedState.getEvaluation());
     }
 

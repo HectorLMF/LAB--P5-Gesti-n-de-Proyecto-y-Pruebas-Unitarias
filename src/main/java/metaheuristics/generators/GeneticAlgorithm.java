@@ -52,24 +52,22 @@ public class GeneticAlgorithm extends Generator {
 	private float weight;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
-	private int[] listCountBetterGender = new int[10];
-	private int[] listCountGender = new int[10];
+	private int[] betterCountByPeriod = new int[10];
+	private int[] usageCountByPeriod = new int[10];
 	private float[] listTrace = new float[1200000];
 	
     public GeneticAlgorithm() {
 		super();
-		this.listState = getListStateRef(); // llamada al método que devuelve la lista. 
+		this.listState = getListStateRef(); // llamada al mï¿½todo que devuelve la lista. 
 //		this.selectionType = SelectionType.Truncation;
 //		this.crossoverType = CrossoverType.UniformCrossover;
 //		this.mutationType = MutationType.UniformMutation;
 //		this.replaceType = ReplaceType.Smallest;
-		this.generatorType = GeneratorType.GeneticAlgorithm;
+		this.generatorType = GeneratorType.GENETIC_ALGORITHM;
 		this.weight = 50;
 		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		betterCountByPeriod[0] = 0;
+		usageCountByPeriod[0] = 0;
 	}
     
 	@Override
@@ -160,7 +158,7 @@ public class GeneticAlgorithm extends Generator {
 			return this.listState = new ArrayList<State>();
 		}*/
 		while((found.equals(false)) && (Strategy.getStrategy().mapGenerators.size() > count)){
-			if(key.get(count).equals(GeneratorType.GeneticAlgorithm.toString())){
+			if(key.get(count).equals(GeneratorType.GENETIC_ALGORITHM.toString())){
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				GeneticAlgorithm generator = (GeneticAlgorithm) Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListState().isEmpty()){
@@ -233,14 +231,12 @@ public class GeneticAlgorithm extends Generator {
 	}
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.betterCountByPeriod;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountByPeriod;
 	}
 
 	@Override

@@ -47,8 +47,8 @@ public class Strategy {
 	
 	public boolean saveListStates; //guardar lista de estados generados
 	public boolean saveListBestStates; // guardar lista con los mejores estados encontrados en cada iteracion
-	public boolean saveFreneParetoMonoObjetivo; //guardar lista de soluciones no dominadas de una ejecución
-	public boolean calculateTime; // calcular tiempo de ejecución de un algoritmo
+	public boolean saveFreneParetoMonoObjetivo; //guardar lista de soluciones no dominadas de una ejecuciï¿½n
+	public boolean calculateTime; // calcular tiempo de ejecuciï¿½n de un algoritmo
 	
 	//calculo del Tiempo inicial y final
 	long initialTime;
@@ -109,18 +109,18 @@ public class Strategy {
 		countChange = countIterationsChange;
 		countPeriodo = countIterationsChange / 10; //cantidad de iteraciones de un periodo 
 		//verificar que es portafolio e inicializar los generadores del portafolio
-		if(generatorType.equals(GeneratorType.MultiGenerator)){
+		if(generatorType.equals(GeneratorType.MULTI_GENERATOR)){
 			initializeGenerators();
 			MultiGenerator.initializeGenerators();
 			MultiGenerator.listGeneratedPP.clear();
-			multiGenerator = (MultiGenerator)((MultiGenerator)generator).clone();
+			multiGenerator = ((MultiGenerator)generator).copy();
 		}
 		else initialize(); //crea el mapa de generadores
 		update(countCurrent);
 		
 		float sumMax = 0; // suma acumulativa para almacenar la evaluacion de la mejor solucion encotrada y calcular el OfflinePerformance
 		int countOff = 0; // variable par contar los OfflinePerformance que se van salvando en el arreglo
-		//ciclio de ejecución del algoritmo
+		//ciclio de ejecuciï¿½n del algoritmo
 		while (!stopexecute.stopIterations(countCurrent, countmaxIterations)){
 			//si se detecta un cambio
 			if(countCurrent == countChange){
@@ -134,7 +134,7 @@ public class Strategy {
 				countChange = countChange + countPeriodChange;
 				//generar un nuevo candidato en la iteracion, dependiendo del generador
 				State stateCandidate = null;
-				if(generatorType.equals(GeneratorType.MultiGenerator)){
+				if(generatorType.equals(GeneratorType.MULTI_GENERATOR)){
 					if(countPeriodo == countCurrent){
 						updateCountGender();
 						countPeriodo = countPeriodo + countPeriodChange / 10;
@@ -142,7 +142,7 @@ public class Strategy {
 						MultiGenerator.activeGenerator.countBetterGender = 0;
 					}
 					updateWeight();//actualizar el peso de los generadores si se reinician cuando ocurre un cambio
-					//generar el estado candidato de la iteración
+					//generar el estado candidato de la iteraciÃ³n
 					stateCandidate = multiGenerator.generate(operatornumber);
 					problem.Evaluate(stateCandidate);
 					stateCandidate.setEvaluation(stateCandidate.getEvaluation());
@@ -181,7 +181,7 @@ public class Strategy {
 			// no ha ocurrido un cambio
 			else {
 				State stateCandidate = null;
-				if(generatorType.equals(GeneratorType.MultiGenerator)){
+				if(generatorType.equals(GeneratorType.MULTI_GENERATOR)){
 					if(countPeriodo == countCurrent){
 						updateCountGender();
 						countPeriodo = countPeriodo + countPeriodChange / 10;
@@ -232,7 +232,7 @@ public class Strategy {
 			timeExecute = finalTime - initialTime;
 			System.out.println("El tiempo de ejecucion: " + timeExecute);
 		}
-		if(generatorType.equals(GeneratorType.MultiGenerator)){
+		if(generatorType.equals(GeneratorType.MULTI_GENERATOR)){
 			listBest = (ArrayList<State>) multiGenerator.getReferenceList();
 			//calcular offlinePerformance
 			calculateOffLinePerformance(sumMax, countOff);
@@ -248,10 +248,10 @@ public class Strategy {
 	
 	public void updateCountGender(){ // actualizar la cantidad de mejoras y cantidad de veces que se uso un generador en un periodo dado
 		for (int i = 0; i < MultiGenerator.getListGenerators().length; i++) {
-			if(!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiGenerator) ){/*&& !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiCaseSimulatedAnnealing) &&
-				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveHillClimbingDistance) && !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveHillClimbingRestart) &&
-				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveStochasticHillClimbing) && !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiobjectiveTabuSearch) && 
-				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.ParticleSwarmOptimization)*/
+			if(!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTI_GENERATOR) ){/*&& !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTI_CASE_SIMULATED_ANNEALING) &&
+				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_DISTANCE) && !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_RESTART) &&
+				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTIOBJECTIVE_STOCHASTIC_HILL_CLIMBING) && !MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTIOBJECTIVE_TABU_SEARCH) && 
+				!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION)*/
 				MultiGenerator.getListGenerators()[i].getListCountGender()[periodo] = MultiGenerator.getListGenerators()[i].countGender + MultiGenerator.getListGenerators()[i].getListCountGender()[periodo];
 				MultiGenerator.getListGenerators()[i].getListCountBetterGender()[periodo] = MultiGenerator.getListGenerators()[i].countBetterGender + MultiGenerator.getListGenerators()[i].getListCountBetterGender()[periodo];
 				MultiGenerator.getListGenerators()[i].countGender = 0;
@@ -261,8 +261,8 @@ public class Strategy {
 	}
 	
 	public void updateWeight(){
-		for (int i = 0; i < MultiGenerator.getListGenerators().length; i++) {
-			if(!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MultiGenerator)){
+			for (int i = 0; i < MultiGenerator.getListGenerators().length; i++) {
+				if(!MultiGenerator.getListGenerators()[i].getType().equals(GeneratorType.MULTI_GENERATOR) ){
 				MultiGenerator.getListGenerators()[i].setWeight((float) 50.0);
 			}
 		}
@@ -273,19 +273,19 @@ public class Strategy {
 		//		Here update parameter for update and change generator.
 		if(countIterationsCurrent.equals(GeneticAlgorithm.countRef - 1)){
 			ifFactoryGenerator = new FactoryGenerator();
-			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.GeneticAlgorithm);
+			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.GENETIC_ALGORITHM);
 		}
 		if(countIterationsCurrent.equals(EvolutionStrategies.countRef - 1)){
 			ifFactoryGenerator = new FactoryGenerator();
-			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.EvolutionStrategies);
+			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.EVOLUTION_STRATEGIES);
 		}			
 		if(countIterationsCurrent.equals(DistributionEstimationAlgorithm.countRef - 1)){
 			ifFactoryGenerator = new FactoryGenerator();
-			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.DistributionEstimationAlgorithm);
+			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM);
 		}
 		if(countIterationsCurrent.equals(ParticleSwarmOptimization.countRef - 1)){
 			ifFactoryGenerator = new FactoryGenerator();
-			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.ParticleSwarmOptimization);
+			Strategy.getStrategy().generator = ifFactoryGenerator.createGenerator(GeneratorType.PARTICLE_SWARM_OPTIMIZATION);
 		}
 	}
 
@@ -405,7 +405,7 @@ public class Strategy {
 	public void updateRef(GeneratorType generatorType){
 //		State ref = problem.getOperator().newRef(problem.getRef());
 //		problem.setRef(ref);
-		if(generatorType.equals(GeneratorType.MultiGenerator)){
+		if(generatorType.equals(GeneratorType.MULTI_GENERATOR)){
 			updateRefMultiG();
 			bestState = MultiGenerator.listStateReference.get( MultiGenerator.listStateReference.size() - 1);
 		}
@@ -420,7 +420,7 @@ public class Strategy {
 		}
 	}
 	public void updateRefGenerator(Generator generator) {
-		if(generator.getType().equals(GeneratorType.HillClimbing) || generator.getType().equals(GeneratorType.TabuSearch) || generator.getType().equals(GeneratorType.RandomSearch) || generator.getType().equals(GeneratorType.SimulatedAnnealing)){
+		if(generator.getType().equals(GeneratorType.HILL_CLIMBING) || generator.getType().equals(GeneratorType.TABU_SEARCH) || generator.getType().equals(GeneratorType.RANDOM_SEARCH) || generator.getType().equals(GeneratorType.SIMULATED_ANNEALING)){
 			double evaluation = getProblem().getFunction().get(0).Evaluation(generator.getReference());
 			generator.getReference().getEvaluation().set(0, evaluation);
 //			State state = new State();
@@ -432,7 +432,7 @@ public class Strategy {
 			generator.setInitialReference(state);
 			generator.getReferenceList().add(state);*/
 		}
-		if(generator.getType().equals(GeneratorType.GeneticAlgorithm) || generator.getType().equals(GeneratorType.DistributionEstimationAlgorithm) || generator.getType().equals(GeneratorType.EvolutionStrategies)){
+		if(generator.getType().equals(GeneratorType.GENETIC_ALGORITHM) || generator.getType().equals(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM) || generator.getType().equals(GeneratorType.EVOLUTION_STRATEGIES)){
 			for (int j = 0; j < generator.getReferenceList().size(); j++) {
 				double evaluation = getProblem().getFunction().get(0).Evaluation(generator.getReferenceList().get(j));
 				generator.getReferenceList().get(j).getEvaluation().set(0, evaluation);

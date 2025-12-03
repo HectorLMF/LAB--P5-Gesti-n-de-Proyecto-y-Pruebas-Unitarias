@@ -45,26 +45,24 @@ public class DistributionEstimationAlgorithm extends Generator {
 	private float weight;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
-	private int[] listCountBetterGender = new int[10];
-	private int[] listCountGender = new int[10];
+	private int[] betterCountByPeriod = new int[10];
+	private int[] usageCountByPeriod = new int[10];
 	private float[] listTrace = new float[1200000];
 	
 	
 	public DistributionEstimationAlgorithm() {
 		super();
-		this.referenceList = getListStateRef(); // llamada al método que devuelve la lista. 
+		this.referenceList = getListStateRef(); // llamada al mï¿½todo que devuelve la lista. 
 //		this.selectionType = SelectionType.Truncation;
 		//this.replaceType = ReplaceType.Generational;
 //		this.replaceType = ReplaceType.Smallest;
-		this.generatorType = GeneratorType.DistributionEstimationAlgorithm;
+		this.generatorType = GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM;
 		this.distributionType = DistributionType.Univariate;
 		this.Samplingtype = SamplingType.ProbabilisticSampling;
 		this.weight = 50;
 		listTrace[0] = weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		betterCountByPeriod[0] = 0;
+		usageCountByPeriod[0] = 0;
 	}
 	
 	public State MaxValue (List<State> listInd){
@@ -182,7 +180,7 @@ public class DistributionEstimationAlgorithm extends Generator {
 			return this.referenceList = new ArrayList<State>();
 		}*/
 		while((found.equals(false)) && (Strategy.getStrategy().mapGenerators.size() > count)){
-			if(key.get(count).equals(GeneratorType.DistributionEstimationAlgorithm.toString())){
+			if(key.get(count).equals(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM.toString())){
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				DistributionEstimationAlgorithm generator = (DistributionEstimationAlgorithm)Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListReference().isEmpty()){
@@ -268,14 +266,12 @@ public class DistributionEstimationAlgorithm extends Generator {
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.betterCountByPeriod;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountByPeriod;
 	}
 
 	@Override

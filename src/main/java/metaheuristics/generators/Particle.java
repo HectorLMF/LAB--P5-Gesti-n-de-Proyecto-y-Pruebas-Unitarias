@@ -76,8 +76,9 @@ public class Particle extends Generator {
     	double rand1 = SecureRandomGenerator.nextDouble();
     	double rand2 = SecureRandomGenerator.nextDouble();
     	double inertia, cognitive, social;
-    	int learning = ParticleSwarmOptimization.learning1 + ParticleSwarmOptimization.learning2; // ratios de aprendizaje cognitivo y social
-    	ParticleSwarmOptimization.constriction = 2/(Math.abs(2 - learning-Math.sqrt((learning * learning)- 4 * learning)));   // Factor de costriccion
+		int learning = ParticleSwarmOptimization.learning1 + ParticleSwarmOptimization.learning2; // ratios de aprendizaje cognitivo y social
+		// Use double arithmetic to avoid integer subtraction pitfalls
+		ParticleSwarmOptimization.constriction = 2.0/(Math.abs(2.0 - (double)learning - Math.sqrt(((double)learning * (double)learning) - 4.0 * (double)learning)));   // Factor de costriccion
     	ArrayList<Object> actualVelocity = new ArrayList<Object>();
     	if(velocity.isEmpty()){
     		for (int i = 0; i < Strategy.getStrategy().getProblem().getState().getCode().size(); i++){
@@ -114,7 +115,7 @@ public class Particle extends Generator {
 		//poner la condicion de si se esta trabajando con valores continuos o binarios
 		if(ParticleSwarmOptimization.binary == false){	
 			for (int i = 0; i < stateActual.getCode().size(); i++) {
-					newCode.add( (Double)(stateActual.getCode().get(i)) + (Double)(actualVelocity.get(i)) );
+	                newCode.add( (Double)(stateActual.getCode().get(i)) + (Double)(actualVelocity.get(i)) );
 		    }
 			return newCode;
 	    }

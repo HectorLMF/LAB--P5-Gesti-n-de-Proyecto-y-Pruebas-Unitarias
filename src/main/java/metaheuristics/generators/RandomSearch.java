@@ -31,10 +31,8 @@ public class RandomSearch extends Generator {
 	public static List<State> listStateReference = new ArrayList<State>();
 	
 	//problemas dinamicos
-    public static int countGender = 0;
-    public static int countBetterGender = 0;
-    private int[] listCountBetterGender = new int[10];
-    private int[] listCountGender = new int[10];
+	private int[] betterCountByPeriod = new int[10];
+	private int[] usageCountByPeriod = new int[10];
     private float[] listTrace = new float[1200000];
 	
 	public RandomSearch() {
@@ -43,11 +41,11 @@ public class RandomSearch extends Generator {
 		this.strategy = StrategyType.NORMAL;
 		this.typeCandidate = CandidateType.RandomCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.typeGenerator = GeneratorType.RandomSearch;
+		this.typeGenerator = GeneratorType.RANDOM_SEARCH;
 		this.weight = 50;
 		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		betterCountByPeriod[0] = 0;
+		usageCountByPeriod[0] = 0;
 		listStateReference = new ArrayList<State>();
 	}
 	
@@ -129,14 +127,12 @@ public class RandomSearch extends Generator {
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.betterCountByPeriod;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountByPeriod;
 	}
 
 	@Override

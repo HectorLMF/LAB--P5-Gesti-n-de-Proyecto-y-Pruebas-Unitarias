@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import metaheurictics.strategy.Strategy;
-
-import problem.definition.State;
 import problem.definition.Problem.ProblemType;
+import problem.definition.State;
 import evolutionary_algorithms.complement.FatherSelection;
 import evolutionary_algorithms.complement.Mutation;
 import evolutionary_algorithms.complement.MutationType;
@@ -41,10 +40,8 @@ public class EvolutionStrategies extends Generator {
 	private float weight = 50;
 	
 	//problemas dinamicos
-	public static int countGender = 0;
-	public static int countBetterGender = 0;
-	private int[] listCountBetterGender = new int[10];
-	private int[] listCountGender = new int[10];
+	private int[] betterCountByPeriod = new int[10];
+	private int[] usageCountByPeriod = new int[10];
 	private float[] listTrace = new float[1200000];
 	
 	public EvolutionStrategies() {
@@ -53,11 +50,11 @@ public class EvolutionStrategies extends Generator {
 //		this.selectionType = SelectionType.Truncation;
 //		this.mutationType = MutationType.UniformMutation;
 //		this.replaceType = ReplaceType.Smallest;
-		this.generatorType = GeneratorType.EvolutionStrategies;
+		this.generatorType = GeneratorType.EVOLUTION_STRATEGIES;
 		this.weight = 50;
 		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		betterCountByPeriod[0] = 0;
+		usageCountByPeriod[0] = 0;
 	}
 
 	@Override
@@ -132,7 +129,7 @@ public class EvolutionStrategies extends Generator {
 			return this.listStateReference = new ArrayList<State>();
 		}*/
 		while((found.equals(false)) && (Strategy.getStrategy().mapGenerators.size() > count)){
-			if(key.get(count).equals(GeneratorType.EvolutionStrategies.toString())){
+			if(key.get(count).equals(GeneratorType.EVOLUTION_STRATEGIES.toString())){
 				GeneratorType keyGenerator = GeneratorType.valueOf(String.valueOf(key.get(count)));
 				EvolutionStrategies generator = (EvolutionStrategies) Strategy.getStrategy().mapGenerators.get(keyGenerator);
 				if(generator.getListStateReference().isEmpty()){
@@ -207,14 +204,12 @@ public class EvolutionStrategies extends Generator {
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.betterCountByPeriod;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountByPeriod;
 	}
 
 	@Override

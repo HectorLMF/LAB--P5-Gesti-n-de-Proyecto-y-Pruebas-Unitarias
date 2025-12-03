@@ -56,7 +56,7 @@ public class MultiobjectiveTabuSearch extends Generator {
 		Problem problem = Strategy.getStrategy().getProblem();
 		this.typeCandidate = CandidateType.RandomCandidate;
 		this.candidatevalue = new CandidateValue();
-		this.typeGenerator = GeneratorType.MultiobjectiveTabuSearch;
+		this.typeGenerator = GeneratorType.MULTIOBJECTIVE_TABU_SEARCH;
 		this.weight = 50;
 		listTrace.add(weight);
 	}

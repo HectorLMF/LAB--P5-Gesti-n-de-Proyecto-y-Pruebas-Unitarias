@@ -34,10 +34,8 @@ public class TabuSearch extends Generator {
     private float weight;
 	
 	//problemas dinamicos
-    public static int countGender = 0;
-    public static int countBetterGender = 0;
-    private int[] listCountBetterGender = new int[10];
-    private int[] listCountGender = new int[10];
+	private int[] betterCountByPeriod = new int[10];
+	private int[] usageCountByPeriod = new int[10];
     private float[] listTrace = new float[1200000];
 
 
@@ -65,11 +63,11 @@ public class TabuSearch extends Generator {
 		}
 
 		this.candidatevalue = new CandidateValue();
-		this.typeGenerator = GeneratorType.TabuSearch;
+		this.typeGenerator = GeneratorType.TABU_SEARCH;
 		this.weight = 50;
 		listTrace[0] = this.weight;
-		listCountBetterGender[0] = 0;
-		listCountGender[0] = 0;
+		betterCountByPeriod[0] = 0;
+		usageCountByPeriod[0] = 0;
 		
 	}
 
@@ -176,14 +174,12 @@ public class TabuSearch extends Generator {
 
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return this.listCountBetterGender;
+		return this.betterCountByPeriod;
 	}
 
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return this.listCountGender;
+		return this.usageCountByPeriod;
 	}
 
 	@Override

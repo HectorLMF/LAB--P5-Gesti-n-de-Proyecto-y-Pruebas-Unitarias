@@ -19,7 +19,7 @@ public class StateCoverageTest {
         eval.add(1.0);
         s.setEvaluation(eval);
 
-        State c = s.clone();
+        State c = s.getCopy();
         // Ensure collections are different instances
         assertNotSame(s.getCode(), c.getCode());
         assertNotSame(s.getEvaluation(), c.getEvaluation());
