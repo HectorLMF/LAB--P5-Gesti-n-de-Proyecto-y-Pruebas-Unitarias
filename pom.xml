@@ -19,18 +19,25 @@
         <maven.compiler.target>11</maven.compiler.target>
         <junit.version>5.10.1</junit.version>
         
-        <!-- Propiedades de SonarQube -->
-        <sonar.projectKey>biciam</sonar.projectKey>
+        <!-- Propiedades de SonarCloud -->
+        <sonar.organization>HectorLMF</sonar.organization>
+        <sonar.projectKey>HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias</sonar.projectKey>
         <sonar.projectName>BiCIAM</sonar.projectName>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.java.source>11</sonar.java.source>
         <sonar.sourceEncoding>ISO-8859-1</sonar.sourceEncoding>
         
-        <!-- Rutas de cobertura para SonarQube -->
+        <!-- Rutas de cobertura para SonarCloud -->
         <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        
+        <!-- Rutas de reportes para análisis -->
+        <sonar.dependencyCheck.htmlReportPath>${project.build.directory}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
+        <sonar.dependencyCheck.jsonReportPath>${project.build.directory}/dependency-check-report.json</sonar.dependencyCheck.jsonReportPath>
         
         <!-- Exclusiones de análisis -->
-        <sonar.exclusions>**/config/**,**/META-INF/**</sonar.exclusions>
+        <sonar.exclusions>**/META-INF/**</sonar.exclusions>
+        <sonar.coverage.exclusions>**/config/tspDynamic/**</sonar.coverage.exclusions>
     </properties>
 
     <dependencies>
@@ -137,6 +144,12 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.11</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/config/tspDynamic/**</exclude>
+                        <exclude>**/META-INF/**</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
@@ -153,18 +166,24 @@
                     </execution>
                     <execution>
                         <id>jacoco-check</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>PACKAGE</element>
+                                    <element>BUNDLE</element>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.00</minimum>
+                                            <minimum>0.80</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.70</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
