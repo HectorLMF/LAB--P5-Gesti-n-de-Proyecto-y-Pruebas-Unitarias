@@ -1,0 +1,83 @@
+\doxysection{Referencia de la clase metaheuristics.\+generators.\+Instance\+EE}
+\hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e}{}\label{classmetaheuristics_1_1generators_1_1_instance_e_e}\index{metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}}
+
+
+Hilo ejecutable para instanciar el algoritmo de estrategias evolutivas.  
+
+
+
+
+Diagrama de herencia de metaheuristics.\+generators.\+Instance\+EE
+% FIG 0
+
+
+Diagrama de colaboración de metaheuristics.\+generators.\+Instance\+EE\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_e_e_a0b7588c73c2a82f79b2282c83bf4b9c8}{run}} ()
+\begin{DoxyCompactList}\small\item\em Método run del hilo que crea la instancia del generador EE. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_e_e_a597780fabf84aabd766637b679b66ecf}{is\+Terminate}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_e_e_a971c0edca64fe1d19463918c7f760837}{set\+Terminate}} (boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_e_e_a6d98a494ddfe4fb1042817618cd825f0}{terminate}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_e_e_a6d98a494ddfe4fb1042817618cd825f0}{terminate}} = false
+\begin{DoxyCompactList}\small\item\em Indicador de finalización del hilo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Hilo ejecutable para instanciar el algoritmo de estrategias evolutivas. 
+
+Esta clase implementa Runnable para crear instancias del generador EE de forma concurrente y reemplazar el generador correspondiente en la lista del \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. 
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e_a597780fabf84aabd766637b679b66ecf}\index{metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}!isTerminate@{isTerminate}}
+\index{isTerminate@{isTerminate}!metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}}
+\doxysubsubsection{\texorpdfstring{isTerminate()}{isTerminate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_e_e_a597780fabf84aabd766637b679b66ecf} 
+boolean metaheuristics.\+generators.\+Instance\+EE.\+is\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e_a0b7588c73c2a82f79b2282c83bf4b9c8}\index{metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}!run@{run}}
+\index{run@{run}!metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_e_e_a0b7588c73c2a82f79b2282c83bf4b9c8} 
+void metaheuristics.\+generators.\+Instance\+EE.\+run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Método run del hilo que crea la instancia del generador EE. 
+
+Crea una nueva instancia del algoritmo de estrategias evolutivas y la reemplaza en la lista de generadores del \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e_a971c0edca64fe1d19463918c7f760837}\index{metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}!setTerminate@{setTerminate}}
+\index{setTerminate@{setTerminate}!metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}}
+\doxysubsubsection{\texorpdfstring{setTerminate()}{setTerminate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_e_e_a971c0edca64fe1d19463918c7f760837} 
+void metaheuristics.\+generators.\+Instance\+EE.\+set\+Terminate (\begin{DoxyParamCaption}\item[{boolean}]{terminate}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_e_e_a6d98a494ddfe4fb1042817618cd825f0}\index{metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}!terminate@{terminate}}
+\index{terminate@{terminate}!metaheuristics.generators.InstanceEE@{metaheuristics.generators.InstanceEE}}
+\doxysubsubsection{\texorpdfstring{terminate}{terminate}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_e_e_a6d98a494ddfe4fb1042817618cd825f0} 
+boolean metaheuristics.\+generators.\+Instance\+EE.\+terminate = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicador de finalización del hilo. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/\mbox{\hyperlink{_instance_e_e_8java}{Instance\+EE.\+java}}\end{DoxyCompactItemize}

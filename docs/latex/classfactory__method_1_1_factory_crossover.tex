@@ -1,0 +1,94 @@
+\doxysection{Referencia de la clase factory\+\_\+method.\+Factory\+Crossover}
+\hypertarget{classfactory__method_1_1_factory_crossover}{}\label{classfactory__method_1_1_factory_crossover}\index{factory\_method.FactoryCrossover@{factory\_method.FactoryCrossover}}
+
+
+Fábrica concreta para crear operadores de cruce.  
+
+
+
+
+Diagrama de herencia de factory\+\_\+method.\+Factory\+Crossover
+% FIG 0
+
+
+Diagrama de colaboración de factory\+\_\+method.\+Factory\+Crossover\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover}{Crossover}} \mbox{\hyperlink{classfactory__method_1_1_factory_crossover_ae361191d68e551e12a823f5956111a49}{create\+Crossover}} (\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_crossover_type}{Crossover\+Type}} Crossovertype)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Crea un operador de cruce mediante reflexión. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover}{Crossover}} \mbox{\hyperlink{classfactory__method_1_1_factory_crossover_a958bbac8cc07bb3330e165078dbe56a7}{crossing}}
+\begin{DoxyCompactList}\small\item\em Instancia del operador de cruce creado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Fábrica concreta para crear operadores de cruce. 
+
+\label{doc-func-members}
+\Hypertarget{classfactory__method_1_1_factory_crossover_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classfactory__method_1_1_factory_crossover_ae361191d68e551e12a823f5956111a49}\index{factory\_method.FactoryCrossover@{factory\_method.FactoryCrossover}!createCrossover@{createCrossover}}
+\index{createCrossover@{createCrossover}!factory\_method.FactoryCrossover@{factory\_method.FactoryCrossover}}
+\doxysubsubsection{\texorpdfstring{createCrossover()}{createCrossover()}}
+{\footnotesize\ttfamily \label{classfactory__method_1_1_factory_crossover_ae361191d68e551e12a823f5956111a49} 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover}{Crossover}} factory\+\_\+method.\+Factory\+Crossover.\+create\+Crossover (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_crossover_type}{Crossover\+Type}}}]{Crossovertype}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Crea un operador de cruce mediante reflexión. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Crossovertype} & Tipo de operador de cruce a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia del operador de cruce 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si el argumento es inválido \\
+\hline
+{\em Security\+Exception} & Si hay una violación de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase \\
+\hline
+{\em Instantiation\+Exception} & Si falla la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si el acceso es ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si falla la invocación del método \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_crossover_af2c954dab1eb110beaab79ccae6115c5}{factory\+\_\+interface.\+IFFactory\+Crossover}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\label{doc-variable-members}
+\Hypertarget{classfactory__method_1_1_factory_crossover_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classfactory__method_1_1_factory_crossover_a958bbac8cc07bb3330e165078dbe56a7}\index{factory\_method.FactoryCrossover@{factory\_method.FactoryCrossover}!crossing@{crossing}}
+\index{crossing@{crossing}!factory\_method.FactoryCrossover@{factory\_method.FactoryCrossover}}
+\doxysubsubsection{\texorpdfstring{crossing}{crossing}}
+{\footnotesize\ttfamily \label{classfactory__method_1_1_factory_crossover_a958bbac8cc07bb3330e165078dbe56a7} 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover}{Crossover}} factory\+\_\+method.\+Factory\+Crossover.\+crossing\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instancia del operador de cruce creado. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/factory\+\_\+method/\mbox{\hyperlink{_factory_crossover_8java}{Factory\+Crossover.\+java}}\end{DoxyCompactItemize}

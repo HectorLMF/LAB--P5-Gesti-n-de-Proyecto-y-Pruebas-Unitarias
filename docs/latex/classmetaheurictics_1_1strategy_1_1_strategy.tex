@@ -1,0 +1,969 @@
+\doxysection{Referencia de la clase metaheurictics.\+strategy.\+Strategy}
+\hypertarget{classmetaheurictics_1_1strategy_1_1_strategy}{}\label{classmetaheurictics_1_1strategy_1_1_strategy}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+
+
+Coordinador central para la ejecución de algoritmos metaheurísticos.  
+
+
+
+
+Diagrama de colaboración de metaheurictics.\+strategy.\+Strategy\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_af320de8dac2de5a7ec10d373952064d5}{execute\+Strategy}} (int countmax\+Iterations, int count\+Iterations\+Change, int operatornumber, \mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} generator\+Type)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception
+\begin{DoxyCompactList}\small\item\em Ejecuta la estrategia de optimización metaheurística. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502}{update\+Count\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza los contadores de uso y mejoras de cada generador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798}{update\+Weight}} ()
+\begin{DoxyCompactList}\small\item\em Reinicia los pesos de los generadores en el \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44}{update}} (Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Actualiza el generador activo basándose en la iteración actual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_abc3c1b65673f8757ae414dfd4bf18f97}{new\+Generator}} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} Generatortype)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Crea una nueva instancia de generador del tipo especificado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a4194b52f17701a8fabfc1265e6b4b267}{get\+Best\+State}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el mejor estado encontrado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aef162976b610a8d30ab537af9face3b4}{set\+Best\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} bes\+State)
+\begin{DoxyCompactList}\small\item\em Establece el mejor estado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a1ce64c953a44083a90753c3ffb46d40e}{get\+Stopexecute}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el criterio de parada. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a6d5037c21b9a24975f301ac6aba4dffd}{get\+Count\+Max}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el número máximo de iteraciones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a7512cbe68ba46c4d8534f0aff17b5c17}{set\+Count\+Max}} (int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a3251f7d633dd233da6de5e84cb49b14b}{count\+Max}})
+\begin{DoxyCompactList}\small\item\em Establece el número máximo de iteraciones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a2f833e91e1f26476659d049362f219ac}{set\+Stopexecute}} (\mbox{\hyperlink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aba3d7b221051061dd7955d3059ea2272}{stopexecute}})
+\begin{DoxyCompactList}\small\item\em Establece el criterio de parada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a0036f56e2cd146ee5f37a6da30ed415a}{get\+Updateparameter}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el gestor de actualización de parámetros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac781087326a37b5f9cc1ea135bfc7c82}{set\+Updateparameter}} (\mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aeae847a5e9cad6d863212f3e3cf04cbe}{updateparameter}})
+\begin{DoxyCompactList}\small\item\em Establece el gestor de actualización de parámetros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_problem}{Problem}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a4bc6bd95db71e14b1f48c1bfc85f1305}{get\+Problem}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el problema de optimización. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a2a5bb3ddd64d9f7d7ee9f50da7804850}{set\+Problem}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_problem}{Problem}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a72e752e037880a0ff45c679bbc553d00}{problem}})
+\begin{DoxyCompactList}\small\item\em Establece el problema de optimización. \end{DoxyCompactList}\item 
+Array\+List$<$ String $>$ \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac70469856a2b6424f29952c0e77eebf8}{get\+List\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de claves de tipos de generadores disponibles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0}{initialize\+Generators}} ()  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Inicializa todos los tipos de generadores disponibles para \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3}{initialize}} ()  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Inicializa el mapa de generadores. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a6440afde976cb69c01b95d4c41a9ff5c}{get\+Count\+Current}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el contador de iteraciones actual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a0a7bed828f9d4fb1b29dbda112020b77}{set\+Count\+Current}} (int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a537769ff595ae1b51c2035982723be6e}{count\+Current}})
+\begin{DoxyCompactList}\small\item\em Establece el contador de iteraciones actual. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a307eddf8b8d1eadfdce6b89148bd78fb}{get\+Threshold}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el umbral de tolerancia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_abc89b807d8506e11ef85c41eeb5e1858}{set\+Threshold}} (double \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a1914ff8fe50a63e507d63538cd63e9ea}{threshold}})
+\begin{DoxyCompactList}\small\item\em Establece el umbral de tolerancia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a6d8f615b37de120cbf16eac6f1b6e721}{calculate\+Off\+Line\+Performance}} (float sum\+Max, int count\+Off)
+\begin{DoxyCompactList}\small\item\em Calcula y almacena la métrica Offline Performance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce}{update\+Ref}} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} generator\+Type)
+\begin{DoxyCompactList}\small\item\em Actualiza las referencias después de un cambio en el entorno dinámico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65}{update\+Ref\+MultiG}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza las referencias de todos los generadores en un \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484}{update\+Ref\+Generator}} (\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a2f0ea18b2127e6e38c1d335fed32c7e0}{generator}})
+\begin{DoxyCompactList}\small\item\em Actualiza la referencia de un generador específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694}{Strategy}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ad2641e12c52292930364de6655333aa8}{get\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia única de \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy} (patrón Singleton). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac4829af561593656b314235f004f0308}{destroy\+Execute}} ()
+\begin{DoxyCompactList}\small\item\em Destruye la instancia del Singleton y limpia recursos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+Sorted\+Map$<$ \mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}, \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} $>$ \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a72b0b983ab5990ef999037f9c331515a}{map\+Generators}}
+\begin{DoxyCompactList}\small\item\em Mapa que asocia tipos de generadores con sus instancias. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a2f0ea18b2127e6e38c1d335fed32c7e0}{generator}}
+\begin{DoxyCompactList}\small\item\em Generador activo actual. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a1914ff8fe50a63e507d63538cd63e9ea}{threshold}}
+\begin{DoxyCompactList}\small\item\em Umbral de tolerancia para comparaciones. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aad28420c74454b07fc98f622640ea5cf}{list\+States}}
+\begin{DoxyCompactList}\small\item\em Lista de todos los estados generados en cada iteración. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a990e5c94e0d5ac270853827300f433db}{list\+Best}}
+\begin{DoxyCompactList}\small\item\em Lista de las mejores soluciones encontradas en cada iteración. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aa572e7d90e24bae70ea47a31fee298f4}{list\+Ref\+Poblac\+Final}} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ ()
+\begin{DoxyCompactList}\small\item\em Lista de soluciones no dominadas (frente de Pareto). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_dominance}{Dominance}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a5ac9ccf79296d15b1a44d119c1f1fc6e}{not\+Dominated}}
+\begin{DoxyCompactList}\small\item\em Gestor de dominancia para calcular soluciones no dominadas. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a4e698ca86e2842c70099dadd560e7578}{save\+List\+States}}
+\begin{DoxyCompactList}\small\item\em Indica si se debe guardar la lista de estados generados. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a077d2cdfe76bd31661ca024e339a4c98}{save\+List\+Best\+States}}
+\begin{DoxyCompactList}\small\item\em Indica si se debe guardar la lista de mejores estados en cada iteración. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ad7c438a82bc4f08ad239b3bc56320bca}{save\+Frene\+Pareto\+Mono\+Objetivo}}
+\begin{DoxyCompactList}\small\item\em Indica si se debe guardar el frente de Pareto en problemas monoobjetivo. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a3a4ef09902bbbfec07102446f7eb2809}{calculate\+Time}}
+\begin{DoxyCompactList}\small\item\em Indica si se debe calcular el tiempo de ejecución del algoritmo. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ab111e2ebd50ff83f126ef6f5201f9283}{list\+Offline\+Error}} = new float\mbox{[}100\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array para almacenar la métrica de rendimiento offline (Offline Performance). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ab22b49ea4c8e68c8d35f392bcc4f8ded}{count\+Period\+Change}} = 0
+\begin{DoxyCompactList}\small\item\em Cantidad de iteraciones antes de que ocurra un cambio en el entorno dinámico. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_abea8b81eeed176475070dac996fe9b6c}{count\+Change}} = 0
+\begin{DoxyCompactList}\small\item\em Contador para el próximo cambio de entorno. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static long \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a98a7b4be6d8c731b7f1dcfcde571a5d5}{time\+Execute}}
+\begin{DoxyCompactList}\small\item\em Tiempo total de ejecución del algoritmo en milisegundos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694}{Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Constructor privado para implementar el patrón Singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_af08a0f377eacb28b46d0fcc315b69ad0}{best\+State}}
+\begin{DoxyCompactList}\small\item\em Mejor estado encontrado durante la ejecución del algoritmo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_problem}{Problem}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a72e752e037880a0ff45c679bbc553d00}{problem}}
+\begin{DoxyCompactList}\small\item\em Problema de optimización que se está resolviendo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aba3d7b221051061dd7955d3059ea2272}{stopexecute}}
+\begin{DoxyCompactList}\small\item\em Criterio de parada para controlar la finalización de la ejecución. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_aeae847a5e9cad6d863212f3e3cf04cbe}{updateparameter}}
+\begin{DoxyCompactList}\small\item\em Gestor de actualización de parámetros durante la ejecución. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_generator}{IFFactory\+Generator}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_afc091846262ceb740b13d949744e8bf7}{if\+Factory\+Generator}}
+\begin{DoxyCompactList}\small\item\em Factoría para crear instancias de generadores. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a537769ff595ae1b51c2035982723be6e}{count\+Current}}
+\begin{DoxyCompactList}\small\item\em Contador de iteraciones actuales. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a3251f7d633dd233da6de5e84cb49b14b}{count\+Max}}
+\begin{DoxyCompactList}\small\item\em Número máximo de iteraciones permitidas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a86782bca2ad115b47f019513b1e8a389}{count\+Periodo}}
+\begin{DoxyCompactList}\small\item\em Contador para determinar cuándo guardar estadísticas de generadores. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ab3b8afb295795d6f31000bd5c18700be}{periodo}}
+\begin{DoxyCompactList}\small\item\em Contador para controlar el periodo actual de guardado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos estáticos privados}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694}{Strategy}} \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_a235c3afb5c1d4afe8ebaa1da12cff32e}{strategy}} = null
+\begin{DoxyCompactList}\small\item\em Instancia única del Singleton \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Coordinador central para la ejecución de algoritmos metaheurísticos. 
+
+Esta clase singleton gestiona la estrategia global de optimización, coordinando la ejecución de diferentes generadores metaheurísticos, manteniendo el seguimiento del mejor estado encontrado, gestionando las iteraciones y recopilando estadísticas de rendimiento. Soporta múltiples modos de operación incluyendo algoritmos de un solo generador y portafolios de múltiples generadores (\doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}).
+
+La clase también gestiona entornos dinámicos donde el problema puede cambiar durante la ejecución, permitiendo adaptación y reinicio de referencias. 
+
+\label{doc-constructors}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!Strategy@{Strategy}}
+\index{Strategy@{Strategy}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{Strategy()}{Strategy()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694} 
+metaheurictics.\+strategy.\+Strategy.\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructor privado para implementar el patrón Singleton. 
+
+Inicializa la instancia de \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy}. Este constructor es privado para prevenir la instanciación directa desde fuera de la clase. Gráfico de llamadas a esta función\+:
+% FIG 1
+
+
+\label{doc-func-members}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a6d8f615b37de120cbf16eac6f1b6e721}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!calculateOffLinePerformance@{calculateOffLinePerformance}}
+\index{calculateOffLinePerformance@{calculateOffLinePerformance}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{calculateOffLinePerformance()}{calculateOffLinePerformance()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a6d8f615b37de120cbf16eac6f1b6e721} 
+void metaheurictics.\+strategy.\+Strategy.\+calculate\+Off\+Line\+Performance (\begin{DoxyParamCaption}\item[{float}]{sum\+Max}{, }\item[{int}]{count\+Off}{}\end{DoxyParamCaption})}
+
+
+
+Calcula y almacena la métrica Offline Performance. 
+
+Calcula el rendimiento offline dividiendo la suma acumulada de evaluaciones por el número de iteraciones del periodo y lo almacena en el array.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em sum\+Max} & Suma acumulada de las evaluaciones del mejor estado \\
+\hline
+{\em count\+Off} & Índice donde almacenar el resultado en el array \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ac4829af561593656b314235f004f0308}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!destroyExecute@{destroyExecute}}
+\index{destroyExecute@{destroyExecute}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{destroyExecute()}{destroyExecute()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ac4829af561593656b314235f004f0308} 
+void metaheurictics.\+strategy.\+Strategy.\+destroy\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Destruye la instancia del Singleton y limpia recursos. 
+
+Libera la instancia de \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy} y limpia las referencias de estado para permitir una nueva ejecución limpia. \Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_af320de8dac2de5a7ec10d373952064d5}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!executeStrategy@{executeStrategy}}
+\index{executeStrategy@{executeStrategy}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{executeStrategy()}{executeStrategy()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_af320de8dac2de5a7ec10d373952064d5} 
+void metaheurictics.\+strategy.\+Strategy.\+execute\+Strategy (\begin{DoxyParamCaption}\item[{int}]{countmax\+Iterations}{, }\item[{int}]{count\+Iterations\+Change}{, }\item[{int}]{operatornumber}{, }\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{generator\+Type}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Ejecuta la estrategia de optimización metaheurística. 
+
+Método principal que coordina la ejecución completa del algoritmo metaheurístico. Inicializa el estado, ejecuta el ciclo de optimización, gestiona cambios dinámicos del entorno y recopila métricas de rendimiento.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em countmax\+Iterations} & Número máximo de iteraciones a ejecutar \\
+\hline
+{\em count\+Iterations\+Change} & Número de iteraciones entre cambios de entorno \\
+\hline
+{\em operatornumber} & Número de operadores a utilizar en la generación \\
+\hline
+{\em generator\+Type} & Tipo de generador metaheurístico a utilizar \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos no son válidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad en la reflexión \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase del generador \\
+\hline
+{\em Instantiation\+Exception} & Si no se puede instanciar el generador \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso en la reflexión \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay errores al invocar métodos \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método requerido \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 3
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a4194b52f17701a8fabfc1265e6b4b267}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getBestState@{getBestState}}
+\index{getBestState@{getBestState}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getBestState()}{getBestState()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a4194b52f17701a8fabfc1265e6b4b267} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheurictics.\+strategy.\+Strategy.\+get\+Best\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el mejor estado encontrado. 
+
+\begin{DoxyReturn}{Devuelve}
+El mejor estado encontrado durante la ejecución 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 4
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a6440afde976cb69c01b95d4c41a9ff5c}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getCountCurrent@{getCountCurrent}}
+\index{getCountCurrent@{getCountCurrent}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getCountCurrent()}{getCountCurrent()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a6440afde976cb69c01b95d4c41a9ff5c} 
+int metaheurictics.\+strategy.\+Strategy.\+get\+Count\+Current (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el contador de iteraciones actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de iteración actual 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a6d5037c21b9a24975f301ac6aba4dffd}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getCountMax@{getCountMax}}
+\index{getCountMax@{getCountMax}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getCountMax()}{getCountMax()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a6d5037c21b9a24975f301ac6aba4dffd} 
+int metaheurictics.\+strategy.\+Strategy.\+get\+Count\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el número máximo de iteraciones. 
+
+\begin{DoxyReturn}{Devuelve}
+Número máximo de iteraciones configurado 
+\end{DoxyReturn}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ac70469856a2b6424f29952c0e77eebf8}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getListKey@{getListKey}}
+\index{getListKey@{getListKey}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getListKey()}{getListKey()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ac70469856a2b6424f29952c0e77eebf8} 
+Array\+List$<$ String $>$ metaheurictics.\+strategy.\+Strategy.\+get\+List\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de claves de tipos de generadores disponibles. 
+
+Extrae y formatea las claves del mapa de generadores en una lista de cadenas.
+
+\begin{DoxyReturn}{Devuelve}
+Lista de nombres de tipos de generadores 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 6
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a4bc6bd95db71e14b1f48c1bfc85f1305}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getProblem@{getProblem}}
+\index{getProblem@{getProblem}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getProblem()}{getProblem()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a4bc6bd95db71e14b1f48c1bfc85f1305} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_problem}{Problem}} metaheurictics.\+strategy.\+Strategy.\+get\+Problem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el problema de optimización. 
+
+\begin{DoxyReturn}{Devuelve}
+El problema actual 
+\end{DoxyReturn}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a1ce64c953a44083a90753c3ffb46d40e}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getStopexecute@{getStopexecute}}
+\index{getStopexecute@{getStopexecute}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getStopexecute()}{getStopexecute()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a1ce64c953a44083a90753c3ffb46d40e} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute}} metaheurictics.\+strategy.\+Strategy.\+get\+Stopexecute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el criterio de parada. 
+
+\begin{DoxyReturn}{Devuelve}
+Objeto \doxylink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute} que controla la finalización 
+\end{DoxyReturn}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ad2641e12c52292930364de6655333aa8}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getStrategy@{getStrategy}}
+\index{getStrategy@{getStrategy}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getStrategy()}{getStrategy()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ad2641e12c52292930364de6655333aa8} 
+\mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694}{Strategy}} metaheurictics.\+strategy.\+Strategy.\+get\+Strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtiene la instancia única de \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy} (patrón Singleton). 
+
+Implementación lazy del patrón Singleton. Crea la instancia única si no existe, o devuelve la existente.
+
+\begin{DoxyReturn}{Devuelve}
+La instancia única de \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy} 
+\end{DoxyReturn}
+Gráfico de llamadas de esta función\+:
+% FIG 7
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a307eddf8b8d1eadfdce6b89148bd78fb}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getThreshold@{getThreshold}}
+\index{getThreshold@{getThreshold}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getThreshold()}{getThreshold()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a307eddf8b8d1eadfdce6b89148bd78fb} 
+double metaheurictics.\+strategy.\+Strategy.\+get\+Threshold (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el umbral de tolerancia. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor del umbral 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 8
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a0036f56e2cd146ee5f37a6da30ed415a}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!getUpdateparameter@{getUpdateparameter}}
+\index{getUpdateparameter@{getUpdateparameter}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{getUpdateparameter()}{getUpdateparameter()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a0036f56e2cd146ee5f37a6da30ed415a} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter}} metaheurictics.\+strategy.\+Strategy.\+get\+Updateparameter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el gestor de actualización de parámetros. 
+
+\begin{DoxyReturn}{Devuelve}
+Objeto \doxylink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter} 
+\end{DoxyReturn}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!initialize@{initialize}}
+\index{initialize@{initialize}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3} 
+void metaheurictics.\+strategy.\+Strategy.\+initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Inicializa el mapa de generadores. 
+
+Crea instancias de todos los tipos de generadores y los almacena en el mapa. Similar a initialize\+Generators pero para uso general.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos no son válidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad en la reflexión \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase del generador \\
+\hline
+{\em Instantiation\+Exception} & Si no se puede instanciar el generador \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso en la reflexión \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay errores al invocar métodos \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método requerido \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 9
+Gráfico de llamadas a esta función\+:
+% FIG 10
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!initializeGenerators@{initializeGenerators}}
+\index{initializeGenerators@{initializeGenerators}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{initializeGenerators()}{initializeGenerators()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0} 
+void metaheurictics.\+strategy.\+Strategy.\+initialize\+Generators (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Inicializa todos los tipos de generadores disponibles para \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. 
+
+Crea instancias de todos los tipos de generadores definidos en \doxylink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type} y los almacena en el mapa de generadores. Utilizado específicamente para configurar portafolios de generadores.
+
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos no son válidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad en la reflexión \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase del generador \\
+\hline
+{\em Instantiation\+Exception} & Si no se puede instanciar el generador \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso en la reflexión \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay errores al invocar métodos \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método requerido \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 11
+Gráfico de llamadas a esta función\+:
+% FIG 12
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_abc3c1b65673f8757ae414dfd4bf18f97}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!newGenerator@{newGenerator}}
+\index{newGenerator@{newGenerator}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{newGenerator()}{newGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_abc3c1b65673f8757ae414dfd4bf18f97} 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} metaheurictics.\+strategy.\+Strategy.\+new\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{Generatortype}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Crea una nueva instancia de generador del tipo especificado. 
+
+Utiliza el patrón Factory para crear una instancia del generador metaheurístico solicitado.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Generatortype} & Tipo de generador a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Nueva instancia del generador solicitado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si el tipo de generador no es válido \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad en la reflexión \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase del generador \\
+\hline
+{\em Instantiation\+Exception} & Si no se puede instanciar el generador \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso en la reflexión \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay errores al invocar métodos \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método requerido \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas a esta función\+:
+% FIG 13
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_aef162976b610a8d30ab537af9face3b4}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setBestState@{setBestState}}
+\index{setBestState@{setBestState}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setBestState()}{setBestState()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_aef162976b610a8d30ab537af9face3b4} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Best\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{bes\+State}{}\end{DoxyParamCaption})}
+
+
+
+Establece el mejor estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em bes\+State} & Nuevo mejor estado \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a0a7bed828f9d4fb1b29dbda112020b77}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setCountCurrent@{setCountCurrent}}
+\index{setCountCurrent@{setCountCurrent}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setCountCurrent()}{setCountCurrent()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a0a7bed828f9d4fb1b29dbda112020b77} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Count\+Current (\begin{DoxyParamCaption}\item[{int}]{count\+Current}{}\end{DoxyParamCaption})}
+
+
+
+Establece el contador de iteraciones actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em count\+Current} & Nuevo valor del contador de iteraciones \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a7512cbe68ba46c4d8534f0aff17b5c17}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setCountMax@{setCountMax}}
+\index{setCountMax@{setCountMax}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setCountMax()}{setCountMax()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a7512cbe68ba46c4d8534f0aff17b5c17} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Count\+Max (\begin{DoxyParamCaption}\item[{int}]{count\+Max}{}\end{DoxyParamCaption})}
+
+
+
+Establece el número máximo de iteraciones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em count\+Max} & Nuevo número máximo de iteraciones \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a2a5bb3ddd64d9f7d7ee9f50da7804850}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setProblem@{setProblem}}
+\index{setProblem@{setProblem}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setProblem()}{setProblem()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a2a5bb3ddd64d9f7d7ee9f50da7804850} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Problem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_problem}{Problem}}}]{problem}{}\end{DoxyParamCaption})}
+
+
+
+Establece el problema de optimización. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em problem} & Nuevo problema a resolver \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a2f833e91e1f26476659d049362f219ac}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setStopexecute@{setStopexecute}}
+\index{setStopexecute@{setStopexecute}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setStopexecute()}{setStopexecute()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a2f833e91e1f26476659d049362f219ac} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Stopexecute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute}}}]{stopexecute}{}\end{DoxyParamCaption})}
+
+
+
+Establece el criterio de parada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em stopexecute} & Nuevo criterio de parada \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_abc89b807d8506e11ef85c41eeb5e1858}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setThreshold@{setThreshold}}
+\index{setThreshold@{setThreshold}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setThreshold()}{setThreshold()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_abc89b807d8506e11ef85c41eeb5e1858} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Threshold (\begin{DoxyParamCaption}\item[{double}]{threshold}{}\end{DoxyParamCaption})}
+
+
+
+Establece el umbral de tolerancia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em threshold} & Nuevo valor del umbral \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ac781087326a37b5f9cc1ea135bfc7c82}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!setUpdateparameter@{setUpdateparameter}}
+\index{setUpdateparameter@{setUpdateparameter}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{setUpdateparameter()}{setUpdateparameter()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ac781087326a37b5f9cc1ea135bfc7c82} 
+void metaheurictics.\+strategy.\+Strategy.\+set\+Updateparameter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter}}}]{updateparameter}{}\end{DoxyParamCaption})}
+
+
+
+Establece el gestor de actualización de parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em updateparameter} & Nuevo gestor de actualización \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!update@{update}}
+\index{update@{update}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44} 
+void metaheurictics.\+strategy.\+Strategy.\+update (\begin{DoxyParamCaption}\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Actualiza el generador activo basándose en la iteración actual. 
+
+Cambia dinámicamente el tipo de generador cuando se alcanza un umbral específico de iteraciones, permitiendo transiciones entre diferentes algoritmos metaheurísticos durante la ejecución.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em count\+Iterations\+Current} & Número de iteración actual \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos no son válidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad en la reflexión \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase del generador \\
+\hline
+{\em Instantiation\+Exception} & Si no se puede instanciar el generador \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso en la reflexión \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay errores al invocar métodos \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método requerido \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 14
+Gráfico de llamadas a esta función\+:
+% FIG 15
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!updateCountGender@{updateCountGender}}
+\index{updateCountGender@{updateCountGender}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{updateCountGender()}{updateCountGender()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502} 
+void metaheurictics.\+strategy.\+Strategy.\+update\+Count\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los contadores de uso y mejoras de cada generador. 
+
+Actualiza las estadísticas de cuántas veces se usó cada generador y cuántas mejoras produjo durante un periodo determinado. Reinicia los contadores para el siguiente periodo. Gráfico de llamadas de esta función\+:
+% FIG 16
+Gráfico de llamadas a esta función\+:
+% FIG 17
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!updateRef@{updateRef}}
+\index{updateRef@{updateRef}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{updateRef()}{updateRef()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce} 
+void metaheurictics.\+strategy.\+Strategy.\+update\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{generator\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza las referencias después de un cambio en el entorno dinámico. 
+
+Reevalúa las soluciones de referencia del generador cuando ocurre un cambio en el problema dinámico, actualizando el mejor estado encontrado.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em generator\+Type} & Tipo de generador cuya referencia se actualizará \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas de esta función\+:
+% FIG 18
+Gráfico de llamadas a esta función\+:
+% FIG 19
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!updateRefGenerator@{updateRefGenerator}}
+\index{updateRefGenerator@{updateRefGenerator}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{updateRefGenerator()}{updateRefGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484} 
+void metaheurictics.\+strategy.\+Strategy.\+update\+Ref\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}}}]{generator}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la referencia de un generador específico. 
+
+Reevalúa las soluciones de referencia del generador después de un cambio en el problema. El comportamiento depende del tipo de generador\+:
+\begin{DoxyItemize}
+\item Para generadores de búsqueda local\+: actualiza una única referencia
+\item Para algoritmos poblacionales\+: actualiza toda la población de referencia
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parámetros}
+{\em generator} & Generador cuya referencia se actualizará \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas de esta función\+:
+% FIG 20
+Gráfico de llamadas a esta función\+:
+% FIG 21
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!updateRefMultiG@{updateRefMultiG}}
+\index{updateRefMultiG@{updateRefMultiG}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{updateRefMultiG()}{updateRefMultiG()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65} 
+void metaheurictics.\+strategy.\+Strategy.\+update\+Ref\+MultiG (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza las referencias de todos los generadores en un \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. 
+
+Itera sobre todos los generadores del portafolio y actualiza sus referencias después de un cambio en el entorno. Gráfico de llamadas de esta función\+:
+% FIG 22
+Gráfico de llamadas a esta función\+:
+% FIG 23
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!updateWeight@{updateWeight}}
+\index{updateWeight@{updateWeight}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{updateWeight()}{updateWeight()}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798} 
+void metaheurictics.\+strategy.\+Strategy.\+update\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reinicia los pesos de los generadores en el \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. 
+
+Establece el peso de todos los generadores a un valor predeterminado (50.\+0) después de un cambio en el entorno dinámico. Gráfico de llamadas de esta función\+:
+% FIG 24
+Gráfico de llamadas a esta función\+:
+% FIG 25
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_af08a0f377eacb28b46d0fcc315b69ad0}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!bestState@{bestState}}
+\index{bestState@{bestState}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{bestState}{bestState}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_af08a0f377eacb28b46d0fcc315b69ad0} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheurictics.\+strategy.\+Strategy.\+best\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mejor estado encontrado durante la ejecución del algoritmo. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a3a4ef09902bbbfec07102446f7eb2809}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!calculateTime@{calculateTime}}
+\index{calculateTime@{calculateTime}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{calculateTime}{calculateTime}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a3a4ef09902bbbfec07102446f7eb2809} 
+boolean metaheurictics.\+strategy.\+Strategy.\+calculate\+Time}
+
+
+
+Indica si se debe calcular el tiempo de ejecución del algoritmo. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_abea8b81eeed176475070dac996fe9b6c}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!countChange@{countChange}}
+\index{countChange@{countChange}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{countChange}{countChange}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_abea8b81eeed176475070dac996fe9b6c} 
+int metaheurictics.\+strategy.\+Strategy.\+count\+Change = 0}
+
+
+
+Contador para el próximo cambio de entorno. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a537769ff595ae1b51c2035982723be6e}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!countCurrent@{countCurrent}}
+\index{countCurrent@{countCurrent}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{countCurrent}{countCurrent}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a537769ff595ae1b51c2035982723be6e} 
+int metaheurictics.\+strategy.\+Strategy.\+count\+Current\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador de iteraciones actuales. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a3251f7d633dd233da6de5e84cb49b14b}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!countMax@{countMax}}
+\index{countMax@{countMax}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{countMax}{countMax}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a3251f7d633dd233da6de5e84cb49b14b} 
+int metaheurictics.\+strategy.\+Strategy.\+count\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número máximo de iteraciones permitidas. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ab22b49ea4c8e68c8d35f392bcc4f8ded}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!countPeriodChange@{countPeriodChange}}
+\index{countPeriodChange@{countPeriodChange}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{countPeriodChange}{countPeriodChange}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ab22b49ea4c8e68c8d35f392bcc4f8ded} 
+int metaheurictics.\+strategy.\+Strategy.\+count\+Period\+Change = 0}
+
+
+
+Cantidad de iteraciones antes de que ocurra un cambio en el entorno dinámico. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a86782bca2ad115b47f019513b1e8a389}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!countPeriodo@{countPeriodo}}
+\index{countPeriodo@{countPeriodo}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{countPeriodo}{countPeriodo}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a86782bca2ad115b47f019513b1e8a389} 
+int metaheurictics.\+strategy.\+Strategy.\+count\+Periodo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador para determinar cuándo guardar estadísticas de generadores. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a2f0ea18b2127e6e38c1d335fed32c7e0}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!generator@{generator}}
+\index{generator@{generator}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{generator}{generator}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a2f0ea18b2127e6e38c1d335fed32c7e0} 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} metaheurictics.\+strategy.\+Strategy.\+generator}
+
+
+
+Generador activo actual. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_afc091846262ceb740b13d949744e8bf7}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!ifFactoryGenerator@{ifFactoryGenerator}}
+\index{ifFactoryGenerator@{ifFactoryGenerator}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{ifFactoryGenerator}{ifFactoryGenerator}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_afc091846262ceb740b13d949744e8bf7} 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_generator}{IFFactory\+Generator}} metaheurictics.\+strategy.\+Strategy.\+if\+Factory\+Generator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Factoría para crear instancias de generadores. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a990e5c94e0d5ac270853827300f433db}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!listBest@{listBest}}
+\index{listBest@{listBest}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{listBest}{listBest}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a990e5c94e0d5ac270853827300f433db} 
+Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ metaheurictics.\+strategy.\+Strategy.\+list\+Best}
+
+
+
+Lista de las mejores soluciones encontradas en cada iteración. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ab111e2ebd50ff83f126ef6f5201f9283}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!listOfflineError@{listOfflineError}}
+\index{listOfflineError@{listOfflineError}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{listOfflineError}{listOfflineError}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ab111e2ebd50ff83f126ef6f5201f9283} 
+float \mbox{[}$\,$\mbox{]} metaheurictics.\+strategy.\+Strategy.\+list\+Offline\+Error = new float\mbox{[}100\mbox{]}}
+
+
+
+Array para almacenar la métrica de rendimiento offline (Offline Performance). 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_aa572e7d90e24bae70ea47a31fee298f4}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!listRefPoblacFinal@{listRefPoblacFinal}}
+\index{listRefPoblacFinal@{listRefPoblacFinal}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{listRefPoblacFinal}{listRefPoblacFinal}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_aa572e7d90e24bae70ea47a31fee298f4} 
+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ metaheurictics.\+strategy.\+Strategy.\+list\+Ref\+Poblac\+Final = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ ()}
+
+
+
+Lista de soluciones no dominadas (frente de Pareto). 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_aad28420c74454b07fc98f622640ea5cf}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!listStates@{listStates}}
+\index{listStates@{listStates}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{listStates}{listStates}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_aad28420c74454b07fc98f622640ea5cf} 
+Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ metaheurictics.\+strategy.\+Strategy.\+list\+States}
+
+
+
+Lista de todos los estados generados en cada iteración. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a72b0b983ab5990ef999037f9c331515a}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!mapGenerators@{mapGenerators}}
+\index{mapGenerators@{mapGenerators}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{mapGenerators}{mapGenerators}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a72b0b983ab5990ef999037f9c331515a} 
+Sorted\+Map$<$\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}, \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}}$>$ metaheurictics.\+strategy.\+Strategy.\+map\+Generators}
+
+
+
+Mapa que asocia tipos de generadores con sus instancias. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a5ac9ccf79296d15b1a44d119c1f1fc6e}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!notDominated@{notDominated}}
+\index{notDominated@{notDominated}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{notDominated}{notDominated}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a5ac9ccf79296d15b1a44d119c1f1fc6e} 
+\mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_dominance}{Dominance}} metaheurictics.\+strategy.\+Strategy.\+not\+Dominated}
+
+
+
+Gestor de dominancia para calcular soluciones no dominadas. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ab3b8afb295795d6f31000bd5c18700be}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!periodo@{periodo}}
+\index{periodo@{periodo}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{periodo}{periodo}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ab3b8afb295795d6f31000bd5c18700be} 
+int metaheurictics.\+strategy.\+Strategy.\+periodo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador para controlar el periodo actual de guardado. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a72e752e037880a0ff45c679bbc553d00}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!problem@{problem}}
+\index{problem@{problem}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{problem}{problem}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a72e752e037880a0ff45c679bbc553d00} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_problem}{Problem}} metaheurictics.\+strategy.\+Strategy.\+problem\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Problema de optimización que se está resolviendo. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_ad7c438a82bc4f08ad239b3bc56320bca}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!saveFreneParetoMonoObjetivo@{saveFreneParetoMonoObjetivo}}
+\index{saveFreneParetoMonoObjetivo@{saveFreneParetoMonoObjetivo}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{saveFreneParetoMonoObjetivo}{saveFreneParetoMonoObjetivo}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_ad7c438a82bc4f08ad239b3bc56320bca} 
+boolean metaheurictics.\+strategy.\+Strategy.\+save\+Frene\+Pareto\+Mono\+Objetivo}
+
+
+
+Indica si se debe guardar el frente de Pareto en problemas monoobjetivo. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a077d2cdfe76bd31661ca024e339a4c98}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!saveListBestStates@{saveListBestStates}}
+\index{saveListBestStates@{saveListBestStates}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{saveListBestStates}{saveListBestStates}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a077d2cdfe76bd31661ca024e339a4c98} 
+boolean metaheurictics.\+strategy.\+Strategy.\+save\+List\+Best\+States}
+
+
+
+Indica si se debe guardar la lista de mejores estados en cada iteración. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a4e698ca86e2842c70099dadd560e7578}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!saveListStates@{saveListStates}}
+\index{saveListStates@{saveListStates}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{saveListStates}{saveListStates}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a4e698ca86e2842c70099dadd560e7578} 
+boolean metaheurictics.\+strategy.\+Strategy.\+save\+List\+States}
+
+
+
+Indica si se debe guardar la lista de estados generados. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_aba3d7b221051061dd7955d3059ea2272}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!stopexecute@{stopexecute}}
+\index{stopexecute@{stopexecute}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{stopexecute}{stopexecute}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_aba3d7b221051061dd7955d3059ea2272} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_stop_execute}{Stop\+Execute}} metaheurictics.\+strategy.\+Strategy.\+stopexecute\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Criterio de parada para controlar la finalización de la ejecución. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a235c3afb5c1d4afe8ebaa1da12cff32e}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!strategy@{strategy}}
+\index{strategy@{strategy}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{strategy}{strategy}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a235c3afb5c1d4afe8ebaa1da12cff32e} 
+\mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694}{Strategy}} metaheurictics.\+strategy.\+Strategy.\+strategy = null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Instancia única del Singleton \doxylink{classmetaheurictics_1_1strategy_1_1_strategy}{Strategy}. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a1914ff8fe50a63e507d63538cd63e9ea}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!threshold@{threshold}}
+\index{threshold@{threshold}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{threshold}{threshold}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a1914ff8fe50a63e507d63538cd63e9ea} 
+double metaheurictics.\+strategy.\+Strategy.\+threshold}
+
+
+
+Umbral de tolerancia para comparaciones. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_a98a7b4be6d8c731b7f1dcfcde571a5d5}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!timeExecute@{timeExecute}}
+\index{timeExecute@{timeExecute}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{timeExecute}{timeExecute}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_a98a7b4be6d8c731b7f1dcfcde571a5d5} 
+long metaheurictics.\+strategy.\+Strategy.\+time\+Execute\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Tiempo total de ejecución del algoritmo en milisegundos. 
+
+\Hypertarget{classmetaheurictics_1_1strategy_1_1_strategy_aeae847a5e9cad6d863212f3e3cf04cbe}\index{metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}!updateparameter@{updateparameter}}
+\index{updateparameter@{updateparameter}!metaheurictics.strategy.Strategy@{metaheurictics.strategy.Strategy}}
+\doxysubsubsection{\texorpdfstring{updateparameter}{updateparameter}}
+{\footnotesize\ttfamily \label{classmetaheurictics_1_1strategy_1_1_strategy_aeae847a5e9cad6d863212f3e3cf04cbe} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter}{Update\+Parameter}} metaheurictics.\+strategy.\+Strategy.\+updateparameter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gestor de actualización de parámetros durante la ejecución. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheurictics/strategy/\mbox{\hyperlink{_strategy_8java}{Strategy.\+java}}\end{DoxyCompactItemize}

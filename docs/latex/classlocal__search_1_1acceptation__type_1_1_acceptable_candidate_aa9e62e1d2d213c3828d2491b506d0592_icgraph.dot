@@ -1,0 +1,31 @@
+digraph "local_search.acceptation_type.AcceptableCandidate.acceptCandidate"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="local_search.acceptation\l_type.AcceptableCandidate.accept\lCandidate",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Determina si un estado candidato debe ser aceptado."];
+  Node1 -> Node2 [id="edge12_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="metaheuristics.generators.\lHillClimbing.updateReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_hill_climbing.html#afc5f08a9d50796fdf3bbc8dd3e4d8b87",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+  Node1 -> Node3 [id="edge13_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="metaheuristics.generators.\lHillClimbingRestart.updateReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_hill_climbing_restart.html#a7dceb2a864772b9f3b83befa4fe39be8",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+  Node1 -> Node4 [id="edge14_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="metaheuristics.generators.\lLimitThreshold.updateReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_limit_threshold.html#a74c3d66b7aba895e95facbced3cac70f",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+  Node1 -> Node5 [id="edge15_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="metaheuristics.generators.\lMultiCaseSimulatedAnnealing.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multi_case_simulated_annealing.html#a7410b42658c2aacb75082a509d1059fc",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+  Node1 -> Node6 [id="edge16_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="metaheuristics.generators.\lMultiobjectiveHillClimbingDistance.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multiobjective_hill_climbing_distance.html#a35ed16f3af3c7fdcbff8165d9674cc9a",tooltip="Actualiza la referencia con el candidato evaluado."];
+  Node1 -> Node7 [id="edge17_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="metaheuristics.generators.\lMultiobjectiveHillClimbingRestart.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multiobjective_hill_climbing_restart.html#ab3716a950049b1d77c4374efd355aa14",tooltip="Actualiza la referencia con reinicio si es necesario."];
+  Node1 -> Node8 [id="edge18_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="metaheuristics.generators.\lMultiobjectiveStochasticHillClimbing.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing.html#a326b491494f5c4aca1b49cb397d8bcd2",tooltip="Actualiza la referencia con el candidato evaluado."];
+  Node1 -> Node9 [id="edge19_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="metaheuristics.generators.\lMultiobjectiveTabuSearch.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multiobjective_tabu_search.html#a5e7f4e1f1fb436f2fb9c1770b90ee253",tooltip="Actualiza la referencia y la lista tabú"];
+  Node1 -> Node10 [id="edge20_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="metaheuristics.generators.\lRandomSearch.updateReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_random_search.html#a0ec26b03ce5dd592af4568fa0b4b915e",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+  Node1 -> Node11 [id="edge21_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="metaheuristics.generators.\lSimulatedAnnealing.updateReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_simulated_annealing.html#af6e00b21dc4f621cbee1a9ed85b9770e",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+  Node1 -> Node12 [id="edge22_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="metaheuristics.generators.\lTabuSearch.updateReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_tabu_search.html#a8e5310bc24ca49dccb985a122173936c",tooltip="Actualiza el estado de referencia con un nuevo candidato."];
+}

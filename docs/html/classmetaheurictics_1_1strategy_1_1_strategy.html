@@ -1,0 +1,1663 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BiCIAM - Framework Metaheurístico: Referencia de la clase metaheurictics.strategy.Strategy</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BiCIAM - Framework Metaheurístico<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Framework de optimización con algoritmos metaheurísticos y evolutivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmetaheurictics_1_1strategy_1_1_strategy.html','','classmetaheurictics_1_1strategy_1_1_strategy-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase metaheurictics.strategy.Strategy</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Coordinador central para la ejecución de algoritmos metaheurísticos.  
+ <a href="#details">Más...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de colaboración de metaheurictics.strategy.Strategy:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy__coll__graph.png" border="0" usemap="#ametaheurictics_8strategy_8_strategy_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:af320de8dac2de5a7ec10d373952064d5" id="r_af320de8dac2de5a7ec10d373952064d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af320de8dac2de5a7ec10d373952064d5">executeStrategy</a> (int countmaxIterations, int countIterationsChange, int operatornumber, <a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> generatorType)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td></tr>
+<tr class="memdesc:af320de8dac2de5a7ec10d373952064d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ejecuta la estrategia de optimización metaheurística.  <br /></td></tr>
+<tr class="memitem:a2f4520e24d31de6e4895bdf4ab2b9502" id="r_a2f4520e24d31de6e4895bdf4ab2b9502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f4520e24d31de6e4895bdf4ab2b9502">updateCountGender</a> ()</td></tr>
+<tr class="memdesc:a2f4520e24d31de6e4895bdf4ab2b9502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los contadores de uso y mejoras de cada generador.  <br /></td></tr>
+<tr class="memitem:aa65b766626141e9b647a42c0056a4798" id="r_aa65b766626141e9b647a42c0056a4798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65b766626141e9b647a42c0056a4798">updateWeight</a> ()</td></tr>
+<tr class="memdesc:aa65b766626141e9b647a42c0056a4798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicia los pesos de los generadores en el <a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>.  <br /></td></tr>
+<tr class="memitem:ae5fae0f94a80e56677aa3f7ac77b6d44" id="r_ae5fae0f94a80e56677aa3f7ac77b6d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5fae0f94a80e56677aa3f7ac77b6d44">update</a> (Integer countIterationsCurrent)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:ae5fae0f94a80e56677aa3f7ac77b6d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el generador activo basándose en la iteración actual.  <br /></td></tr>
+<tr class="memitem:abc3c1b65673f8757ae414dfd4bf18f97" id="r_abc3c1b65673f8757ae414dfd4bf18f97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc3c1b65673f8757ae414dfd4bf18f97">newGenerator</a> (<a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> Generatortype)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:abc3c1b65673f8757ae414dfd4bf18f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nueva instancia de generador del tipo especificado.  <br /></td></tr>
+<tr class="memitem:a4194b52f17701a8fabfc1265e6b4b267" id="r_a4194b52f17701a8fabfc1265e6b4b267"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4194b52f17701a8fabfc1265e6b4b267">getBestState</a> ()</td></tr>
+<tr class="memdesc:a4194b52f17701a8fabfc1265e6b4b267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el mejor estado encontrado.  <br /></td></tr>
+<tr class="memitem:aef162976b610a8d30ab537af9face3b4" id="r_aef162976b610a8d30ab537af9face3b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef162976b610a8d30ab537af9face3b4">setBestState</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> besState)</td></tr>
+<tr class="memdesc:aef162976b610a8d30ab537af9face3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el mejor estado.  <br /></td></tr>
+<tr class="memitem:a1ce64c953a44083a90753c3ffb46d40e" id="r_a1ce64c953a44083a90753c3ffb46d40e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html">StopExecute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce64c953a44083a90753c3ffb46d40e">getStopexecute</a> ()</td></tr>
+<tr class="memdesc:a1ce64c953a44083a90753c3ffb46d40e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el criterio de parada.  <br /></td></tr>
+<tr class="memitem:a6d5037c21b9a24975f301ac6aba4dffd" id="r_a6d5037c21b9a24975f301ac6aba4dffd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d5037c21b9a24975f301ac6aba4dffd">getCountMax</a> ()</td></tr>
+<tr class="memdesc:a6d5037c21b9a24975f301ac6aba4dffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el número máximo de iteraciones.  <br /></td></tr>
+<tr class="memitem:a7512cbe68ba46c4d8534f0aff17b5c17" id="r_a7512cbe68ba46c4d8534f0aff17b5c17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7512cbe68ba46c4d8534f0aff17b5c17">setCountMax</a> (int <a class="el" href="#a3251f7d633dd233da6de5e84cb49b14b">countMax</a>)</td></tr>
+<tr class="memdesc:a7512cbe68ba46c4d8534f0aff17b5c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el número máximo de iteraciones.  <br /></td></tr>
+<tr class="memitem:a2f833e91e1f26476659d049362f219ac" id="r_a2f833e91e1f26476659d049362f219ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f833e91e1f26476659d049362f219ac">setStopexecute</a> (<a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html">StopExecute</a> <a class="el" href="#aba3d7b221051061dd7955d3059ea2272">stopexecute</a>)</td></tr>
+<tr class="memdesc:a2f833e91e1f26476659d049362f219ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el criterio de parada.  <br /></td></tr>
+<tr class="memitem:a0036f56e2cd146ee5f37a6da30ed415a" id="r_a0036f56e2cd146ee5f37a6da30ed415a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html">UpdateParameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0036f56e2cd146ee5f37a6da30ed415a">getUpdateparameter</a> ()</td></tr>
+<tr class="memdesc:a0036f56e2cd146ee5f37a6da30ed415a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el gestor de actualización de parámetros.  <br /></td></tr>
+<tr class="memitem:ac781087326a37b5f9cc1ea135bfc7c82" id="r_ac781087326a37b5f9cc1ea135bfc7c82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac781087326a37b5f9cc1ea135bfc7c82">setUpdateparameter</a> (<a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html">UpdateParameter</a> <a class="el" href="#aeae847a5e9cad6d863212f3e3cf04cbe">updateparameter</a>)</td></tr>
+<tr class="memdesc:ac781087326a37b5f9cc1ea135bfc7c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el gestor de actualización de parámetros.  <br /></td></tr>
+<tr class="memitem:a4bc6bd95db71e14b1f48c1bfc85f1305" id="r_a4bc6bd95db71e14b1f48c1bfc85f1305"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_problem.html">Problem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bc6bd95db71e14b1f48c1bfc85f1305">getProblem</a> ()</td></tr>
+<tr class="memdesc:a4bc6bd95db71e14b1f48c1bfc85f1305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el problema de optimización.  <br /></td></tr>
+<tr class="memitem:a2a5bb3ddd64d9f7d7ee9f50da7804850" id="r_a2a5bb3ddd64d9f7d7ee9f50da7804850"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a5bb3ddd64d9f7d7ee9f50da7804850">setProblem</a> (<a class="el" href="classproblem_1_1definition_1_1_problem.html">Problem</a> <a class="el" href="#a72e752e037880a0ff45c679bbc553d00">problem</a>)</td></tr>
+<tr class="memdesc:a2a5bb3ddd64d9f7d7ee9f50da7804850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el problema de optimización.  <br /></td></tr>
+<tr class="memitem:ac70469856a2b6424f29952c0e77eebf8" id="r_ac70469856a2b6424f29952c0e77eebf8"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70469856a2b6424f29952c0e77eebf8">getListKey</a> ()</td></tr>
+<tr class="memdesc:ac70469856a2b6424f29952c0e77eebf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de claves de tipos de generadores disponibles.  <br /></td></tr>
+<tr class="memitem:a01adb5013155c7f691f95e8ab59181d0" id="r_a01adb5013155c7f691f95e8ab59181d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01adb5013155c7f691f95e8ab59181d0">initializeGenerators</a> ()  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:a01adb5013155c7f691f95e8ab59181d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa todos los tipos de generadores disponibles para <a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>.  <br /></td></tr>
+<tr class="memitem:a24dc7f53fd6fed09d4db04350f73b1a3" id="r_a24dc7f53fd6fed09d4db04350f73b1a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24dc7f53fd6fed09d4db04350f73b1a3">initialize</a> ()  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:a24dc7f53fd6fed09d4db04350f73b1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el mapa de generadores.  <br /></td></tr>
+<tr class="memitem:a6440afde976cb69c01b95d4c41a9ff5c" id="r_a6440afde976cb69c01b95d4c41a9ff5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6440afde976cb69c01b95d4c41a9ff5c">getCountCurrent</a> ()</td></tr>
+<tr class="memdesc:a6440afde976cb69c01b95d4c41a9ff5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el contador de iteraciones actual.  <br /></td></tr>
+<tr class="memitem:a0a7bed828f9d4fb1b29dbda112020b77" id="r_a0a7bed828f9d4fb1b29dbda112020b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a7bed828f9d4fb1b29dbda112020b77">setCountCurrent</a> (int <a class="el" href="#a537769ff595ae1b51c2035982723be6e">countCurrent</a>)</td></tr>
+<tr class="memdesc:a0a7bed828f9d4fb1b29dbda112020b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el contador de iteraciones actual.  <br /></td></tr>
+<tr class="memitem:a307eddf8b8d1eadfdce6b89148bd78fb" id="r_a307eddf8b8d1eadfdce6b89148bd78fb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a307eddf8b8d1eadfdce6b89148bd78fb">getThreshold</a> ()</td></tr>
+<tr class="memdesc:a307eddf8b8d1eadfdce6b89148bd78fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el umbral de tolerancia.  <br /></td></tr>
+<tr class="memitem:abc89b807d8506e11ef85c41eeb5e1858" id="r_abc89b807d8506e11ef85c41eeb5e1858"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc89b807d8506e11ef85c41eeb5e1858">setThreshold</a> (double <a class="el" href="#a1914ff8fe50a63e507d63538cd63e9ea">threshold</a>)</td></tr>
+<tr class="memdesc:abc89b807d8506e11ef85c41eeb5e1858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el umbral de tolerancia.  <br /></td></tr>
+<tr class="memitem:a6d8f615b37de120cbf16eac6f1b6e721" id="r_a6d8f615b37de120cbf16eac6f1b6e721"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d8f615b37de120cbf16eac6f1b6e721">calculateOffLinePerformance</a> (float sumMax, int countOff)</td></tr>
+<tr class="memdesc:a6d8f615b37de120cbf16eac6f1b6e721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula y almacena la métrica Offline Performance.  <br /></td></tr>
+<tr class="memitem:a91022422139781e5efd55fe77049bcce" id="r_a91022422139781e5efd55fe77049bcce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91022422139781e5efd55fe77049bcce">updateRef</a> (<a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> generatorType)</td></tr>
+<tr class="memdesc:a91022422139781e5efd55fe77049bcce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las referencias después de un cambio en el entorno dinámico.  <br /></td></tr>
+<tr class="memitem:a1a969707e4659afea6bc6ee7479e9e65" id="r_a1a969707e4659afea6bc6ee7479e9e65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a969707e4659afea6bc6ee7479e9e65">updateRefMultiG</a> ()</td></tr>
+<tr class="memdesc:a1a969707e4659afea6bc6ee7479e9e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las referencias de todos los generadores en un <a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>.  <br /></td></tr>
+<tr class="memitem:a507abefc022ec475c0d5473055adf484" id="r_a507abefc022ec475c0d5473055adf484"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a507abefc022ec475c0d5473055adf484">updateRefGenerator</a> (<a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a> <a class="el" href="#a2f0ea18b2127e6e38c1d335fed32c7e0">generator</a>)</td></tr>
+<tr class="memdesc:a507abefc022ec475c0d5473055adf484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la referencia de un generador específico.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:ad2641e12c52292930364de6655333aa8" id="r_ad2641e12c52292930364de6655333aa8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#ac65d26e08073f5cfc7596577f18b9694">Strategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2641e12c52292930364de6655333aa8">getStrategy</a> ()</td></tr>
+<tr class="memdesc:ad2641e12c52292930364de6655333aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la instancia única de <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a> (patrón Singleton).  <br /></td></tr>
+<tr class="memitem:ac4829af561593656b314235f004f0308" id="r_ac4829af561593656b314235f004f0308"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4829af561593656b314235f004f0308">destroyExecute</a> ()</td></tr>
+<tr class="memdesc:ac4829af561593656b314235f004f0308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruye la instancia del Singleton y limpia recursos.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a72b0b983ab5990ef999037f9c331515a" id="r_a72b0b983ab5990ef999037f9c331515a"><td class="memItemLeft" align="right" valign="top">SortedMap&lt; <a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>, <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72b0b983ab5990ef999037f9c331515a">mapGenerators</a></td></tr>
+<tr class="memdesc:a72b0b983ab5990ef999037f9c331515a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapa que asocia tipos de generadores con sus instancias.  <br /></td></tr>
+<tr class="memitem:a2f0ea18b2127e6e38c1d335fed32c7e0" id="r_a2f0ea18b2127e6e38c1d335fed32c7e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f0ea18b2127e6e38c1d335fed32c7e0">generator</a></td></tr>
+<tr class="memdesc:a2f0ea18b2127e6e38c1d335fed32c7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generador activo actual.  <br /></td></tr>
+<tr class="memitem:a1914ff8fe50a63e507d63538cd63e9ea" id="r_a1914ff8fe50a63e507d63538cd63e9ea"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1914ff8fe50a63e507d63538cd63e9ea">threshold</a></td></tr>
+<tr class="memdesc:a1914ff8fe50a63e507d63538cd63e9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Umbral de tolerancia para comparaciones.  <br /></td></tr>
+<tr class="memitem:aad28420c74454b07fc98f622640ea5cf" id="r_aad28420c74454b07fc98f622640ea5cf"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad28420c74454b07fc98f622640ea5cf">listStates</a></td></tr>
+<tr class="memdesc:aad28420c74454b07fc98f622640ea5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de todos los estados generados en cada iteración.  <br /></td></tr>
+<tr class="memitem:a990e5c94e0d5ac270853827300f433db" id="r_a990e5c94e0d5ac270853827300f433db"><td class="memItemLeft" align="right" valign="top">ArrayList&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a990e5c94e0d5ac270853827300f433db">listBest</a></td></tr>
+<tr class="memdesc:a990e5c94e0d5ac270853827300f433db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de las mejores soluciones encontradas en cada iteración.  <br /></td></tr>
+<tr class="memitem:aa572e7d90e24bae70ea47a31fee298f4" id="r_aa572e7d90e24bae70ea47a31fee298f4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa572e7d90e24bae70ea47a31fee298f4">listRefPoblacFinal</a> = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; ()</td></tr>
+<tr class="memdesc:aa572e7d90e24bae70ea47a31fee298f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de soluciones no dominadas (frente de Pareto).  <br /></td></tr>
+<tr class="memitem:a5ac9ccf79296d15b1a44d119c1f1fc6e" id="r_a5ac9ccf79296d15b1a44d119c1f1fc6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlocal__search_1_1acceptation__type_1_1_dominance.html">Dominance</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac9ccf79296d15b1a44d119c1f1fc6e">notDominated</a></td></tr>
+<tr class="memdesc:a5ac9ccf79296d15b1a44d119c1f1fc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestor de dominancia para calcular soluciones no dominadas.  <br /></td></tr>
+<tr class="memitem:a4e698ca86e2842c70099dadd560e7578" id="r_a4e698ca86e2842c70099dadd560e7578"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e698ca86e2842c70099dadd560e7578">saveListStates</a></td></tr>
+<tr class="memdesc:a4e698ca86e2842c70099dadd560e7578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si se debe guardar la lista de estados generados.  <br /></td></tr>
+<tr class="memitem:a077d2cdfe76bd31661ca024e339a4c98" id="r_a077d2cdfe76bd31661ca024e339a4c98"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a077d2cdfe76bd31661ca024e339a4c98">saveListBestStates</a></td></tr>
+<tr class="memdesc:a077d2cdfe76bd31661ca024e339a4c98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si se debe guardar la lista de mejores estados en cada iteración.  <br /></td></tr>
+<tr class="memitem:ad7c438a82bc4f08ad239b3bc56320bca" id="r_ad7c438a82bc4f08ad239b3bc56320bca"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7c438a82bc4f08ad239b3bc56320bca">saveFreneParetoMonoObjetivo</a></td></tr>
+<tr class="memdesc:ad7c438a82bc4f08ad239b3bc56320bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si se debe guardar el frente de Pareto en problemas monoobjetivo.  <br /></td></tr>
+<tr class="memitem:a3a4ef09902bbbfec07102446f7eb2809" id="r_a3a4ef09902bbbfec07102446f7eb2809"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a4ef09902bbbfec07102446f7eb2809">calculateTime</a></td></tr>
+<tr class="memdesc:a3a4ef09902bbbfec07102446f7eb2809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si se debe calcular el tiempo de ejecución del algoritmo.  <br /></td></tr>
+<tr class="memitem:ab111e2ebd50ff83f126ef6f5201f9283" id="r_ab111e2ebd50ff83f126ef6f5201f9283"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab111e2ebd50ff83f126ef6f5201f9283">listOfflineError</a> = new float[100]</td></tr>
+<tr class="memdesc:ab111e2ebd50ff83f126ef6f5201f9283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array para almacenar la métrica de rendimiento offline (Offline Performance).  <br /></td></tr>
+<tr class="memitem:ab22b49ea4c8e68c8d35f392bcc4f8ded" id="r_ab22b49ea4c8e68c8d35f392bcc4f8ded"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab22b49ea4c8e68c8d35f392bcc4f8ded">countPeriodChange</a> = 0</td></tr>
+<tr class="memdesc:ab22b49ea4c8e68c8d35f392bcc4f8ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cantidad de iteraciones antes de que ocurra un cambio en el entorno dinámico.  <br /></td></tr>
+<tr class="memitem:abea8b81eeed176475070dac996fe9b6c" id="r_abea8b81eeed176475070dac996fe9b6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abea8b81eeed176475070dac996fe9b6c">countChange</a> = 0</td></tr>
+<tr class="memdesc:abea8b81eeed176475070dac996fe9b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador para el próximo cambio de entorno.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a98a7b4be6d8c731b7f1dcfcde571a5d5" id="r_a98a7b4be6d8c731b7f1dcfcde571a5d5"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98a7b4be6d8c731b7f1dcfcde571a5d5">timeExecute</a></td></tr>
+<tr class="memdesc:a98a7b4be6d8c731b7f1dcfcde571a5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tiempo total de ejecución del algoritmo en milisegundos.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:ac65d26e08073f5cfc7596577f18b9694" id="r_ac65d26e08073f5cfc7596577f18b9694"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac65d26e08073f5cfc7596577f18b9694">Strategy</a> ()</td></tr>
+<tr class="memdesc:ac65d26e08073f5cfc7596577f18b9694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor privado para implementar el patrón Singleton.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:af08a0f377eacb28b46d0fcc315b69ad0" id="r_af08a0f377eacb28b46d0fcc315b69ad0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af08a0f377eacb28b46d0fcc315b69ad0">bestState</a></td></tr>
+<tr class="memdesc:af08a0f377eacb28b46d0fcc315b69ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mejor estado encontrado durante la ejecución del algoritmo.  <br /></td></tr>
+<tr class="memitem:a72e752e037880a0ff45c679bbc553d00" id="r_a72e752e037880a0ff45c679bbc553d00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_problem.html">Problem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72e752e037880a0ff45c679bbc553d00">problem</a></td></tr>
+<tr class="memdesc:a72e752e037880a0ff45c679bbc553d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Problema de optimización que se está resolviendo.  <br /></td></tr>
+<tr class="memitem:aba3d7b221051061dd7955d3059ea2272" id="r_aba3d7b221051061dd7955d3059ea2272"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html">StopExecute</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba3d7b221051061dd7955d3059ea2272">stopexecute</a></td></tr>
+<tr class="memdesc:aba3d7b221051061dd7955d3059ea2272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Criterio de parada para controlar la finalización de la ejecución.  <br /></td></tr>
+<tr class="memitem:aeae847a5e9cad6d863212f3e3cf04cbe" id="r_aeae847a5e9cad6d863212f3e3cf04cbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html">UpdateParameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeae847a5e9cad6d863212f3e3cf04cbe">updateparameter</a></td></tr>
+<tr class="memdesc:aeae847a5e9cad6d863212f3e3cf04cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestor de actualización de parámetros durante la ejecución.  <br /></td></tr>
+<tr class="memitem:afc091846262ceb740b13d949744e8bf7" id="r_afc091846262ceb740b13d949744e8bf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_generator.html">IFFactoryGenerator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc091846262ceb740b13d949744e8bf7">ifFactoryGenerator</a></td></tr>
+<tr class="memdesc:afc091846262ceb740b13d949744e8bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para crear instancias de generadores.  <br /></td></tr>
+<tr class="memitem:a537769ff595ae1b51c2035982723be6e" id="r_a537769ff595ae1b51c2035982723be6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a537769ff595ae1b51c2035982723be6e">countCurrent</a></td></tr>
+<tr class="memdesc:a537769ff595ae1b51c2035982723be6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de iteraciones actuales.  <br /></td></tr>
+<tr class="memitem:a3251f7d633dd233da6de5e84cb49b14b" id="r_a3251f7d633dd233da6de5e84cb49b14b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3251f7d633dd233da6de5e84cb49b14b">countMax</a></td></tr>
+<tr class="memdesc:a3251f7d633dd233da6de5e84cb49b14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número máximo de iteraciones permitidas.  <br /></td></tr>
+<tr class="memitem:a86782bca2ad115b47f019513b1e8a389" id="r_a86782bca2ad115b47f019513b1e8a389"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86782bca2ad115b47f019513b1e8a389">countPeriodo</a></td></tr>
+<tr class="memdesc:a86782bca2ad115b47f019513b1e8a389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador para determinar cuándo guardar estadísticas de generadores.  <br /></td></tr>
+<tr class="memitem:ab3b8afb295795d6f31000bd5c18700be" id="r_ab3b8afb295795d6f31000bd5c18700be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3b8afb295795d6f31000bd5c18700be">periodo</a></td></tr>
+<tr class="memdesc:ab3b8afb295795d6f31000bd5c18700be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador para controlar el periodo actual de guardado.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Atributos estáticos privados</h2></td></tr>
+<tr class="memitem:a235c3afb5c1d4afe8ebaa1da12cff32e" id="r_a235c3afb5c1d4afe8ebaa1da12cff32e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#ac65d26e08073f5cfc7596577f18b9694">Strategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a235c3afb5c1d4afe8ebaa1da12cff32e">strategy</a> = null</td></tr>
+<tr class="memdesc:a235c3afb5c1d4afe8ebaa1da12cff32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancia única del Singleton <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Coordinador central para la ejecución de algoritmos metaheurísticos. </p>
+<p>Esta clase singleton gestiona la estrategia global de optimización, coordinando la ejecución de diferentes generadores metaheurísticos, manteniendo el seguimiento del mejor estado encontrado, gestionando las iteraciones y recopilando estadísticas de rendimiento. Soporta múltiples modos de operación incluyendo algoritmos de un solo generador y portafolios de múltiples generadores (<a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>).</p>
+<p>La clase también gestiona entornos dinámicos donde el problema puede cambiar durante la ejecución, permitiendo adaptación y reinicio de referencias. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="ac65d26e08073f5cfc7596577f18b9694" name="ac65d26e08073f5cfc7596577f18b9694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac65d26e08073f5cfc7596577f18b9694">&#9670;&#160;</a></span>Strategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">metaheurictics.strategy.Strategy.Strategy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor privado para implementar el patrón Singleton. </p>
+<p>Inicializa la instancia de <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a>. Este constructor es privado para prevenir la instanciación directa desde fuera de la clase. </p>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_ac65d26e08073f5cfc7596577f18b9694_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a6d8f615b37de120cbf16eac6f1b6e721" name="a6d8f615b37de120cbf16eac6f1b6e721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d8f615b37de120cbf16eac6f1b6e721">&#9670;&#160;</a></span>calculateOffLinePerformance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.calculateOffLinePerformance </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>sumMax</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>countOff</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula y almacena la métrica Offline Performance. </p>
+<p>Calcula el rendimiento offline dividiendo la suma acumulada de evaluaciones por el número de iteraciones del periodo y lo almacena en el array.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sumMax</td><td>Suma acumulada de las evaluaciones del mejor estado </td></tr>
+    <tr><td class="paramname">countOff</td><td>Índice donde almacenar el resultado en el array </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a6d8f615b37de120cbf16eac6f1b6e721_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a6d8f615b37de120cbf16eac6f1b6e721_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac4829af561593656b314235f004f0308" name="ac4829af561593656b314235f004f0308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4829af561593656b314235f004f0308">&#9670;&#160;</a></span>destroyExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.destroyExecute </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruye la instancia del Singleton y limpia recursos. </p>
+<p>Libera la instancia de <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a> y limpia las referencias de estado para permitir una nueva ejecución limpia. </p>
+
+</div>
+</div>
+<a id="af320de8dac2de5a7ec10d373952064d5" name="af320de8dac2de5a7ec10d373952064d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af320de8dac2de5a7ec10d373952064d5">&#9670;&#160;</a></span>executeStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.executeStrategy </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>countmaxIterations</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>countIterationsChange</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>operatornumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a></td>          <td class="paramname"><span class="paramname"><em>generatorType</em></span>&#160;) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ejecuta la estrategia de optimización metaheurística. </p>
+<p>Método principal que coordina la ejecución completa del algoritmo metaheurístico. Inicializa el estado, ejecuta el ciclo de optimización, gestiona cambios dinámicos del entorno y recopila métricas de rendimiento.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">countmaxIterations</td><td>Número máximo de iteraciones a ejecutar </td></tr>
+    <tr><td class="paramname">countIterationsChange</td><td>Número de iteraciones entre cambios de entorno </td></tr>
+    <tr><td class="paramname">operatornumber</td><td>Número de operadores a utilizar en la generación </td></tr>
+    <tr><td class="paramname">generatorType</td><td>Tipo de generador metaheurístico a utilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos no son válidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad en la reflexión </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase del generador </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si no se puede instanciar el generador </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay problemas de acceso en la reflexión </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay errores al invocar métodos </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método requerido </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_af320de8dac2de5a7ec10d373952064d5_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_af320de8dac2de5a7ec10d373952064d5_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4194b52f17701a8fabfc1265e6b4b267" name="a4194b52f17701a8fabfc1265e6b4b267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4194b52f17701a8fabfc1265e6b4b267">&#9670;&#160;</a></span>getBestState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheurictics.strategy.Strategy.getBestState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el mejor estado encontrado. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>El mejor estado encontrado durante la ejecución </dd></dl>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a4194b52f17701a8fabfc1265e6b4b267_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a4194b52f17701a8fabfc1265e6b4b267_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a6440afde976cb69c01b95d4c41a9ff5c" name="a6440afde976cb69c01b95d4c41a9ff5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6440afde976cb69c01b95d4c41a9ff5c">&#9670;&#160;</a></span>getCountCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.getCountCurrent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el contador de iteraciones actual. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Número de iteración actual </dd></dl>
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a6440afde976cb69c01b95d4c41a9ff5c_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a6440afde976cb69c01b95d4c41a9ff5c_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a6d5037c21b9a24975f301ac6aba4dffd" name="a6d5037c21b9a24975f301ac6aba4dffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5037c21b9a24975f301ac6aba4dffd">&#9670;&#160;</a></span>getCountMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.getCountMax </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el número máximo de iteraciones. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Número máximo de iteraciones configurado </dd></dl>
+
+</div>
+</div>
+<a id="ac70469856a2b6424f29952c0e77eebf8" name="ac70469856a2b6424f29952c0e77eebf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70469856a2b6424f29952c0e77eebf8">&#9670;&#160;</a></span>getListKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ArrayList&lt; String &gt; metaheurictics.strategy.Strategy.getListKey </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de claves de tipos de generadores disponibles. </p>
+<p>Extrae y formatea las claves del mapa de generadores en una lista de cadenas.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de nombres de tipos de generadores </dd></dl>
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_ac70469856a2b6424f29952c0e77eebf8_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_ac70469856a2b6424f29952c0e77eebf8_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4bc6bd95db71e14b1f48c1bfc85f1305" name="a4bc6bd95db71e14b1f48c1bfc85f1305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc6bd95db71e14b1f48c1bfc85f1305">&#9670;&#160;</a></span>getProblem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_problem.html">Problem</a> metaheurictics.strategy.Strategy.getProblem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el problema de optimización. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>El problema actual </dd></dl>
+
+</div>
+</div>
+<a id="a1ce64c953a44083a90753c3ffb46d40e" name="a1ce64c953a44083a90753c3ffb46d40e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce64c953a44083a90753c3ffb46d40e">&#9670;&#160;</a></span>getStopexecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html">StopExecute</a> metaheurictics.strategy.Strategy.getStopexecute </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el criterio de parada. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Objeto <a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html" title="Clase que determina cuándo detener la ejecución del algoritmo.">StopExecute</a> que controla la finalización </dd></dl>
+
+</div>
+</div>
+<a id="ad2641e12c52292930364de6655333aa8" name="ad2641e12c52292930364de6655333aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2641e12c52292930364de6655333aa8">&#9670;&#160;</a></span>getStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac65d26e08073f5cfc7596577f18b9694">Strategy</a> metaheurictics.strategy.Strategy.getStrategy </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene la instancia única de <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a> (patrón Singleton). </p>
+<p>Implementación lazy del patrón Singleton. Crea la instancia única si no existe, o devuelve la existente.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>La instancia única de <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a> </dd></dl>
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_ad2641e12c52292930364de6655333aa8_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_ad2641e12c52292930364de6655333aa8_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a307eddf8b8d1eadfdce6b89148bd78fb" name="a307eddf8b8d1eadfdce6b89148bd78fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307eddf8b8d1eadfdce6b89148bd78fb">&#9670;&#160;</a></span>getThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double metaheurictics.strategy.Strategy.getThreshold </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el umbral de tolerancia. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Valor del umbral </dd></dl>
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a307eddf8b8d1eadfdce6b89148bd78fb_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a307eddf8b8d1eadfdce6b89148bd78fb_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0036f56e2cd146ee5f37a6da30ed415a" name="a0036f56e2cd146ee5f37a6da30ed415a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0036f56e2cd146ee5f37a6da30ed415a">&#9670;&#160;</a></span>getUpdateparameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html">UpdateParameter</a> metaheurictics.strategy.Strategy.getUpdateparameter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el gestor de actualización de parámetros. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Objeto <a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html" title="Clase que gestiona la actualización de parámetros y cambio de generadores.">UpdateParameter</a> </dd></dl>
+
+</div>
+</div>
+<a id="a24dc7f53fd6fed09d4db04350f73b1a3" name="a24dc7f53fd6fed09d4db04350f73b1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24dc7f53fd6fed09d4db04350f73b1a3">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.initialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el mapa de generadores. </p>
+<p>Crea instancias de todos los tipos de generadores y los almacena en el mapa. Similar a initializeGenerators pero para uso general.</p>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos no son válidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad en la reflexión </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase del generador </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si no se puede instanciar el generador </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay problemas de acceso en la reflexión </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay errores al invocar métodos </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método requerido </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a24dc7f53fd6fed09d4db04350f73b1a3_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a01adb5013155c7f691f95e8ab59181d0" name="a01adb5013155c7f691f95e8ab59181d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01adb5013155c7f691f95e8ab59181d0">&#9670;&#160;</a></span>initializeGenerators()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.initializeGenerators </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa todos los tipos de generadores disponibles para <a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>. </p>
+<p>Crea instancias de todos los tipos de generadores definidos en <a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> y los almacena en el mapa de generadores. Utilizado específicamente para configurar portafolios de generadores.</p>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos no son válidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad en la reflexión </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase del generador </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si no se puede instanciar el generador </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay problemas de acceso en la reflexión </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay errores al invocar métodos </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método requerido </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a01adb5013155c7f691f95e8ab59181d0_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="abc3c1b65673f8757ae414dfd4bf18f97" name="abc3c1b65673f8757ae414dfd4bf18f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3c1b65673f8757ae414dfd4bf18f97">&#9670;&#160;</a></span>newGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a> metaheurictics.strategy.Strategy.newGenerator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a></td>          <td class="paramname"><span class="paramname"><em>Generatortype</em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea una nueva instancia de generador del tipo especificado. </p>
+<p>Utiliza el patrón Factory para crear una instancia del generador metaheurístico solicitado.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Generatortype</td><td>Tipo de generador a crear </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Nueva instancia del generador solicitado </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si el tipo de generador no es válido </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad en la reflexión </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase del generador </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si no se puede instanciar el generador </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay problemas de acceso en la reflexión </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay errores al invocar métodos </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método requerido </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_abc3c1b65673f8757ae414dfd4bf18f97_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_abc3c1b65673f8757ae414dfd4bf18f97_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aef162976b610a8d30ab537af9face3b4" name="aef162976b610a8d30ab537af9face3b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef162976b610a8d30ab537af9face3b4">&#9670;&#160;</a></span>setBestState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setBestState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>besState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el mejor estado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">besState</td><td>Nuevo mejor estado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a7bed828f9d4fb1b29dbda112020b77" name="a0a7bed828f9d4fb1b29dbda112020b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7bed828f9d4fb1b29dbda112020b77">&#9670;&#160;</a></span>setCountCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setCountCurrent </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>countCurrent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el contador de iteraciones actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">countCurrent</td><td>Nuevo valor del contador de iteraciones </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7512cbe68ba46c4d8534f0aff17b5c17" name="a7512cbe68ba46c4d8534f0aff17b5c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7512cbe68ba46c4d8534f0aff17b5c17">&#9670;&#160;</a></span>setCountMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setCountMax </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>countMax</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el número máximo de iteraciones. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">countMax</td><td>Nuevo número máximo de iteraciones </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a5bb3ddd64d9f7d7ee9f50da7804850" name="a2a5bb3ddd64d9f7d7ee9f50da7804850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a5bb3ddd64d9f7d7ee9f50da7804850">&#9670;&#160;</a></span>setProblem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setProblem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_problem.html">Problem</a></td>          <td class="paramname"><span class="paramname"><em>problem</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el problema de optimización. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">problem</td><td>Nuevo problema a resolver </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f833e91e1f26476659d049362f219ac" name="a2f833e91e1f26476659d049362f219ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f833e91e1f26476659d049362f219ac">&#9670;&#160;</a></span>setStopexecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setStopexecute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html">StopExecute</a></td>          <td class="paramname"><span class="paramname"><em>stopexecute</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el criterio de parada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stopexecute</td><td>Nuevo criterio de parada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abc89b807d8506e11ef85c41eeb5e1858" name="abc89b807d8506e11ef85c41eeb5e1858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc89b807d8506e11ef85c41eeb5e1858">&#9670;&#160;</a></span>setThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setThreshold </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>threshold</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el umbral de tolerancia. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">threshold</td><td>Nuevo valor del umbral </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac781087326a37b5f9cc1ea135bfc7c82" name="ac781087326a37b5f9cc1ea135bfc7c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac781087326a37b5f9cc1ea135bfc7c82">&#9670;&#160;</a></span>setUpdateparameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.setUpdateparameter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html">UpdateParameter</a></td>          <td class="paramname"><span class="paramname"><em>updateparameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el gestor de actualización de parámetros. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">updateparameter</td><td>Nuevo gestor de actualización </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae5fae0f94a80e56677aa3f7ac77b6d44" name="ae5fae0f94a80e56677aa3f7ac77b6d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fae0f94a80e56677aa3f7ac77b6d44">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.update </td>
+          <td>(</td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>countIterationsCurrent</em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza el generador activo basándose en la iteración actual. </p>
+<p>Cambia dinámicamente el tipo de generador cuando se alcanza un umbral específico de iteraciones, permitiendo transiciones entre diferentes algoritmos metaheurísticos durante la ejecución.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">countIterationsCurrent</td><td>Número de iteración actual </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos no son válidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad en la reflexión </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase del generador </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si no se puede instanciar el generador </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay problemas de acceso en la reflexión </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay errores al invocar métodos </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método requerido </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_ae5fae0f94a80e56677aa3f7ac77b6d44_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a2f4520e24d31de6e4895bdf4ab2b9502" name="a2f4520e24d31de6e4895bdf4ab2b9502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4520e24d31de6e4895bdf4ab2b9502">&#9670;&#160;</a></span>updateCountGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.updateCountGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza los contadores de uso y mejoras de cada generador. </p>
+<p>Actualiza las estadísticas de cuántas veces se usó cada generador y cuántas mejoras produjo durante un periodo determinado. Reinicia los contadores para el siguiente periodo. </p>
+<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a2f4520e24d31de6e4895bdf4ab2b9502_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a91022422139781e5efd55fe77049bcce" name="a91022422139781e5efd55fe77049bcce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91022422139781e5efd55fe77049bcce">&#9670;&#160;</a></span>updateRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.updateRef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a></td>          <td class="paramname"><span class="paramname"><em>generatorType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza las referencias después de un cambio en el entorno dinámico. </p>
+<p>Reevalúa las soluciones de referencia del generador cuando ocurre un cambio en el problema dinámico, actualizando el mejor estado encontrado.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generatorType</td><td>Tipo de generador cuya referencia se actualizará </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a91022422139781e5efd55fe77049bcce_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a507abefc022ec475c0d5473055adf484" name="a507abefc022ec475c0d5473055adf484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a507abefc022ec475c0d5473055adf484">&#9670;&#160;</a></span>updateRefGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.updateRefGenerator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a></td>          <td class="paramname"><span class="paramname"><em>generator</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza la referencia de un generador específico. </p>
+<p>Reevalúa las soluciones de referencia del generador después de un cambio en el problema. El comportamiento depende del tipo de generador:</p><ul>
+<li>Para generadores de búsqueda local: actualiza una única referencia</li>
+<li>Para algoritmos poblacionales: actualiza toda la población de referencia</li>
+</ul>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generator</td><td>Generador cuya referencia se actualizará </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a507abefc022ec475c0d5473055adf484_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a1a969707e4659afea6bc6ee7479e9e65" name="a1a969707e4659afea6bc6ee7479e9e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a969707e4659afea6bc6ee7479e9e65">&#9670;&#160;</a></span>updateRefMultiG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.updateRefMultiG </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza las referencias de todos los generadores en un <a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>. </p>
+<p>Itera sobre todos los generadores del portafolio y actualiza sus referencias después de un cambio en el entorno. </p>
+<div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-23" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_a1a969707e4659afea6bc6ee7479e9e65_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa65b766626141e9b647a42c0056a4798" name="aa65b766626141e9b647a42c0056a4798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65b766626141e9b647a42c0056a4798">&#9670;&#160;</a></span>updateWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheurictics.strategy.Strategy.updateWeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reinicia los pesos de los generadores en el <a class="el" href="classmetaheuristics_1_1generators_1_1_multi_generator.html" title="Generador híbrido que combina múltiples metaheurísticas.">MultiGenerator</a>. </p>
+<p>Establece el peso de todos los generadores a un valor predeterminado (50.0) después de un cambio en el entorno dinámico. </p>
+<div id="dynsection-24" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798_cgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-25" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798_icgraph.png" border="0" usemap="#aclassmetaheurictics_1_1strategy_1_1_strategy_aa65b766626141e9b647a42c0056a4798_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="af08a0f377eacb28b46d0fcc315b69ad0" name="af08a0f377eacb28b46d0fcc315b69ad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08a0f377eacb28b46d0fcc315b69ad0">&#9670;&#160;</a></span>bestState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheurictics.strategy.Strategy.bestState</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mejor estado encontrado durante la ejecución del algoritmo. </p>
+
+</div>
+</div>
+<a id="a3a4ef09902bbbfec07102446f7eb2809" name="a3a4ef09902bbbfec07102446f7eb2809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a4ef09902bbbfec07102446f7eb2809">&#9670;&#160;</a></span>calculateTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheurictics.strategy.Strategy.calculateTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si se debe calcular el tiempo de ejecución del algoritmo. </p>
+
+</div>
+</div>
+<a id="abea8b81eeed176475070dac996fe9b6c" name="abea8b81eeed176475070dac996fe9b6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea8b81eeed176475070dac996fe9b6c">&#9670;&#160;</a></span>countChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.countChange = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contador para el próximo cambio de entorno. </p>
+
+</div>
+</div>
+<a id="a537769ff595ae1b51c2035982723be6e" name="a537769ff595ae1b51c2035982723be6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537769ff595ae1b51c2035982723be6e">&#9670;&#160;</a></span>countCurrent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.countCurrent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de iteraciones actuales. </p>
+
+</div>
+</div>
+<a id="a3251f7d633dd233da6de5e84cb49b14b" name="a3251f7d633dd233da6de5e84cb49b14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3251f7d633dd233da6de5e84cb49b14b">&#9670;&#160;</a></span>countMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.countMax</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Número máximo de iteraciones permitidas. </p>
+
+</div>
+</div>
+<a id="ab22b49ea4c8e68c8d35f392bcc4f8ded" name="ab22b49ea4c8e68c8d35f392bcc4f8ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22b49ea4c8e68c8d35f392bcc4f8ded">&#9670;&#160;</a></span>countPeriodChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.countPeriodChange = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cantidad de iteraciones antes de que ocurra un cambio en el entorno dinámico. </p>
+
+</div>
+</div>
+<a id="a86782bca2ad115b47f019513b1e8a389" name="a86782bca2ad115b47f019513b1e8a389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86782bca2ad115b47f019513b1e8a389">&#9670;&#160;</a></span>countPeriodo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.countPeriodo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador para determinar cuándo guardar estadísticas de generadores. </p>
+
+</div>
+</div>
+<a id="a2f0ea18b2127e6e38c1d335fed32c7e0" name="a2f0ea18b2127e6e38c1d335fed32c7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0ea18b2127e6e38c1d335fed32c7e0">&#9670;&#160;</a></span>generator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a> metaheurictics.strategy.Strategy.generator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generador activo actual. </p>
+
+</div>
+</div>
+<a id="afc091846262ceb740b13d949744e8bf7" name="afc091846262ceb740b13d949744e8bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc091846262ceb740b13d949744e8bf7">&#9670;&#160;</a></span>ifFactoryGenerator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_generator.html">IFFactoryGenerator</a> metaheurictics.strategy.Strategy.ifFactoryGenerator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para crear instancias de generadores. </p>
+
+</div>
+</div>
+<a id="a990e5c94e0d5ac270853827300f433db" name="a990e5c94e0d5ac270853827300f433db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990e5c94e0d5ac270853827300f433db">&#9670;&#160;</a></span>listBest</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheurictics.strategy.Strategy.listBest</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista de las mejores soluciones encontradas en cada iteración. </p>
+
+</div>
+</div>
+<a id="ab111e2ebd50ff83f126ef6f5201f9283" name="ab111e2ebd50ff83f126ef6f5201f9283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab111e2ebd50ff83f126ef6f5201f9283">&#9670;&#160;</a></span>listOfflineError</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [] metaheurictics.strategy.Strategy.listOfflineError = new float[100]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array para almacenar la métrica de rendimiento offline (Offline Performance). </p>
+
+</div>
+</div>
+<a id="aa572e7d90e24bae70ea47a31fee298f4" name="aa572e7d90e24bae70ea47a31fee298f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa572e7d90e24bae70ea47a31fee298f4">&#9670;&#160;</a></span>listRefPoblacFinal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheurictics.strategy.Strategy.listRefPoblacFinal = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; ()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista de soluciones no dominadas (frente de Pareto). </p>
+
+</div>
+</div>
+<a id="aad28420c74454b07fc98f622640ea5cf" name="aad28420c74454b07fc98f622640ea5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad28420c74454b07fc98f622640ea5cf">&#9670;&#160;</a></span>listStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheurictics.strategy.Strategy.listStates</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista de todos los estados generados en cada iteración. </p>
+
+</div>
+</div>
+<a id="a72b0b983ab5990ef999037f9c331515a" name="a72b0b983ab5990ef999037f9c331515a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b0b983ab5990ef999037f9c331515a">&#9670;&#160;</a></span>mapGenerators</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SortedMap&lt;<a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>, <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">Generator</a>&gt; metaheurictics.strategy.Strategy.mapGenerators</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mapa que asocia tipos de generadores con sus instancias. </p>
+
+</div>
+</div>
+<a id="a5ac9ccf79296d15b1a44d119c1f1fc6e" name="a5ac9ccf79296d15b1a44d119c1f1fc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac9ccf79296d15b1a44d119c1f1fc6e">&#9670;&#160;</a></span>notDominated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlocal__search_1_1acceptation__type_1_1_dominance.html">Dominance</a> metaheurictics.strategy.Strategy.notDominated</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gestor de dominancia para calcular soluciones no dominadas. </p>
+
+</div>
+</div>
+<a id="ab3b8afb295795d6f31000bd5c18700be" name="ab3b8afb295795d6f31000bd5c18700be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b8afb295795d6f31000bd5c18700be">&#9670;&#160;</a></span>periodo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheurictics.strategy.Strategy.periodo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador para controlar el periodo actual de guardado. </p>
+
+</div>
+</div>
+<a id="a72e752e037880a0ff45c679bbc553d00" name="a72e752e037880a0ff45c679bbc553d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e752e037880a0ff45c679bbc553d00">&#9670;&#160;</a></span>problem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_problem.html">Problem</a> metaheurictics.strategy.Strategy.problem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Problema de optimización que se está resolviendo. </p>
+
+</div>
+</div>
+<a id="ad7c438a82bc4f08ad239b3bc56320bca" name="ad7c438a82bc4f08ad239b3bc56320bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7c438a82bc4f08ad239b3bc56320bca">&#9670;&#160;</a></span>saveFreneParetoMonoObjetivo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheurictics.strategy.Strategy.saveFreneParetoMonoObjetivo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si se debe guardar el frente de Pareto en problemas monoobjetivo. </p>
+
+</div>
+</div>
+<a id="a077d2cdfe76bd31661ca024e339a4c98" name="a077d2cdfe76bd31661ca024e339a4c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077d2cdfe76bd31661ca024e339a4c98">&#9670;&#160;</a></span>saveListBestStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheurictics.strategy.Strategy.saveListBestStates</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si se debe guardar la lista de mejores estados en cada iteración. </p>
+
+</div>
+</div>
+<a id="a4e698ca86e2842c70099dadd560e7578" name="a4e698ca86e2842c70099dadd560e7578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e698ca86e2842c70099dadd560e7578">&#9670;&#160;</a></span>saveListStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheurictics.strategy.Strategy.saveListStates</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indica si se debe guardar la lista de estados generados. </p>
+
+</div>
+</div>
+<a id="aba3d7b221051061dd7955d3059ea2272" name="aba3d7b221051061dd7955d3059ea2272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3d7b221051061dd7955d3059ea2272">&#9670;&#160;</a></span>stopexecute</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlocal__search_1_1complement_1_1_stop_execute.html">StopExecute</a> metaheurictics.strategy.Strategy.stopexecute</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Criterio de parada para controlar la finalización de la ejecución. </p>
+
+</div>
+</div>
+<a id="a235c3afb5c1d4afe8ebaa1da12cff32e" name="a235c3afb5c1d4afe8ebaa1da12cff32e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235c3afb5c1d4afe8ebaa1da12cff32e">&#9670;&#160;</a></span>strategy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac65d26e08073f5cfc7596577f18b9694">Strategy</a> metaheurictics.strategy.Strategy.strategy = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Instancia única del Singleton <a class="el" href="classmetaheurictics_1_1strategy_1_1_strategy.html" title="Coordinador central para la ejecución de algoritmos metaheurísticos.">Strategy</a>. </p>
+
+</div>
+</div>
+<a id="a1914ff8fe50a63e507d63538cd63e9ea" name="a1914ff8fe50a63e507d63538cd63e9ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1914ff8fe50a63e507d63538cd63e9ea">&#9670;&#160;</a></span>threshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double metaheurictics.strategy.Strategy.threshold</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Umbral de tolerancia para comparaciones. </p>
+
+</div>
+</div>
+<a id="a98a7b4be6d8c731b7f1dcfcde571a5d5" name="a98a7b4be6d8c731b7f1dcfcde571a5d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a7b4be6d8c731b7f1dcfcde571a5d5">&#9670;&#160;</a></span>timeExecute</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long metaheurictics.strategy.Strategy.timeExecute</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tiempo total de ejecución del algoritmo en milisegundos. </p>
+
+</div>
+</div>
+<a id="aeae847a5e9cad6d863212f3e3cf04cbe" name="aeae847a5e9cad6d863212f3e3cf04cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeae847a5e9cad6d863212f3e3cf04cbe">&#9670;&#160;</a></span>updateparameter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlocal__search_1_1complement_1_1_update_parameter.html">UpdateParameter</a> metaheurictics.strategy.Strategy.updateparameter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gestor de actualización de parámetros durante la ejecución. </p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>src/main/java/metaheurictics/strategy/<a class="el" href="_strategy_8java.html">Strategy.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>metaheurictics</b></li><li class="navelem"><a href="namespacemetaheurictics_1_1strategy.html">strategy</a></li><li class="navelem"><a href="classmetaheurictics_1_1strategy_1_1_strategy.html">Strategy</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para BiCIAM - Framework Metaheurístico por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

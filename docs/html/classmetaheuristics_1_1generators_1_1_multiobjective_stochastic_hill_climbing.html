@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BiCIAM - Framework Metaheurístico: Referencia de la clase metaheuristics.generators.MultiobjectiveStochasticHillClimbing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BiCIAM - Framework Metaheurístico<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Framework de optimización con algoritmos metaheurísticos y evolutivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing.html','','classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase metaheuristics.generators.MultiobjectiveStochasticHillClimbing</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Hill Climbing estocástico para optimización multiobjetivo.  
+ <a href="#details">Más...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de herencia de metaheuristics.generators.MultiobjectiveStochasticHillClimbing</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing__inherit__graph.png" border="0" usemap="#ametaheuristics_8generators_8_multiobjective_stochastic_hill_climbing_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+</div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de colaboración de metaheuristics.generators.MultiobjectiveStochasticHillClimbing:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing__coll__graph.png" border="0" usemap="#ametaheuristics_8generators_8_multiobjective_stochastic_hill_climbing_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:afd67895ecb625136938949d95319386c" id="r_afd67895ecb625136938949d95319386c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd67895ecb625136938949d95319386c">MultiobjectiveStochasticHillClimbing</a> ()</td></tr>
+<tr class="memdesc:afd67895ecb625136938949d95319386c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto.  <br /></td></tr>
+<tr class="memitem:a4bdaba8339058a9132146ca79d88d19d" id="r_a4bdaba8339058a9132146ca79d88d19d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bdaba8339058a9132146ca79d88d19d">generate</a> (Integer operatornumber)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:a4bdaba8339058a9132146ca79d88d19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un nuevo estado candidato.  <br /></td></tr>
+<tr class="memitem:a326b491494f5c4aca1b49cb397d8bcd2" id="r_a326b491494f5c4aca1b49cb397d8bcd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a326b491494f5c4aca1b49cb397d8bcd2">updateReference</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateCandidate, Integer countIterationsCurrent)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:a326b491494f5c4aca1b49cb397d8bcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la referencia con el candidato evaluado.  <br /></td></tr>
+<tr class="memitem:a45f6e4c4d8de17ce3b1d98e724ec4672" id="r_a45f6e4c4d8de17ce3b1d98e724ec4672"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f6e4c4d8de17ce3b1d98e724ec4672">getReferenceList</a> ()</td></tr>
+<tr class="memdesc:a45f6e4c4d8de17ce3b1d98e724ec4672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de referencias.  <br /></td></tr>
+<tr class="memitem:af81e64ac28fb24b19854158b51e631ee" id="r_af81e64ac28fb24b19854158b51e631ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af81e64ac28fb24b19854158b51e631ee">getReference</a> ()</td></tr>
+<tr class="memdesc:af81e64ac28fb24b19854158b51e631ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el estado de referencia actual.  <br /></td></tr>
+<tr class="memitem:a3ad3644571811f220d25ff4a2d9f0213" id="r_a3ad3644571811f220d25ff4a2d9f0213"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ad3644571811f220d25ff4a2d9f0213">setStateRef</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateRef)</td></tr>
+<tr class="memdesc:a3ad3644571811f220d25ff4a2d9f0213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el estado de referencia.  <br /></td></tr>
+<tr class="memitem:ac08b87e351f6d8f395df7fc047008860" id="r_ac08b87e351f6d8f395df7fc047008860"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac08b87e351f6d8f395df7fc047008860">setInitialReference</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateInitialRef)</td></tr>
+<tr class="memdesc:ac08b87e351f6d8f395df7fc047008860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece la referencia inicial.  <br /></td></tr>
+<tr class="memitem:aaef4e96c8ca37dd959e469da0f466c41" id="r_aaef4e96c8ca37dd959e469da0f466c41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaef4e96c8ca37dd959e469da0f466c41">getGeneratorType</a> ()</td></tr>
+<tr class="memdesc:aaef4e96c8ca37dd959e469da0f466c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el tipo de generador.  <br /></td></tr>
+<tr class="memitem:aa08b89141ed50e4ab5fad200d7d44d79" id="r_aa08b89141ed50e4ab5fad200d7d44d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa08b89141ed50e4ab5fad200d7d44d79">setGeneratorType</a> (<a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> <a class="el" href="#aea2a629a892b9a095d0f7a5ed0c13575">Generatortype</a>)</td></tr>
+<tr class="memdesc:aa08b89141ed50e4ab5fad200d7d44d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el tipo de generador.  <br /></td></tr>
+<tr class="memitem:a859febf72320ab1931647b0555a10278" id="r_a859febf72320ab1931647b0555a10278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a859febf72320ab1931647b0555a10278">getType</a> ()</td></tr>
+<tr class="memdesc:a859febf72320ab1931647b0555a10278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el tipo de generador.  <br /></td></tr>
+<tr class="memitem:ac1bc6b24127dcd33f67fb785a2e2272e" id="r_ac1bc6b24127dcd33f67fb785a2e2272e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1bc6b24127dcd33f67fb785a2e2272e">getSonList</a> ()</td></tr>
+<tr class="memdesc:ac1bc6b24127dcd33f67fb785a2e2272e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene lista de hijos.  <br /></td></tr>
+<tr class="memitem:a1445fe4fbfe1c164b398236df77166fa" id="r_a1445fe4fbfe1c164b398236df77166fa"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1445fe4fbfe1c164b398236df77166fa">awardUpdateREF</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateCandidate)</td></tr>
+<tr class="memdesc:a1445fe4fbfe1c164b398236df77166fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza referencia con premio.  <br /></td></tr>
+<tr class="memitem:a0a0c51d818efac484b0d703f75f35983" id="r_a0a0c51d818efac484b0d703f75f35983"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a0c51d818efac484b0d703f75f35983">getWeight</a> ()</td></tr>
+<tr class="memdesc:a0a0c51d818efac484b0d703f75f35983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el peso del generador.  <br /></td></tr>
+<tr class="memitem:a419ab87fb5b9682e82ea7c21ef1eec63" id="r_a419ab87fb5b9682e82ea7c21ef1eec63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a419ab87fb5b9682e82ea7c21ef1eec63">setWeight</a> (float <a class="el" href="#ade35a951cf3e5039d09a70f0a99faf40">weight</a>)</td></tr>
+<tr class="memdesc:a419ab87fb5b9682e82ea7c21ef1eec63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el peso del generador.  <br /></td></tr>
+<tr class="memitem:a4cc5c1ab7bf2227590b6a6fee9d46a6e" id="r_a4cc5c1ab7bf2227590b6a6fee9d46a6e"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cc5c1ab7bf2227590b6a6fee9d46a6e">getTrace</a> ()</td></tr>
+<tr class="memdesc:a4cc5c1ab7bf2227590b6a6fee9d46a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la traza de pesos.  <br /></td></tr>
+<tr class="memitem:a95ad9830c174c6da3dd23d7c090ebeb8" id="r_a95ad9830c174c6da3dd23d7c090ebeb8"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95ad9830c174c6da3dd23d7c090ebeb8">getListCountBetterGender</a> ()</td></tr>
+<tr class="memdesc:a95ad9830c174c6da3dd23d7c090ebeb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene lista de contadores de mejores géneros.  <br /></td></tr>
+<tr class="memitem:a8a54d7c080d84a790d046fc754332841" id="r_a8a54d7c080d84a790d046fc754332841"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a54d7c080d84a790d046fc754332841">getListCountGender</a> ()</td></tr>
+<tr class="memdesc:a8a54d7c080d84a790d046fc754332841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene lista de contadores de géneros.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr class="memitem:a64a512172bbe8697671ce15ac46e256d" id="r_a64a512172bbe8697671ce15ac46e256d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlocal__search_1_1candidate__type_1_1_candidate_value.html">CandidateValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64a512172bbe8697671ce15ac46e256d">candidatevalue</a></td></tr>
+<tr class="memdesc:a64a512172bbe8697671ce15ac46e256d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor del candidato para selección.  <br /></td></tr>
+<tr class="memitem:aba423860662624ae6ce422bd2d5d58c1" id="r_aba423860662624ae6ce422bd2d5d58c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumlocal__search_1_1acceptation__type_1_1_accept_type.html">AcceptType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba423860662624ae6ce422bd2d5d58c1">typeAcceptation</a></td></tr>
+<tr class="memdesc:aba423860662624ae6ce422bd2d5d58c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de aceptación de candidatos.  <br /></td></tr>
+<tr class="memitem:a9be1c3e50b7922eb0590f4445b2b860e" id="r_a9be1c3e50b7922eb0590f4445b2b860e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumlocal__search_1_1complement_1_1_strategy_type.html">StrategyType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be1c3e50b7922eb0590f4445b2b860e">strategy</a></td></tr>
+<tr class="memdesc:a9be1c3e50b7922eb0590f4445b2b860e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrategia de búsqueda.  <br /></td></tr>
+<tr class="memitem:a36eca8ca9f93f1d7ff66ad08f01759dd" id="r_a36eca8ca9f93f1d7ff66ad08f01759dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumlocal__search_1_1candidate__type_1_1_candidate_type.html">CandidateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36eca8ca9f93f1d7ff66ad08f01759dd">typeCandidate</a></td></tr>
+<tr class="memdesc:a36eca8ca9f93f1d7ff66ad08f01759dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de candidato.  <br /></td></tr>
+<tr class="memitem:a25b9fc0814a9afd5095910fdc8df28be" id="r_a25b9fc0814a9afd5095910fdc8df28be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25b9fc0814a9afd5095910fdc8df28be">stateReferenceHC</a></td></tr>
+<tr class="memdesc:a25b9fc0814a9afd5095910fdc8df28be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de referencia actual del algoritmo.  <br /></td></tr>
+<tr class="memitem:ad4b72f8298ee57f6093a5d7dae34fd97" id="r_ad4b72f8298ee57f6093a5d7dae34fd97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_accept_candidate.html">IFFactoryAcceptCandidate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4b72f8298ee57f6093a5d7dae34fd97">ifacceptCandidate</a></td></tr>
+<tr class="memdesc:ad4b72f8298ee57f6093a5d7dae34fd97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fábrica para crear criterios de aceptación.  <br /></td></tr>
+<tr class="memitem:aea2a629a892b9a095d0f7a5ed0c13575" id="r_aea2a629a892b9a095d0f7a5ed0c13575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2a629a892b9a095d0f7a5ed0c13575">Generatortype</a></td></tr>
+<tr class="memdesc:aea2a629a892b9a095d0f7a5ed0c13575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de generador.  <br /></td></tr>
+<tr class="memitem:a4e7e06bd34248720829f54666ab69c27" id="r_a4e7e06bd34248720829f54666ab69c27"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e7e06bd34248720829f54666ab69c27">listStateReference</a> = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td></tr>
+<tr class="memdesc:a4e7e06bd34248720829f54666ab69c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de estados de referencia.  <br /></td></tr>
+<tr class="memitem:ade35a951cf3e5039d09a70f0a99faf40" id="r_ade35a951cf3e5039d09a70f0a99faf40"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade35a951cf3e5039d09a70f0a99faf40">weight</a></td></tr>
+<tr class="memdesc:ade35a951cf3e5039d09a70f0a99faf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peso del generador.  <br /></td></tr>
+<tr class="memitem:a8089f811d09cad437b2743f3ac1a9055" id="r_a8089f811d09cad437b2743f3ac1a9055"><td class="memItemLeft" align="right" valign="top">List&lt; Float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8089f811d09cad437b2743f3ac1a9055">listTrace</a> = new ArrayList&lt;Float&gt;()</td></tr>
+<tr class="memdesc:a8089f811d09cad437b2743f3ac1a9055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traza de pesos.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classmetaheuristics_1_1generators_1_1_generator')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Atributos públicos heredados de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">metaheuristics.generators.Generator</a></td></tr>
+<tr class="memitem:a3c0145210385b6257c8fc20cac1f830a inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a3c0145210385b6257c8fc20cac1f830a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a3c0145210385b6257c8fc20cac1f830a">countGender</a></td></tr>
+<tr class="memdesc:a3c0145210385b6257c8fc20cac1f830a inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de uso del generador.  <br /></td></tr>
+<tr class="memitem:a43815f3944c514ba3156b0e68482befa inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a43815f3944c514ba3156b0e68482befa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a43815f3944c514ba3156b0e68482befa">countBetterGender</a></td></tr>
+<tr class="memdesc:a43815f3944c514ba3156b0e68482befa inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de mejoras del generador.  <br /></td></tr>
+<tr class="memitem:a535a5753046bdda55fb6fee44c4b1f88 inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a535a5753046bdda55fb6fee44c4b1f88"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a535a5753046bdda55fb6fee44c4b1f88">listCountBetterGender</a></td></tr>
+<tr class="memdesc:a535a5753046bdda55fb6fee44c4b1f88 inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array con las mejoras de cada generador en períodos de 10, acumulativo.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Hill Climbing estocástico para optimización multiobjetivo. </p>
+<p>Esta clase implementa un algoritmo de búsqueda local multiobjetivo que acepta soluciones no dominadas manteniendo un frente de Pareto. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="afd67895ecb625136938949d95319386c" name="afd67895ecb625136938949d95319386c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd67895ecb625136938949d95319386c">&#9670;&#160;</a></span>MultiobjectiveStochasticHillClimbing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">metaheuristics.generators.MultiobjectiveStochasticHillClimbing.MultiobjectiveStochasticHillClimbing </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor por defecto. </p>
+<p>Inicializa el Hill Climbing estocástico multiobjetivo con criterio de aceptación no dominado. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="a1445fe4fbfe1c164b398236df77166fa" name="a1445fe4fbfe1c164b398236df77166fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1445fe4fbfe1c164b398236df77166fa">&#9670;&#160;</a></span>awardUpdateREF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheuristics.generators.MultiobjectiveStochasticHillClimbing.awardUpdateREF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateCandidate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza referencia con premio. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateCandidate</td><td>Estado candidato </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>false (no implementado) </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a3513d3953ecc97683f38bcb662b74b9b">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a4bdaba8339058a9132146ca79d88d19d" name="a4bdaba8339058a9132146ca79d88d19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bdaba8339058a9132146ca79d88d19d">&#9670;&#160;</a></span>generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.generate </td>
+          <td>(</td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>operatornumber</em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera un nuevo estado candidato. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operatornumber</td><td>Número de operador para generar el vecindario </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado candidato generado </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si el argumento es ilégal </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay un problema de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si falla la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si el acceso es ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si falla la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a06f6f7622b9ce32590eadbdf6bf962b5">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing_a4bdaba8339058a9132146ca79d88d19d_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing_a4bdaba8339058a9132146ca79d88d19d_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aaef4e96c8ca37dd959e469da0f466c41" name="aaef4e96c8ca37dd959e469da0f466c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef4e96c8ca37dd959e469da0f466c41">&#9670;&#160;</a></span>getGeneratorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getGeneratorType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el tipo de generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Tipo de generador </dd></dl>
+
+</div>
+</div>
+<a id="a95ad9830c174c6da3dd23d7c090ebeb8" name="a95ad9830c174c6da3dd23d7c090ebeb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95ad9830c174c6da3dd23d7c090ebeb8">&#9670;&#160;</a></span>getListCountBetterGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getListCountBetterGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene lista de contadores de mejores géneros. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>null (no implementado) </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ac5bace71f51c16b611ede3ed53263473">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a8a54d7c080d84a790d046fc754332841" name="a8a54d7c080d84a790d046fc754332841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a54d7c080d84a790d046fc754332841">&#9670;&#160;</a></span>getListCountGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getListCountGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene lista de contadores de géneros. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>null (no implementado) </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ac5d6d45ee8017fb87d80aa952edfc34e">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="af81e64ac28fb24b19854158b51e631ee" name="af81e64ac28fb24b19854158b51e631ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81e64ac28fb24b19854158b51e631ee">&#9670;&#160;</a></span>getReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getReference </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el estado de referencia actual. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado de referencia </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa56dd45a45776f6023b9f74179cc6384">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a45f6e4c4d8de17ce3b1d98e724ec4672" name="a45f6e4c4d8de17ce3b1d98e724ec4672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f6e4c4d8de17ce3b1d98e724ec4672">&#9670;&#160;</a></span>getReferenceList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getReferenceList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de referencias. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados de referencia </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ae168237b306de55fe4d6dfda75c7cd13">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing_a45f6e4c4d8de17ce3b1d98e724ec4672_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing_a45f6e4c4d8de17ce3b1d98e724ec4672_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac1bc6b24127dcd33f67fb785a2e2272e" name="ac1bc6b24127dcd33f67fb785a2e2272e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bc6b24127dcd33f67fb785a2e2272e">&#9670;&#160;</a></span>getSonList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getSonList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene lista de hijos. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>null (no implementado para este algoritmo) </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aee09d724c1b3040e7a7ad0b64e341c96">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a4cc5c1ab7bf2227590b6a6fee9d46a6e" name="a4cc5c1ab7bf2227590b6a6fee9d46a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc5c1ab7bf2227590b6a6fee9d46a6e">&#9670;&#160;</a></span>getTrace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float[] metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getTrace </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la traza de pesos. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>null (no implementado) </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a75d7f30dd2cb3f92475db8525ac7c6e7">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a859febf72320ab1931647b0555a10278" name="a859febf72320ab1931647b0555a10278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a859febf72320ab1931647b0555a10278">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el tipo de generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Tipo de generador </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a5a123306b43c42d28cd1d6e17f8067a5">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a0a0c51d818efac484b0d703f75f35983" name="a0a0c51d818efac484b0d703f75f35983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a0c51d818efac484b0d703f75f35983">&#9670;&#160;</a></span>getWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float metaheuristics.generators.MultiobjectiveStochasticHillClimbing.getWeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el peso del generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>0 (no implementado) </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a64f2b824081c7af593bf9aa8eabf2c9e">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="aa08b89141ed50e4ab5fad200d7d44d79" name="aa08b89141ed50e4ab5fad200d7d44d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08b89141ed50e4ab5fad200d7d44d79">&#9670;&#160;</a></span>setGeneratorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.MultiobjectiveStochasticHillClimbing.setGeneratorType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a></td>          <td class="paramname"><span class="paramname"><em>Generatortype</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el tipo de generador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Generatortype</td><td>Nuevo tipo de generador </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac08b87e351f6d8f395df7fc047008860" name="ac08b87e351f6d8f395df7fc047008860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac08b87e351f6d8f395df7fc047008860">&#9670;&#160;</a></span>setInitialReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.MultiobjectiveStochasticHillClimbing.setInitialReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateInitialRef</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece la referencia inicial. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateInitialRef</td><td>Estado inicial de referencia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa9f7c4c983705f843b8fcc81e4aa8ba4">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a3ad3644571811f220d25ff4a2d9f0213" name="a3ad3644571811f220d25ff4a2d9f0213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad3644571811f220d25ff4a2d9f0213">&#9670;&#160;</a></span>setStateRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.MultiobjectiveStochasticHillClimbing.setStateRef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateRef</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el estado de referencia. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateRef</td><td>Nuevo estado de referencia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a419ab87fb5b9682e82ea7c21ef1eec63" name="a419ab87fb5b9682e82ea7c21ef1eec63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419ab87fb5b9682e82ea7c21ef1eec63">&#9670;&#160;</a></span>setWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.MultiobjectiveStochasticHillClimbing.setWeight </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>weight</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el peso del generador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weight</td><td>Nuevo peso </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a8b3c66b57b4c739666989fbce667eb40">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a326b491494f5c4aca1b49cb397d8bcd2" name="a326b491494f5c4aca1b49cb397d8bcd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326b491494f5c4aca1b49cb397d8bcd2">&#9670;&#160;</a></span>updateReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.MultiobjectiveStochasticHillClimbing.updateReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateCandidate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>countIterationsCurrent</em></span>&#160;) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza la referencia con el candidato evaluado. </p>
+<p>Acepta soluciones no dominadas y actualiza el frente de Pareto.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateCandidate</td><td>Estado candidato a evaluar </td></tr>
+    <tr><td class="paramname">countIterationsCurrent</td><td>Contador de iteraciones actuales </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si el argumento es ilégal </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay un problema de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra la clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si falla la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si el acceso es ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si falla la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra el método </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa1c5878953f2111221b21cb9b1e6cc9f">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing_a326b491494f5c4aca1b49cb397d8bcd2_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing_a326b491494f5c4aca1b49cb397d8bcd2_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="a64a512172bbe8697671ce15ac46e256d" name="a64a512172bbe8697671ce15ac46e256d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a512172bbe8697671ce15ac46e256d">&#9670;&#160;</a></span>candidatevalue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlocal__search_1_1candidate__type_1_1_candidate_value.html">CandidateValue</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.candidatevalue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valor del candidato para selección. </p>
+
+</div>
+</div>
+<a id="aea2a629a892b9a095d0f7a5ed0c13575" name="aea2a629a892b9a095d0f7a5ed0c13575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2a629a892b9a095d0f7a5ed0c13575">&#9670;&#160;</a></span>Generatortype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.Generatortype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de generador. </p>
+
+</div>
+</div>
+<a id="ad4b72f8298ee57f6093a5d7dae34fd97" name="ad4b72f8298ee57f6093a5d7dae34fd97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b72f8298ee57f6093a5d7dae34fd97">&#9670;&#160;</a></span>ifacceptCandidate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_accept_candidate.html">IFFactoryAcceptCandidate</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.ifacceptCandidate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fábrica para crear criterios de aceptación. </p>
+
+</div>
+</div>
+<a id="a4e7e06bd34248720829f54666ab69c27" name="a4e7e06bd34248720829f54666ab69c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e7e06bd34248720829f54666ab69c27">&#9670;&#160;</a></span>listStateReference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheuristics.generators.MultiobjectiveStochasticHillClimbing.listStateReference = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista de estados de referencia. </p>
+
+</div>
+</div>
+<a id="a8089f811d09cad437b2743f3ac1a9055" name="a8089f811d09cad437b2743f3ac1a9055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8089f811d09cad437b2743f3ac1a9055">&#9670;&#160;</a></span>listTrace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Float&gt; metaheuristics.generators.MultiobjectiveStochasticHillClimbing.listTrace = new ArrayList&lt;Float&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Traza de pesos. </p>
+
+</div>
+</div>
+<a id="a25b9fc0814a9afd5095910fdc8df28be" name="a25b9fc0814a9afd5095910fdc8df28be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b9fc0814a9afd5095910fdc8df28be">&#9670;&#160;</a></span>stateReferenceHC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.stateReferenceHC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estado de referencia actual del algoritmo. </p>
+
+</div>
+</div>
+<a id="a9be1c3e50b7922eb0590f4445b2b860e" name="a9be1c3e50b7922eb0590f4445b2b860e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be1c3e50b7922eb0590f4445b2b860e">&#9670;&#160;</a></span>strategy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumlocal__search_1_1complement_1_1_strategy_type.html">StrategyType</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.strategy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estrategia de búsqueda. </p>
+
+</div>
+</div>
+<a id="aba423860662624ae6ce422bd2d5d58c1" name="aba423860662624ae6ce422bd2d5d58c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba423860662624ae6ce422bd2d5d58c1">&#9670;&#160;</a></span>typeAcceptation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumlocal__search_1_1acceptation__type_1_1_accept_type.html">AcceptType</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.typeAcceptation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de aceptación de candidatos. </p>
+
+</div>
+</div>
+<a id="a36eca8ca9f93f1d7ff66ad08f01759dd" name="a36eca8ca9f93f1d7ff66ad08f01759dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36eca8ca9f93f1d7ff66ad08f01759dd">&#9670;&#160;</a></span>typeCandidate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumlocal__search_1_1candidate__type_1_1_candidate_type.html">CandidateType</a> metaheuristics.generators.MultiobjectiveStochasticHillClimbing.typeCandidate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de candidato. </p>
+
+</div>
+</div>
+<a id="ade35a951cf3e5039d09a70f0a99faf40" name="ade35a951cf3e5039d09a70f0a99faf40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade35a951cf3e5039d09a70f0a99faf40">&#9670;&#160;</a></span>weight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float metaheuristics.generators.MultiobjectiveStochasticHillClimbing.weight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Peso del generador. </p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>src/main/java/metaheuristics/generators/<a class="el" href="_multiobjective_stochastic_hill_climbing_8java.html">MultiobjectiveStochasticHillClimbing.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>metaheuristics</b></li><li class="navelem"><a href="namespacemetaheuristics_1_1generators.html">generators</a></li><li class="navelem"><a href="classmetaheuristics_1_1generators_1_1_multiobjective_stochastic_hill_climbing.html">MultiobjectiveStochasticHillClimbing</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para BiCIAM - Framework Metaheurístico por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

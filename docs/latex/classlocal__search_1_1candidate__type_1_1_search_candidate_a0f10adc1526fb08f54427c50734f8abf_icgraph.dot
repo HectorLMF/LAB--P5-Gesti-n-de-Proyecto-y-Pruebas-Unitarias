@@ -1,0 +1,12 @@
+digraph "local_search.candidate_type.SearchCandidate.stateSearch"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="local_search.candidate\l_type.SearchCandidate.stateSearch",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Busca y selecciona un estado del vecindario."];
+  Node1 -> Node2 [id="edge3_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="local_search.candidate\l_type.CandidateValue.stateCandidate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classlocal__search_1_1candidate__type_1_1_candidate_value.html#a77505d8ed443552afa435f51d0222d75",tooltip="Selecciona un estado candidato del vecindario."];
+  Node2 -> Node2 [id="edge4_Node000002_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

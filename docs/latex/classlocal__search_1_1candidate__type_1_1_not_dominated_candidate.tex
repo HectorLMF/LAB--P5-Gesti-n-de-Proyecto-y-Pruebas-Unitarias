@@ -1,0 +1,76 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+candidate\+\_\+type.\+Not\+Dominated\+Candidate}
+\hypertarget{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate}{}\label{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate}\index{local\_search.candidate\_type.NotDominatedCandidate@{local\_search.candidate\_type.NotDominatedCandidate}}
+
+
+Clase que selecciona candidatos basados en dominancia de Pareto.  
+
+
+
+
+Diagrama de herencia de local\+\_\+search.\+candidate\+\_\+type.\+Not\+Dominated\+Candidate
+% FIG 0
+
+
+Diagrama de colaboración de local\+\_\+search.\+candidate\+\_\+type.\+Not\+Dominated\+Candidate\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate_a8f08ece6519709427b4917712b805159}{state\+Search}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+Neighborhood)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Busca un estado no dominado en el vecindario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que selecciona candidatos basados en dominancia de Pareto. 
+
+Esta clase implementa una estrategia de selección para problemas multiobjetivo, eligiendo el primer candidato que no es dominado por otros en el vecindario. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate_a8f08ece6519709427b4917712b805159}\index{local\_search.candidate\_type.NotDominatedCandidate@{local\_search.candidate\_type.NotDominatedCandidate}!stateSearch@{stateSearch}}
+\index{stateSearch@{stateSearch}!local\_search.candidate\_type.NotDominatedCandidate@{local\_search.candidate\_type.NotDominatedCandidate}}
+\doxysubsubsection{\texorpdfstring{stateSearch()}{stateSearch()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_not_dominated_candidate_a8f08ece6519709427b4917712b805159} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} local\+\_\+search.\+candidate\+\_\+type.\+Not\+Dominated\+Candidate.\+state\+Search (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+Neighborhood}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Busca un estado no dominado en el vecindario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em list\+Neighborhood} & Lista de estados vecinos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxylink{classproblem_1_1definition_1_1_state}{State} Primer estado no dominado encontrado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay problemas al instanciar \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay problemas en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate_a0f10adc1526fb08f54427c50734f8abf}{local\+\_\+search.\+candidate\+\_\+type.\+Search\+Candidate}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/candidate\+\_\+type/\mbox{\hyperlink{_not_dominated_candidate_8java}{Not\+Dominated\+Candidate.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,1197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BiCIAM - Framework Metaheurístico: Referencia de la clase metaheuristics.generators.GeneticAlgorithm</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BiCIAM - Framework Metaheurístico<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Framework de optimización con algoritmos metaheurísticos y evolutivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmetaheuristics_1_1generators_1_1_genetic_algorithm.html','','classmetaheuristics_1_1generators_1_1_genetic_algorithm-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase metaheuristics.generators.GeneticAlgorithm</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Algoritmo genético con selección, cruzamiento, mutación y reemplazo.  
+ <a href="#details">Más...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de herencia de metaheuristics.generators.GeneticAlgorithm</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm__inherit__graph.png" border="0" usemap="#ametaheuristics_8generators_8_genetic_algorithm_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+</div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de colaboración de metaheuristics.generators.GeneticAlgorithm:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm__coll__graph.png" border="0" usemap="#ametaheuristics_8generators_8_genetic_algorithm_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a2d0bf12c8bedefdebb47612a503a6e6b" id="r_a2d0bf12c8bedefdebb47612a503a6e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d0bf12c8bedefdebb47612a503a6e6b">GeneticAlgorithm</a> ()</td></tr>
+<tr class="memdesc:a2d0bf12c8bedefdebb47612a503a6e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto del algoritmo genético.  <br /></td></tr>
+<tr class="memitem:afa69278cc4f87d309326773aeab7b6da" id="r_afa69278cc4f87d309326773aeab7b6da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa69278cc4f87d309326773aeab7b6da">generate</a> (Integer operatornumber)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:afa69278cc4f87d309326773aeab7b6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un nuevo estado mediante selección, cruzamiento y mutación.  <br /></td></tr>
+<tr class="memitem:a7bff79adbecc5510d4294dbc617eb8b4" id="r_a7bff79adbecc5510d4294dbc617eb8b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bff79adbecc5510d4294dbc617eb8b4">getReference</a> ()</td></tr>
+<tr class="memdesc:a7bff79adbecc5510d4294dbc617eb8b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el estado de referencia actual.  <br /></td></tr>
+<tr class="memitem:a27f40e887e3304027c08bf705f99c4a0" id="r_a27f40e887e3304027c08bf705f99c4a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27f40e887e3304027c08bf705f99c4a0">setStateRef</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateRef)</td></tr>
+<tr class="memitem:af30dbd658c8be56deb62ebc45c2ef894" id="r_af30dbd658c8be56deb62ebc45c2ef894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af30dbd658c8be56deb62ebc45c2ef894">setInitialReference</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateInitialRef)</td></tr>
+<tr class="memdesc:af30dbd658c8be56deb62ebc45c2ef894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el estado de referencia inicial.  <br /></td></tr>
+<tr class="memitem:af007f7a227b465ed513b5b07f8c54b6b" id="r_af007f7a227b465ed513b5b07f8c54b6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af007f7a227b465ed513b5b07f8c54b6b">updateReference</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateCandidate, Integer countIterationsCurrent)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException </td></tr>
+<tr class="memdesc:af007f7a227b465ed513b5b07f8c54b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado de referencia con un nuevo candidato.  <br /></td></tr>
+<tr class="memitem:af808ab394faa3451363c64047b0b3319" id="r_af808ab394faa3451363c64047b0b3319"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af808ab394faa3451363c64047b0b3319">getListState</a> ()</td></tr>
+<tr class="memitem:a4e72574da9810ab5815c94c3499b8671" id="r_a4e72574da9810ab5815c94c3499b8671"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e72574da9810ab5815c94c3499b8671">setListState</a> (List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; <a class="el" href="#a48f94ad3fa5a3a89331f9a7b49400886">listState</a>)</td></tr>
+<tr class="memitem:a02c8f9088f27ab03a6a6ec65348750b5" id="r_a02c8f9088f27ab03a6a6ec65348750b5"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02c8f9088f27ab03a6a6ec65348750b5">getListStateRef</a> ()</td></tr>
+<tr class="memitem:a1d25e15228ac6416a75c73c21c0ea036" id="r_a1d25e15228ac6416a75c73c21c0ea036"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d25e15228ac6416a75c73c21c0ea036">getGeneratorType</a> ()</td></tr>
+<tr class="memitem:a0aa86194072af7818974867b703e06a4" id="r_a0aa86194072af7818974867b703e06a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aa86194072af7818974867b703e06a4">setGeneratorType</a> (<a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> <a class="el" href="#aa5911146e16570dbe2c6792922f64c4a">generatorType</a>)</td></tr>
+<tr class="memitem:a773b3a5d6e96968a738a0e5232317cf8" id="r_a773b3a5d6e96968a738a0e5232317cf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a773b3a5d6e96968a738a0e5232317cf8">getType</a> ()</td></tr>
+<tr class="memdesc:a773b3a5d6e96968a738a0e5232317cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el tipo de generador.  <br /></td></tr>
+<tr class="memitem:a1e7b57b017ec0fc5e4a77efac27020eb" id="r_a1e7b57b017ec0fc5e4a77efac27020eb"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e7b57b017ec0fc5e4a77efac27020eb">getReferenceList</a> ()</td></tr>
+<tr class="memdesc:a1e7b57b017ec0fc5e4a77efac27020eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de estados de referencia.  <br /></td></tr>
+<tr class="memitem:ae834128268192dd5fa3af2533601b4e8" id="r_ae834128268192dd5fa3af2533601b4e8"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae834128268192dd5fa3af2533601b4e8">getSonList</a> ()</td></tr>
+<tr class="memdesc:ae834128268192dd5fa3af2533601b4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de estados hijos generados.  <br /></td></tr>
+<tr class="memitem:aad3ab352411fa0a6d2ac878b4e422348" id="r_aad3ab352411fa0a6d2ac878b4e422348"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad3ab352411fa0a6d2ac878b4e422348">awardUpdateREF</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateCandidate)</td></tr>
+<tr class="memdesc:aad3ab352411fa0a6d2ac878b4e422348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si se debe actualizar la referencia.  <br /></td></tr>
+<tr class="memitem:a56efbafbfd2c341a047e2110e652b561" id="r_a56efbafbfd2c341a047e2110e652b561"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56efbafbfd2c341a047e2110e652b561">getWeight</a> ()</td></tr>
+<tr class="memdesc:a56efbafbfd2c341a047e2110e652b561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el peso actual del generador.  <br /></td></tr>
+<tr class="memitem:ab7d68ca3a4c1510c1ef697857c525233" id="r_ab7d68ca3a4c1510c1ef697857c525233"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7d68ca3a4c1510c1ef697857c525233">setWeight</a> (float <a class="el" href="#a4d164cdf156c6ce65f593fb42af2dc82">weight</a>)</td></tr>
+<tr class="memdesc:ab7d68ca3a4c1510c1ef697857c525233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el peso del generador.  <br /></td></tr>
+<tr class="memitem:a12d345be0bac7bc8b1098589604ad6f8" id="r_a12d345be0bac7bc8b1098589604ad6f8"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12d345be0bac7bc8b1098589604ad6f8">getListCountBetterGender</a> ()</td></tr>
+<tr class="memdesc:a12d345be0bac7bc8b1098589604ad6f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el historial de mejoras por período.  <br /></td></tr>
+<tr class="memitem:aafdeff3304b265033eb1b43c0e1d333a" id="r_aafdeff3304b265033eb1b43c0e1d333a"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafdeff3304b265033eb1b43c0e1d333a">getListCountGender</a> ()</td></tr>
+<tr class="memdesc:aafdeff3304b265033eb1b43c0e1d333a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el historial de uso por período.  <br /></td></tr>
+<tr class="memitem:aafb70e875527d683740485f89bbcc51e" id="r_aafb70e875527d683740485f89bbcc51e"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb70e875527d683740485f89bbcc51e">getTrace</a> ()</td></tr>
+<tr class="memdesc:aafb70e875527d683740485f89bbcc51e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el historial de trazas.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:aedae90ea5f95f6be370f046bb8b31748" id="r_aedae90ea5f95f6be370f046bb8b31748"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_mutation_type.html">MutationType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedae90ea5f95f6be370f046bb8b31748">mutationType</a></td></tr>
+<tr class="memdesc:aedae90ea5f95f6be370f046bb8b31748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de mutación utilizada.  <br /></td></tr>
+<tr class="memitem:a45784a2535a3bf9e0682505c5bfb9570" id="r_a45784a2535a3bf9e0682505c5bfb9570"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_crossover_type.html">CrossoverType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45784a2535a3bf9e0682505c5bfb9570">crossoverType</a></td></tr>
+<tr class="memdesc:a45784a2535a3bf9e0682505c5bfb9570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de cruzamiento utilizado.  <br /></td></tr>
+<tr class="memitem:aa966781c8b8190eadab80a5553d0e529" id="r_aa966781c8b8190eadab80a5553d0e529"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_replace_type.html">ReplaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa966781c8b8190eadab80a5553d0e529">replaceType</a></td></tr>
+<tr class="memdesc:aa966781c8b8190eadab80a5553d0e529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de reemplazo de soluciones.  <br /></td></tr>
+<tr class="memitem:aceb4611e17990b54d011f94359d54e10" id="r_aceb4611e17990b54d011f94359d54e10"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_selection_type.html">SelectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb4611e17990b54d011f94359d54e10">selectionType</a></td></tr>
+<tr class="memdesc:aceb4611e17990b54d011f94359d54e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de selección de padres.  <br /></td></tr>
+<tr class="memitem:a98016337527c5a6f3b3e5d61aa80b1de" id="r_a98016337527c5a6f3b3e5d61aa80b1de"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98016337527c5a6f3b3e5d61aa80b1de">PC</a></td></tr>
+<tr class="memdesc:a98016337527c5a6f3b3e5d61aa80b1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probabilidad de cruzamiento.  <br /></td></tr>
+<tr class="memitem:ae8946c1f257de16c07a73c77ad8224a5" id="r_ae8946c1f257de16c07a73c77ad8224a5"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8946c1f257de16c07a73c77ad8224a5">PM</a></td></tr>
+<tr class="memdesc:ae8946c1f257de16c07a73c77ad8224a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probabilidad de mutación.  <br /></td></tr>
+<tr class="memitem:a0f9e6dbafe6cc5c7ade5ba106d1e1626" id="r_a0f9e6dbafe6cc5c7ade5ba106d1e1626"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f9e6dbafe6cc5c7ade5ba106d1e1626">countRef</a> = 0</td></tr>
+<tr class="memdesc:a0f9e6dbafe6cc5c7ade5ba106d1e1626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de referencias.  <br /></td></tr>
+<tr class="memitem:a364caf6433c5b6a4db40aae1919d0c32" id="r_a364caf6433c5b6a4db40aae1919d0c32"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a364caf6433c5b6a4db40aae1919d0c32">truncation</a></td></tr>
+<tr class="memdesc:a364caf6433c5b6a4db40aae1919d0c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamaño de truncamiento para selección.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a6aead58a018010568e7f453f97021b8d" id="r_a6aead58a018010568e7f453f97021b8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aead58a018010568e7f453f97021b8d">stateReferenceGA</a></td></tr>
+<tr class="memdesc:a6aead58a018010568e7f453f97021b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de referencia del algoritmo genético.  <br /></td></tr>
+<tr class="memitem:a48f94ad3fa5a3a89331f9a7b49400886" id="r_a48f94ad3fa5a3a89331f9a7b49400886"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48f94ad3fa5a3a89331f9a7b49400886">listState</a> = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td></tr>
+<tr class="memdesc:a48f94ad3fa5a3a89331f9a7b49400886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de estados de la población.  <br /></td></tr>
+<tr class="memitem:ae4eb9fe7eb65161cf1b41ca978451a32" id="r_ae4eb9fe7eb65161cf1b41ca978451a32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_father_selection.html">IFFactoryFatherSelection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4eb9fe7eb65161cf1b41ca978451a32">iffatherselection</a></td></tr>
+<tr class="memdesc:ae4eb9fe7eb65161cf1b41ca978451a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para la selección de padres.  <br /></td></tr>
+<tr class="memitem:acf49e3525fe7ef722a96b3c82990bfe3" id="r_acf49e3525fe7ef722a96b3c82990bfe3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_crossover.html">IFFactoryCrossover</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf49e3525fe7ef722a96b3c82990bfe3">iffactorycrossover</a></td></tr>
+<tr class="memdesc:acf49e3525fe7ef722a96b3c82990bfe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para el operador de cruzamiento.  <br /></td></tr>
+<tr class="memitem:a73cf0d217617644f072c286df7a5a097" id="r_a73cf0d217617644f072c286df7a5a097"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_mutation.html">IFFactoryMutation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73cf0d217617644f072c286df7a5a097">iffactorymutation</a></td></tr>
+<tr class="memdesc:a73cf0d217617644f072c286df7a5a097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para el operador de mutación.  <br /></td></tr>
+<tr class="memitem:aa7b956e32f2aedea280263be61bc5efb" id="r_aa7b956e32f2aedea280263be61bc5efb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_replace.html">IFFactoryReplace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7b956e32f2aedea280263be61bc5efb">iffreplace</a></td></tr>
+<tr class="memdesc:aa7b956e32f2aedea280263be61bc5efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para el reemplazo de soluciones.  <br /></td></tr>
+<tr class="memitem:aa5911146e16570dbe2c6792922f64c4a" id="r_aa5911146e16570dbe2c6792922f64c4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5911146e16570dbe2c6792922f64c4a">generatorType</a></td></tr>
+<tr class="memdesc:aa5911146e16570dbe2c6792922f64c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de generador metaheurístico.  <br /></td></tr>
+<tr class="memitem:a4d164cdf156c6ce65f593fb42af2dc82" id="r_a4d164cdf156c6ce65f593fb42af2dc82"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d164cdf156c6ce65f593fb42af2dc82">weight</a></td></tr>
+<tr class="memdesc:a4d164cdf156c6ce65f593fb42af2dc82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peso del generador.  <br /></td></tr>
+<tr class="memitem:a062906bafc313839fec39aab32d2ce1e" id="r_a062906bafc313839fec39aab32d2ce1e"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a062906bafc313839fec39aab32d2ce1e">betterCountByPeriod</a> = new int[10]</td></tr>
+<tr class="memdesc:a062906bafc313839fec39aab32d2ce1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de mejoras por período para problemas dinámicos.  <br /></td></tr>
+<tr class="memitem:a91aa0e5ec6e17b7754bdc8c7a60156ba" id="r_a91aa0e5ec6e17b7754bdc8c7a60156ba"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91aa0e5ec6e17b7754bdc8c7a60156ba">usageCountByPeriod</a> = new int[10]</td></tr>
+<tr class="memdesc:a91aa0e5ec6e17b7754bdc8c7a60156ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de uso por período para problemas dinámicos.  <br /></td></tr>
+<tr class="memitem:aca22b6729d609b6b9d2bf258994558ba" id="r_aca22b6729d609b6b9d2bf258994558ba"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca22b6729d609b6b9d2bf258994558ba">listTrace</a> = new float[1200000]</td></tr>
+<tr class="memdesc:aca22b6729d609b6b9d2bf258994558ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Historial de trazas del peso.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classmetaheuristics_1_1generators_1_1_generator')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Atributos públicos heredados de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">metaheuristics.generators.Generator</a></td></tr>
+<tr class="memitem:a3c0145210385b6257c8fc20cac1f830a inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a3c0145210385b6257c8fc20cac1f830a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a3c0145210385b6257c8fc20cac1f830a">countGender</a></td></tr>
+<tr class="memdesc:a3c0145210385b6257c8fc20cac1f830a inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de uso del generador.  <br /></td></tr>
+<tr class="memitem:a43815f3944c514ba3156b0e68482befa inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a43815f3944c514ba3156b0e68482befa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a43815f3944c514ba3156b0e68482befa">countBetterGender</a></td></tr>
+<tr class="memdesc:a43815f3944c514ba3156b0e68482befa inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de mejoras del generador.  <br /></td></tr>
+<tr class="memitem:a535a5753046bdda55fb6fee44c4b1f88 inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a535a5753046bdda55fb6fee44c4b1f88"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a535a5753046bdda55fb6fee44c4b1f88">listCountBetterGender</a></td></tr>
+<tr class="memdesc:a535a5753046bdda55fb6fee44c4b1f88 inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array con las mejoras de cada generador en períodos de 10, acumulativo.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Algoritmo genético con selección, cruzamiento, mutación y reemplazo. </p>
+<p>Esta clase implementa un algoritmo genético clásico que evoluciona poblaciones de soluciones mediante operadores genéticos de selección, cruzamiento y mutación. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a2d0bf12c8bedefdebb47612a503a6e6b" name="a2d0bf12c8bedefdebb47612a503a6e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d0bf12c8bedefdebb47612a503a6e6b">&#9670;&#160;</a></span>GeneticAlgorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">metaheuristics.generators.GeneticAlgorithm.GeneticAlgorithm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor por defecto del algoritmo genético. </p>
+<p>Inicializa el algoritmo con cruzamiento uniforme, mutación uniforme, reemplazo de los peores y selección por truncamiento, con peso inicial de 50. </p>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_a2d0bf12c8bedefdebb47612a503a6e6b_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_a2d0bf12c8bedefdebb47612a503a6e6b_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_a2d0bf12c8bedefdebb47612a503a6e6b_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_a2d0bf12c8bedefdebb47612a503a6e6b_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="aad3ab352411fa0a6d2ac878b4e422348" name="aad3ab352411fa0a6d2ac878b4e422348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3ab352411fa0a6d2ac878b4e422348">&#9670;&#160;</a></span>awardUpdateREF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheuristics.generators.GeneticAlgorithm.awardUpdateREF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateCandidate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si se debe actualizar la referencia. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateCandidate</td><td>Estado candidato a verificar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si se debe actualizar, false en caso contrario </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a3513d3953ecc97683f38bcb662b74b9b">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="afa69278cc4f87d309326773aeab7b6da" name="afa69278cc4f87d309326773aeab7b6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa69278cc4f87d309326773aeab7b6da">&#9670;&#160;</a></span>generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.GeneticAlgorithm.generate </td>
+          <td>(</td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>operatornumber</em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera un nuevo estado mediante selección, cruzamiento y mutación. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operatornumber</td><td>Número de operador a utilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado candidato generado por operadores genéticos </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos son inválidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra una clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si hay error en la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay acceso ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay error en la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra un método </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a06f6f7622b9ce32590eadbdf6bf962b5">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_afa69278cc4f87d309326773aeab7b6da_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_afa69278cc4f87d309326773aeab7b6da_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a1d25e15228ac6416a75c73c21c0ea036" name="a1d25e15228ac6416a75c73c21c0ea036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d25e15228ac6416a75c73c21c0ea036">&#9670;&#160;</a></span>getGeneratorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.GeneticAlgorithm.getGeneratorType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12d345be0bac7bc8b1098589604ad6f8" name="a12d345be0bac7bc8b1098589604ad6f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d345be0bac7bc8b1098589604ad6f8">&#9670;&#160;</a></span>getListCountBetterGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] metaheuristics.generators.GeneticAlgorithm.getListCountBetterGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el historial de mejoras por período. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Array con el contador de mejoras </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ac5bace71f51c16b611ede3ed53263473">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="aafdeff3304b265033eb1b43c0e1d333a" name="aafdeff3304b265033eb1b43c0e1d333a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafdeff3304b265033eb1b43c0e1d333a">&#9670;&#160;</a></span>getListCountGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] metaheuristics.generators.GeneticAlgorithm.getListCountGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el historial de uso por período. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Array con el contador de uso </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ac5d6d45ee8017fb87d80aa952edfc34e">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="af808ab394faa3451363c64047b0b3319" name="af808ab394faa3451363c64047b0b3319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af808ab394faa3451363c64047b0b3319">&#9670;&#160;</a></span>getListState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.GeneticAlgorithm.getListState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_af808ab394faa3451363c64047b0b3319_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_af808ab394faa3451363c64047b0b3319_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a02c8f9088f27ab03a6a6ec65348750b5" name="a02c8f9088f27ab03a6a6ec65348750b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c8f9088f27ab03a6a6ec65348750b5">&#9670;&#160;</a></span>getListStateRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.GeneticAlgorithm.getListStateRef </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_a02c8f9088f27ab03a6a6ec65348750b5_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_a02c8f9088f27ab03a6a6ec65348750b5_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_a02c8f9088f27ab03a6a6ec65348750b5_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_a02c8f9088f27ab03a6a6ec65348750b5_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a7bff79adbecc5510d4294dbc617eb8b4" name="a7bff79adbecc5510d4294dbc617eb8b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bff79adbecc5510d4294dbc617eb8b4">&#9670;&#160;</a></span>getReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.GeneticAlgorithm.getReference </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el estado de referencia actual. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado de referencia actual </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa56dd45a45776f6023b9f74179cc6384">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_a7bff79adbecc5510d4294dbc617eb8b4_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_a7bff79adbecc5510d4294dbc617eb8b4_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a1e7b57b017ec0fc5e4a77efac27020eb" name="a1e7b57b017ec0fc5e4a77efac27020eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e7b57b017ec0fc5e4a77efac27020eb">&#9670;&#160;</a></span>getReferenceList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.GeneticAlgorithm.getReferenceList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de estados de referencia. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados de referencia </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ae168237b306de55fe4d6dfda75c7cd13">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="ae834128268192dd5fa3af2533601b4e8" name="ae834128268192dd5fa3af2533601b4e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae834128268192dd5fa3af2533601b4e8">&#9670;&#160;</a></span>getSonList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.GeneticAlgorithm.getSonList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de estados hijos generados. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados hijos </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aee09d724c1b3040e7a7ad0b64e341c96">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="aafb70e875527d683740485f89bbcc51e" name="aafb70e875527d683740485f89bbcc51e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb70e875527d683740485f89bbcc51e">&#9670;&#160;</a></span>getTrace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float[] metaheuristics.generators.GeneticAlgorithm.getTrace </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el historial de trazas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Array con el historial de trazas </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a75d7f30dd2cb3f92475db8525ac7c6e7">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a773b3a5d6e96968a738a0e5232317cf8" name="a773b3a5d6e96968a738a0e5232317cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773b3a5d6e96968a738a0e5232317cf8">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.GeneticAlgorithm.getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el tipo de generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Tipo de generador metaheurístico </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a5a123306b43c42d28cd1d6e17f8067a5">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a56efbafbfd2c341a047e2110e652b561" name="a56efbafbfd2c341a047e2110e652b561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56efbafbfd2c341a047e2110e652b561">&#9670;&#160;</a></span>getWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float metaheuristics.generators.GeneticAlgorithm.getWeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el peso actual del generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Peso del generador </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a64f2b824081c7af593bf9aa8eabf2c9e">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a0aa86194072af7818974867b703e06a4" name="a0aa86194072af7818974867b703e06a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa86194072af7818974867b703e06a4">&#9670;&#160;</a></span>setGeneratorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.GeneticAlgorithm.setGeneratorType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a></td>          <td class="paramname"><span class="paramname"><em>generatorType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af30dbd658c8be56deb62ebc45c2ef894" name="af30dbd658c8be56deb62ebc45c2ef894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30dbd658c8be56deb62ebc45c2ef894">&#9670;&#160;</a></span>setInitialReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.GeneticAlgorithm.setInitialReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateInitialRef</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el estado de referencia inicial. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateInitialRef</td><td>Estado de referencia inicial </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa9f7c4c983705f843b8fcc81e4aa8ba4">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a4e72574da9810ab5815c94c3499b8671" name="a4e72574da9810ab5815c94c3499b8671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e72574da9810ab5815c94c3499b8671">&#9670;&#160;</a></span>setListState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.GeneticAlgorithm.setListState </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>listState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27f40e887e3304027c08bf705f99c4a0" name="a27f40e887e3304027c08bf705f99c4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f40e887e3304027c08bf705f99c4a0">&#9670;&#160;</a></span>setStateRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.GeneticAlgorithm.setStateRef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateRef</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7d68ca3a4c1510c1ef697857c525233" name="ab7d68ca3a4c1510c1ef697857c525233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d68ca3a4c1510c1ef697857c525233">&#9670;&#160;</a></span>setWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.GeneticAlgorithm.setWeight </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>weight</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el peso del generador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weight</td><td>Nuevo peso del generador </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a8b3c66b57b4c739666989fbce667eb40">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="af007f7a227b465ed513b5b07f8c54b6b" name="af007f7a227b465ed513b5b07f8c54b6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af007f7a227b465ed513b5b07f8c54b6b">&#9670;&#160;</a></span>updateReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.GeneticAlgorithm.updateReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateCandidate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>countIterationsCurrent</em></span>&#160;) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza el estado de referencia con un nuevo candidato. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateCandidate</td><td>Estado candidato a considerar </td></tr>
+    <tr><td class="paramname">countIterationsCurrent</td><td>Iteración actual del algoritmo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos son inválidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra una clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si hay error en la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay acceso ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay error en la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra un método </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa1c5878953f2111221b21cb9b1e6cc9f">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_genetic_algorithm_af007f7a227b465ed513b5b07f8c54b6b_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_genetic_algorithm_af007f7a227b465ed513b5b07f8c54b6b_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="a062906bafc313839fec39aab32d2ce1e" name="a062906bafc313839fec39aab32d2ce1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062906bafc313839fec39aab32d2ce1e">&#9670;&#160;</a></span>betterCountByPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] metaheuristics.generators.GeneticAlgorithm.betterCountByPeriod = new int[10]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de mejoras por período para problemas dinámicos. </p>
+
+</div>
+</div>
+<a id="a0f9e6dbafe6cc5c7ade5ba106d1e1626" name="a0f9e6dbafe6cc5c7ade5ba106d1e1626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9e6dbafe6cc5c7ade5ba106d1e1626">&#9670;&#160;</a></span>countRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheuristics.generators.GeneticAlgorithm.countRef = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de referencias. </p>
+
+</div>
+</div>
+<a id="a45784a2535a3bf9e0682505c5bfb9570" name="a45784a2535a3bf9e0682505c5bfb9570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45784a2535a3bf9e0682505c5bfb9570">&#9670;&#160;</a></span>crossoverType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_crossover_type.html">CrossoverType</a> metaheuristics.generators.GeneticAlgorithm.crossoverType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de cruzamiento utilizado. </p>
+
+</div>
+</div>
+<a id="aa5911146e16570dbe2c6792922f64c4a" name="aa5911146e16570dbe2c6792922f64c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5911146e16570dbe2c6792922f64c4a">&#9670;&#160;</a></span>generatorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.GeneticAlgorithm.generatorType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de generador metaheurístico. </p>
+
+</div>
+</div>
+<a id="acf49e3525fe7ef722a96b3c82990bfe3" name="acf49e3525fe7ef722a96b3c82990bfe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf49e3525fe7ef722a96b3c82990bfe3">&#9670;&#160;</a></span>iffactorycrossover</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_crossover.html">IFFactoryCrossover</a> metaheuristics.generators.GeneticAlgorithm.iffactorycrossover</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para el operador de cruzamiento. </p>
+
+</div>
+</div>
+<a id="a73cf0d217617644f072c286df7a5a097" name="a73cf0d217617644f072c286df7a5a097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73cf0d217617644f072c286df7a5a097">&#9670;&#160;</a></span>iffactorymutation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_mutation.html">IFFactoryMutation</a> metaheuristics.generators.GeneticAlgorithm.iffactorymutation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para el operador de mutación. </p>
+
+</div>
+</div>
+<a id="ae4eb9fe7eb65161cf1b41ca978451a32" name="ae4eb9fe7eb65161cf1b41ca978451a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4eb9fe7eb65161cf1b41ca978451a32">&#9670;&#160;</a></span>iffatherselection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_father_selection.html">IFFactoryFatherSelection</a> metaheuristics.generators.GeneticAlgorithm.iffatherselection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para la selección de padres. </p>
+
+</div>
+</div>
+<a id="aa7b956e32f2aedea280263be61bc5efb" name="aa7b956e32f2aedea280263be61bc5efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b956e32f2aedea280263be61bc5efb">&#9670;&#160;</a></span>iffreplace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_replace.html">IFFactoryReplace</a> metaheuristics.generators.GeneticAlgorithm.iffreplace</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para el reemplazo de soluciones. </p>
+
+</div>
+</div>
+<a id="a48f94ad3fa5a3a89331f9a7b49400886" name="a48f94ad3fa5a3a89331f9a7b49400886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f94ad3fa5a3a89331f9a7b49400886">&#9670;&#160;</a></span>listState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheuristics.generators.GeneticAlgorithm.listState = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista de estados de la población. </p>
+
+</div>
+</div>
+<a id="aca22b6729d609b6b9d2bf258994558ba" name="aca22b6729d609b6b9d2bf258994558ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca22b6729d609b6b9d2bf258994558ba">&#9670;&#160;</a></span>listTrace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [] metaheuristics.generators.GeneticAlgorithm.listTrace = new float[1200000]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Historial de trazas del peso. </p>
+
+</div>
+</div>
+<a id="aedae90ea5f95f6be370f046bb8b31748" name="aedae90ea5f95f6be370f046bb8b31748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedae90ea5f95f6be370f046bb8b31748">&#9670;&#160;</a></span>mutationType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_mutation_type.html">MutationType</a> metaheuristics.generators.GeneticAlgorithm.mutationType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de mutación utilizada. </p>
+
+</div>
+</div>
+<a id="a98016337527c5a6f3b3e5d61aa80b1de" name="a98016337527c5a6f3b3e5d61aa80b1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98016337527c5a6f3b3e5d61aa80b1de">&#9670;&#160;</a></span>PC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double metaheuristics.generators.GeneticAlgorithm.PC</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Probabilidad de cruzamiento. </p>
+
+</div>
+</div>
+<a id="ae8946c1f257de16c07a73c77ad8224a5" name="ae8946c1f257de16c07a73c77ad8224a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8946c1f257de16c07a73c77ad8224a5">&#9670;&#160;</a></span>PM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double metaheuristics.generators.GeneticAlgorithm.PM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Probabilidad de mutación. </p>
+
+</div>
+</div>
+<a id="aa966781c8b8190eadab80a5553d0e529" name="aa966781c8b8190eadab80a5553d0e529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa966781c8b8190eadab80a5553d0e529">&#9670;&#160;</a></span>replaceType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_replace_type.html">ReplaceType</a> metaheuristics.generators.GeneticAlgorithm.replaceType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de reemplazo de soluciones. </p>
+
+</div>
+</div>
+<a id="aceb4611e17990b54d011f94359d54e10" name="aceb4611e17990b54d011f94359d54e10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb4611e17990b54d011f94359d54e10">&#9670;&#160;</a></span>selectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_selection_type.html">SelectionType</a> metaheuristics.generators.GeneticAlgorithm.selectionType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de selección de padres. </p>
+
+</div>
+</div>
+<a id="a6aead58a018010568e7f453f97021b8d" name="a6aead58a018010568e7f453f97021b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aead58a018010568e7f453f97021b8d">&#9670;&#160;</a></span>stateReferenceGA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.GeneticAlgorithm.stateReferenceGA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estado de referencia del algoritmo genético. </p>
+
+</div>
+</div>
+<a id="a364caf6433c5b6a4db40aae1919d0c32" name="a364caf6433c5b6a4db40aae1919d0c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364caf6433c5b6a4db40aae1919d0c32">&#9670;&#160;</a></span>truncation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheuristics.generators.GeneticAlgorithm.truncation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tamaño de truncamiento para selección. </p>
+
+</div>
+</div>
+<a id="a91aa0e5ec6e17b7754bdc8c7a60156ba" name="a91aa0e5ec6e17b7754bdc8c7a60156ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91aa0e5ec6e17b7754bdc8c7a60156ba">&#9670;&#160;</a></span>usageCountByPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] metaheuristics.generators.GeneticAlgorithm.usageCountByPeriod = new int[10]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de uso por período para problemas dinámicos. </p>
+
+</div>
+</div>
+<a id="a4d164cdf156c6ce65f593fb42af2dc82" name="a4d164cdf156c6ce65f593fb42af2dc82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d164cdf156c6ce65f593fb42af2dc82">&#9670;&#160;</a></span>weight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float metaheuristics.generators.GeneticAlgorithm.weight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Peso del generador. </p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>src/main/java/metaheuristics/generators/<a class="el" href="_genetic_algorithm_8java.html">GeneticAlgorithm.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>metaheuristics</b></li><li class="navelem"><a href="namespacemetaheuristics_1_1generators.html">generators</a></li><li class="navelem"><a href="classmetaheuristics_1_1generators_1_1_genetic_algorithm.html">GeneticAlgorithm</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para BiCIAM - Framework Metaheurístico por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

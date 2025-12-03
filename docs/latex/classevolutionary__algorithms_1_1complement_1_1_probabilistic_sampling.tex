@@ -1,0 +1,85 @@
+\doxysection{Referencia de la clase evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling}{}\label{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling}\index{evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}}
+
+
+Clase que implementa el operador de muestreo probabilístico.  
+
+
+
+
+Diagrama de herencia de evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling
+% FIG 0
+
+
+Diagrama de colaboración de evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e}{sampling}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ fathers, int count\+Ind)
+\begin{DoxyCompactList}\small\item\em Realiza el muestreo probabilístico de los padres. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a034f2039f6c915edd8b074acaeca25b7}{list\+State}} (int count\+Ind)
+\begin{DoxyCompactList}\small\item\em Inicializa la lista de individuos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que implementa el operador de muestreo probabilístico. 
+
+Genera nuevos individuos basándose en la distribución de probabilidad de los padres. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a034f2039f6c915edd8b074acaeca25b7}\index{evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}!listState@{listState}}
+\index{listState@{listState}!evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}}
+\doxysubsubsection{\texorpdfstring{listState()}{listState()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a034f2039f6c915edd8b074acaeca25b7} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling.\+list\+State (\begin{DoxyParamCaption}\item[{int}]{count\+Ind}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa la lista de individuos. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em count\+Ind} & Número de individuos a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de estados inicializados 
+\end{DoxyReturn}
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e}\index{evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}!sampling@{sampling}}
+\index{sampling@{sampling}!evolutionary\_algorithms.complement.ProbabilisticSampling@{evolutionary\_algorithms.complement.ProbabilisticSampling}}
+\doxysubsubsection{\texorpdfstring{sampling()}{sampling()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_probabilistic_sampling_a985f07b42905655bfaffb59b10f3471e} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Probabilistic\+Sampling.\+sampling (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{fathers}{, }\item[{int}]{count\+Ind}{}\end{DoxyParamCaption})}
+
+
+
+Realiza el muestreo probabilístico de los padres. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fathers} & Lista de estados padres \\
+\hline
+{\em count\+Ind} & Número de individuos a generar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de estados generados 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_sampling_a6e7058367ab7e7c4758bf37c61a75ba2}{evolutionary\+\_\+algorithms.\+complement.\+Sampling}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/\mbox{\hyperlink{_probabilistic_sampling_8java}{Probabilistic\+Sampling.\+java}}\end{DoxyCompactItemize}

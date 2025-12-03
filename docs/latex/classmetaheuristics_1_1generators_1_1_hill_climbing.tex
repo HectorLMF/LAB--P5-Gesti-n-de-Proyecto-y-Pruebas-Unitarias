@@ -1,0 +1,552 @@
+\doxysection{Referencia de la clase metaheuristics.\+generators.\+Hill\+Climbing}
+\hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing}{}\label{classmetaheuristics_1_1generators_1_1_hill_climbing}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+
+
+Algoritmo de búsqueda local Hill Climbing (Ascenso de Colina).  
+
+
+
+
+Diagrama de herencia de metaheuristics.\+generators.\+Hill\+Climbing
+% FIG 0
+
+
+Diagrama de colaboración de metaheuristics.\+generators.\+Hill\+Climbing\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_af34d8991af9ef04c0d8355040e5f2611}{Hill\+Climbing}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto del Hill Climbing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_abcb16309481537b632ff4ece07534f97}{generate}} (Integer operatornumber)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Genera un nuevo estado candidato. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_afc5f08a9d50796fdf3bbc8dd3e4d8b87}{update\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Actualiza el estado de referencia con un nuevo candidato. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a45523304d129ec007b65256ce9a3e89e}{get\+Reference\+List}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de estados de referencia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_afb086dfd5037d8cbbdea556e09ad9f7f}{get\+Reference}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el estado de referencia actual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a04e698625fb41011cd55eafecf915867}{set\+State\+Ref}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Ref)
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a0790d02b85721c230e066191da3f2c6f}{set\+Initial\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Initial\+Ref)
+\begin{DoxyCompactList}\small\item\em Establece el estado de referencia inicial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_ae95ec499eb79cc3ac7fc95dc536c988a}{get\+Generator\+Type}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a16603b863aa42362f5e3f97a386c5fcf}{set\+Generator\+Type}} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_afc0eabf82d3d13972ea26cff10a1515c}{Generatortype}})
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a44dfa53f4234b1367c70660dd0858be7}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo de generador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a1a568d406158a216f47b267847d0e18e}{get\+Son\+List}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de estados hijos generados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_ab7aed0f2b9a7874d1fa09a37fced2b8f}{set\+Type\+Candidate}} (\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a908b6923734a87ee40227f30fd158424}{type\+Candidate}})
+\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_ae761f3055d7e563799a97cbe44172611}{award\+Update\+REF}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\begin{DoxyCompactList}\small\item\em Verifica si se debe actualizar la referencia. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a8bc57ebf6d41c795a9366c1b7b1bec15}{get\+Weight}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el peso actual del generador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_aa40a855ef60361b2406caacf6f7a0455}{set\+Weight}} (float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a280a7518b2a6113cdb329c867957f444}{weight}})
+\begin{DoxyCompactList}\small\item\em Establece el peso del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a6395f4b4c5bcbc7c15d304eea58fb616}{get\+List\+Count\+Better\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de mejoras por período. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a443bd2414ab65785fdf92dc6087404b4}{get\+List\+Count\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de uso por período. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_ab3095afd08464f7c7f1c9f3a6ebf4fb4}{get\+Trace}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de trazas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value}{Candidate\+Value}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a3f9dd1fc279a04cee2fb3206678a2c30}{candidatevalue}}
+\begin{DoxyCompactList}\small\item\em Seleccionador de candidatos del vecindario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1acceptation__type_1_1_accept_type}{Accept\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a777aadb130ce93d3a8a29e252f485a65}{type\+Acceptation}}
+\begin{DoxyCompactList}\small\item\em Tipo de aceptación de soluciones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_ac9e8e7a40ca250d938ed896ea47c167c}{strategy}}
+\begin{DoxyCompactList}\small\item\em Tipo de estrategia de búsqueda. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a908b6923734a87ee40227f30fd158424}{type\+Candidate}}
+\begin{DoxyCompactList}\small\item\em Tipo de candidato a seleccionar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a4396c7086458dc1ac342d51ab5ad7f02}{state\+Reference\+HC}}
+\begin{DoxyCompactList}\small\item\em Estado de referencia del Hill Climbing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_accept_candidate}{IFFactory\+Accept\+Candidate}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_af41ce2cba0e64cd77f757fde246adbb0}{ifaccept\+Candidate}}
+\begin{DoxyCompactList}\small\item\em Factoría para crear aceptadores de candidatos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_afc0eabf82d3d13972ea26cff10a1515c}{Generatortype}}
+\begin{DoxyCompactList}\small\item\em Tipo de generador metaheurístico. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a212f480eb02ac3be119f5f1e2c93ae52}{list\+State\+Reference}} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()
+\begin{DoxyCompactList}\small\item\em Lista de estados de referencia. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a280a7518b2a6113cdb329c867957f444}{weight}}
+\begin{DoxyCompactList}\small\item\em Peso del generador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a86450cf6d93e7bce1ddbf5af0a74f54a}{better\+Count\+By\+Period}} = new int\mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Contador de mejoras por período para problemas dinámicos. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_ad9b7f6122db6f42fa11a118ee83320a3}{usage\+Count\+By\+Period}} = new int\mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Contador de uso por período para problemas dinámicos. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_hill_climbing_a3256981e03c8cf380eaa540099ac960d}{list\+Trace}} = new float\mbox{[}1200000\mbox{]}
+\begin{DoxyCompactList}\small\item\em Historial de trazas del peso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3c0145210385b6257c8fc20cac1f830a}{count\+Gender}}
+\begin{DoxyCompactList}\small\item\em Contador de uso del generador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a43815f3944c514ba3156b0e68482befa}{count\+Better\+Gender}}
+\begin{DoxyCompactList}\small\item\em Contador de mejoras del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a535a5753046bdda55fb6fee44c4b1f88}{list\+Count\+Better\+Gender}}
+\begin{DoxyCompactList}\small\item\em Array con las mejoras de cada generador en períodos de 10, acumulativo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Algoritmo de búsqueda local Hill Climbing (Ascenso de Colina). 
+
+Esta clase implementa el algoritmo de búsqueda local Hill Climbing que explora el vecindario de la solución actual y se mueve hacia mejores soluciones. 
+
+\label{doc-constructors}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_af34d8991af9ef04c0d8355040e5f2611}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!HillClimbing@{HillClimbing}}
+\index{HillClimbing@{HillClimbing}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{HillClimbing()}{HillClimbing()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_af34d8991af9ef04c0d8355040e5f2611} 
+metaheuristics.\+generators.\+Hill\+Climbing.\+Hill\+Climbing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto del Hill Climbing. 
+
+Inicializa el algoritmo con aceptación del mejor candidato y estrategia normal. El tipo de candidato se determina según el tipo de problema (maximización o minimización). Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_ae761f3055d7e563799a97cbe44172611}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!awardUpdateREF@{awardUpdateREF}}
+\index{awardUpdateREF@{awardUpdateREF}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{awardUpdateREF()}{awardUpdateREF()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_ae761f3055d7e563799a97cbe44172611} 
+boolean metaheuristics.\+generators.\+Hill\+Climbing.\+award\+Update\+REF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si se debe actualizar la referencia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Candidate} & Estado candidato a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se debe actualizar, false en caso contrario 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3513d3953ecc97683f38bcb662b74b9b}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_abcb16309481537b632ff4ece07534f97}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!generate@{generate}}
+\index{generate@{generate}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_abcb16309481537b632ff4ece07534f97} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Hill\+Climbing.\+generate (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Genera un nuevo estado candidato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em operatornumber} & Número de operador a utilizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado candidato generado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay error en la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay acceso ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay error en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a06f6f7622b9ce32590eadbdf6bf962b5}{metaheuristics.\+generators.\+Generator}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_ae95ec499eb79cc3ac7fc95dc536c988a}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getGeneratorType@{getGeneratorType}}
+\index{getGeneratorType@{getGeneratorType}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getGeneratorType()}{getGeneratorType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_ae95ec499eb79cc3ac7fc95dc536c988a} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Generator\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a6395f4b4c5bcbc7c15d304eea58fb616}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getListCountBetterGender@{getListCountBetterGender}}
+\index{getListCountBetterGender@{getListCountBetterGender}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getListCountBetterGender()}{getListCountBetterGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a6395f4b4c5bcbc7c15d304eea58fb616} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Hill\+Climbing.\+get\+List\+Count\+Better\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de mejoras por período. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el contador de mejoras 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5bace71f51c16b611ede3ed53263473}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a443bd2414ab65785fdf92dc6087404b4}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getListCountGender@{getListCountGender}}
+\index{getListCountGender@{getListCountGender}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getListCountGender()}{getListCountGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a443bd2414ab65785fdf92dc6087404b4} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Hill\+Climbing.\+get\+List\+Count\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de uso por período. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el contador de uso 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5d6d45ee8017fb87d80aa952edfc34e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_afb086dfd5037d8cbbdea556e09ad9f7f}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getReference@{getReference}}
+\index{getReference@{getReference}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_afb086dfd5037d8cbbdea556e09ad9f7f} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el estado de referencia actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Estado de referencia actual 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa56dd45a45776f6023b9f74179cc6384}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a45523304d129ec007b65256ce9a3e89e}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getReferenceList@{getReferenceList}}
+\index{getReferenceList@{getReferenceList}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getReferenceList()}{getReferenceList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a45523304d129ec007b65256ce9a3e89e} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Reference\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de estados de referencia. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de estados de referencia 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ae168237b306de55fe4d6dfda75c7cd13}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a1a568d406158a216f47b267847d0e18e}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getSonList@{getSonList}}
+\index{getSonList@{getSonList}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getSonList()}{getSonList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a1a568d406158a216f47b267847d0e18e} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Son\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de estados hijos generados. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de estados hijos 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aee09d724c1b3040e7a7ad0b64e341c96}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_ab3095afd08464f7c7f1c9f3a6ebf4fb4}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getTrace@{getTrace}}
+\index{getTrace@{getTrace}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getTrace()}{getTrace()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_ab3095afd08464f7c7f1c9f3a6ebf4fb4} 
+float\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de trazas. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el historial de trazas 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a75d7f30dd2cb3f92475db8525ac7c6e7}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a44dfa53f4234b1367c70660dd0858be7}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getType@{getType}}
+\index{getType@{getType}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a44dfa53f4234b1367c70660dd0858be7} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el tipo de generador. 
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de generador metaheurístico 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a5a123306b43c42d28cd1d6e17f8067a5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a8bc57ebf6d41c795a9366c1b7b1bec15}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a8bc57ebf6d41c795a9366c1b7b1bec15} 
+float metaheuristics.\+generators.\+Hill\+Climbing.\+get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el peso actual del generador. 
+
+\begin{DoxyReturn}{Devuelve}
+Peso del generador 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a64f2b824081c7af593bf9aa8eabf2c9e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a16603b863aa42362f5e3f97a386c5fcf}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!setGeneratorType@{setGeneratorType}}
+\index{setGeneratorType@{setGeneratorType}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{setGeneratorType()}{setGeneratorType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a16603b863aa42362f5e3f97a386c5fcf} 
+void metaheuristics.\+generators.\+Hill\+Climbing.\+set\+Generator\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{Generatortype}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a0790d02b85721c230e066191da3f2c6f}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!setInitialReference@{setInitialReference}}
+\index{setInitialReference@{setInitialReference}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{setInitialReference()}{setInitialReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a0790d02b85721c230e066191da3f2c6f} 
+void metaheuristics.\+generators.\+Hill\+Climbing.\+set\+Initial\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Initial\+Ref}{}\end{DoxyParamCaption})}
+
+
+
+Establece el estado de referencia inicial. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Initial\+Ref} & Estado de referencia inicial \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa9f7c4c983705f843b8fcc81e4aa8ba4}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a04e698625fb41011cd55eafecf915867}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!setStateRef@{setStateRef}}
+\index{setStateRef@{setStateRef}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{setStateRef()}{setStateRef()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a04e698625fb41011cd55eafecf915867} 
+void metaheuristics.\+generators.\+Hill\+Climbing.\+set\+State\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Ref}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_ab7aed0f2b9a7874d1fa09a37fced2b8f}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!setTypeCandidate@{setTypeCandidate}}
+\index{setTypeCandidate@{setTypeCandidate}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{setTypeCandidate()}{setTypeCandidate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_ab7aed0f2b9a7874d1fa09a37fced2b8f} 
+void metaheuristics.\+generators.\+Hill\+Climbing.\+set\+Type\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{type\+Candidate}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_aa40a855ef60361b2406caacf6f7a0455}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_aa40a855ef60361b2406caacf6f7a0455} 
+void metaheuristics.\+generators.\+Hill\+Climbing.\+set\+Weight (\begin{DoxyParamCaption}\item[{float}]{weight}{}\end{DoxyParamCaption})}
+
+
+
+Establece el peso del generador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em weight} & Nuevo peso del generador \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a8b3c66b57b4c739666989fbce667eb40}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_afc5f08a9d50796fdf3bbc8dd3e4d8b87}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!updateReference@{updateReference}}
+\index{updateReference@{updateReference}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{updateReference()}{updateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_afc5f08a9d50796fdf3bbc8dd3e4d8b87} 
+void metaheuristics.\+generators.\+Hill\+Climbing.\+update\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Actualiza el estado de referencia con un nuevo candidato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Candidate} & Estado candidato a considerar \\
+\hline
+{\em count\+Iterations\+Current} & Iteración actual del algoritmo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay error en la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay acceso ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay error en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa1c5878953f2111221b21cb9b1e6cc9f}{metaheuristics.\+generators.\+Generator}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a86450cf6d93e7bce1ddbf5af0a74f54a}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!betterCountByPeriod@{betterCountByPeriod}}
+\index{betterCountByPeriod@{betterCountByPeriod}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{betterCountByPeriod}{betterCountByPeriod}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a86450cf6d93e7bce1ddbf5af0a74f54a} 
+int \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Hill\+Climbing.\+better\+Count\+By\+Period = new int\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador de mejoras por período para problemas dinámicos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a3f9dd1fc279a04cee2fb3206678a2c30}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!candidatevalue@{candidatevalue}}
+\index{candidatevalue@{candidatevalue}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{candidatevalue}{candidatevalue}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a3f9dd1fc279a04cee2fb3206678a2c30} 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value}{Candidate\+Value}} metaheuristics.\+generators.\+Hill\+Climbing.\+candidatevalue\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Seleccionador de candidatos del vecindario. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_afc0eabf82d3d13972ea26cff10a1515c}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!Generatortype@{Generatortype}}
+\index{Generatortype@{Generatortype}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{Generatortype}{Generatortype}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_afc0eabf82d3d13972ea26cff10a1515c} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Hill\+Climbing.\+Generatortype\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tipo de generador metaheurístico. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_af41ce2cba0e64cd77f757fde246adbb0}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!ifacceptCandidate@{ifacceptCandidate}}
+\index{ifacceptCandidate@{ifacceptCandidate}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{ifacceptCandidate}{ifacceptCandidate}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_af41ce2cba0e64cd77f757fde246adbb0} 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_accept_candidate}{IFFactory\+Accept\+Candidate}} metaheuristics.\+generators.\+Hill\+Climbing.\+ifaccept\+Candidate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Factoría para crear aceptadores de candidatos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a212f480eb02ac3be119f5f1e2c93ae52}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!listStateReference@{listStateReference}}
+\index{listStateReference@{listStateReference}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{listStateReference}{listStateReference}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a212f480eb02ac3be119f5f1e2c93ae52} 
+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ metaheuristics.\+generators.\+Hill\+Climbing.\+list\+State\+Reference = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lista de estados de referencia. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a3256981e03c8cf380eaa540099ac960d}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!listTrace@{listTrace}}
+\index{listTrace@{listTrace}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{listTrace}{listTrace}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a3256981e03c8cf380eaa540099ac960d} 
+float \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Hill\+Climbing.\+list\+Trace = new float\mbox{[}1200000\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Historial de trazas del peso. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a4396c7086458dc1ac342d51ab5ad7f02}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!stateReferenceHC@{stateReferenceHC}}
+\index{stateReferenceHC@{stateReferenceHC}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{stateReferenceHC}{stateReferenceHC}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a4396c7086458dc1ac342d51ab5ad7f02} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Hill\+Climbing.\+state\+Reference\+HC\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Estado de referencia del Hill Climbing. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_ac9e8e7a40ca250d938ed896ea47c167c}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!strategy@{strategy}}
+\index{strategy@{strategy}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{strategy}{strategy}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_ac9e8e7a40ca250d938ed896ea47c167c} 
+\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} metaheuristics.\+generators.\+Hill\+Climbing.\+strategy\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tipo de estrategia de búsqueda. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a777aadb130ce93d3a8a29e252f485a65}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!typeAcceptation@{typeAcceptation}}
+\index{typeAcceptation@{typeAcceptation}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{typeAcceptation}{typeAcceptation}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a777aadb130ce93d3a8a29e252f485a65} 
+\mbox{\hyperlink{enumlocal__search_1_1acceptation__type_1_1_accept_type}{Accept\+Type}} metaheuristics.\+generators.\+Hill\+Climbing.\+type\+Acceptation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tipo de aceptación de soluciones. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a908b6923734a87ee40227f30fd158424}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!typeCandidate@{typeCandidate}}
+\index{typeCandidate@{typeCandidate}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{typeCandidate}{typeCandidate}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a908b6923734a87ee40227f30fd158424} 
+\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} metaheuristics.\+generators.\+Hill\+Climbing.\+type\+Candidate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tipo de candidato a seleccionar. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_ad9b7f6122db6f42fa11a118ee83320a3}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!usageCountByPeriod@{usageCountByPeriod}}
+\index{usageCountByPeriod@{usageCountByPeriod}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{usageCountByPeriod}{usageCountByPeriod}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_ad9b7f6122db6f42fa11a118ee83320a3} 
+int \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Hill\+Climbing.\+usage\+Count\+By\+Period = new int\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador de uso por período para problemas dinámicos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_hill_climbing_a280a7518b2a6113cdb329c867957f444}\index{metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}!weight@{weight}}
+\index{weight@{weight}!metaheuristics.generators.HillClimbing@{metaheuristics.generators.HillClimbing}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_hill_climbing_a280a7518b2a6113cdb329c867957f444} 
+float metaheuristics.\+generators.\+Hill\+Climbing.\+weight\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Peso del generador. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/\mbox{\hyperlink{_hill_climbing_8java}{Hill\+Climbing.\+java}}\end{DoxyCompactItemize}

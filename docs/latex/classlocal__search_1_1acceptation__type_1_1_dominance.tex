@@ -1,0 +1,81 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+acceptation\+\_\+type.\+Dominance}
+\hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance}{}\label{classlocal__search_1_1acceptation__type_1_1_dominance}\index{local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}}
+
+
+Clase que gestiona operaciones de dominancia de Pareto multiobjetivo.  
+
+
+
+
+Diagrama de colaboración de local\+\_\+search.\+acceptation\+\_\+type.\+Dominance\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_dominance_aff9166b5654b3ed44eed2cee4de7d2b2}{List\+Dominance}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solutionX, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list)
+\begin{DoxyCompactList}\small\item\em Determina si una solución domina a alguna del frente de Pareto. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_dominance_a0dafd58be8365a22956f59417841a2d8}{dominance}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solutionX, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solutionY)
+\begin{DoxyCompactList}\small\item\em Verifica si solutionX domina a solutionY según criterio de Pareto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que gestiona operaciones de dominancia de Pareto multiobjetivo. 
+
+Esta clase proporciona métodos para evaluar relaciones de dominancia entre soluciones en problemas de optimización multiobjetivo, incluyendo la gestión del frente de Pareto de soluciones no dominadas. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance_a0dafd58be8365a22956f59417841a2d8}\index{local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}!dominance@{dominance}}
+\index{dominance@{dominance}!local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}}
+\doxysubsubsection{\texorpdfstring{dominance()}{dominance()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_dominance_a0dafd58be8365a22956f59417841a2d8} 
+boolean local\+\_\+search.\+acceptation\+\_\+type.\+Dominance.\+dominance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solutionX}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solutionY}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si solutionX domina a solutionY según criterio de Pareto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em solutionX} & Primera solución a comparar \\
+\hline
+{\em solutionY} & Segunda solución a comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+boolean true si solutionX domina a solutionY, false en caso contrario
+\end{DoxyReturn}
+Una solución X domina a Y si es al menos igual en todos los objetivos y estrictamente mejor en al menos uno. Gráfico de llamadas de esta función\+:
+% FIG 1
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_dominance_aff9166b5654b3ed44eed2cee4de7d2b2}\index{local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}!ListDominance@{ListDominance}}
+\index{ListDominance@{ListDominance}!local\_search.acceptation\_type.Dominance@{local\_search.acceptation\_type.Dominance}}
+\doxysubsubsection{\texorpdfstring{ListDominance()}{ListDominance()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_dominance_aff9166b5654b3ed44eed2cee4de7d2b2} 
+boolean local\+\_\+search.\+acceptation\+\_\+type.\+Dominance.\+List\+Dominance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solutionX}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list}{}\end{DoxyParamCaption})}
+
+
+
+Determina si una solución domina a alguna del frente de Pareto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em solutionX} & Solución candidata a evaluar \\
+\hline
+{\em list} & Lista de soluciones del frente de Pareto actual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+boolean true si la solución fue agregada al frente, false en caso contrario
+\end{DoxyReturn}
+Este método verifica si solutionX domina a alguna solución de la lista, eliminando las dominadas y agregando solutionX si no está dominada. Gráfico de llamadas de esta función\+:
+% FIG 3
+Gráfico de llamadas a esta función\+:
+% FIG 4
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/acceptation\+\_\+type/\mbox{\hyperlink{_dominance_8java}{Dominance.\+java}}\end{DoxyCompactItemize}

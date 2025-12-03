@@ -1,0 +1,99 @@
+\doxysection{Referencia de la clase metaheuristics.\+generators.\+Instance\+DE}
+\hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e}{}\label{classmetaheuristics_1_1generators_1_1_instance_d_e}\index{metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}}
+
+
+Hilo ejecutable para instanciar el algoritmo de estimación de distribuciones.  
+
+
+
+
+Diagrama de herencia de metaheuristics.\+generators.\+Instance\+DE
+% FIG 0
+
+
+Diagrama de colaboración de metaheuristics.\+generators.\+Instance\+DE\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_d_e_a670666f9e178336ab435f4c3f9f8b60e}{run}} ()
+\begin{DoxyCompactList}\small\item\em Método run del hilo que crea la instancia del generador DE. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_d_e_a1da514370250dac706d4d441080b68da}{is\+Terminate}} ()
+\begin{DoxyCompactList}\small\item\em Verifica si el hilo ha terminado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_d_e_ade700027e8d1498e7480c9e1cff25a27}{set\+Terminate}} (boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_d_e_aa025bce5c645eeffbbd6e4eb507a16f1}{terminate}})
+\begin{DoxyCompactList}\small\item\em Establece el estado de terminación del hilo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_instance_d_e_aa025bce5c645eeffbbd6e4eb507a16f1}{terminate}} = false
+\begin{DoxyCompactList}\small\item\em Indicador de finalización del hilo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Hilo ejecutable para instanciar el algoritmo de estimación de distribuciones. 
+
+Esta clase implementa Runnable para crear instancias del generador DE de forma concurrente y reemplazar el generador correspondiente en la lista del \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. 
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e_a1da514370250dac706d4d441080b68da}\index{metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}!isTerminate@{isTerminate}}
+\index{isTerminate@{isTerminate}!metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}}
+\doxysubsubsection{\texorpdfstring{isTerminate()}{isTerminate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_d_e_a1da514370250dac706d4d441080b68da} 
+boolean metaheuristics.\+generators.\+Instance\+DE.\+is\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si el hilo ha terminado. 
+
+\begin{DoxyReturn}{Devuelve}
+true si el hilo terminó, false en caso contrario 
+\end{DoxyReturn}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e_a670666f9e178336ab435f4c3f9f8b60e}\index{metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}!run@{run}}
+\index{run@{run}!metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_d_e_a670666f9e178336ab435f4c3f9f8b60e} 
+void metaheuristics.\+generators.\+Instance\+DE.\+run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Método run del hilo que crea la instancia del generador DE. 
+
+Crea una nueva instancia del algoritmo de estimación de distribuciones y la reemplaza en la lista de generadores del \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e_ade700027e8d1498e7480c9e1cff25a27}\index{metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}!setTerminate@{setTerminate}}
+\index{setTerminate@{setTerminate}!metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}}
+\doxysubsubsection{\texorpdfstring{setTerminate()}{setTerminate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_d_e_ade700027e8d1498e7480c9e1cff25a27} 
+void metaheuristics.\+generators.\+Instance\+DE.\+set\+Terminate (\begin{DoxyParamCaption}\item[{boolean}]{terminate}{}\end{DoxyParamCaption})}
+
+
+
+Establece el estado de terminación del hilo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em terminate} & Nuevo estado de terminación \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_instance_d_e_aa025bce5c645eeffbbd6e4eb507a16f1}\index{metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}!terminate@{terminate}}
+\index{terminate@{terminate}!metaheuristics.generators.InstanceDE@{metaheuristics.generators.InstanceDE}}
+\doxysubsubsection{\texorpdfstring{terminate}{terminate}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_instance_d_e_aa025bce5c645eeffbbd6e4eb507a16f1} 
+boolean metaheuristics.\+generators.\+Instance\+DE.\+terminate = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indicador de finalización del hilo. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/\mbox{\hyperlink{_instance_d_e_8java}{Instance\+DE.\+java}}\end{DoxyCompactItemize}

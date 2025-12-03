@@ -1,0 +1,175 @@
+\doxysection{Referencia de la clase metaheuristics.\+generators.\+Limit\+Roulette}
+\hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette}{}\label{classmetaheuristics_1_1generators_1_1_limit_roulette}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+
+
+Clase que define un rango de límites para selección por ruleta.  
+
+
+
+
+Diagrama de colaboración de metaheuristics.\+generators.\+Limit\+Roulette\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a56cd44ddc7c2d5fcbcaad28b3c7905ff}{get\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el generador asociado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_aec0f5b7cf5635953e5a7aab29da7e484}{set\+Generator}} (\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a4d31eddba0b433f1c979d9a044d06776}{generator}})
+\begin{DoxyCompactList}\small\item\em Establece el generador asociado. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a0ce6ae87cae772312e72a43c2458690e}{get\+Limit\+High}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el límite superior. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a0822acf2c718ff18695f40042659844d}{set\+Limit\+High}} (float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a57005b4fd4d8092fcf8e6182b8f5c3a4}{limit\+High}})
+\begin{DoxyCompactList}\small\item\em Establece el límite superior. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a0531ef878dcd399e3efb887ce093cd54}{get\+Limit\+Low}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el límite inferior. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a6e2cc0e2c945ab59920d9eb2253271fe}{set\+Limit\+Low}} (float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_abf45dc026676e8e9513a614489b72991}{limit\+Low}})
+\begin{DoxyCompactList}\small\item\em Establece el límite inferior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_abf45dc026676e8e9513a614489b72991}{limit\+Low}}
+\begin{DoxyCompactList}\small\item\em Límite inferior del segmento de ruleta. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a57005b4fd4d8092fcf8e6182b8f5c3a4}{limit\+High}}
+\begin{DoxyCompactList}\small\item\em Límite superior del segmento de ruleta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_limit_roulette_a4d31eddba0b433f1c979d9a044d06776}{generator}}
+\begin{DoxyCompactList}\small\item\em Generador asociado a este segmento de ruleta. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que define un rango de límites para selección por ruleta. 
+
+Esta clase almacena los límites inferior y superior de un segmento de ruleta asociado a un generador específico, utilizada en el \doxylink{classmetaheuristics_1_1generators_1_1_multi_generator}{Multi\+Generator}. 
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a56cd44ddc7c2d5fcbcaad28b3c7905ff}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!getGenerator@{getGenerator}}
+\index{getGenerator@{getGenerator}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{getGenerator()}{getGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a56cd44ddc7c2d5fcbcaad28b3c7905ff} 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} metaheuristics.\+generators.\+Limit\+Roulette.\+get\+Generator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el generador asociado. 
+
+\begin{DoxyReturn}{Devuelve}
+Generador asociado al segmento 
+\end{DoxyReturn}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a0ce6ae87cae772312e72a43c2458690e}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!getLimitHigh@{getLimitHigh}}
+\index{getLimitHigh@{getLimitHigh}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{getLimitHigh()}{getLimitHigh()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a0ce6ae87cae772312e72a43c2458690e} 
+float metaheuristics.\+generators.\+Limit\+Roulette.\+get\+Limit\+High (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el límite superior. 
+
+\begin{DoxyReturn}{Devuelve}
+Límite superior del segmento 
+\end{DoxyReturn}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a0531ef878dcd399e3efb887ce093cd54}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!getLimitLow@{getLimitLow}}
+\index{getLimitLow@{getLimitLow}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{getLimitLow()}{getLimitLow()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a0531ef878dcd399e3efb887ce093cd54} 
+float metaheuristics.\+generators.\+Limit\+Roulette.\+get\+Limit\+Low (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el límite inferior. 
+
+\begin{DoxyReturn}{Devuelve}
+Límite inferior del segmento 
+\end{DoxyReturn}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_aec0f5b7cf5635953e5a7aab29da7e484}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!setGenerator@{setGenerator}}
+\index{setGenerator@{setGenerator}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{setGenerator()}{setGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_aec0f5b7cf5635953e5a7aab29da7e484} 
+void metaheuristics.\+generators.\+Limit\+Roulette.\+set\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}}}]{generator}{}\end{DoxyParamCaption})}
+
+
+
+Establece el generador asociado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em generator} & Nuevo generador a asociar \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a0822acf2c718ff18695f40042659844d}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!setLimitHigh@{setLimitHigh}}
+\index{setLimitHigh@{setLimitHigh}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{setLimitHigh()}{setLimitHigh()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a0822acf2c718ff18695f40042659844d} 
+void metaheuristics.\+generators.\+Limit\+Roulette.\+set\+Limit\+High (\begin{DoxyParamCaption}\item[{float}]{limit\+High}{}\end{DoxyParamCaption})}
+
+
+
+Establece el límite superior. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em limit\+High} & Nuevo límite superior \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a6e2cc0e2c945ab59920d9eb2253271fe}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!setLimitLow@{setLimitLow}}
+\index{setLimitLow@{setLimitLow}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{setLimitLow()}{setLimitLow()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a6e2cc0e2c945ab59920d9eb2253271fe} 
+void metaheuristics.\+generators.\+Limit\+Roulette.\+set\+Limit\+Low (\begin{DoxyParamCaption}\item[{float}]{limit\+Low}{}\end{DoxyParamCaption})}
+
+
+
+Establece el límite inferior. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em limit\+Low} & Nuevo límite inferior \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas a esta función\+:
+% FIG 3
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a4d31eddba0b433f1c979d9a044d06776}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!generator@{generator}}
+\index{generator@{generator}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{generator}{generator}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a4d31eddba0b433f1c979d9a044d06776} 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{Generator}} metaheuristics.\+generators.\+Limit\+Roulette.\+generator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generador asociado a este segmento de ruleta. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_a57005b4fd4d8092fcf8e6182b8f5c3a4}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!limitHigh@{limitHigh}}
+\index{limitHigh@{limitHigh}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{limitHigh}{limitHigh}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_a57005b4fd4d8092fcf8e6182b8f5c3a4} 
+float metaheuristics.\+generators.\+Limit\+Roulette.\+limit\+High\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Límite superior del segmento de ruleta. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_limit_roulette_abf45dc026676e8e9513a614489b72991}\index{metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}!limitLow@{limitLow}}
+\index{limitLow@{limitLow}!metaheuristics.generators.LimitRoulette@{metaheuristics.generators.LimitRoulette}}
+\doxysubsubsection{\texorpdfstring{limitLow}{limitLow}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_limit_roulette_abf45dc026676e8e9513a614489b72991} 
+float metaheuristics.\+generators.\+Limit\+Roulette.\+limit\+Low\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Límite inferior del segmento de ruleta. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/\mbox{\hyperlink{_limit_roulette_8java}{Limit\+Roulette.\+java}}\end{DoxyCompactItemize}

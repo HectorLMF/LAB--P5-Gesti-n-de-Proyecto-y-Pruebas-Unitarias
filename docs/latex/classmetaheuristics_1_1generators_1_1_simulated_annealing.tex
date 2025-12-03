@@ -1,0 +1,598 @@
+\doxysection{Referencia de la clase metaheuristics.\+generators.\+Simulated\+Annealing}
+\hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing}{}\label{classmetaheuristics_1_1generators_1_1_simulated_annealing}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+
+
+Algoritmo de recocido simulado con temperatura decreciente.  
+
+
+
+
+Diagrama de herencia de metaheuristics.\+generators.\+Simulated\+Annealing
+% FIG 0
+
+
+Diagrama de colaboración de metaheuristics.\+generators.\+Simulated\+Annealing\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_afd5b39c160dde18e329cb2c1e6f78c7e}{get\+Type\+Generator}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_ad60a310eb9f0cd4887dc348ed3a8237b}{set\+Type\+Generator}} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_acfe4c36fcd2481896e4aa50d97ffb1d8}{type\+Generator}})
+\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_ab3cd175e54b2e49c7712d0949a69a9e1}{Simulated\+Annealing}} ()
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a42465a5f9da3ff282afbd8cae9603274}{generate}} (Integer operatornumber)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Genera un nuevo estado candidato. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aadbaa9f82c1d336b0007493ae74d6b07}{get\+Reference}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el estado de referencia actual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a98382f5ece5062c48988d2642bf6cd60}{set\+State\+Ref}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Ref)
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_ae2a08a4f7183db472485cdf70fed53a1}{set\+Initial\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Initial\+Ref)
+\begin{DoxyCompactList}\small\item\em Establece el estado de referencia inicial. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_af6e00b21dc4f621cbee1a9ed85b9770e}{update\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Actualiza el estado de referencia con un nuevo candidato. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a98d43a4efb241b43981dbecc5b6f3b1d}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo de generador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a0228e9c2ac6f1bb8dd4e452e3b7791ca}{get\+Reference\+List}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de estados de referencia. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aefc4df55a0b09417f9b4a098f2c29d31}{get\+Son\+List}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de estados hijos generados. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a9c5aedc7476522393077fdf35a5d24d1}{award\+Update\+REF}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\begin{DoxyCompactList}\small\item\em Verifica si se debe actualizar la referencia. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aa8743c43beb6426cde3ec0c4e26540e1}{get\+Weight}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el peso actual del generador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a19bda7a83cc317fca0853b72d333c7e9}{set\+Weight}} (float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6700e17003775441ab84b9b7e1b9b81c}{weight}})
+\begin{DoxyCompactList}\small\item\em Establece el peso del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aae733e716b463e946d832b33c1b9653b}{get\+List\+Count\+Better\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de mejoras por período. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a561cb467405e63cb9355b2d638463d13}{get\+List\+Count\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de uso por período. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6af67fc9994b85087052b858e02976f6}{get\+Trace}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de trazas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static Double \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a71b8d3cabe240c17de1603a07273c7ac}{alpha}}
+\begin{DoxyCompactList}\small\item\em Factor de enfriamiento (alpha). \end{DoxyCompactList}\item 
+static Double \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a7a5ade37358362ab5729dca3cca702a2}{tinitial}}
+\begin{DoxyCompactList}\small\item\em Temperatura inicial. \end{DoxyCompactList}\item 
+static Double \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a01dcd9c726ec0982fd1d778dd3e0f0be}{tfinal}}
+\begin{DoxyCompactList}\small\item\em Temperatura final. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_ada54fbe66abb5a0c9b8ee124b560d6b5}{count\+IterationsT}}
+\begin{DoxyCompactList}\small\item\em Número de iteraciones por temperatura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value}{Candidate\+Value}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aba2f66057a6dd21cd1e6b3995ded996c}{candidatevalue}}
+\begin{DoxyCompactList}\small\item\em Seleccionador de valores candidatos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1acceptation__type_1_1_accept_type}{Accept\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a14b22498bb70cc309d0c1bf66627959b}{type\+Acceptation}}
+\begin{DoxyCompactList}\small\item\em Tipo de aceptación de soluciones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a78d443dc318f9a1537f45e4241691eb6}{strategy}}
+\begin{DoxyCompactList}\small\item\em Tipo de estrategia de búsqueda. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_adc272255c564b496520029696f3d6665}{type\+Candidate}}
+\begin{DoxyCompactList}\small\item\em Tipo de candidato a seleccionar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a53133e9907cee763a9dc5d807d52e965}{state\+Reference\+SA}}
+\begin{DoxyCompactList}\small\item\em Estado de referencia del recocido simulado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_accept_candidate}{IFFactory\+Accept\+Candidate}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aa4e1bfb8d9af657714728b5b2a5cb322}{ifaccept\+Candidate}}
+\begin{DoxyCompactList}\small\item\em Factoría para crear aceptadores de candidatos. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_aab3934a05e37f41f57f1bd449b015c92}{count\+Rept}}
+\begin{DoxyCompactList}\small\item\em Contador de repeticiones. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_acfe4c36fcd2481896e4aa50d97ffb1d8}{type\+Generator}}
+\begin{DoxyCompactList}\small\item\em Tipo de generador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a3d7097840ef5c91150b33454b901a001}{list\+State\+Reference}} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()
+\begin{DoxyCompactList}\small\item\em Lista de estados de referencia. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6700e17003775441ab84b9b7e1b9b81c}{weight}}
+\begin{DoxyCompactList}\small\item\em Peso del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a1464139bd5907c3120dad17ac70729d6}{better\+Count\+By\+Period}} = new int\mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Contador de mejoras por período para problemas dinámicos. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a73e8374fc79cad833b3a0ee04ecd0fd2}{usage\+Count\+By\+Period}} = new int\mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Contador de uso por período para problemas dinámicos. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_simulated_annealing_a16307a8fa45d9e1e5979de2b91fb1cda}{list\+Trace}} = new float\mbox{[}1200000\mbox{]}
+\begin{DoxyCompactList}\small\item\em Historial de trazas del peso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3c0145210385b6257c8fc20cac1f830a}{count\+Gender}}
+\begin{DoxyCompactList}\small\item\em Contador de uso del generador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a43815f3944c514ba3156b0e68482befa}{count\+Better\+Gender}}
+\begin{DoxyCompactList}\small\item\em Contador de mejoras del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a535a5753046bdda55fb6fee44c4b1f88}{list\+Count\+Better\+Gender}}
+\begin{DoxyCompactList}\small\item\em Array con las mejoras de cada generador en períodos de 10, acumulativo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Algoritmo de recocido simulado con temperatura decreciente. 
+
+Esta clase implementa el algoritmo de recocido simulado que acepta soluciones peores con probabilidad decreciente según un esquema de temperatura. 
+
+\label{doc-constructors}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_ab3cd175e54b2e49c7712d0949a69a9e1}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!SimulatedAnnealing@{SimulatedAnnealing}}
+\index{SimulatedAnnealing@{SimulatedAnnealing}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{SimulatedAnnealing()}{SimulatedAnnealing()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_ab3cd175e54b2e49c7712d0949a69a9e1} 
+metaheuristics.\+generators.\+Simulated\+Annealing.\+Simulated\+Annealing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a9c5aedc7476522393077fdf35a5d24d1}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!awardUpdateREF@{awardUpdateREF}}
+\index{awardUpdateREF@{awardUpdateREF}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{awardUpdateREF()}{awardUpdateREF()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a9c5aedc7476522393077fdf35a5d24d1} 
+boolean metaheuristics.\+generators.\+Simulated\+Annealing.\+award\+Update\+REF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si se debe actualizar la referencia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Candidate} & Estado candidato a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se debe actualizar, false en caso contrario 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3513d3953ecc97683f38bcb662b74b9b}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a42465a5f9da3ff282afbd8cae9603274}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!generate@{generate}}
+\index{generate@{generate}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a42465a5f9da3ff282afbd8cae9603274} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Simulated\+Annealing.\+generate (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Genera un nuevo estado candidato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em operatornumber} & Número de operador a utilizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado candidato generado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay error en la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay acceso ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay error en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a06f6f7622b9ce32590eadbdf6bf962b5}{metaheuristics.\+generators.\+Generator}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aae733e716b463e946d832b33c1b9653b}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getListCountBetterGender@{getListCountBetterGender}}
+\index{getListCountBetterGender@{getListCountBetterGender}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getListCountBetterGender()}{getListCountBetterGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aae733e716b463e946d832b33c1b9653b} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+List\+Count\+Better\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de mejoras por período. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el contador de mejoras 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5bace71f51c16b611ede3ed53263473}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a561cb467405e63cb9355b2d638463d13}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getListCountGender@{getListCountGender}}
+\index{getListCountGender@{getListCountGender}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getListCountGender()}{getListCountGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a561cb467405e63cb9355b2d638463d13} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+List\+Count\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de uso por período. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el contador de uso 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5d6d45ee8017fb87d80aa952edfc34e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aadbaa9f82c1d336b0007493ae74d6b07}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getReference@{getReference}}
+\index{getReference@{getReference}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aadbaa9f82c1d336b0007493ae74d6b07} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el estado de referencia actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Estado de referencia actual 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa56dd45a45776f6023b9f74179cc6384}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a0228e9c2ac6f1bb8dd4e452e3b7791ca}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getReferenceList@{getReferenceList}}
+\index{getReferenceList@{getReferenceList}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getReferenceList()}{getReferenceList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a0228e9c2ac6f1bb8dd4e452e3b7791ca} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Reference\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de estados de referencia. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de estados de referencia 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ae168237b306de55fe4d6dfda75c7cd13}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aefc4df55a0b09417f9b4a098f2c29d31}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getSonList@{getSonList}}
+\index{getSonList@{getSonList}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getSonList()}{getSonList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aefc4df55a0b09417f9b4a098f2c29d31} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Son\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de estados hijos generados. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de estados hijos 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aee09d724c1b3040e7a7ad0b64e341c96}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6af67fc9994b85087052b858e02976f6}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getTrace@{getTrace}}
+\index{getTrace@{getTrace}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getTrace()}{getTrace()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6af67fc9994b85087052b858e02976f6} 
+float\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de trazas. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el historial de trazas 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a75d7f30dd2cb3f92475db8525ac7c6e7}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a98d43a4efb241b43981dbecc5b6f3b1d}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getType@{getType}}
+\index{getType@{getType}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a98d43a4efb241b43981dbecc5b6f3b1d} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el tipo de generador. 
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de generador metaheurístico 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a5a123306b43c42d28cd1d6e17f8067a5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_afd5b39c160dde18e329cb2c1e6f78c7e}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getTypeGenerator@{getTypeGenerator}}
+\index{getTypeGenerator@{getTypeGenerator}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getTypeGenerator()}{getTypeGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_afd5b39c160dde18e329cb2c1e6f78c7e} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Type\+Generator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aa8743c43beb6426cde3ec0c4e26540e1}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aa8743c43beb6426cde3ec0c4e26540e1} 
+float metaheuristics.\+generators.\+Simulated\+Annealing.\+get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el peso actual del generador. 
+
+\begin{DoxyReturn}{Devuelve}
+Peso del generador 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a64f2b824081c7af593bf9aa8eabf2c9e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_ae2a08a4f7183db472485cdf70fed53a1}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!setInitialReference@{setInitialReference}}
+\index{setInitialReference@{setInitialReference}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{setInitialReference()}{setInitialReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_ae2a08a4f7183db472485cdf70fed53a1} 
+void metaheuristics.\+generators.\+Simulated\+Annealing.\+set\+Initial\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Initial\+Ref}{}\end{DoxyParamCaption})}
+
+
+
+Establece el estado de referencia inicial. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Initial\+Ref} & Estado de referencia inicial \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa9f7c4c983705f843b8fcc81e4aa8ba4}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a98382f5ece5062c48988d2642bf6cd60}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!setStateRef@{setStateRef}}
+\index{setStateRef@{setStateRef}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{setStateRef()}{setStateRef()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a98382f5ece5062c48988d2642bf6cd60} 
+void metaheuristics.\+generators.\+Simulated\+Annealing.\+set\+State\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Ref}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_ad60a310eb9f0cd4887dc348ed3a8237b}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!setTypeGenerator@{setTypeGenerator}}
+\index{setTypeGenerator@{setTypeGenerator}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{setTypeGenerator()}{setTypeGenerator()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_ad60a310eb9f0cd4887dc348ed3a8237b} 
+void metaheuristics.\+generators.\+Simulated\+Annealing.\+set\+Type\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{type\+Generator}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a19bda7a83cc317fca0853b72d333c7e9}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a19bda7a83cc317fca0853b72d333c7e9} 
+void metaheuristics.\+generators.\+Simulated\+Annealing.\+set\+Weight (\begin{DoxyParamCaption}\item[{float}]{weight}{}\end{DoxyParamCaption})}
+
+
+
+Establece el peso del generador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em weight} & Nuevo peso del generador \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a8b3c66b57b4c739666989fbce667eb40}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_af6e00b21dc4f621cbee1a9ed85b9770e}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!updateReference@{updateReference}}
+\index{updateReference@{updateReference}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{updateReference()}{updateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_af6e00b21dc4f621cbee1a9ed85b9770e} 
+void metaheuristics.\+generators.\+Simulated\+Annealing.\+update\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Actualiza el estado de referencia con un nuevo candidato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Candidate} & Estado candidato a considerar \\
+\hline
+{\em count\+Iterations\+Current} & Iteración actual del algoritmo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay error en la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay acceso ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay error en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa1c5878953f2111221b21cb9b1e6cc9f}{metaheuristics.\+generators.\+Generator}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a71b8d3cabe240c17de1603a07273c7ac}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!alpha@{alpha}}
+\index{alpha@{alpha}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a71b8d3cabe240c17de1603a07273c7ac} 
+Double metaheuristics.\+generators.\+Simulated\+Annealing.\+alpha\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Factor de enfriamiento (alpha). 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a1464139bd5907c3120dad17ac70729d6}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!betterCountByPeriod@{betterCountByPeriod}}
+\index{betterCountByPeriod@{betterCountByPeriod}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{betterCountByPeriod}{betterCountByPeriod}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a1464139bd5907c3120dad17ac70729d6} 
+int \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Simulated\+Annealing.\+better\+Count\+By\+Period = new int\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador de mejoras por período para problemas dinámicos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aba2f66057a6dd21cd1e6b3995ded996c}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!candidatevalue@{candidatevalue}}
+\index{candidatevalue@{candidatevalue}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{candidatevalue}{candidatevalue}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aba2f66057a6dd21cd1e6b3995ded996c} 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value}{Candidate\+Value}} metaheuristics.\+generators.\+Simulated\+Annealing.\+candidatevalue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Seleccionador de valores candidatos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_ada54fbe66abb5a0c9b8ee124b560d6b5}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!countIterationsT@{countIterationsT}}
+\index{countIterationsT@{countIterationsT}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{countIterationsT}{countIterationsT}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_ada54fbe66abb5a0c9b8ee124b560d6b5} 
+int metaheuristics.\+generators.\+Simulated\+Annealing.\+count\+IterationsT\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número de iteraciones por temperatura. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aab3934a05e37f41f57f1bd449b015c92}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!countRept@{countRept}}
+\index{countRept@{countRept}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{countRept}{countRept}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aab3934a05e37f41f57f1bd449b015c92} 
+int metaheuristics.\+generators.\+Simulated\+Annealing.\+count\+Rept\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador de repeticiones. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_aa4e1bfb8d9af657714728b5b2a5cb322}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!ifacceptCandidate@{ifacceptCandidate}}
+\index{ifacceptCandidate@{ifacceptCandidate}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{ifacceptCandidate}{ifacceptCandidate}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_aa4e1bfb8d9af657714728b5b2a5cb322} 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_accept_candidate}{IFFactory\+Accept\+Candidate}} metaheuristics.\+generators.\+Simulated\+Annealing.\+ifaccept\+Candidate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Factoría para crear aceptadores de candidatos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a3d7097840ef5c91150b33454b901a001}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!listStateReference@{listStateReference}}
+\index{listStateReference@{listStateReference}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{listStateReference}{listStateReference}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a3d7097840ef5c91150b33454b901a001} 
+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ metaheuristics.\+generators.\+Simulated\+Annealing.\+list\+State\+Reference = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lista de estados de referencia. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a16307a8fa45d9e1e5979de2b91fb1cda}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!listTrace@{listTrace}}
+\index{listTrace@{listTrace}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{listTrace}{listTrace}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a16307a8fa45d9e1e5979de2b91fb1cda} 
+float \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Simulated\+Annealing.\+list\+Trace = new float\mbox{[}1200000\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Historial de trazas del peso. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a53133e9907cee763a9dc5d807d52e965}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!stateReferenceSA@{stateReferenceSA}}
+\index{stateReferenceSA@{stateReferenceSA}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{stateReferenceSA}{stateReferenceSA}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a53133e9907cee763a9dc5d807d52e965} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Simulated\+Annealing.\+state\+Reference\+SA\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Estado de referencia del recocido simulado. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a78d443dc318f9a1537f45e4241691eb6}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!strategy@{strategy}}
+\index{strategy@{strategy}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{strategy}{strategy}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a78d443dc318f9a1537f45e4241691eb6} 
+\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} metaheuristics.\+generators.\+Simulated\+Annealing.\+strategy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de estrategia de búsqueda. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a01dcd9c726ec0982fd1d778dd3e0f0be}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!tfinal@{tfinal}}
+\index{tfinal@{tfinal}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{tfinal}{tfinal}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a01dcd9c726ec0982fd1d778dd3e0f0be} 
+Double metaheuristics.\+generators.\+Simulated\+Annealing.\+tfinal\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Temperatura final. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a7a5ade37358362ab5729dca3cca702a2}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!tinitial@{tinitial}}
+\index{tinitial@{tinitial}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{tinitial}{tinitial}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a7a5ade37358362ab5729dca3cca702a2} 
+Double metaheuristics.\+generators.\+Simulated\+Annealing.\+tinitial\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Temperatura inicial. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a14b22498bb70cc309d0c1bf66627959b}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!typeAcceptation@{typeAcceptation}}
+\index{typeAcceptation@{typeAcceptation}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{typeAcceptation}{typeAcceptation}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a14b22498bb70cc309d0c1bf66627959b} 
+\mbox{\hyperlink{enumlocal__search_1_1acceptation__type_1_1_accept_type}{Accept\+Type}} metaheuristics.\+generators.\+Simulated\+Annealing.\+type\+Acceptation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de aceptación de soluciones. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_adc272255c564b496520029696f3d6665}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!typeCandidate@{typeCandidate}}
+\index{typeCandidate@{typeCandidate}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{typeCandidate}{typeCandidate}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_adc272255c564b496520029696f3d6665} 
+\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} metaheuristics.\+generators.\+Simulated\+Annealing.\+type\+Candidate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de candidato a seleccionar. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_acfe4c36fcd2481896e4aa50d97ffb1d8}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!typeGenerator@{typeGenerator}}
+\index{typeGenerator@{typeGenerator}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{typeGenerator}{typeGenerator}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_acfe4c36fcd2481896e4aa50d97ffb1d8} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Simulated\+Annealing.\+type\+Generator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de generador. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a73e8374fc79cad833b3a0ee04ecd0fd2}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!usageCountByPeriod@{usageCountByPeriod}}
+\index{usageCountByPeriod@{usageCountByPeriod}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{usageCountByPeriod}{usageCountByPeriod}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a73e8374fc79cad833b3a0ee04ecd0fd2} 
+int \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Simulated\+Annealing.\+usage\+Count\+By\+Period = new int\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador de uso por período para problemas dinámicos. 
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6700e17003775441ab84b9b7e1b9b81c}\index{metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}!weight@{weight}}
+\index{weight@{weight}!metaheuristics.generators.SimulatedAnnealing@{metaheuristics.generators.SimulatedAnnealing}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_simulated_annealing_a6700e17003775441ab84b9b7e1b9b81c} 
+float metaheuristics.\+generators.\+Simulated\+Annealing.\+weight\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Peso del generador. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/\mbox{\hyperlink{_simulated_annealing_8java}{Simulated\+Annealing.\+java}}\end{DoxyCompactItemize}

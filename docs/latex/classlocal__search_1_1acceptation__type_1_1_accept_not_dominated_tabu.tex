@@ -1,0 +1,61 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated\+Tabu}
+\hypertarget{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu}{}\label{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu}\index{local\_search.acceptation\_type.AcceptNotDominatedTabu@{local\_search.acceptation\_type.AcceptNotDominatedTabu}}
+
+
+Clase que mantiene un frente de Pareto con estrategia tabú  
+
+
+
+
+Diagrama de herencia de local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated\+Tabu
+% FIG 0
+
+
+Diagrama de colaboración de local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated\+Tabu\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+Boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu_a3182ac113bddb89bb3ea7af704b38835}{accept\+Candidate}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\begin{DoxyCompactList}\small\item\em Actualiza el frente de Pareto con soluciones no dominadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que mantiene un frente de Pareto con estrategia tabú 
+
+Esta clase implementa una estrategia de aceptación para problemas multiobjetivo que mantiene y actualiza el frente de Pareto de soluciones no dominadas, incorporando el concepto de búsqueda tabú. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu_a3182ac113bddb89bb3ea7af704b38835}\index{local\_search.acceptation\_type.AcceptNotDominatedTabu@{local\_search.acceptation\_type.AcceptNotDominatedTabu}!acceptCandidate@{acceptCandidate}}
+\index{acceptCandidate@{acceptCandidate}!local\_search.acceptation\_type.AcceptNotDominatedTabu@{local\_search.acceptation\_type.AcceptNotDominatedTabu}}
+\doxysubsubsection{\texorpdfstring{acceptCandidate()}{acceptCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu_a3182ac113bddb89bb3ea7af704b38835} 
+Boolean local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated\+Tabu.\+accept\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza el frente de Pareto con soluciones no dominadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Current} & Estado actual de la búsqueda \\
+\hline
+{\em state\+Candidate} & Estado candidato a evaluar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Boolean Siempre retorna true después de actualizar el frente 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_aa9e62e1d2d213c3828d2491b506d0592}{local\+\_\+search.\+acceptation\+\_\+type.\+Acceptable\+Candidate}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/acceptation\+\_\+type/\mbox{\hyperlink{_accept_not_dominated_tabu_8java}{Accept\+Not\+Dominated\+Tabu.\+java}}\end{DoxyCompactItemize}

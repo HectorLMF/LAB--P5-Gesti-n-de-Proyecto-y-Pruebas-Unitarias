@@ -1,0 +1,61 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated}
+\hypertarget{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated}{}\label{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated}\index{local\_search.acceptation\_type.AcceptNotDominated@{local\_search.acceptation\_type.AcceptNotDominated}}
+
+
+Clase que acepta candidatos no dominados según criterio de Pareto.  
+
+
+
+
+Diagrama de herencia de local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated
+% FIG 0
+
+
+Diagrama de colaboración de local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+Boolean \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_a05fe7b0385dfafe7701f6a4e9b2b80d2}{accept\+Candidate}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\begin{DoxyCompactList}\small\item\em Acepta candidatos no dominados según criterio de Pareto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que acepta candidatos no dominados según criterio de Pareto. 
+
+Esta clase implementa una estrategia de aceptación para problemas multiobjetivo basada en el concepto de dominancia de Pareto. Un candidato es aceptado si no es dominado por la solución actual y domina a alguna solución del frente de Pareto. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_a05fe7b0385dfafe7701f6a4e9b2b80d2}\index{local\_search.acceptation\_type.AcceptNotDominated@{local\_search.acceptation\_type.AcceptNotDominated}!acceptCandidate@{acceptCandidate}}
+\index{acceptCandidate@{acceptCandidate}!local\_search.acceptation\_type.AcceptNotDominated@{local\_search.acceptation\_type.AcceptNotDominated}}
+\doxysubsubsection{\texorpdfstring{acceptCandidate()}{acceptCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_a05fe7b0385dfafe7701f6a4e9b2b80d2} 
+Boolean local\+\_\+search.\+acceptation\+\_\+type.\+Accept\+Not\+Dominated.\+accept\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+
+
+Acepta candidatos no dominados según criterio de Pareto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Current} & Estado actual de la búsqueda \\
+\hline
+{\em state\+Candidate} & Estado candidato a evaluar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Boolean true si el candidato no está dominado y domina a alguna solución 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classlocal__search_1_1acceptation__type_1_1_acceptable_candidate_aa9e62e1d2d213c3828d2491b506d0592}{local\+\_\+search.\+acceptation\+\_\+type.\+Acceptable\+Candidate}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/acceptation\+\_\+type/\mbox{\hyperlink{_accept_not_dominated_8java}{Accept\+Not\+Dominated.\+java}}\end{DoxyCompactItemize}

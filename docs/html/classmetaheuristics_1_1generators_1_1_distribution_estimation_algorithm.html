@@ -1,0 +1,1292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BiCIAM - Framework Metaheurístico: Referencia de la clase metaheuristics.generators.DistributionEstimationAlgorithm</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BiCIAM - Framework Metaheurístico<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Framework de optimización con algoritmos metaheurísticos y evolutivos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm.html','','classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia de la clase metaheuristics.generators.DistributionEstimationAlgorithm</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Algoritmo metaheurístico basado en estimación de distribuciones de probabilidad.  
+ <a href="#details">Más...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de herencia de metaheuristics.generators.DistributionEstimationAlgorithm</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm__inherit__graph.png" border="0" usemap="#ametaheuristics_8generators_8_distribution_estimation_algorithm_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+</div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Diagrama de colaboración de metaheuristics.generators.DistributionEstimationAlgorithm:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm__coll__graph.png" border="0" usemap="#ametaheuristics_8generators_8_distribution_estimation_algorithm_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ad12cfff2a65093d0cd966b9dea4e3c4d" id="r_ad12cfff2a65093d0cd966b9dea4e3c4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad12cfff2a65093d0cd966b9dea4e3c4d">DistributionEstimationAlgorithm</a> ()</td></tr>
+<tr class="memdesc:ad12cfff2a65093d0cd966b9dea4e3c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto del algoritmo de estimación de distribuciones.  <br /></td></tr>
+<tr class="memitem:a60bc26ebe3a4aabd79b6b9ae4925be9c" id="r_a60bc26ebe3a4aabd79b6b9ae4925be9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60bc26ebe3a4aabd79b6b9ae4925be9c">MaxValue</a> (List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; listInd)</td></tr>
+<tr class="memdesc:a60bc26ebe3a4aabd79b6b9ae4925be9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el estado con el valor máximo de evaluación.  <br /></td></tr>
+<tr class="memitem:a5d496021c3310be8abbc218d4bc63baa" id="r_a5d496021c3310be8abbc218d4bc63baa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d496021c3310be8abbc218d4bc63baa">generate</a> (Integer operatornumber)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException </td></tr>
+<tr class="memdesc:a5d496021c3310be8abbc218d4bc63baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un nuevo estado candidato mediante estimación de distribuciones.  <br /></td></tr>
+<tr class="memitem:a8087863b6c6a820fdf5c9b6aa3bc151c" id="r_a8087863b6c6a820fdf5c9b6aa3bc151c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8087863b6c6a820fdf5c9b6aa3bc151c">getReference</a> ()</td></tr>
+<tr class="memdesc:a8087863b6c6a820fdf5c9b6aa3bc151c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el estado de referencia con mejor evaluación.  <br /></td></tr>
+<tr class="memitem:aec5cc42528713e5a6148dcf801967a4f" id="r_aec5cc42528713e5a6148dcf801967a4f"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec5cc42528713e5a6148dcf801967a4f">getReferenceList</a> ()</td></tr>
+<tr class="memdesc:aec5cc42528713e5a6148dcf801967a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene una copia de la lista de referencias.  <br /></td></tr>
+<tr class="memitem:a65df1345bc39190ac99421eefc1bbd67" id="r_a65df1345bc39190ac99421eefc1bbd67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65df1345bc39190ac99421eefc1bbd67">getType</a> ()</td></tr>
+<tr class="memdesc:a65df1345bc39190ac99421eefc1bbd67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el tipo de generador.  <br /></td></tr>
+<tr class="memitem:a3d83ca9d02abf4db1fbb391855f66c6a" id="r_a3d83ca9d02abf4db1fbb391855f66c6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d83ca9d02abf4db1fbb391855f66c6a">setInitialReference</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateInitialRef)</td></tr>
+<tr class="memdesc:a3d83ca9d02abf4db1fbb391855f66c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el estado de referencia inicial.  <br /></td></tr>
+<tr class="memitem:aae6c25e5e1e4c93694755233cb016ea6" id="r_aae6c25e5e1e4c93694755233cb016ea6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae6c25e5e1e4c93694755233cb016ea6">updateReference</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateCandidate, Integer countIterationsCurrent)  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException </td></tr>
+<tr class="memdesc:aae6c25e5e1e4c93694755233cb016ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la lista de referencias con un nuevo candidato.  <br /></td></tr>
+<tr class="memitem:a951d5d5991b9e676084456258c2c2947" id="r_a951d5d5991b9e676084456258c2c2947"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a951d5d5991b9e676084456258c2c2947">getListStateRef</a> ()</td></tr>
+<tr class="memdesc:a951d5d5991b9e676084456258c2c2947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de estados de referencia desde la estrategia.  <br /></td></tr>
+<tr class="memitem:a2e90e06f027b83effd624f8faf132f56" id="r_a2e90e06f027b83effd624f8faf132f56"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e90e06f027b83effd624f8faf132f56">getListReference</a> ()</td></tr>
+<tr class="memdesc:a2e90e06f027b83effd624f8faf132f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de referencias.  <br /></td></tr>
+<tr class="memitem:a76fb30adfebb2354dfd7a3cb2bf5afe3" id="r_a76fb30adfebb2354dfd7a3cb2bf5afe3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76fb30adfebb2354dfd7a3cb2bf5afe3">setListReference</a> (List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; listReference)</td></tr>
+<tr class="memdesc:a76fb30adfebb2354dfd7a3cb2bf5afe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece la lista de referencias.  <br /></td></tr>
+<tr class="memitem:aa9ae94137e444e26a5ec3c4c7e512b34" id="r_aa9ae94137e444e26a5ec3c4c7e512b34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9ae94137e444e26a5ec3c4c7e512b34">getGeneratorType</a> ()</td></tr>
+<tr class="memdesc:aa9ae94137e444e26a5ec3c4c7e512b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el tipo de generador.  <br /></td></tr>
+<tr class="memitem:a8d743d159276575ddc51036464d28533" id="r_a8d743d159276575ddc51036464d28533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d743d159276575ddc51036464d28533">setGeneratorType</a> (<a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> <a class="el" href="#ad8d812c866c4528cfcee15fec6ae493c">generatorType</a>)</td></tr>
+<tr class="memdesc:a8d743d159276575ddc51036464d28533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el tipo de generador.  <br /></td></tr>
+<tr class="memitem:aa50eadf373760bd9ddb3345fc64838e7" id="r_aa50eadf373760bd9ddb3345fc64838e7"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa50eadf373760bd9ddb3345fc64838e7">getfathersList</a> ()  throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException </td></tr>
+<tr class="memdesc:aa50eadf373760bd9ddb3345fc64838e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de padres seleccionados.  <br /></td></tr>
+<tr class="memitem:a9d9915d817035bd6a090415ab684afbc" id="r_a9d9915d817035bd6a090415ab684afbc"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d9915d817035bd6a090415ab684afbc">getSonList</a> ()</td></tr>
+<tr class="memdesc:a9d9915d817035bd6a090415ab684afbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de estados hijos generados.  <br /></td></tr>
+<tr class="memitem:af7d5ee7c1b8affad2bd7419e375b7c86" id="r_af7d5ee7c1b8affad2bd7419e375b7c86"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7d5ee7c1b8affad2bd7419e375b7c86">awardUpdateREF</a> (<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> stateCandidate)</td></tr>
+<tr class="memdesc:af7d5ee7c1b8affad2bd7419e375b7c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si el candidato está en la lista de referencias.  <br /></td></tr>
+<tr class="memitem:a54fb6f7606227a703d5398457eae9a37" id="r_a54fb6f7606227a703d5398457eae9a37"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54fb6f7606227a703d5398457eae9a37">getWeight</a> ()</td></tr>
+<tr class="memdesc:a54fb6f7606227a703d5398457eae9a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el peso actual del generador.  <br /></td></tr>
+<tr class="memitem:a03ea61f13a989523d24b8a50ca1e1d78" id="r_a03ea61f13a989523d24b8a50ca1e1d78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03ea61f13a989523d24b8a50ca1e1d78">setWeight</a> (float <a class="el" href="#a29827001a6d79c5b923d0aa477f6fde2">weight</a>)</td></tr>
+<tr class="memdesc:a03ea61f13a989523d24b8a50ca1e1d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el peso del generador.  <br /></td></tr>
+<tr class="memitem:a473bbd5a91fcec6c570120bc90ab963a" id="r_a473bbd5a91fcec6c570120bc90ab963a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_distribution_type.html">DistributionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a473bbd5a91fcec6c570120bc90ab963a">getDistributionType</a> ()</td></tr>
+<tr class="memdesc:a473bbd5a91fcec6c570120bc90ab963a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el tipo de distribución.  <br /></td></tr>
+<tr class="memitem:ab22c0d511e722c39d85cc6a4486d2772" id="r_ab22c0d511e722c39d85cc6a4486d2772"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab22c0d511e722c39d85cc6a4486d2772">setDistributionType</a> (<a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_distribution_type.html">DistributionType</a> <a class="el" href="#add9e35cb827a02c81654c3571614999a">distributionType</a>)</td></tr>
+<tr class="memdesc:ab22c0d511e722c39d85cc6a4486d2772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el tipo de distribución.  <br /></td></tr>
+<tr class="memitem:a9531a297fed4d19b797aad4c56bf61df" id="r_a9531a297fed4d19b797aad4c56bf61df"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9531a297fed4d19b797aad4c56bf61df">getListCountBetterGender</a> ()</td></tr>
+<tr class="memdesc:a9531a297fed4d19b797aad4c56bf61df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el historial de mejoras por período.  <br /></td></tr>
+<tr class="memitem:ab9a3474ef9ec58a0267dbdcea0317273" id="r_ab9a3474ef9ec58a0267dbdcea0317273"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9a3474ef9ec58a0267dbdcea0317273">getListCountGender</a> ()</td></tr>
+<tr class="memdesc:ab9a3474ef9ec58a0267dbdcea0317273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el historial de uso por período.  <br /></td></tr>
+<tr class="memitem:a3aa3187d3dc98c005228d80422b52ea6" id="r_a3aa3187d3dc98c005228d80422b52ea6"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3aa3187d3dc98c005228d80422b52ea6">getTrace</a> ()</td></tr>
+<tr class="memdesc:a3aa3187d3dc98c005228d80422b52ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el historial de trazas.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a94d9f995790e5dd5bd3a9485483ac9d4" id="r_a94d9f995790e5dd5bd3a9485483ac9d4"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94d9f995790e5dd5bd3a9485483ac9d4">sonList</a> = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td></tr>
+<tr class="memdesc:a94d9f995790e5dd5bd3a9485483ac9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de estados hijos generados.  <br /></td></tr>
+<tr class="memitem:af3d20302c15c46294cea93c91657a03f" id="r_af3d20302c15c46294cea93c91657a03f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_replace_type.html">ReplaceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3d20302c15c46294cea93c91657a03f">replaceType</a></td></tr>
+<tr class="memdesc:af3d20302c15c46294cea93c91657a03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de reemplazo de soluciones.  <br /></td></tr>
+<tr class="memitem:a9ebaac08d1a99695d49abc7ce50e9188" id="r_a9ebaac08d1a99695d49abc7ce50e9188"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_selection_type.html">SelectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ebaac08d1a99695d49abc7ce50e9188">selectionType</a></td></tr>
+<tr class="memdesc:a9ebaac08d1a99695d49abc7ce50e9188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de selección de padres.  <br /></td></tr>
+<tr class="memitem:a108c4227bf4fd0e5b6b074cec0225eb6" id="r_a108c4227bf4fd0e5b6b074cec0225eb6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a108c4227bf4fd0e5b6b074cec0225eb6">truncation</a></td></tr>
+<tr class="memdesc:a108c4227bf4fd0e5b6b074cec0225eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamaño de truncamiento para la selección.  <br /></td></tr>
+<tr class="memitem:a174ec58f932f401fb4fce8be26827aa4" id="r_a174ec58f932f401fb4fce8be26827aa4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a174ec58f932f401fb4fce8be26827aa4">countRef</a> = 0</td></tr>
+<tr class="memdesc:a174ec58f932f401fb4fce8be26827aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de referencias.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a4663f82ff00e2f37157c09e12a8fe4fd" id="r_a4663f82ff00e2f37157c09e12a8fe4fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4663f82ff00e2f37157c09e12a8fe4fd">stateReferenceDA</a></td></tr>
+<tr class="memdesc:a4663f82ff00e2f37157c09e12a8fe4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de referencia del algoritmo de estimación de distribuciones.  <br /></td></tr>
+<tr class="memitem:aec5d60202316756f6b08e51f90c11cc0" id="r_aec5d60202316756f6b08e51f90c11cc0"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec5d60202316756f6b08e51f90c11cc0">referenceList</a> = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td></tr>
+<tr class="memdesc:aec5d60202316756f6b08e51f90c11cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de estados de referencia para la estimación de distribuciones.  <br /></td></tr>
+<tr class="memitem:ac075d9624747efdfb4ee40eb8f05a686" id="r_ac075d9624747efdfb4ee40eb8f05a686"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_father_selection.html">IFFactoryFatherSelection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac075d9624747efdfb4ee40eb8f05a686">iffatherselection</a></td></tr>
+<tr class="memdesc:ac075d9624747efdfb4ee40eb8f05a686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para la selección de padres.  <br /></td></tr>
+<tr class="memitem:a3ceddf16b5595b4471eeccdb75a101d0" id="r_a3ceddf16b5595b4471eeccdb75a101d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_f_sampling.html">IFFSampling</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ceddf16b5595b4471eeccdb75a101d0">iffsampling</a></td></tr>
+<tr class="memdesc:a3ceddf16b5595b4471eeccdb75a101d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para el muestreo de soluciones.  <br /></td></tr>
+<tr class="memitem:ad043e0940b90329de4a34423342bdf80" id="r_ad043e0940b90329de4a34423342bdf80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_replace.html">IFFactoryReplace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad043e0940b90329de4a34423342bdf80">iffreplace</a></td></tr>
+<tr class="memdesc:ad043e0940b90329de4a34423342bdf80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factoría para el reemplazo de soluciones.  <br /></td></tr>
+<tr class="memitem:add9e35cb827a02c81654c3571614999a" id="r_add9e35cb827a02c81654c3571614999a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_distribution_type.html">DistributionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add9e35cb827a02c81654c3571614999a">distributionType</a></td></tr>
+<tr class="memdesc:add9e35cb827a02c81654c3571614999a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de distribución utilizada.  <br /></td></tr>
+<tr class="memitem:a6498475ec771820413a3d33dc1ada435" id="r_a6498475ec771820413a3d33dc1ada435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_sampling_type.html">SamplingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6498475ec771820413a3d33dc1ada435">Samplingtype</a></td></tr>
+<tr class="memdesc:a6498475ec771820413a3d33dc1ada435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de muestreo utilizado.  <br /></td></tr>
+<tr class="memitem:ad8d812c866c4528cfcee15fec6ae493c" id="r_ad8d812c866c4528cfcee15fec6ae493c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8d812c866c4528cfcee15fec6ae493c">generatorType</a></td></tr>
+<tr class="memdesc:ad8d812c866c4528cfcee15fec6ae493c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo de generador metaheurístico.  <br /></td></tr>
+<tr class="memitem:a29827001a6d79c5b923d0aa477f6fde2" id="r_a29827001a6d79c5b923d0aa477f6fde2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29827001a6d79c5b923d0aa477f6fde2">weight</a></td></tr>
+<tr class="memdesc:a29827001a6d79c5b923d0aa477f6fde2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peso del generador.  <br /></td></tr>
+<tr class="memitem:ab54c23d5f2da8a9d2bfee5571266ca8b" id="r_ab54c23d5f2da8a9d2bfee5571266ca8b"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab54c23d5f2da8a9d2bfee5571266ca8b">betterCountByPeriod</a> = new int[10]</td></tr>
+<tr class="memdesc:ab54c23d5f2da8a9d2bfee5571266ca8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de mejoras por período para problemas dinámicos.  <br /></td></tr>
+<tr class="memitem:a9bf28e216a71c36635084133c9417109" id="r_a9bf28e216a71c36635084133c9417109"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bf28e216a71c36635084133c9417109">usageCountByPeriod</a> = new int[10]</td></tr>
+<tr class="memdesc:a9bf28e216a71c36635084133c9417109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de uso por período para problemas dinámicos.  <br /></td></tr>
+<tr class="memitem:a1170f5c9f59c259b858518ce5d4b9c53" id="r_a1170f5c9f59c259b858518ce5d4b9c53"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1170f5c9f59c259b858518ce5d4b9c53">listTrace</a> = new float[1200000]</td></tr>
+<tr class="memdesc:a1170f5c9f59c259b858518ce5d4b9c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Historial de trazas del peso.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Otros miembros heredados</h2></td></tr>
+<tr class="inherit_header pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classmetaheuristics_1_1generators_1_1_generator')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Atributos públicos heredados de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html">metaheuristics.generators.Generator</a></td></tr>
+<tr class="memitem:a3c0145210385b6257c8fc20cac1f830a inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a3c0145210385b6257c8fc20cac1f830a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a3c0145210385b6257c8fc20cac1f830a">countGender</a></td></tr>
+<tr class="memdesc:a3c0145210385b6257c8fc20cac1f830a inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de uso del generador.  <br /></td></tr>
+<tr class="memitem:a43815f3944c514ba3156b0e68482befa inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a43815f3944c514ba3156b0e68482befa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a43815f3944c514ba3156b0e68482befa">countBetterGender</a></td></tr>
+<tr class="memdesc:a43815f3944c514ba3156b0e68482befa inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contador de mejoras del generador.  <br /></td></tr>
+<tr class="memitem:a535a5753046bdda55fb6fee44c4b1f88 inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator" id="r_a535a5753046bdda55fb6fee44c4b1f88"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a535a5753046bdda55fb6fee44c4b1f88">listCountBetterGender</a></td></tr>
+<tr class="memdesc:a535a5753046bdda55fb6fee44c4b1f88 inherit pub_attribs_classmetaheuristics_1_1generators_1_1_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array con las mejoras de cada generador en períodos de 10, acumulativo.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Algoritmo metaheurístico basado en estimación de distribuciones de probabilidad. </p>
+<p>Esta clase implementa el algoritmo EDA que genera nuevas soluciones mediante la estimación de distribuciones de probabilidad a partir de un conjunto de soluciones prometedoras. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Documentación de constructores y destructores</h2>
+<a id="ad12cfff2a65093d0cd966b9dea4e3c4d" name="ad12cfff2a65093d0cd966b9dea4e3c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12cfff2a65093d0cd966b9dea4e3c4d">&#9670;&#160;</a></span>DistributionEstimationAlgorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">metaheuristics.generators.DistributionEstimationAlgorithm.DistributionEstimationAlgorithm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor por defecto del algoritmo de estimación de distribuciones. </p>
+<p>Inicializa el algoritmo con los parámetros por defecto, incluyendo tipo de distribución univariada, muestreo probabilístico y peso inicial de 50. </p>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ad12cfff2a65093d0cd966b9dea4e3c4d_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ad12cfff2a65093d0cd966b9dea4e3c4d_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ad12cfff2a65093d0cd966b9dea4e3c4d_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_ad12cfff2a65093d0cd966b9dea4e3c4d_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones miembro</h2>
+<a id="af7d5ee7c1b8affad2bd7419e375b7c86" name="af7d5ee7c1b8affad2bd7419e375b7c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7d5ee7c1b8affad2bd7419e375b7c86">&#9670;&#160;</a></span>awardUpdateREF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean metaheuristics.generators.DistributionEstimationAlgorithm.awardUpdateREF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateCandidate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si el candidato está en la lista de referencias. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateCandidate</td><td>Estado candidato a verificar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si el candidato está en las referencias, false en caso contrario </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a3513d3953ecc97683f38bcb662b74b9b">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a5d496021c3310be8abbc218d4bc63baa" name="a5d496021c3310be8abbc218d4bc63baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d496021c3310be8abbc218d4bc63baa">&#9670;&#160;</a></span>generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.DistributionEstimationAlgorithm.generate </td>
+          <td>(</td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>operatornumber</em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera un nuevo estado candidato mediante estimación de distribuciones. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operatornumber</td><td>Número de operador a utilizar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado candidato generado </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos son inválidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra una clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si hay error en la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay acceso ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay error en la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra un método </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a06f6f7622b9ce32590eadbdf6bf962b5">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a5d496021c3310be8abbc218d4bc63baa_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a5d496021c3310be8abbc218d4bc63baa_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a473bbd5a91fcec6c570120bc90ab963a" name="a473bbd5a91fcec6c570120bc90ab963a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473bbd5a91fcec6c570120bc90ab963a">&#9670;&#160;</a></span>getDistributionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_distribution_type.html">DistributionType</a> metaheuristics.generators.DistributionEstimationAlgorithm.getDistributionType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el tipo de distribución. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Tipo de distribución utilizada </dd></dl>
+
+</div>
+</div>
+<a id="aa50eadf373760bd9ddb3345fc64838e7" name="aa50eadf373760bd9ddb3345fc64838e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50eadf373760bd9ddb3345fc64838e7">&#9670;&#160;</a></span>getfathersList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.DistributionEstimationAlgorithm.getfathersList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de padres seleccionados. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados padres seleccionados </dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos son inválidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra una clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si hay error en la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay acceso ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay error en la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra un método </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_aa50eadf373760bd9ddb3345fc64838e7_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_aa50eadf373760bd9ddb3345fc64838e7_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_aa50eadf373760bd9ddb3345fc64838e7_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_aa50eadf373760bd9ddb3345fc64838e7_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa9ae94137e444e26a5ec3c4c7e512b34" name="aa9ae94137e444e26a5ec3c4c7e512b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ae94137e444e26a5ec3c4c7e512b34">&#9670;&#160;</a></span>getGeneratorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.DistributionEstimationAlgorithm.getGeneratorType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el tipo de generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Tipo de generador </dd></dl>
+
+</div>
+</div>
+<a id="a9531a297fed4d19b797aad4c56bf61df" name="a9531a297fed4d19b797aad4c56bf61df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9531a297fed4d19b797aad4c56bf61df">&#9670;&#160;</a></span>getListCountBetterGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] metaheuristics.generators.DistributionEstimationAlgorithm.getListCountBetterGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el historial de mejoras por período. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Array con el contador de mejoras </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ac5bace71f51c16b611ede3ed53263473">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="ab9a3474ef9ec58a0267dbdcea0317273" name="ab9a3474ef9ec58a0267dbdcea0317273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a3474ef9ec58a0267dbdcea0317273">&#9670;&#160;</a></span>getListCountGender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int[] metaheuristics.generators.DistributionEstimationAlgorithm.getListCountGender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el historial de uso por período. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Array con el contador de uso </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ac5d6d45ee8017fb87d80aa952edfc34e">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a2e90e06f027b83effd624f8faf132f56" name="a2e90e06f027b83effd624f8faf132f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e90e06f027b83effd624f8faf132f56">&#9670;&#160;</a></span>getListReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.DistributionEstimationAlgorithm.getListReference </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de referencias. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados de referencia </dd></dl>
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a2e90e06f027b83effd624f8faf132f56_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a2e90e06f027b83effd624f8faf132f56_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a951d5d5991b9e676084456258c2c2947" name="a951d5d5991b9e676084456258c2c2947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951d5d5991b9e676084456258c2c2947">&#9670;&#160;</a></span>getListStateRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.DistributionEstimationAlgorithm.getListStateRef </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de estados de referencia desde la estrategia. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados de referencia </dd></dl>
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a951d5d5991b9e676084456258c2c2947_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a951d5d5991b9e676084456258c2c2947_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a951d5d5991b9e676084456258c2c2947_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a951d5d5991b9e676084456258c2c2947_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a8087863b6c6a820fdf5c9b6aa3bc151c" name="a8087863b6c6a820fdf5c9b6aa3bc151c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8087863b6c6a820fdf5c9b6aa3bc151c">&#9670;&#160;</a></span>getReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.DistributionEstimationAlgorithm.getReference </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el estado de referencia con mejor evaluación. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado de referencia óptimo de la lista </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa56dd45a45776f6023b9f74179cc6384">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a8087863b6c6a820fdf5c9b6aa3bc151c_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a8087863b6c6a820fdf5c9b6aa3bc151c_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aec5cc42528713e5a6148dcf801967a4f" name="aec5cc42528713e5a6148dcf801967a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5cc42528713e5a6148dcf801967a4f">&#9670;&#160;</a></span>getReferenceList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.DistributionEstimationAlgorithm.getReferenceList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene una copia de la lista de referencias. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados de referencia </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#ae168237b306de55fe4d6dfda75c7cd13">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a9d9915d817035bd6a090415ab684afbc" name="a9d9915d817035bd6a090415ab684afbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9915d817035bd6a090415ab684afbc">&#9670;&#160;</a></span>getSonList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt; metaheuristics.generators.DistributionEstimationAlgorithm.getSonList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de estados hijos generados. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Lista de estados hijos </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aee09d724c1b3040e7a7ad0b64e341c96">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a3aa3187d3dc98c005228d80422b52ea6" name="a3aa3187d3dc98c005228d80422b52ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa3187d3dc98c005228d80422b52ea6">&#9670;&#160;</a></span>getTrace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float[] metaheuristics.generators.DistributionEstimationAlgorithm.getTrace </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el historial de trazas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Array con el historial de trazas </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a75d7f30dd2cb3f92475db8525ac7c6e7">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a65df1345bc39190ac99421eefc1bbd67" name="a65df1345bc39190ac99421eefc1bbd67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65df1345bc39190ac99421eefc1bbd67">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.DistributionEstimationAlgorithm.getType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el tipo de generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Tipo de generador DISTRIBUTION_ESTIMATION_ALGORITHM </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a5a123306b43c42d28cd1d6e17f8067a5">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a54fb6f7606227a703d5398457eae9a37" name="a54fb6f7606227a703d5398457eae9a37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54fb6f7606227a703d5398457eae9a37">&#9670;&#160;</a></span>getWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float metaheuristics.generators.DistributionEstimationAlgorithm.getWeight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el peso actual del generador. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Peso del generador </dd></dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a64f2b824081c7af593bf9aa8eabf2c9e">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a60bc26ebe3a4aabd79b6b9ae4925be9c" name="a60bc26ebe3a4aabd79b6b9ae4925be9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60bc26ebe3a4aabd79b6b9ae4925be9c">&#9670;&#160;</a></span>MaxValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.DistributionEstimationAlgorithm.MaxValue </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>listInd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el estado con el valor máximo de evaluación. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listInd</td><td>Lista de estados a evaluar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Estado con la mejor evaluación </dd></dl>
+<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c_cgraph" loading="lazy" alt=""/></div>
+</div>
+<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c_icgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_a60bc26ebe3a4aabd79b6b9ae4925be9c_icgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab22c0d511e722c39d85cc6a4486d2772" name="ab22c0d511e722c39d85cc6a4486d2772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab22c0d511e722c39d85cc6a4486d2772">&#9670;&#160;</a></span>setDistributionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.DistributionEstimationAlgorithm.setDistributionType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_distribution_type.html">DistributionType</a></td>          <td class="paramname"><span class="paramname"><em>distributionType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el tipo de distribución. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distributionType</td><td>Nuevo tipo de distribución </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8d743d159276575ddc51036464d28533" name="a8d743d159276575ddc51036464d28533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d743d159276575ddc51036464d28533">&#9670;&#160;</a></span>setGeneratorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.DistributionEstimationAlgorithm.setGeneratorType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a></td>          <td class="paramname"><span class="paramname"><em>generatorType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el tipo de generador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">generatorType</td><td>Nuevo tipo de generador </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d83ca9d02abf4db1fbb391855f66c6a" name="a3d83ca9d02abf4db1fbb391855f66c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d83ca9d02abf4db1fbb391855f66c6a">&#9670;&#160;</a></span>setInitialReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.DistributionEstimationAlgorithm.setInitialReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateInitialRef</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el estado de referencia inicial. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateInitialRef</td><td>Estado de referencia inicial </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa9f7c4c983705f843b8fcc81e4aa8ba4">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="a76fb30adfebb2354dfd7a3cb2bf5afe3" name="a76fb30adfebb2354dfd7a3cb2bf5afe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76fb30adfebb2354dfd7a3cb2bf5afe3">&#9670;&#160;</a></span>setListReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.DistributionEstimationAlgorithm.setListReference </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; <a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>listReference</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece la lista de referencias. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listReference</td><td>Nueva lista de estados de referencia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a03ea61f13a989523d24b8a50ca1e1d78" name="a03ea61f13a989523d24b8a50ca1e1d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ea61f13a989523d24b8a50ca1e1d78">&#9670;&#160;</a></span>setWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.DistributionEstimationAlgorithm.setWeight </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>weight</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece el peso del generador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weight</td><td>Nuevo peso del generador </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#a8b3c66b57b4c739666989fbce667eb40">metaheuristics.generators.Generator</a>.</p>
+
+</div>
+</div>
+<a id="aae6c25e5e1e4c93694755233cb016ea6" name="aae6c25e5e1e4c93694755233cb016ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae6c25e5e1e4c93694755233cb016ea6">&#9670;&#160;</a></span>updateReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void metaheuristics.generators.DistributionEstimationAlgorithm.updateReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a></td>          <td class="paramname"><span class="paramname"><em>stateCandidate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Integer</td>          <td class="paramname"><span class="paramname"><em>countIterationsCurrent</em></span>&#160;) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza la lista de referencias con un nuevo candidato. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateCandidate</td><td>Estado candidato a evaluar </td></tr>
+    <tr><td class="paramname">countIterationsCurrent</td><td>Iteración actual </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>Si los argumentos son inválidos </td></tr>
+    <tr><td class="paramname">SecurityException</td><td>Si hay problemas de seguridad </td></tr>
+    <tr><td class="paramname">ClassNotFoundException</td><td>Si no se encuentra una clase </td></tr>
+    <tr><td class="paramname">InstantiationException</td><td>Si hay error en la instanciación </td></tr>
+    <tr><td class="paramname">IllegalAccessException</td><td>Si hay acceso ilegal </td></tr>
+    <tr><td class="paramname">InvocationTargetException</td><td>Si hay error en la invocación </td></tr>
+    <tr><td class="paramname">NoSuchMethodException</td><td>Si no se encuentra un método </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="classmetaheuristics_1_1generators_1_1_generator.html#aa1c5878953f2111221b21cb9b1e6cc9f">metaheuristics.generators.Generator</a>.</p>
+<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_aae6c25e5e1e4c93694755233cb016ea6_cgraph.png" border="0" usemap="#aclassmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm_aae6c25e5e1e4c93694755233cb016ea6_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentación de datos miembro</h2>
+<a id="ab54c23d5f2da8a9d2bfee5571266ca8b" name="ab54c23d5f2da8a9d2bfee5571266ca8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab54c23d5f2da8a9d2bfee5571266ca8b">&#9670;&#160;</a></span>betterCountByPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] metaheuristics.generators.DistributionEstimationAlgorithm.betterCountByPeriod = new int[10]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de mejoras por período para problemas dinámicos. </p>
+
+</div>
+</div>
+<a id="a174ec58f932f401fb4fce8be26827aa4" name="a174ec58f932f401fb4fce8be26827aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a174ec58f932f401fb4fce8be26827aa4">&#9670;&#160;</a></span>countRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheuristics.generators.DistributionEstimationAlgorithm.countRef = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de referencias. </p>
+
+</div>
+</div>
+<a id="add9e35cb827a02c81654c3571614999a" name="add9e35cb827a02c81654c3571614999a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9e35cb827a02c81654c3571614999a">&#9670;&#160;</a></span>distributionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_distribution_type.html">DistributionType</a> metaheuristics.generators.DistributionEstimationAlgorithm.distributionType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de distribución utilizada. </p>
+
+</div>
+</div>
+<a id="ad8d812c866c4528cfcee15fec6ae493c" name="ad8d812c866c4528cfcee15fec6ae493c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8d812c866c4528cfcee15fec6ae493c">&#9670;&#160;</a></span>generatorType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enummetaheuristics_1_1generators_1_1_generator_type.html">GeneratorType</a> metaheuristics.generators.DistributionEstimationAlgorithm.generatorType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de generador metaheurístico. </p>
+
+</div>
+</div>
+<a id="ac075d9624747efdfb4ee40eb8f05a686" name="ac075d9624747efdfb4ee40eb8f05a686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac075d9624747efdfb4ee40eb8f05a686">&#9670;&#160;</a></span>iffatherselection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_father_selection.html">IFFactoryFatherSelection</a> metaheuristics.generators.DistributionEstimationAlgorithm.iffatherselection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para la selección de padres. </p>
+
+</div>
+</div>
+<a id="ad043e0940b90329de4a34423342bdf80" name="ad043e0940b90329de4a34423342bdf80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad043e0940b90329de4a34423342bdf80">&#9670;&#160;</a></span>iffreplace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_factory_replace.html">IFFactoryReplace</a> metaheuristics.generators.DistributionEstimationAlgorithm.iffreplace</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para el reemplazo de soluciones. </p>
+
+</div>
+</div>
+<a id="a3ceddf16b5595b4471eeccdb75a101d0" name="a3ceddf16b5595b4471eeccdb75a101d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ceddf16b5595b4471eeccdb75a101d0">&#9670;&#160;</a></span>iffsampling</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacefactory__interface_1_1_i_f_f_sampling.html">IFFSampling</a> metaheuristics.generators.DistributionEstimationAlgorithm.iffsampling</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Factoría para el muestreo de soluciones. </p>
+
+</div>
+</div>
+<a id="a1170f5c9f59c259b858518ce5d4b9c53" name="a1170f5c9f59c259b858518ce5d4b9c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1170f5c9f59c259b858518ce5d4b9c53">&#9670;&#160;</a></span>listTrace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [] metaheuristics.generators.DistributionEstimationAlgorithm.listTrace = new float[1200000]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Historial de trazas del peso. </p>
+
+</div>
+</div>
+<a id="aec5d60202316756f6b08e51f90c11cc0" name="aec5d60202316756f6b08e51f90c11cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5d60202316756f6b08e51f90c11cc0">&#9670;&#160;</a></span>referenceList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheuristics.generators.DistributionEstimationAlgorithm.referenceList = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista de estados de referencia para la estimación de distribuciones. </p>
+
+</div>
+</div>
+<a id="af3d20302c15c46294cea93c91657a03f" name="af3d20302c15c46294cea93c91657a03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d20302c15c46294cea93c91657a03f">&#9670;&#160;</a></span>replaceType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_replace_type.html">ReplaceType</a> metaheuristics.generators.DistributionEstimationAlgorithm.replaceType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de reemplazo de soluciones. </p>
+
+</div>
+</div>
+<a id="a6498475ec771820413a3d33dc1ada435" name="a6498475ec771820413a3d33dc1ada435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6498475ec771820413a3d33dc1ada435">&#9670;&#160;</a></span>Samplingtype</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_sampling_type.html">SamplingType</a> metaheuristics.generators.DistributionEstimationAlgorithm.Samplingtype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de muestreo utilizado. </p>
+
+</div>
+</div>
+<a id="a9ebaac08d1a99695d49abc7ce50e9188" name="a9ebaac08d1a99695d49abc7ce50e9188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ebaac08d1a99695d49abc7ce50e9188">&#9670;&#160;</a></span>selectionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumevolutionary__algorithms_1_1complement_1_1_selection_type.html">SelectionType</a> metaheuristics.generators.DistributionEstimationAlgorithm.selectionType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tipo de selección de padres. </p>
+
+</div>
+</div>
+<a id="a94d9f995790e5dd5bd3a9485483ac9d4" name="a94d9f995790e5dd5bd3a9485483ac9d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d9f995790e5dd5bd3a9485483ac9d4">&#9670;&#160;</a></span>sonList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt; metaheuristics.generators.DistributionEstimationAlgorithm.sonList = new ArrayList&lt;<a class="el" href="classproblem_1_1definition_1_1_state.html">State</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista de estados hijos generados. </p>
+
+</div>
+</div>
+<a id="a4663f82ff00e2f37157c09e12a8fe4fd" name="a4663f82ff00e2f37157c09e12a8fe4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4663f82ff00e2f37157c09e12a8fe4fd">&#9670;&#160;</a></span>stateReferenceDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classproblem_1_1definition_1_1_state.html">State</a> metaheuristics.generators.DistributionEstimationAlgorithm.stateReferenceDA</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estado de referencia del algoritmo de estimación de distribuciones. </p>
+
+</div>
+</div>
+<a id="a108c4227bf4fd0e5b6b074cec0225eb6" name="a108c4227bf4fd0e5b6b074cec0225eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108c4227bf4fd0e5b6b074cec0225eb6">&#9670;&#160;</a></span>truncation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int metaheuristics.generators.DistributionEstimationAlgorithm.truncation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tamaño de truncamiento para la selección. </p>
+
+</div>
+</div>
+<a id="a9bf28e216a71c36635084133c9417109" name="a9bf28e216a71c36635084133c9417109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf28e216a71c36635084133c9417109">&#9670;&#160;</a></span>usageCountByPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] metaheuristics.generators.DistributionEstimationAlgorithm.usageCountByPeriod = new int[10]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contador de uso por período para problemas dinámicos. </p>
+
+</div>
+</div>
+<a id="a29827001a6d79c5b923d0aa477f6fde2" name="a29827001a6d79c5b923d0aa477f6fde2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29827001a6d79c5b923d0aa477f6fde2">&#9670;&#160;</a></span>weight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float metaheuristics.generators.DistributionEstimationAlgorithm.weight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Peso del generador. </p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>src/main/java/metaheuristics/generators/<a class="el" href="_distribution_estimation_algorithm_8java.html">DistributionEstimationAlgorithm.java</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>metaheuristics</b></li><li class="navelem"><a href="namespacemetaheuristics_1_1generators.html">generators</a></li><li class="navelem"><a href="classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm.html">DistributionEstimationAlgorithm</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para BiCIAM - Framework Metaheurístico por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>

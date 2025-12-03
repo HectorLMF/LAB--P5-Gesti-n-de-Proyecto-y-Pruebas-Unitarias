@@ -1,0 +1,86 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+complement.\+Tabu\+Solutions}
+\hypertarget{classlocal__search_1_1complement_1_1_tabu_solutions}{}\label{classlocal__search_1_1complement_1_1_tabu_solutions}\index{local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}}
+
+
+Clase que gestiona la lista tabú de soluciones prohibidas.  
+
+
+
+
+Diagrama de colaboración de local\+\_\+search.\+complement.\+Tabu\+Solutions\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions_abe7521e1b6c8ca96a3a6b5b63cd08c48}{filter\+Neighborhood}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+Neighborhood)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Filtra el vecindario eliminando soluciones tabú \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions_abf842f4b783b633f825bd6a8b870c11e}{list\+Tabu}} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()
+\begin{DoxyCompactList}\small\item\em Lista de soluciones tabú (prohibidas). \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions_a64055034036ec4a7ad32c407a05324b3}{maxelements}}
+\begin{DoxyCompactList}\small\item\em Número máximo de elementos en la lista tabú \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que gestiona la lista tabú de soluciones prohibidas. 
+
+Esta clase mantiene una lista de soluciones visitadas recientemente que no deben ser revisitadas, implementando el mecanismo de memoria a corto plazo de la búsqueda tabú. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1complement_1_1_tabu_solutions_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1complement_1_1_tabu_solutions_abe7521e1b6c8ca96a3a6b5b63cd08c48}\index{local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}!filterNeighborhood@{filterNeighborhood}}
+\index{filterNeighborhood@{filterNeighborhood}!local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}}
+\doxysubsubsection{\texorpdfstring{filterNeighborhood()}{filterNeighborhood()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1complement_1_1_tabu_solutions_abe7521e1b6c8ca96a3a6b5b63cd08c48} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ local\+\_\+search.\+complement.\+Tabu\+Solutions.\+filter\+Neighborhood (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+Neighborhood}{}\end{DoxyParamCaption}) throws Exception}
+
+
+
+Filtra el vecindario eliminando soluciones tabú 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em list\+Neighborhood} & Lista de estados vecinos a filtrar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+List$<$\+State$>$ Lista filtrada sin soluciones tabú 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Exception} & Si todos los vecinos están en la lista tabú \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\Hypertarget{classlocal__search_1_1complement_1_1_tabu_solutions_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classlocal__search_1_1complement_1_1_tabu_solutions_abf842f4b783b633f825bd6a8b870c11e}\index{local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}!listTabu@{listTabu}}
+\index{listTabu@{listTabu}!local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}}
+\doxysubsubsection{\texorpdfstring{listTabu}{listTabu}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1complement_1_1_tabu_solutions_abf842f4b783b633f825bd6a8b870c11e} 
+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ local\+\_\+search.\+complement.\+Tabu\+Solutions.\+list\+Tabu = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista de soluciones tabú (prohibidas). 
+
+\Hypertarget{classlocal__search_1_1complement_1_1_tabu_solutions_a64055034036ec4a7ad32c407a05324b3}\index{local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}!maxelements@{maxelements}}
+\index{maxelements@{maxelements}!local\_search.complement.TabuSolutions@{local\_search.complement.TabuSolutions}}
+\doxysubsubsection{\texorpdfstring{maxelements}{maxelements}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1complement_1_1_tabu_solutions_a64055034036ec4a7ad32c407a05324b3} 
+int local\+\_\+search.\+complement.\+Tabu\+Solutions.\+maxelements\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número máximo de elementos en la lista tabú 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/complement/\mbox{\hyperlink{_tabu_solutions_8java}{Tabu\+Solutions.\+java}}\end{DoxyCompactItemize}

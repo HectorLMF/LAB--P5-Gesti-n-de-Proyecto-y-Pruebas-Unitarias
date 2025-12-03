@@ -1,0 +1,17 @@
+digraph "metaheuristics.generators.HillClimbing.HillClimbing"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="metaheuristics.generators.\lHillClimbing.HillClimbing",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Constructor por defecto del Hill Climbing."];
+  Node1 -> Node2 [id="edge5_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="metaheurictics.strategy.\lStrategy.getProblem",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheurictics_1_1strategy_1_1_strategy.html#a4bc6bd95db71e14b1f48c1bfc85f1305",tooltip="Obtiene el problema de optimización."];
+  Node1 -> Node3 [id="edge6_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="metaheurictics.strategy.\lStrategy.getStrategy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheurictics_1_1strategy_1_1_strategy.html#ad2641e12c52292930364de6655333aa8",tooltip="Obtiene la instancia única de Strategy (patrón Singleton)."];
+  Node3 -> Node4 [id="edge7_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="metaheurictics.strategy.\lStrategy.Strategy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheurictics_1_1strategy_1_1_strategy.html#ac65d26e08073f5cfc7596577f18b9694",tooltip="Constructor privado para implementar el patrón Singleton."];
+  Node1 -> Node5 [id="edge8_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="problem.definition.Problem.get\lTypeProblem",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classproblem_1_1definition_1_1_problem.html#ad6f38df755179e22ffe487ba4a5c8021",tooltip=" "];
+}

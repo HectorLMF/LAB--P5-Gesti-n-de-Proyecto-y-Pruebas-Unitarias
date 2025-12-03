@@ -1,0 +1,213 @@
+\doxysection{Referencia de la clase problem.\+extension.\+Metricas\+Multiobjetivo}
+\hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo}{}\label{classproblem_1_1extension_1_1_metricas_multiobjetivo}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+
+
+Proporciona métricas para evaluar la calidad de soluciones en problemas multiobjetivo.  
+
+
+
+
+Diagrama de colaboración de problem.\+extension.\+Metricas\+Multiobjetivo\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_a4472830ebe1a6fe8bd33f701316552b1}{Tasa\+Error}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ solutions\+FPcurrent, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ solutions\+FPtrue)  throws Biff\+Exception, IOException
+\begin{DoxyCompactList}\small\item\em Calcula el porcentaje de soluciones que no son miembros del frente de Pareto verdadero. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_a30a03c8819f7191b7bfe09000d33532f}{Distancia\+Generacional}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ solutions\+FPcurrent, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ solutions\+FPtrue)  throws Biff\+Exception, IOException
+\begin{DoxyCompactList}\small\item\em Calcula la distancia generacional entre el frente de Pareto actual y el verdadero. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_a5ded050edcc046f49548df1cf0ec7449}{Dispersion}} (Array\+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ solutions)  throws Biff\+Exception, IOException
+\begin{DoxyCompactList}\small\item\em Calcula la dispersión de las soluciones obtenidas. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_abfb87540cf1b3680d692821621a2619c}{Calcular\+Min}} (Array\+List$<$ Double $>$ all\+Metrics)
+\begin{DoxyCompactList}\small\item\em Calcula el valor mínimo de una lista de métricas. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_a38ed4658d79ea9d5cfef4bceb7ba5816}{Calcular\+Max}} (Array\+List$<$ Double $>$ all\+Metrics)
+\begin{DoxyCompactList}\small\item\em Calcula el valor máximo de una lista de métricas. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_add9c9a821a254397c6a70d4f56363c0a}{Calcular\+Media}} (Array\+List$<$ Double $>$ all\+Metrics)
+\begin{DoxyCompactList}\small\item\em Calcula la media aritmética de una lista de métricas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classproblem_1_1extension_1_1_metricas_multiobjetivo_a0baaa7dba3706f16de008d747a7548a1}{Contains}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} solA, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ solutions)
+\begin{DoxyCompactList}\small\item\em Verifica si una solución está contenida en una lista de soluciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Proporciona métricas para evaluar la calidad de soluciones en problemas multiobjetivo. 
+
+Incluye métricas como tasa de error, distancia generacional y dispersión para comparar frentes de Pareto actuales con frentes de Pareto verdaderos. 
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_a38ed4658d79ea9d5cfef4bceb7ba5816}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!CalcularMax@{CalcularMax}}
+\index{CalcularMax@{CalcularMax}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{CalcularMax()}{CalcularMax()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_a38ed4658d79ea9d5cfef4bceb7ba5816} 
+double problem.\+extension.\+Metricas\+Multiobjetivo.\+Calcular\+Max (\begin{DoxyParamCaption}\item[{Array\+List$<$ Double $>$}]{all\+Metrics}{}\end{DoxyParamCaption})}
+
+
+
+Calcula el valor máximo de una lista de métricas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em all\+Metrics} & Lista de valores de métricas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor máximo encontrado 
+\end{DoxyReturn}
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_add9c9a821a254397c6a70d4f56363c0a}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!CalcularMedia@{CalcularMedia}}
+\index{CalcularMedia@{CalcularMedia}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{CalcularMedia()}{CalcularMedia()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_add9c9a821a254397c6a70d4f56363c0a} 
+double problem.\+extension.\+Metricas\+Multiobjetivo.\+Calcular\+Media (\begin{DoxyParamCaption}\item[{Array\+List$<$ Double $>$}]{all\+Metrics}{}\end{DoxyParamCaption})}
+
+
+
+Calcula la media aritmética de una lista de métricas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em all\+Metrics} & Lista de valores de métricas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Media aritmética de los valores 
+\end{DoxyReturn}
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_abfb87540cf1b3680d692821621a2619c}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!CalcularMin@{CalcularMin}}
+\index{CalcularMin@{CalcularMin}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{CalcularMin()}{CalcularMin()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_abfb87540cf1b3680d692821621a2619c} 
+double problem.\+extension.\+Metricas\+Multiobjetivo.\+Calcular\+Min (\begin{DoxyParamCaption}\item[{Array\+List$<$ Double $>$}]{all\+Metrics}{}\end{DoxyParamCaption})}
+
+
+
+Calcula el valor mínimo de una lista de métricas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em all\+Metrics} & Lista de valores de métricas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor mínimo encontrado 
+\end{DoxyReturn}
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_a0baaa7dba3706f16de008d747a7548a1}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!Contains@{Contains}}
+\index{Contains@{Contains}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_a0baaa7dba3706f16de008d747a7548a1} 
+boolean problem.\+extension.\+Metricas\+Multiobjetivo.\+Contains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{solA}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{solutions}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Verifica si una solución está contenida en una lista de soluciones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em solA} & Solución a buscar \\
+\hline
+{\em solutions} & Lista de soluciones donde buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si la solución está en la lista, false en caso contrario 
+\end{DoxyReturn}
+Gráfico de llamadas de esta función\+:
+% FIG 1
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_a5ded050edcc046f49548df1cf0ec7449}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!Dispersion@{Dispersion}}
+\index{Dispersion@{Dispersion}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{Dispersion()}{Dispersion()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_a5ded050edcc046f49548df1cf0ec7449} 
+double problem.\+extension.\+Metricas\+Multiobjetivo.\+Dispersion (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{solutions}{}\end{DoxyParamCaption}) throws Biff\+Exception, IOException}
+
+
+
+Calcula la dispersión de las soluciones obtenidas. 
+
+Mide qué tan distribuidas están las soluciones en el espacio de objetivos, calculando la desviación estándar de las distancias entre soluciones vecinas.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em solutions} & Lista de soluciones a analizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor de dispersión 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Biff\+Exception} & Si hay error al leer datos \\
+\hline
+{\em IOException} & Si hay error de entrada/salida \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 3
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_a30a03c8819f7191b7bfe09000d33532f}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!DistanciaGeneracional@{DistanciaGeneracional}}
+\index{DistanciaGeneracional@{DistanciaGeneracional}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{DistanciaGeneracional()}{DistanciaGeneracional()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_a30a03c8819f7191b7bfe09000d33532f} 
+double problem.\+extension.\+Metricas\+Multiobjetivo.\+Distancia\+Generacional (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{solutions\+FPcurrent}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{solutions\+FPtrue}{}\end{DoxyParamCaption}) throws Biff\+Exception, IOException}
+
+
+
+Calcula la distancia generacional entre el frente de Pareto actual y el verdadero. 
+
+Indica qué tan lejos están los elementos del frente de Pareto actual respecto al frente de Pareto verdadero usando distancia euclidiana.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em solutions\+FPcurrent} & Frente de Pareto actual obtenido \\
+\hline
+{\em solutions\+FPtrue} & Frente de Pareto verdadero de referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Distancia generacional promedio 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Biff\+Exception} & Si hay error al leer datos \\
+\hline
+{\em IOException} & Si hay error de entrada/salida \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 4
+\Hypertarget{classproblem_1_1extension_1_1_metricas_multiobjetivo_a4472830ebe1a6fe8bd33f701316552b1}\index{problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}!TasaError@{TasaError}}
+\index{TasaError@{TasaError}!problem.extension.MetricasMultiobjetivo@{problem.extension.MetricasMultiobjetivo}}
+\doxysubsubsection{\texorpdfstring{TasaError()}{TasaError()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_metricas_multiobjetivo_a4472830ebe1a6fe8bd33f701316552b1} 
+double problem.\+extension.\+Metricas\+Multiobjetivo.\+Tasa\+Error (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{solutions\+FPcurrent}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{solutions\+FPtrue}{}\end{DoxyParamCaption}) throws Biff\+Exception, IOException}
+
+
+
+Calcula el porcentaje de soluciones que no son miembros del frente de Pareto verdadero. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em solutions\+FPcurrent} & Frente de Pareto actual obtenido \\
+\hline
+{\em solutions\+FPtrue} & Frente de Pareto verdadero de referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Tasa de error como valor entre 0 y 1 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Biff\+Exception} & Si hay error al leer datos \\
+\hline
+{\em IOException} & Si hay error de entrada/salida \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 5
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/extension/\mbox{\hyperlink{_metricas_multiobjetivo_8java}{Metricas\+Multiobjetivo.\+java}}\end{DoxyCompactItemize}

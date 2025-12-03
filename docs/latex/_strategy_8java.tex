@@ -1,0 +1,56 @@
+\doxysection{Referencia del archivo src/main/java/metaheurictics/strategy/\+Strategy.java}
+\hypertarget{_strategy_8java}{}\label{_strategy_8java}\index{src/main/java/metaheurictics/strategy/Strategy.java@{src/main/java/metaheurictics/strategy/Strategy.java}}
+
+
+Clase central que coordina la ejecución de generadores metaheurísticos.  
+
+
+{\ttfamily import java.\+lang.\+reflect.\+Invocation\+Target\+Exception;}\newline
+{\ttfamily import java.\+util.\+Array\+List;}\newline
+{\ttfamily import java.\+util.\+List;}\newline
+{\ttfamily import java.\+util.\+Sorted\+Map;}\newline
+{\ttfamily import java.\+util.\+Tree\+Map;}\newline
+{\ttfamily import factory\+\_\+interface.\+IFFactory\+Generator;}\newline
+{\ttfamily import factory\+\_\+method.\+Factory\+Generator;}\newline
+{\ttfamily import problem.\+definition.\+Problem;}\newline
+{\ttfamily import problem.\+definition.\+State;}\newline
+{\ttfamily import problem.\+definition.\+Problem.\+Problem\+Type;}\newline
+{\ttfamily import local\+\_\+search.\+acceptation\+\_\+type.\+Dominance;}\newline
+{\ttfamily import local\+\_\+search.\+complement.\+Stop\+Execute;}\newline
+{\ttfamily import local\+\_\+search.\+complement.\+Update\+Parameter;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Distribution\+Estimation\+Algorithm;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Evolution\+Strategies;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Generator;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Generator\+Type;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Genetic\+Algorithm;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Multi\+Generator;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Particle\+Swarm\+Optimization;}\newline
+{\ttfamily import metaheuristics.\+generators.\+Random\+Search;}\newline
+Gráfico de dependencias incluidas en Strategy.\+java\+:
+% FIG 0
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmetaheurictics_1_1strategy_1_1_strategy}{metaheurictics.\+strategy.\+Strategy}}
+\begin{DoxyCompactList}\small\item\em Coordinador central para la ejecución de algoritmos metaheurísticos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Paquetes}
+\begin{DoxyCompactItemize}
+\item 
+package \mbox{\hyperlink{namespacemetaheurictics_1_1strategy}{metaheurictics.\+strategy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase central que coordina la ejecución de generadores metaheurísticos. 
+
+Esta clase implementa el patrón Singleton y actúa como coordinador principal del sistema de optimización metaheurística. Gestiona la ejecución de diferentes generadores, mantiene el estado global, controla las iteraciones y recopila métricas de rendimiento durante la búsqueda de soluciones.
+
+\begin{DoxyAuthor}{Autor}
+Bi\+CIAM 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2025 
+\end{DoxyDate}

@@ -1,0 +1,72 @@
+\doxysection{Referencia de la interface factory\+\_\+interface.\+IFFactory\+Father\+Selection}
+\hypertarget{interfacefactory__interface_1_1_i_f_factory_father_selection}{}\label{interfacefactory__interface_1_1_i_f_factory_father_selection}\index{factory\_interface.IFFactoryFatherSelection@{factory\_interface.IFFactoryFatherSelection}}
+
+
+Interfaz para la fábrica de estrategias de selección de padres.  
+
+
+
+
+Diagrama de herencia de factory\+\_\+interface.\+IFFactory\+Father\+Selection
+% FIG 0
+
+
+Diagrama de colaboración de factory\+\_\+interface.\+IFFactory\+Father\+Selection\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_father_selection}{Father\+Selection}} \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_father_selection_a029880d16f4d67500c67276b6898ff09}{create\+Select\+Father}} (\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_selection_type}{Selection\+Type}} selection\+Type)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Crea una estrategia de selección de padres según el tipo especificado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para la fábrica de estrategias de selección de padres. 
+
+\label{doc-func-members}
+\Hypertarget{interfacefactory__interface_1_1_i_f_factory_father_selection_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{interfacefactory__interface_1_1_i_f_factory_father_selection_a029880d16f4d67500c67276b6898ff09}\index{factory\_interface.IFFactoryFatherSelection@{factory\_interface.IFFactoryFatherSelection}!createSelectFather@{createSelectFather}}
+\index{createSelectFather@{createSelectFather}!factory\_interface.IFFactoryFatherSelection@{factory\_interface.IFFactoryFatherSelection}}
+\doxysubsubsection{\texorpdfstring{createSelectFather()}{createSelectFather()}}
+{\footnotesize\ttfamily \label{interfacefactory__interface_1_1_i_f_factory_father_selection_a029880d16f4d67500c67276b6898ff09} 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_father_selection}{Father\+Selection}} factory\+\_\+interface.\+IFFactory\+Father\+Selection.\+create\+Select\+Father (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_selection_type}{Selection\+Type}}}]{selection\+Type}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Crea una estrategia de selección de padres según el tipo especificado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em selection\+Type} & Tipo de estrategia de selección a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Una instancia de la estrategia de selección solicitada 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si el argumento es inválido \\
+\hline
+{\em Security\+Exception} & Si hay una violación de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase \\
+\hline
+{\em Instantiation\+Exception} & Si falla la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si el acceso es ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si falla la invocación del método \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementado en \mbox{\hyperlink{classfactory__method_1_1_factory_father_selection_ae10bf5deba29bc28091e356f4c776d7f}{factory\+\_\+method.\+Factory\+Father\+Selection}}.
+
+
+
+La documentación de esta interface está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/factory\+\_\+interface/\mbox{\hyperlink{_i_f_factory_father_selection_8java}{IFFactory\+Father\+Selection.\+java}}\end{DoxyCompactItemize}

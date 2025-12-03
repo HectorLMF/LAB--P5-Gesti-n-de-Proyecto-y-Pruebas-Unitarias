@@ -1,0 +1,119 @@
+\doxysection{Referencia de la clase evolutionary\+\_\+algorithms.\+complement.\+AIOMutation}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation}{}\label{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation}\index{evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}}
+
+
+Clase que implementa el operador de mutación AIOM para el problema TSP.  
+
+
+
+
+Diagrama de herencia de evolutionary\+\_\+algorithms.\+complement.\+AIOMutation
+% FIG 0
+
+
+Diagrama de colaboración de evolutionary\+\_\+algorithms.\+complement.\+AIOMutation\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a182dacf4bb3046d61563d6bd5f31e156}{mutation}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state, double PM)
+\begin{DoxyCompactList}\small\item\em Aplica la mutación AIOM al estado dado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_aa07dddb2b2b0291e997a7ea1608529df}{sorted\+Path\+Value}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\begin{DoxyCompactList}\small\item\em Ordena el camino por valor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a3c9193b63cc517d48761bfddc3c0374b}{fill\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa el camino con índices secuenciales. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static Array\+List$<$ Object $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a15c393d092cf2298a53fdc2bb4a99e35}{path}} = new Array\+List$<$Object$>$()
+\begin{DoxyCompactList}\small\item\em Lista que almacena el camino ordenado durante la mutación. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que implementa el operador de mutación AIOM para el problema TSP. 
+
+Esta clase extiende \doxylink{classevolutionary__algorithms_1_1complement_1_1_mutation}{Mutation} y proporciona una estrategia de mutación específica que invierte un segmento del camino seleccionado aleatoriamente. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a3c9193b63cc517d48761bfddc3c0374b}\index{evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}!fillPath@{fillPath}}
+\index{fillPath@{fillPath}!evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}}
+\doxysubsubsection{\texorpdfstring{fillPath()}{fillPath()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a3c9193b63cc517d48761bfddc3c0374b} 
+void evolutionary\+\_\+algorithms.\+complement.\+AIOMutation.\+fill\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inicializa el camino con índices secuenciales. 
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a182dacf4bb3046d61563d6bd5f31e156}\index{evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}!mutation@{mutation}}
+\index{mutation@{mutation}!evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}}
+\doxysubsubsection{\texorpdfstring{mutation()}{mutation()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a182dacf4bb3046d61563d6bd5f31e156} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} evolutionary\+\_\+algorithms.\+complement.\+AIOMutation.\+mutation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{, }\item[{double}]{PM}{}\end{DoxyParamCaption})}
+
+
+
+Aplica la mutación AIOM al estado dado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Estado a mutar \\
+\hline
+{\em PM} & Probabilidad de mutación \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado mutado 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_mutation_a027da26e5a49d8ca908b03acffebb226}{evolutionary\+\_\+algorithms.\+complement.\+Mutation}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_aa07dddb2b2b0291e997a7ea1608529df}\index{evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}!sortedPathValue@{sortedPathValue}}
+\index{sortedPathValue@{sortedPathValue}!evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}}
+\doxysubsubsection{\texorpdfstring{sortedPathValue()}{sortedPathValue()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_aa07dddb2b2b0291e997a7ea1608529df} 
+void evolutionary\+\_\+algorithms.\+complement.\+AIOMutation.\+sorted\+Path\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Ordena el camino por valor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Estado cuyo código será ordenado \\
+\hline
+\end{DoxyParams}
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+
+
+\label{doc-variable-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a15c393d092cf2298a53fdc2bb4a99e35}\index{evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}!path@{path}}
+\index{path@{path}!evolutionary\_algorithms.complement.AIOMutation@{evolutionary\_algorithms.complement.AIOMutation}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_a_i_o_mutation_a15c393d092cf2298a53fdc2bb4a99e35} 
+Array\+List$<$Object$>$ evolutionary\+\_\+algorithms.\+complement.\+AIOMutation.\+path = new Array\+List$<$Object$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista que almacena el camino ordenado durante la mutación. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/\mbox{\hyperlink{_a_i_o_mutation_8java}{AIOMutation.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+digraph "evolutionary_algorithms.complement.Sampling.sampling"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="evolutionary_algorithms.complement.\lSampling.sampling",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Realiza el muestreo de individuos a partir de los padres."];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="metaheuristics.generators.\lDistributionEstimationAlgorithm.generate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_distribution_estimation_algorithm.html#a5d496021c3310be8abbc218d4bc63baa",tooltip="Genera un nuevo estado candidato mediante estimación de distribuciones."];
+}

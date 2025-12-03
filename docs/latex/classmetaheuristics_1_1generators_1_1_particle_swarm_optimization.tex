@@ -1,0 +1,688 @@
+\doxysection{Referencia de la clase metaheuristics.\+generators.\+Particle\+Swarm\+Optimization}
+\hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization}{}\label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+
+
+Algoritmo PSO que simula el comportamiento social de enjambres.  
+
+
+
+
+Diagrama de herencia de metaheuristics.\+generators.\+Particle\+Swarm\+Optimization
+% FIG 0
+
+
+Diagrama de colaboración de metaheuristics.\+generators.\+Particle\+Swarm\+Optimization\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a58823d3000e36d540bd20800e0636a88}{Particle\+Swarm\+Optimization}} ()
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4bab770550c31f12b11de2585086936a}{generate}} (Integer operatornumber)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception
+\begin{DoxyCompactList}\small\item\em Genera un nuevo estado candidato. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a2b35916a7fef7ecc1ae9c6f4c571a6d1}{inicialice\+LBest}} ()
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a2764712d1d2ba2259d0562f78e669977}{get\+Reference}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el estado de referencia actual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4e9ec463f3058721220c4c28c99a42e7}{get\+State\+Reference\+PSO}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af0007f3368bc26e13509697f13b8bd8f}{set\+State\+Reference\+PSO}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a84f1604d94af7fb5a200176a4c245b15}{state\+Reference\+PSO}})
+\item 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a82c7ce280bc0e520f17466e4c147bea4}{get\+List\+State\+Reference}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a672badc4745b5b9327dcc920fb195c8a}{set\+List\+State\+Reference}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a488b113859866aa90ed7f71dea741024}{list\+State\+Reference}})
+\item 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a754377431c7fa3de15b4e81fd7f79f6f}{get\+List\+Particle}} ()
+\item 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8e0fe5cf94eb84b09d75c6e270bf60de}{set\+List\+Particle}} (List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4635b77d518d93e48c436213dc8d3601}{list\+Particle}})
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6f553e35a4929a626db8c0e3a038eaf5}{get\+Generator\+Type}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a5855f4db41982beb1b0ef27a4b44742d}{set\+Generator\+Type}} (\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a87ec4603a4779481939b402eb8e02089}{generator\+Type}})
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_abc5a8dcdf9ff7418f4084002e383b860}{update\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate, Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception,Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception,Illegal\+Access\+Exception, Invocation\+Target\+Exception,No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Actualiza el estado de referencia con un nuevo candidato. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aec9a3560a4a9aa2e60eeaf289ea18b3c}{g\+Best\+Inicial}} ()
+\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aa8fc5294266abb5704de5fb3b70aa0e2}{set\+Initial\+Reference}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Initial\+Ref)
+\begin{DoxyCompactList}\small\item\em Establece el estado de referencia inicial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a71987dfaef5ebd055f958f9ca186953f}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo de generador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a64d44fa65b23051d69ab0d4d14e0f162}{get\+Reference\+List}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de estados de referencia. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a464fc4922d70868c61bb905e6caa3c8e}{get\+Son\+List}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de estados hijos generados. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a17300bef2e571cecf9428d5768f88dc4}{award\+Update\+REF}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Candidate)
+\begin{DoxyCompactList}\small\item\em Verifica si se debe actualizar la referencia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af200d1e3621dea6a34960f8ffbbefa8c}{set\+Weight}} (float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a4f8987c2b64eb8e5728e9abe354c58}{weight}})
+\begin{DoxyCompactList}\small\item\em Establece el peso del generador. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aec94a0a6dc5331c35a59a3be0078be9f}{get\+Weight}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el peso actual del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac6bc6fa2d1b14049ea3a1a5f0c26b4b5}{get\+List\+Count\+Better\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de mejoras por período. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4015ce46c4c0b78825daa8a263a5ac56}{get\+List\+Count\+Gender}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de uso por período. \end{DoxyCompactList}\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6e3b617f60a8f8ff0d3f3e5e000996fb}{get\+Trace}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el historial de trazas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8a448ceb59a38faaa4d964e5c31510ee}{get\+Count\+Ref}} ()
+\item 
+static void \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a443250bb3b7fb34f1a2a3ba062cb3311}{set\+Count\+Ref}} (int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac7ebf8d9c7ccd1f23c38eea79ea50ad4}{count\+Ref}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac7ebf8d9c7ccd1f23c38eea79ea50ad4}{count\+Ref}} = 0
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a29c7d99df446a2bf178c8e9ffc963a4f}{count\+Particle}} = 0
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac2df5a730f09652ea6303fde195de727}{cout\+Swarm}} = 0
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aeac78dea881f9fd22d59194fb42efd79}{count\+Particle\+By\+Swarm}} = 0
+\item 
+static double \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_addda0820c787d47989359a5bb65a01c4}{wmax}} = 0.\+9
+\item 
+static double \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_abd9131324a538ab434c9578bdbf1b54d}{wmin}} = 0.\+2
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ad5c84892e19813448c191f22023f9da6}{learning1}} = 2
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a21ef4cd4f192822178c0c850ed78f903}{learning2}} = 2
+\item 
+static double \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af62b47f08a2cb5157b18ef72f69c3aaf}{constriction}}
+\item 
+static boolean \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6c6ed35083ee3d13e3b6396225d40db6}{binary}} = false
+\item 
+static \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8c4f8b7e4c2b5bf26916121df43b6002}{l\+Best}}
+\item 
+static \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6ca52dc27ceda8553bae2021e0a7bb81}{g\+Best}}
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a1624017c12a2f31e26d4b6d2c9e44d4e}{count\+Current\+Iter\+PSO}}
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aa71893e8fc8a4ac335a6977c62ccd419}{usage\+Count}} = 0
+\item 
+static int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a923f1b55944f1c4da8730b789fe9de85}{improvement\+Count}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a9da4ad8253a7521056fbb306a495a3}{get\+List\+State\+Ref}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a84f1604d94af7fb5a200176a4c245b15}{state\+Reference\+PSO}}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a488b113859866aa90ed7f71dea741024}{list\+State\+Reference}} = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()
+\item 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4635b77d518d93e48c436213dc8d3601}{list\+Particle}} = new Array\+List$<$\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}}$>$ ()
+\item 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a87ec4603a4779481939b402eb8e02089}{generator\+Type}}
+\item 
+float \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a4f8987c2b64eb8e5728e9abe354c58}{weight}} = 50
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aed12b5144246243b8f212e682900ddc9}{improvement\+Count\+History}} = new int\mbox{[}10\mbox{]}
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a308c27ae6438917b3e3344ffd5cebcaf}{usage\+Count\+History}} = new int\mbox{[}10\mbox{]}
+\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a3436d8147038325c0726224894038433}{list\+Trace}} = new float\mbox{[}1200000\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator}{metaheuristics.\+generators.\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3c0145210385b6257c8fc20cac1f830a}{count\+Gender}}
+\begin{DoxyCompactList}\small\item\em Contador de uso del generador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a43815f3944c514ba3156b0e68482befa}{count\+Better\+Gender}}
+\begin{DoxyCompactList}\small\item\em Contador de mejoras del generador. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a535a5753046bdda55fb6fee44c4b1f88}{list\+Count\+Better\+Gender}}
+\begin{DoxyCompactList}\small\item\em Array con las mejoras de cada generador en períodos de 10, acumulativo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Algoritmo PSO que simula el comportamiento social de enjambres. 
+
+Esta clase implementa el algoritmo PSO que utiliza una población de partículas que se mueven en el espacio de búsqueda influenciadas por su mejor posición personal y la mejor posición global del enjambre. 
+
+\label{doc-constructors}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a58823d3000e36d540bd20800e0636a88}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!ParticleSwarmOptimization@{ParticleSwarmOptimization}}
+\index{ParticleSwarmOptimization@{ParticleSwarmOptimization}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{ParticleSwarmOptimization()}{ParticleSwarmOptimization()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a58823d3000e36d540bd20800e0636a88} 
+metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+Particle\+Swarm\+Optimization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+
+
+\label{doc-func-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a17300bef2e571cecf9428d5768f88dc4}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!awardUpdateREF@{awardUpdateREF}}
+\index{awardUpdateREF@{awardUpdateREF}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{awardUpdateREF()}{awardUpdateREF()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a17300bef2e571cecf9428d5768f88dc4} 
+boolean metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+award\+Update\+REF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si se debe actualizar la referencia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Candidate} & Estado candidato a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si se debe actualizar, false en caso contrario 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a3513d3953ecc97683f38bcb662b74b9b}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aec9a3560a4a9aa2e60eeaf289ea18b3c}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!gBestInicial@{gBestInicial}}
+\index{gBestInicial@{gBestInicial}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{gBestInicial()}{gBestInicial()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aec9a3560a4a9aa2e60eeaf289ea18b3c} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+g\+Best\+Inicial (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4bab770550c31f12b11de2585086936a}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!generate@{generate}}
+\index{generate@{generate}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4bab770550c31f12b11de2585086936a} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+generate (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Genera un nuevo estado candidato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em operatornumber} & Número de operador a utilizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado candidato generado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay error en la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay acceso ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay error en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a06f6f7622b9ce32590eadbdf6bf962b5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8a448ceb59a38faaa4d964e5c31510ee}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getCountRef@{getCountRef}}
+\index{getCountRef@{getCountRef}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getCountRef()}{getCountRef()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8a448ceb59a38faaa4d964e5c31510ee} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Count\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6f553e35a4929a626db8c0e3a038eaf5}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getGeneratorType@{getGeneratorType}}
+\index{getGeneratorType@{getGeneratorType}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getGeneratorType()}{getGeneratorType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6f553e35a4929a626db8c0e3a038eaf5} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Generator\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac6bc6fa2d1b14049ea3a1a5f0c26b4b5}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getListCountBetterGender@{getListCountBetterGender}}
+\index{getListCountBetterGender@{getListCountBetterGender}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getListCountBetterGender()}{getListCountBetterGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac6bc6fa2d1b14049ea3a1a5f0c26b4b5} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+List\+Count\+Better\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de mejoras por período. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el contador de mejoras 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5bace71f51c16b611ede3ed53263473}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4015ce46c4c0b78825daa8a263a5ac56}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getListCountGender@{getListCountGender}}
+\index{getListCountGender@{getListCountGender}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getListCountGender()}{getListCountGender()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4015ce46c4c0b78825daa8a263a5ac56} 
+int\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+List\+Count\+Gender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de uso por período. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el contador de uso 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ac5d6d45ee8017fb87d80aa952edfc34e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a754377431c7fa3de15b4e81fd7f79f6f}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getListParticle@{getListParticle}}
+\index{getListParticle@{getListParticle}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getListParticle()}{getListParticle()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a754377431c7fa3de15b4e81fd7f79f6f} 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+List\+Particle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gráfico de llamadas a esta función\+:
+% FIG 6
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a9da4ad8253a7521056fbb306a495a3}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getListStateRef@{getListStateRef}}
+\index{getListStateRef@{getListStateRef}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getListStateRef()}{getListStateRef()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a9da4ad8253a7521056fbb306a495a3} 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+List\+State\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Gráfico de llamadas de esta función\+:
+% FIG 7
+Gráfico de llamadas a esta función\+:
+% FIG 8
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a82c7ce280bc0e520f17466e4c147bea4}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getListStateReference@{getListStateReference}}
+\index{getListStateReference@{getListStateReference}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getListStateReference()}{getListStateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a82c7ce280bc0e520f17466e4c147bea4} 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+List\+State\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gráfico de llamadas de esta función\+:
+% FIG 9
+Gráfico de llamadas a esta función\+:
+% FIG 10
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a2764712d1d2ba2259d0562f78e669977}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getReference@{getReference}}
+\index{getReference@{getReference}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a2764712d1d2ba2259d0562f78e669977} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el estado de referencia actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Estado de referencia actual 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa56dd45a45776f6023b9f74179cc6384}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a64d44fa65b23051d69ab0d4d14e0f162}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getReferenceList@{getReferenceList}}
+\index{getReferenceList@{getReferenceList}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getReferenceList()}{getReferenceList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a64d44fa65b23051d69ab0d4d14e0f162} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Reference\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de estados de referencia. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de estados de referencia 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_ae168237b306de55fe4d6dfda75c7cd13}{metaheuristics.\+generators.\+Generator}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 11
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a464fc4922d70868c61bb905e6caa3c8e}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getSonList@{getSonList}}
+\index{getSonList@{getSonList}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getSonList()}{getSonList()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a464fc4922d70868c61bb905e6caa3c8e} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Son\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la lista de estados hijos generados. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de estados hijos 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aee09d724c1b3040e7a7ad0b64e341c96}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4e9ec463f3058721220c4c28c99a42e7}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getStateReferencePSO@{getStateReferencePSO}}
+\index{getStateReferencePSO@{getStateReferencePSO}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getStateReferencePSO()}{getStateReferencePSO()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4e9ec463f3058721220c4c28c99a42e7} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+State\+Reference\+PSO (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6e3b617f60a8f8ff0d3f3e5e000996fb}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getTrace@{getTrace}}
+\index{getTrace@{getTrace}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getTrace()}{getTrace()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6e3b617f60a8f8ff0d3f3e5e000996fb} 
+float\mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el historial de trazas. 
+
+\begin{DoxyReturn}{Devuelve}
+Array con el historial de trazas 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a75d7f30dd2cb3f92475db8525ac7c6e7}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a71987dfaef5ebd055f958f9ca186953f}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getType@{getType}}
+\index{getType@{getType}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a71987dfaef5ebd055f958f9ca186953f} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el tipo de generador. 
+
+\begin{DoxyReturn}{Devuelve}
+Tipo de generador metaheurístico 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a5a123306b43c42d28cd1d6e17f8067a5}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aec94a0a6dc5331c35a59a3be0078be9f}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!getWeight@{getWeight}}
+\index{getWeight@{getWeight}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{getWeight()}{getWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aec94a0a6dc5331c35a59a3be0078be9f} 
+float metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+get\+Weight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el peso actual del generador. 
+
+\begin{DoxyReturn}{Devuelve}
+Peso del generador 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a64f2b824081c7af593bf9aa8eabf2c9e}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a2b35916a7fef7ecc1ae9c6f4c571a6d1}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!inicialiceLBest@{inicialiceLBest}}
+\index{inicialiceLBest@{inicialiceLBest}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{inicialiceLBest()}{inicialiceLBest()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a2b35916a7fef7ecc1ae9c6f4c571a6d1} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+inicialice\+LBest (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Gráfico de llamadas de esta función\+:
+% FIG 12
+Gráfico de llamadas a esta función\+:
+% FIG 13
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a443250bb3b7fb34f1a2a3ba062cb3311}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setCountRef@{setCountRef}}
+\index{setCountRef@{setCountRef}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setCountRef()}{setCountRef()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a443250bb3b7fb34f1a2a3ba062cb3311} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+Count\+Ref (\begin{DoxyParamCaption}\item[{int}]{count\+Ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a5855f4db41982beb1b0ef27a4b44742d}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setGeneratorType@{setGeneratorType}}
+\index{setGeneratorType@{setGeneratorType}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setGeneratorType()}{setGeneratorType()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a5855f4db41982beb1b0ef27a4b44742d} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+Generator\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}}}]{generator\+Type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aa8fc5294266abb5704de5fb3b70aa0e2}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setInitialReference@{setInitialReference}}
+\index{setInitialReference@{setInitialReference}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setInitialReference()}{setInitialReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aa8fc5294266abb5704de5fb3b70aa0e2} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+Initial\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Initial\+Ref}{}\end{DoxyParamCaption})}
+
+
+
+Establece el estado de referencia inicial. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Initial\+Ref} & Estado de referencia inicial \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa9f7c4c983705f843b8fcc81e4aa8ba4}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8e0fe5cf94eb84b09d75c6e270bf60de}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setListParticle@{setListParticle}}
+\index{setListParticle@{setListParticle}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setListParticle()}{setListParticle()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8e0fe5cf94eb84b09d75c6e270bf60de} 
+List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+List\+Particle (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}} $>$}]{list\+Particle}{}\end{DoxyParamCaption})}
+
+Gráfico de llamadas a esta función\+:
+% FIG 14
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a672badc4745b5b9327dcc920fb195c8a}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setListStateReference@{setListStateReference}}
+\index{setListStateReference@{setListStateReference}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setListStateReference()}{setListStateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a672badc4745b5b9327dcc920fb195c8a} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+List\+State\+Reference (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State\+Reference}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af0007f3368bc26e13509697f13b8bd8f}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setStateReferencePSO@{setStateReferencePSO}}
+\index{setStateReferencePSO@{setStateReferencePSO}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setStateReferencePSO()}{setStateReferencePSO()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af0007f3368bc26e13509697f13b8bd8f} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+State\+Reference\+PSO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Reference\+PSO}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af200d1e3621dea6a34960f8ffbbefa8c}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!setWeight@{setWeight}}
+\index{setWeight@{setWeight}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{setWeight()}{setWeight()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af200d1e3621dea6a34960f8ffbbefa8c} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+set\+Weight (\begin{DoxyParamCaption}\item[{float}]{weight}{}\end{DoxyParamCaption})}
+
+
+
+Establece el peso del generador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em weight} & Nuevo peso del generador \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_a8b3c66b57b4c739666989fbce667eb40}{metaheuristics.\+generators.\+Generator}}.
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_abc5a8dcdf9ff7418f4084002e383b860}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!updateReference@{updateReference}}
+\index{updateReference@{updateReference}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{updateReference()}{updateReference()}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_abc5a8dcdf9ff7418f4084002e383b860} 
+void metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+update\+Reference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Candidate}{, }\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception,Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception,Illegal\+Access\+Exception, Invocation\+Target\+Exception,No\+Such\+Method\+Exception}
+
+
+
+Actualiza el estado de referencia con un nuevo candidato. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Candidate} & Estado candidato a considerar \\
+\hline
+{\em count\+Iterations\+Current} & Iteración actual del algoritmo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay error en la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay acceso ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay error en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplementado de \mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_generator_aa1c5878953f2111221b21cb9b1e6cc9f}{metaheuristics.\+generators.\+Generator}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 15
+
+
+\label{doc-variable-members}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6c6ed35083ee3d13e3b6396225d40db6}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!binary@{binary}}
+\index{binary@{binary}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{binary}{binary}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6c6ed35083ee3d13e3b6396225d40db6} 
+boolean metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+binary = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af62b47f08a2cb5157b18ef72f69c3aaf}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!constriction@{constriction}}
+\index{constriction@{constriction}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{constriction}{constriction}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_af62b47f08a2cb5157b18ef72f69c3aaf} 
+double metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+constriction\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a1624017c12a2f31e26d4b6d2c9e44d4e}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!countCurrentIterPSO@{countCurrentIterPSO}}
+\index{countCurrentIterPSO@{countCurrentIterPSO}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{countCurrentIterPSO}{countCurrentIterPSO}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a1624017c12a2f31e26d4b6d2c9e44d4e} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+count\+Current\+Iter\+PSO\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a29c7d99df446a2bf178c8e9ffc963a4f}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!countParticle@{countParticle}}
+\index{countParticle@{countParticle}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{countParticle}{countParticle}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a29c7d99df446a2bf178c8e9ffc963a4f} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+count\+Particle = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aeac78dea881f9fd22d59194fb42efd79}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!countParticleBySwarm@{countParticleBySwarm}}
+\index{countParticleBySwarm@{countParticleBySwarm}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{countParticleBySwarm}{countParticleBySwarm}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aeac78dea881f9fd22d59194fb42efd79} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+count\+Particle\+By\+Swarm = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac7ebf8d9c7ccd1f23c38eea79ea50ad4}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!countRef@{countRef}}
+\index{countRef@{countRef}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{countRef}{countRef}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac7ebf8d9c7ccd1f23c38eea79ea50ad4} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+count\+Ref = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac2df5a730f09652ea6303fde195de727}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!coutSwarm@{coutSwarm}}
+\index{coutSwarm@{coutSwarm}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{coutSwarm}{coutSwarm}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ac2df5a730f09652ea6303fde195de727} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+cout\+Swarm = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6ca52dc27ceda8553bae2021e0a7bb81}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!gBest@{gBest}}
+\index{gBest@{gBest}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{gBest}{gBest}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a6ca52dc27ceda8553bae2021e0a7bb81} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+g\+Best\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a87ec4603a4779481939b402eb8e02089}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!generatorType@{generatorType}}
+\index{generatorType@{generatorType}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{generatorType}{generatorType}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a87ec4603a4779481939b402eb8e02089} 
+\mbox{\hyperlink{enummetaheuristics_1_1generators_1_1_generator_type}{Generator\+Type}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+generator\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a923f1b55944f1c4da8730b789fe9de85}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!improvementCount@{improvementCount}}
+\index{improvementCount@{improvementCount}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{improvementCount}{improvementCount}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a923f1b55944f1c4da8730b789fe9de85} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+improvement\+Count = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aed12b5144246243b8f212e682900ddc9}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!improvementCountHistory@{improvementCountHistory}}
+\index{improvementCountHistory@{improvementCountHistory}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{improvementCountHistory}{improvementCountHistory}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aed12b5144246243b8f212e682900ddc9} 
+int \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+improvement\+Count\+History = new int\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8c4f8b7e4c2b5bf26916121df43b6002}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!lBest@{lBest}}
+\index{lBest@{lBest}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{lBest}{lBest}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a8c4f8b7e4c2b5bf26916121df43b6002} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+l\+Best\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ad5c84892e19813448c191f22023f9da6}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!learning1@{learning1}}
+\index{learning1@{learning1}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{learning1}{learning1}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_ad5c84892e19813448c191f22023f9da6} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+learning1 = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a21ef4cd4f192822178c0c850ed78f903}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!learning2@{learning2}}
+\index{learning2@{learning2}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{learning2}{learning2}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a21ef4cd4f192822178c0c850ed78f903} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+learning2 = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4635b77d518d93e48c436213dc8d3601}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!listParticle@{listParticle}}
+\index{listParticle@{listParticle}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{listParticle}{listParticle}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4635b77d518d93e48c436213dc8d3601} 
+List$<$\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}}$>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+list\+Particle = new Array\+List$<$\mbox{\hyperlink{classmetaheuristics_1_1generators_1_1_particle}{Particle}}$>$ ()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a488b113859866aa90ed7f71dea741024}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!listStateReference@{listStateReference}}
+\index{listStateReference@{listStateReference}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{listStateReference}{listStateReference}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a488b113859866aa90ed7f71dea741024} 
+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$ metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+list\+State\+Reference = new Array\+List$<$\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a3436d8147038325c0726224894038433}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!listTrace@{listTrace}}
+\index{listTrace@{listTrace}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{listTrace}{listTrace}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a3436d8147038325c0726224894038433} 
+float \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+list\+Trace = new float\mbox{[}1200000\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a84f1604d94af7fb5a200176a4c245b15}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!stateReferencePSO@{stateReferencePSO}}
+\index{stateReferencePSO@{stateReferencePSO}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{stateReferencePSO}{stateReferencePSO}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a84f1604d94af7fb5a200176a4c245b15} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+state\+Reference\+PSO\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aa71893e8fc8a4ac335a6977c62ccd419}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!usageCount@{usageCount}}
+\index{usageCount@{usageCount}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{usageCount}{usageCount}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_aa71893e8fc8a4ac335a6977c62ccd419} 
+int metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+usage\+Count = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a308c27ae6438917b3e3344ffd5cebcaf}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!usageCountHistory@{usageCountHistory}}
+\index{usageCountHistory@{usageCountHistory}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{usageCountHistory}{usageCountHistory}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a308c27ae6438917b3e3344ffd5cebcaf} 
+int \mbox{[}$\,$\mbox{]} metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+usage\+Count\+History = new int\mbox{[}10\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a4f8987c2b64eb8e5728e9abe354c58}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!weight@{weight}}
+\index{weight@{weight}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_a4a4f8987c2b64eb8e5728e9abe354c58} 
+float metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+weight = 50\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_addda0820c787d47989359a5bb65a01c4}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!wmax@{wmax}}
+\index{wmax@{wmax}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{wmax}{wmax}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_addda0820c787d47989359a5bb65a01c4} 
+double metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+wmax = 0.\+9\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_abd9131324a538ab434c9578bdbf1b54d}\index{metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}!wmin@{wmin}}
+\index{wmin@{wmin}!metaheuristics.generators.ParticleSwarmOptimization@{metaheuristics.generators.ParticleSwarmOptimization}}
+\doxysubsubsection{\texorpdfstring{wmin}{wmin}}
+{\footnotesize\ttfamily \label{classmetaheuristics_1_1generators_1_1_particle_swarm_optimization_abd9131324a538ab434c9578bdbf1b54d} 
+double metaheuristics.\+generators.\+Particle\+Swarm\+Optimization.\+wmin = 0.\+2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/metaheuristics/generators/\mbox{\hyperlink{_particle_swarm_optimization_8java}{Particle\+Swarm\+Optimization.\+java}}\end{DoxyCompactItemize}

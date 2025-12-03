@@ -1,0 +1,103 @@
+\doxysection{Referencia de la clase problem.\+definition.\+Codification}
+\hypertarget{classproblem_1_1definition_1_1_codification}{}\label{classproblem_1_1definition_1_1_codification}\index{problem.definition.Codification@{problem.definition.Codification}}
+
+
+Sistema de codificación abstracto para representar soluciones.  
+
+
+
+
+Diagrama de colaboración de problem.\+definition.\+Codification\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+abstract boolean \mbox{\hyperlink{classproblem_1_1definition_1_1_codification_ad2f8c92a96c58a48febe83adbcd25b8e}{valid\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\begin{DoxyCompactList}\small\item\em Valida si un estado es válido según las restricciones. \end{DoxyCompactList}\item 
+abstract Object \mbox{\hyperlink{classproblem_1_1definition_1_1_codification_ad5875a47b3e863653ede3bb7feae524f}{get\+Variable\+Aleatory\+Value}} (int key)
+\begin{DoxyCompactList}\small\item\em Obtiene un valor aleatorio para una variable. \end{DoxyCompactList}\item 
+abstract int \mbox{\hyperlink{classproblem_1_1definition_1_1_codification_a01a0c8247d76d4c4c32c7f3e51c2d5f8}{get\+Aleatory\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene una clave aleatoria de variable. \end{DoxyCompactList}\item 
+abstract int \mbox{\hyperlink{classproblem_1_1definition_1_1_codification_a3fadfa69736eedaf89c53863dd6ddc6d}{get\+Variable\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el número total de variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Sistema de codificación abstracto para representar soluciones. 
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1definition_1_1_codification_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classproblem_1_1definition_1_1_codification_a01a0c8247d76d4c4c32c7f3e51c2d5f8}\index{problem.definition.Codification@{problem.definition.Codification}!getAleatoryKey@{getAleatoryKey}}
+\index{getAleatoryKey@{getAleatoryKey}!problem.definition.Codification@{problem.definition.Codification}}
+\doxysubsubsection{\texorpdfstring{getAleatoryKey()}{getAleatoryKey()}}
+{\footnotesize\ttfamily \label{classproblem_1_1definition_1_1_codification_a01a0c8247d76d4c4c32c7f3e51c2d5f8} 
+abstract int problem.\+definition.\+Codification.\+get\+Aleatory\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Obtiene una clave aleatoria de variable. 
+
+\begin{DoxyReturn}{Devuelve}
+Clave de variable aleatoria 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{classproblem_1_1definition_1_1_codification_ad5875a47b3e863653ede3bb7feae524f}\index{problem.definition.Codification@{problem.definition.Codification}!getVariableAleatoryValue@{getVariableAleatoryValue}}
+\index{getVariableAleatoryValue@{getVariableAleatoryValue}!problem.definition.Codification@{problem.definition.Codification}}
+\doxysubsubsection{\texorpdfstring{getVariableAleatoryValue()}{getVariableAleatoryValue()}}
+{\footnotesize\ttfamily \label{classproblem_1_1definition_1_1_codification_ad5875a47b3e863653ede3bb7feae524f} 
+abstract Object problem.\+definition.\+Codification.\+get\+Variable\+Aleatory\+Value (\begin{DoxyParamCaption}\item[{int}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Obtiene un valor aleatorio para una variable. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & Clave de la variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Valor aleatorio válido para la variable 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{classproblem_1_1definition_1_1_codification_a3fadfa69736eedaf89c53863dd6ddc6d}\index{problem.definition.Codification@{problem.definition.Codification}!getVariableCount@{getVariableCount}}
+\index{getVariableCount@{getVariableCount}!problem.definition.Codification@{problem.definition.Codification}}
+\doxysubsubsection{\texorpdfstring{getVariableCount()}{getVariableCount()}}
+{\footnotesize\ttfamily \label{classproblem_1_1definition_1_1_codification_a3fadfa69736eedaf89c53863dd6ddc6d} 
+abstract int problem.\+definition.\+Codification.\+get\+Variable\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Obtiene el número total de variables. 
+
+\begin{DoxyReturn}{Devuelve}
+Cantidad de variables en la codificación 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{classproblem_1_1definition_1_1_codification_ad2f8c92a96c58a48febe83adbcd25b8e}\index{problem.definition.Codification@{problem.definition.Codification}!validState@{validState}}
+\index{validState@{validState}!problem.definition.Codification@{problem.definition.Codification}}
+\doxysubsubsection{\texorpdfstring{validState()}{validState()}}
+{\footnotesize\ttfamily \label{classproblem_1_1definition_1_1_codification_ad2f8c92a96c58a48febe83adbcd25b8e} 
+abstract boolean problem.\+definition.\+Codification.\+valid\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Valida si un estado es válido según las restricciones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Estado a validar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si el estado es válido, false en caso contrario 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/definition/\mbox{\hyperlink{_codification_8java}{Codification.\+java}}\end{DoxyCompactItemize}

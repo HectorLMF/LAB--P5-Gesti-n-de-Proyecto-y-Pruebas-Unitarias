@@ -1,0 +1,87 @@
+\doxysection{Referencia de la clase evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover}{}\label{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover}\index{evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}}
+
+
+Clase que implementa el operador de cruce uniforme.  
+
+
+
+
+Diagrama de herencia de evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover
+% FIG 0
+
+
+Diagrama de colaboración de evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_aa99dc616ac6ca6cd4ee926b275736cb0}{mascara}} (int length)
+\begin{DoxyCompactList}\small\item\em Genera una máscara aleatoria de bits. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774}{crossover}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} father1, \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} father2, double PC)
+\begin{DoxyCompactList}\small\item\em Realiza el cruce uniforme entre dos estados padres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que implementa el operador de cruce uniforme. 
+
+Usa una máscara aleatoria para seleccionar genes de cada padre. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774}\index{evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}!crossover@{crossover}}
+\index{crossover@{crossover}!evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}}
+\doxysubsubsection{\texorpdfstring{crossover()}{crossover()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_a54eb36b06a9e409253360eb9cd76f774} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover.\+crossover (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{father1}{, }\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{father2}{, }\item[{double}]{PC}{}\end{DoxyParamCaption})}
+
+
+
+Realiza el cruce uniforme entre dos estados padres. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em father1} & Primer estado padre \\
+\hline
+{\em father2} & Segundo estado padre \\
+\hline
+{\em PC} & Probabilidad de cruce \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Estado hijo resultado del cruce 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover_a77155266e5646a87bcd427189938cc32}{evolutionary\+\_\+algorithms.\+complement.\+Crossover}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_aa99dc616ac6ca6cd4ee926b275736cb0}\index{evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}!mascara@{mascara}}
+\index{mascara@{mascara}!evolutionary\_algorithms.complement.UniformCrossover@{evolutionary\_algorithms.complement.UniformCrossover}}
+\doxysubsubsection{\texorpdfstring{mascara()}{mascara()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_uniform_crossover_aa99dc616ac6ca6cd4ee926b275736cb0} 
+int\mbox{[}$\,$\mbox{]} evolutionary\+\_\+algorithms.\+complement.\+Uniform\+Crossover.\+mascara (\begin{DoxyParamCaption}\item[{int}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Genera una máscara aleatoria de bits. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em length} & Longitud de la máscara \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Array de enteros con valores 0 o 1 
+\end{DoxyReturn}
+Gráfico de llamadas de esta función\+:
+% FIG 3
+Gráfico de llamadas a esta función\+:
+% FIG 4
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/\mbox{\hyperlink{_uniform_crossover_8java}{Uniform\+Crossover.\+java}}\end{DoxyCompactItemize}

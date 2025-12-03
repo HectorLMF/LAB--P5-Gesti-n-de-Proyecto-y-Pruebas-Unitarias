@@ -1,0 +1,58 @@
+\doxysection{Referencia de la clase problem.\+extension.\+Factores\+Ponderados}
+\hypertarget{classproblem_1_1extension_1_1_factores_ponderados}{}\label{classproblem_1_1extension_1_1_factores_ponderados}\index{problem.extension.FactoresPonderados@{problem.extension.FactoresPonderados}}
+
+
+Clase que implementa el método de factores ponderados para evaluar estados en problemas multiobjetivo.  
+
+
+
+
+Diagrama de herencia de problem.\+extension.\+Factores\+Ponderados
+% FIG 0
+
+
+Diagrama de colaboración de problem.\+extension.\+Factores\+Ponderados\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc}{evaluation\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state)
+\begin{DoxyCompactList}\small\item\em Evalúa un estado utilizando el método de factores ponderados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que implementa el método de factores ponderados para evaluar estados en problemas multiobjetivo. 
+
+Esta clase combina múltiples funciones objetivo mediante pesos asignados a cada una, produciendo una única evaluación agregada del estado. 
+
+\label{doc-func-members}
+\Hypertarget{classproblem_1_1extension_1_1_factores_ponderados_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc}\index{problem.extension.FactoresPonderados@{problem.extension.FactoresPonderados}!evaluationState@{evaluationState}}
+\index{evaluationState@{evaluationState}!problem.extension.FactoresPonderados@{problem.extension.FactoresPonderados}}
+\doxysubsubsection{\texorpdfstring{evaluationState()}{evaluationState()}}
+{\footnotesize\ttfamily \label{classproblem_1_1extension_1_1_factores_ponderados_a935d426d08fbf69af9ea5fe2196692bc} 
+void problem.\+extension.\+Factores\+Ponderados.\+evaluation\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Evalúa un estado utilizando el método de factores ponderados. 
+
+Calcula la evaluación agregada del estado combinando las evaluaciones de cada función objetivo ponderadas por sus respectivos pesos. Maneja la normalización según el tipo de problema.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Estado a evaluar \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{classproblem_1_1extension_1_1_solution_method_ae31d6d6000b9043bdee5e2d79fd2a628}{problem.\+extension.\+Solution\+Method}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem/extension/\mbox{\hyperlink{_factores_ponderados_8java}{Factores\+Ponderados.\+java}}\end{DoxyCompactItemize}

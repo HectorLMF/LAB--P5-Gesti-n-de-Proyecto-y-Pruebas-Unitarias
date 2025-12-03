@@ -1,0 +1,87 @@
+\doxysection{Referencia de la clase problem\+\_\+operators.\+Mutation\+Operator}
+\hypertarget{classproblem__operators_1_1_mutation_operator}{}\label{classproblem__operators_1_1_mutation_operator}\index{problem\_operators.MutationOperator@{problem\_operators.MutationOperator}}
+
+
+Implementa el operador de mutación para algoritmos metaheurísticos.  
+
+
+
+
+Diagrama de herencia de problem\+\_\+operators.\+Mutation\+Operator
+% FIG 0
+
+
+Diagrama de colaboración de problem\+\_\+operators.\+Mutation\+Operator\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classproblem__operators_1_1_mutation_operator_a43be2feec4090f04b60fe76712673747}{generated\+New\+State}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, Integer operatornumber)
+\begin{DoxyCompactList}\small\item\em Genera nuevos estados mediante mutación del estado actual. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classproblem__operators_1_1_mutation_operator_abaa5390974638b870365cf649bf5510b}{generate\+Random\+State}} (Integer operatornumber)
+\begin{DoxyCompactList}\small\item\em Genera estados aleatorios (no implementado). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementa el operador de mutación para algoritmos metaheurísticos. 
+
+Genera nuevos estados mutando aleatoriamente variables del estado actual, útil para exploración del espacio de búsqueda. 
+
+\label{doc-func-members}
+\Hypertarget{classproblem__operators_1_1_mutation_operator_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classproblem__operators_1_1_mutation_operator_a43be2feec4090f04b60fe76712673747}\index{problem\_operators.MutationOperator@{problem\_operators.MutationOperator}!generatedNewState@{generatedNewState}}
+\index{generatedNewState@{generatedNewState}!problem\_operators.MutationOperator@{problem\_operators.MutationOperator}}
+\doxysubsubsection{\texorpdfstring{generatedNewState()}{generatedNewState()}}
+{\footnotesize\ttfamily \label{classproblem__operators_1_1_mutation_operator_a43be2feec4090f04b60fe76712673747} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ problem\+\_\+operators.\+Mutation\+Operator.\+generated\+New\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption})}
+
+
+
+Genera nuevos estados mediante mutación del estado actual. 
+
+Crea un vecindario de soluciones mutando aleatoriamente una variable del estado actual en cada iteración.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Current} & Estado actual a mutar \\
+\hline
+{\em operatornumber} & Número de estados vecinos a generar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de estados generados por mutación 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classproblem_1_1definition_1_1_operator_a5b6625843e73d938f9235985bf966b34}{problem.\+definition.\+Operator}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\Hypertarget{classproblem__operators_1_1_mutation_operator_abaa5390974638b870365cf649bf5510b}\index{problem\_operators.MutationOperator@{problem\_operators.MutationOperator}!generateRandomState@{generateRandomState}}
+\index{generateRandomState@{generateRandomState}!problem\_operators.MutationOperator@{problem\_operators.MutationOperator}}
+\doxysubsubsection{\texorpdfstring{generateRandomState()}{generateRandomState()}}
+{\footnotesize\ttfamily \label{classproblem__operators_1_1_mutation_operator_abaa5390974638b870365cf649bf5510b} 
+List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ problem\+\_\+operators.\+Mutation\+Operator.\+generate\+Random\+State (\begin{DoxyParamCaption}\item[{Integer}]{operatornumber}{}\end{DoxyParamCaption})}
+
+
+
+Genera estados aleatorios (no implementado). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em operatornumber} & Número de estados aleatorios a generar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+null (no implementado) 
+\end{DoxyReturn}
+
+
+Reimplementado de \mbox{\hyperlink{classproblem_1_1definition_1_1_operator_a08c63f0d681ef130fccdb04d24ddf181}{problem.\+definition.\+Operator}}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/problem\+\_\+operators/\mbox{\hyperlink{operators_2_mutation_operator_8java}{Mutation\+Operator.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\doxysection{Referencia de la clase config.\+Secure\+Random\+Generator}
+\hypertarget{classconfig_1_1_secure_random_generator}{}\label{classconfig_1_1_secure_random_generator}\index{config.SecureRandomGenerator@{config.SecureRandomGenerator}}
+
+
+Generador seguro de números aleatorios usando Secure\+Random.  
+
+
+
+
+Diagrama de colaboración de config.\+Secure\+Random\+Generator\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classconfig_1_1_secure_random_generator_a3d37917bdd7964dd2f0355d6aa6db4f6}{next\+Double}} ()
+\begin{DoxyCompactList}\small\item\em Genera un número aleatorio double entre 0.\+0 (inclusivo) y 1.\+0 (exclusivo). \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classconfig_1_1_secure_random_generator_a1e88dd609c5b1286b5926dd50126ad91}{next\+Int}} (int bound)
+\begin{DoxyCompactList}\small\item\em Genera un número aleatorio int entre 0 (inclusivo) y bound (exclusivo). \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{classconfig_1_1_secure_random_generator_a208fff3980897315764409c7d67739cd}{next\+Float}} ()
+\begin{DoxyCompactList}\small\item\em Genera un número aleatorio float entre 0.\+0 (inclusivo) y 1.\+0 (exclusivo). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconfig_1_1_secure_random_generator_aa66686582686b84ab56dc7f8a6a63a87}{Secure\+Random\+Generator}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos estáticos privados}
+\begin{DoxyCompactItemize}
+\item 
+static final Secure\+Random \mbox{\hyperlink{classconfig_1_1_secure_random_generator_a50df06a5ab3e14fcf9bfbb0be8b4553f}{SECURE\+\_\+\+RANDOM}} = new Secure\+Random()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Generador seguro de números aleatorios usando Secure\+Random. 
+
+Reemplaza los usos inseguros de Math.\+random() en toda la aplicación. 
+
+\label{doc-constructors}
+\Hypertarget{classconfig_1_1_secure_random_generator_doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classconfig_1_1_secure_random_generator_aa66686582686b84ab56dc7f8a6a63a87}\index{config.SecureRandomGenerator@{config.SecureRandomGenerator}!SecureRandomGenerator@{SecureRandomGenerator}}
+\index{SecureRandomGenerator@{SecureRandomGenerator}!config.SecureRandomGenerator@{config.SecureRandomGenerator}}
+\doxysubsubsection{\texorpdfstring{SecureRandomGenerator()}{SecureRandomGenerator()}}
+{\footnotesize\ttfamily \label{classconfig_1_1_secure_random_generator_aa66686582686b84ab56dc7f8a6a63a87} 
+config.\+Secure\+Random\+Generator.\+Secure\+Random\+Generator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classconfig_1_1_secure_random_generator_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classconfig_1_1_secure_random_generator_a3d37917bdd7964dd2f0355d6aa6db4f6}\index{config.SecureRandomGenerator@{config.SecureRandomGenerator}!nextDouble@{nextDouble}}
+\index{nextDouble@{nextDouble}!config.SecureRandomGenerator@{config.SecureRandomGenerator}}
+\doxysubsubsection{\texorpdfstring{nextDouble()}{nextDouble()}}
+{\footnotesize\ttfamily \label{classconfig_1_1_secure_random_generator_a3d37917bdd7964dd2f0355d6aa6db4f6} 
+double config.\+Secure\+Random\+Generator.\+next\+Double (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Genera un número aleatorio double entre 0.\+0 (inclusivo) y 1.\+0 (exclusivo). 
+
+\begin{DoxyReturn}{Devuelve}
+número aleatorio double 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\Hypertarget{classconfig_1_1_secure_random_generator_a208fff3980897315764409c7d67739cd}\index{config.SecureRandomGenerator@{config.SecureRandomGenerator}!nextFloat@{nextFloat}}
+\index{nextFloat@{nextFloat}!config.SecureRandomGenerator@{config.SecureRandomGenerator}}
+\doxysubsubsection{\texorpdfstring{nextFloat()}{nextFloat()}}
+{\footnotesize\ttfamily \label{classconfig_1_1_secure_random_generator_a208fff3980897315764409c7d67739cd} 
+float config.\+Secure\+Random\+Generator.\+next\+Float (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Genera un número aleatorio float entre 0.\+0 (inclusivo) y 1.\+0 (exclusivo). 
+
+\begin{DoxyReturn}{Devuelve}
+número aleatorio float 
+\end{DoxyReturn}
+\Hypertarget{classconfig_1_1_secure_random_generator_a1e88dd609c5b1286b5926dd50126ad91}\index{config.SecureRandomGenerator@{config.SecureRandomGenerator}!nextInt@{nextInt}}
+\index{nextInt@{nextInt}!config.SecureRandomGenerator@{config.SecureRandomGenerator}}
+\doxysubsubsection{\texorpdfstring{nextInt()}{nextInt()}}
+{\footnotesize\ttfamily \label{classconfig_1_1_secure_random_generator_a1e88dd609c5b1286b5926dd50126ad91} 
+int config.\+Secure\+Random\+Generator.\+next\+Int (\begin{DoxyParamCaption}\item[{int}]{bound}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Genera un número aleatorio int entre 0 (inclusivo) y bound (exclusivo). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em bound} & límite superior (exclusivo) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+número aleatorio int 
+\end{DoxyReturn}
+Gráfico de llamadas a esta función\+:
+% FIG 2
+
+
+\label{doc-variable-members}
+\Hypertarget{classconfig_1_1_secure_random_generator_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classconfig_1_1_secure_random_generator_a50df06a5ab3e14fcf9bfbb0be8b4553f}\index{config.SecureRandomGenerator@{config.SecureRandomGenerator}!SECURE\_RANDOM@{SECURE\_RANDOM}}
+\index{SECURE\_RANDOM@{SECURE\_RANDOM}!config.SecureRandomGenerator@{config.SecureRandomGenerator}}
+\doxysubsubsection{\texorpdfstring{SECURE\_RANDOM}{SECURE\_RANDOM}}
+{\footnotesize\ttfamily \label{classconfig_1_1_secure_random_generator_a50df06a5ab3e14fcf9bfbb0be8b4553f} 
+final Secure\+Random config.\+Secure\+Random\+Generator.\+SECURE\+\_\+\+RANDOM = new Secure\+Random()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/config/\mbox{\hyperlink{_secure_random_generator_8java}{Secure\+Random\+Generator.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\doxysection{Referencia de la clase factory\+\_\+method.\+Factory\+Distribution}
+\hypertarget{classfactory__method_1_1_factory_distribution}{}\label{classfactory__method_1_1_factory_distribution}\index{factory\_method.FactoryDistribution@{factory\_method.FactoryDistribution}}
+
+
+Fábrica concreta para crear distribuciones de probabilidad.  
+
+
+
+
+Diagrama de herencia de factory\+\_\+method.\+Factory\+Distribution
+% FIG 0
+
+
+Diagrama de colaboración de factory\+\_\+method.\+Factory\+Distribution\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_distribution}{Distribution}} \mbox{\hyperlink{classfactory__method_1_1_factory_distribution_a3e8c76621dcc6efd598b0ab445216de5}{create\+Distribution}} (\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_distribution_type}{Distribution\+Type}} distributiontype)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Crea una distribución mediante reflexión. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_distribution}{Distribution}} \mbox{\hyperlink{classfactory__method_1_1_factory_distribution_aadd22e8b32163307abb4790b9ce67281}{distribution}}
+\begin{DoxyCompactList}\small\item\em Instancia de la distribución creada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Fábrica concreta para crear distribuciones de probabilidad. 
+
+\label{doc-func-members}
+\Hypertarget{classfactory__method_1_1_factory_distribution_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classfactory__method_1_1_factory_distribution_a3e8c76621dcc6efd598b0ab445216de5}\index{factory\_method.FactoryDistribution@{factory\_method.FactoryDistribution}!createDistribution@{createDistribution}}
+\index{createDistribution@{createDistribution}!factory\_method.FactoryDistribution@{factory\_method.FactoryDistribution}}
+\doxysubsubsection{\texorpdfstring{createDistribution()}{createDistribution()}}
+{\footnotesize\ttfamily \label{classfactory__method_1_1_factory_distribution_a3e8c76621dcc6efd598b0ab445216de5} 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_distribution}{Distribution}} factory\+\_\+method.\+Factory\+Distribution.\+create\+Distribution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_distribution_type}{Distribution\+Type}}}]{distributiontype}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Crea una distribución mediante reflexión. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em distributiontype} & Tipo de distribución a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de la distribución 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si el argumento es inválido \\
+\hline
+{\em Security\+Exception} & Si hay una violación de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase \\
+\hline
+{\em Instantiation\+Exception} & Si falla la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si el acceso es ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si falla la invocación del método \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementa \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_distribution_ac63d070c238ef57b8d17409af36f43cb}{factory\+\_\+interface.\+IFFactory\+Distribution}}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\label{doc-variable-members}
+\Hypertarget{classfactory__method_1_1_factory_distribution_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classfactory__method_1_1_factory_distribution_aadd22e8b32163307abb4790b9ce67281}\index{factory\_method.FactoryDistribution@{factory\_method.FactoryDistribution}!distribution@{distribution}}
+\index{distribution@{distribution}!factory\_method.FactoryDistribution@{factory\_method.FactoryDistribution}}
+\doxysubsubsection{\texorpdfstring{distribution}{distribution}}
+{\footnotesize\ttfamily \label{classfactory__method_1_1_factory_distribution_aadd22e8b32163307abb4790b9ce67281} 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_distribution}{Distribution}} factory\+\_\+method.\+Factory\+Distribution.\+distribution\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instancia de la distribución creada. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/factory\+\_\+method/\mbox{\hyperlink{_factory_distribution_8java}{Factory\+Distribution.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,263 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value}
+\hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value}{}\label{classlocal__search_1_1candidate__type_1_1_candidate_value}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+
+
+Clase que gestiona la selección de estados candidatos del vecindario.  
+
+
+
+
+Diagrama de colaboración de local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a0b569242170a94ec76659efea622f402}{Candidate\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a010225e9b9d133c8c621db64cd243fa6}{Candidate\+Value}} (\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_aa06a9f44daf4c08fcb130e00a8ed936f}{strategy}}, \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_candidate}{IFFactory\+Candidate}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a7ec51b9213b57e19f65fa0d7c24a2e67}{if\+Factory}}, \mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a785565d9c378d0f4610efbd9fa669ef2}{typecand}}, \mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a050cc90f7786e4825e7ca09e20492ebb}{tabusolution}}, \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a7b05c8a6d8af9170fc422b78c9af5b64}{searchcandidate}})
+\begin{DoxyCompactList}\small\item\em Constructor con parámetros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_ab02441a95d5abedea3a2c82bf9c5d457}{new\+Search\+Candidate}} (\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} typecandidate)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Crea una nueva instancia de \doxylink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate} según el tipo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a77505d8ed443552afa435f51d0222d75}{state\+Candidate}} (\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} state\+Current, \mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} type\+Candidate, \mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_aa06a9f44daf4c08fcb130e00a8ed936f}{strategy}}, Integer operatornumber, List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ neighborhood)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception
+\begin{DoxyCompactList}\small\item\em Selecciona un estado candidato del vecindario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_ae334fe4b4bc2211c5120d905d3114762}{get\+Tabusolution}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el gestor de soluciones tabú \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a142eb7bff2e5f3312d0277152f803d1a}{set\+Tabusolution}} (\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a050cc90f7786e4825e7ca09e20492ebb}{tabusolution}})
+\begin{DoxyCompactList}\small\item\em Establece el gestor de soluciones tabú \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_aa06a9f44daf4c08fcb130e00a8ed936f}{strategy}}
+\begin{DoxyCompactList}\small\item\em Tipo de estrategia de búsqueda (TABU o NORMAL). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_candidate}{IFFactory\+Candidate}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a7ec51b9213b57e19f65fa0d7c24a2e67}{if\+Factory}}
+\begin{DoxyCompactList}\small\item\em Fábrica para crear instancias de búsqueda de candidatos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a785565d9c378d0f4610efbd9fa669ef2}{typecand}}
+\begin{DoxyCompactList}\small\item\em Tipo de candidato a utilizar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a050cc90f7786e4825e7ca09e20492ebb}{tabusolution}}
+\begin{DoxyCompactList}\small\item\em Gestor de soluciones tabú \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} \mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_candidate_value_a7b05c8a6d8af9170fc422b78c9af5b64}{searchcandidate}}
+\begin{DoxyCompactList}\small\item\em Instancia de búsqueda de candidatos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que gestiona la selección de estados candidatos del vecindario. 
+
+Esta clase coordina la selección de candidatos utilizando diferentes estrategias, incluyendo soporte para búsqueda tabú y filtrado de vecindarios. 
+
+\label{doc-constructors}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_doc-constructors}
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a0b569242170a94ec76659efea622f402}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!CandidateValue@{CandidateValue}}
+\index{CandidateValue@{CandidateValue}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{CandidateValue()}{CandidateValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a0b569242170a94ec76659efea622f402} 
+local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+Candidate\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a010225e9b9d133c8c621db64cd243fa6}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!CandidateValue@{CandidateValue}}
+\index{CandidateValue@{CandidateValue}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{CandidateValue()}{CandidateValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a010225e9b9d133c8c621db64cd243fa6} 
+local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+Candidate\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}}}]{strategy}{, }\item[{\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_candidate}{IFFactory\+Candidate}}}]{if\+Factory}{, }\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{typecand}{, }\item[{\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}}}]{tabusolution}{, }\item[{\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}}}]{searchcandidate}{}\end{DoxyParamCaption})}
+
+
+
+Constructor con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em strategy} & Tipo de estrategia (TABU o NORMAL) \\
+\hline
+{\em if\+Factory} & Fábrica de candidatos \\
+\hline
+{\em typecand} & Tipo de candidato \\
+\hline
+{\em tabusolution} & Gestor de soluciones tabú \\
+\hline
+{\em searchcandidate} & Instancia de búsqueda \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_ae334fe4b4bc2211c5120d905d3114762}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!getTabusolution@{getTabusolution}}
+\index{getTabusolution@{getTabusolution}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{getTabusolution()}{getTabusolution()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_ae334fe4b4bc2211c5120d905d3114762} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+get\+Tabusolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el gestor de soluciones tabú 
+
+\begin{DoxyReturn}{Devuelve}
+\doxylink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions} Gestor de soluciones tabú 
+\end{DoxyReturn}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_ab02441a95d5abedea3a2c82bf9c5d457}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!newSearchCandidate@{newSearchCandidate}}
+\index{newSearchCandidate@{newSearchCandidate}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{newSearchCandidate()}{newSearchCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_ab02441a95d5abedea3a2c82bf9c5d457} 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+new\+Search\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{typecandidate}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Crea una nueva instancia de \doxylink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate} según el tipo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em typecandidate} & Tipo de candidato a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxylink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate} Nueva instancia del buscador de candidatos 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay problemas al instanciar \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay problemas en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a142eb7bff2e5f3312d0277152f803d1a}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!setTabusolution@{setTabusolution}}
+\index{setTabusolution@{setTabusolution}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{setTabusolution()}{setTabusolution()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a142eb7bff2e5f3312d0277152f803d1a} 
+void local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+set\+Tabusolution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}}}]{tabusolution}{}\end{DoxyParamCaption})}
+
+
+
+Establece el gestor de soluciones tabú 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tabusolution} & Nuevo gestor de soluciones tabú \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a77505d8ed443552afa435f51d0222d75}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!stateCandidate@{stateCandidate}}
+\index{stateCandidate@{stateCandidate}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{stateCandidate()}{stateCandidate()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a77505d8ed443552afa435f51d0222d75} 
+\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+state\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}}}]{state\+Current}{, }\item[{\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}}}]{type\+Candidate}{, }\item[{\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}}}]{strategy}{, }\item[{Integer}]{operatornumber}{, }\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{neighborhood}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Selecciona un estado candidato del vecindario. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Current} & Estado actual \\
+\hline
+{\em type\+Candidate} & Tipo de estrategia de selección \\
+\hline
+{\em strategy} & Estrategia de búsqueda (TABU o NORMAL) \\
+\hline
+{\em operatornumber} & Número del operador a aplicar \\
+\hline
+{\em neighborhood} & Lista de estados vecinos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxylink{classproblem_1_1definition_1_1_state}{State} Estado candidato seleccionado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay problemas al instanciar \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay problemas en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+
+
+\label{doc-variable-members}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a7ec51b9213b57e19f65fa0d7c24a2e67}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!ifFactory@{ifFactory}}
+\index{ifFactory@{ifFactory}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{ifFactory}{ifFactory}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a7ec51b9213b57e19f65fa0d7c24a2e67} 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_candidate}{IFFactory\+Candidate}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+if\+Factory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fábrica para crear instancias de búsqueda de candidatos. 
+
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a7b05c8a6d8af9170fc422b78c9af5b64}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!searchcandidate@{searchcandidate}}
+\index{searchcandidate@{searchcandidate}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{searchcandidate}{searchcandidate}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a7b05c8a6d8af9170fc422b78c9af5b64} 
+\mbox{\hyperlink{classlocal__search_1_1candidate__type_1_1_search_candidate}{Search\+Candidate}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+searchcandidate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instancia de búsqueda de candidatos. 
+
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_aa06a9f44daf4c08fcb130e00a8ed936f}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!strategy@{strategy}}
+\index{strategy@{strategy}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{strategy}{strategy}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_aa06a9f44daf4c08fcb130e00a8ed936f} 
+\mbox{\hyperlink{enumlocal__search_1_1complement_1_1_strategy_type}{Strategy\+Type}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+strategy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de estrategia de búsqueda (TABU o NORMAL). 
+
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a050cc90f7786e4825e7ca09e20492ebb}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!tabusolution@{tabusolution}}
+\index{tabusolution@{tabusolution}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{tabusolution}{tabusolution}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a050cc90f7786e4825e7ca09e20492ebb} 
+\mbox{\hyperlink{classlocal__search_1_1complement_1_1_tabu_solutions}{Tabu\+Solutions}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+tabusolution\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gestor de soluciones tabú 
+
+\Hypertarget{classlocal__search_1_1candidate__type_1_1_candidate_value_a785565d9c378d0f4610efbd9fa669ef2}\index{local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}!typecand@{typecand}}
+\index{typecand@{typecand}!local\_search.candidate\_type.CandidateValue@{local\_search.candidate\_type.CandidateValue}}
+\doxysubsubsection{\texorpdfstring{typecand}{typecand}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1candidate__type_1_1_candidate_value_a785565d9c378d0f4610efbd9fa669ef2} 
+\mbox{\hyperlink{enumlocal__search_1_1candidate__type_1_1_candidate_type}{Candidate\+Type}} local\+\_\+search.\+candidate\+\_\+type.\+Candidate\+Value.\+typecand\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tipo de candidato a utilizar. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/candidate\+\_\+type/\mbox{\hyperlink{_candidate_value_8java}{Candidate\+Value.\+java}}\end{DoxyCompactItemize}

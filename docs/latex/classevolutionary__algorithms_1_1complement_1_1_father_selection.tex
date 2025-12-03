@@ -1,0 +1,59 @@
+\doxysection{Referencia de la clase evolutionary\+\_\+algorithms.\+complement.\+Father\+Selection}
+\hypertarget{classevolutionary__algorithms_1_1complement_1_1_father_selection}{}\label{classevolutionary__algorithms_1_1complement_1_1_father_selection}\index{evolutionary\_algorithms.complement.FatherSelection@{evolutionary\_algorithms.complement.FatherSelection}}
+
+
+Clase abstracta que define la interfaz para operadores de selección de padres.  
+
+
+
+
+Diagrama de herencia de evolutionary\+\_\+algorithms.\+complement.\+Father\+Selection
+% FIG 0
+
+
+Diagrama de colaboración de evolutionary\+\_\+algorithms.\+complement.\+Father\+Selection\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_father_selection_aa6e6bd01ac639141a67815fb65f7c831}{selection}} (List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ list\+State, int truncation)
+\begin{DoxyCompactList}\small\item\em Selecciona estados padres de la población. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase abstracta que define la interfaz para operadores de selección de padres. 
+
+\label{doc-func-members}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_father_selection_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classevolutionary__algorithms_1_1complement_1_1_father_selection_aa6e6bd01ac639141a67815fb65f7c831}\index{evolutionary\_algorithms.complement.FatherSelection@{evolutionary\_algorithms.complement.FatherSelection}!selection@{selection}}
+\index{selection@{selection}!evolutionary\_algorithms.complement.FatherSelection@{evolutionary\_algorithms.complement.FatherSelection}}
+\doxysubsubsection{\texorpdfstring{selection()}{selection()}}
+{\footnotesize\ttfamily \label{classevolutionary__algorithms_1_1complement_1_1_father_selection_aa6e6bd01ac639141a67815fb65f7c831} 
+abstract List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$ evolutionary\+\_\+algorithms.\+complement.\+Father\+Selection.\+selection (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classproblem_1_1definition_1_1_state}{State}} $>$}]{list\+State}{, }\item[{int}]{truncation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Selecciona estados padres de la población. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em list\+State} & Lista de estados de la población \\
+\hline
+{\em truncation} & Número de individuos a seleccionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Lista de estados seleccionados como padres 
+\end{DoxyReturn}
+
+
+Reimplementado en \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_roulette_selection_ace4f2faee78f128d104fedb0cf3963fd}{evolutionary\+\_\+algorithms.\+complement.\+Roulette\+Selection}} y \mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_truncation_selection_ab59a8422f18ba171cb70b680c84eaac1}{evolutionary\+\_\+algorithms.\+complement.\+Truncation\+Selection}}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/evolutionary\+\_\+algorithms/complement/\mbox{\hyperlink{_father_selection_8java}{Father\+Selection.\+java}}\end{DoxyCompactItemize}

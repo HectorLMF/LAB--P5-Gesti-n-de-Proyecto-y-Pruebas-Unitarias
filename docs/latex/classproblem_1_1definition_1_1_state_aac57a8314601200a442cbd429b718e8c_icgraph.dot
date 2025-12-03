@@ -1,0 +1,38 @@
+digraph "problem.definition.State.State"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="problem.definition.State.\lState",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Constructor por defecto."];
+  Node1 -> Node2 [id="edge17_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="problem.definition.State.getCopy",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classproblem_1_1definition_1_1_state.html#a3f8a4d76d848cdb28842f8a81e5e479c",tooltip="Obtiene una copia profunda del estado."];
+  Node2 -> Node3 [id="edge18_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="local_search.acceptation\l_type.AcceptMulticase.acceptCandidate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classlocal__search_1_1acceptation__type_1_1_accept_multicase.html#a526e452510b7eebe59af4dde0c59b337",tooltip="Acepta candidatos basándose en dominancia de Pareto y criterios de temperatura."];
+  Node2 -> Node4 [id="edge19_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="local_search.acceptation\l_type.AcceptNotDominated.accept\lCandidate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classlocal__search_1_1acceptation__type_1_1_accept_not_dominated.html#a05fe7b0385dfafe7701f6a4e9b2b80d2",tooltip="Acepta candidatos no dominados según criterio de Pareto."];
+  Node2 -> Node5 [id="edge20_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="local_search.acceptation\l_type.AcceptNotDominatedTabu.accept\lCandidate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classlocal__search_1_1acceptation__type_1_1_accept_not_dominated_tabu.html#a3182ac113bddb89bb3ea7af704b38835",tooltip="Actualiza el frente de Pareto con soluciones no dominadas."];
+  Node2 -> Node6 [id="edge21_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="evolutionary_algorithms.complement.\lOnePointCrossover.crossover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classevolutionary__algorithms_1_1complement_1_1_one_point_crossover.html#a6d644b471de305b6508b2b647edc76d1",tooltip="Realiza el cruce de un punto entre dos estados padres."];
+  Node2 -> Node7 [id="edge22_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="evolutionary_algorithms.complement.\lUniformCrossover.crossover",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classevolutionary__algorithms_1_1complement_1_1_uniform_crossover.html#a54eb36b06a9e409253360eb9cd76f774",tooltip="Realiza el cruce uniforme entre dos estados padres."];
+  Node2 -> Node8 [id="edge23_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="metaheuristics.generators.\lEvolutionStrategies.generate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_evolution_strategies.html#a5a222a42cc69a782b603004f2ca501d0",tooltip="Genera un nuevo estado candidato mediante mutación."];
+  Node2 -> Node9 [id="edge24_Node000002_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="metaheuristics.generators.\lGeneticAlgorithm.generate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_genetic_algorithm.html#afa69278cc4f87d309326773aeab7b6da",tooltip="Genera un nuevo estado mediante selección, cruzamiento y mutación."];
+  Node2 -> Node10 [id="edge25_Node000002_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="problem.operators.Mutation\lOperator.generatedNewState",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classproblem_1_1operators_1_1_mutation_operator.html#ab560db4588f07a894b0d92299101c6f7",tooltip="Genera nuevos estados mediante mutación del estado actual."];
+  Node2 -> Node11 [id="edge26_Node000002_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="problem_operators.Mutation\lOperator.generatedNewState",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classproblem__operators_1_1_mutation_operator.html#a43be2feec4090f04b60fe76712673747",tooltip="Genera nuevos estados mediante mutación del estado actual."];
+  Node2 -> Node12 [id="edge27_Node000002_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="local_search.acceptation\l_type.Dominance.ListDominance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classlocal__search_1_1acceptation__type_1_1_dominance.html#aff9166b5654b3ed44eed2cee4de7d2b2",tooltip="Determina si una solución domina a alguna del frente de Pareto."];
+  Node12 -> Node3 [id="edge28_Node000012_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node4 [id="edge29_Node000012_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node5 [id="edge30_Node000012_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node13 [id="edge31_Node000002_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="metaheuristics.generators.\lMultiobjectiveHillClimbingDistance.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multiobjective_hill_climbing_distance.html#a35ed16f3af3c7fdcbff8165d9674cc9a",tooltip="Actualiza la referencia con el candidato evaluado."];
+  Node2 -> Node14 [id="edge32_Node000002_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="metaheuristics.generators.\lMultiobjectiveHillClimbingRestart.update\lReference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classmetaheuristics_1_1generators_1_1_multiobjective_hill_climbing_restart.html#ab3716a950049b1d77c4374efd355aa14",tooltip="Actualiza la referencia con reinicio si es necesario."];
+}

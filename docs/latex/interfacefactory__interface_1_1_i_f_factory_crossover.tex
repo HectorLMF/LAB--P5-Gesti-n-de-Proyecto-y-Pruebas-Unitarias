@@ -1,0 +1,72 @@
+\doxysection{Referencia de la interface factory\+\_\+interface.\+IFFactory\+Crossover}
+\hypertarget{interfacefactory__interface_1_1_i_f_factory_crossover}{}\label{interfacefactory__interface_1_1_i_f_factory_crossover}\index{factory\_interface.IFFactoryCrossover@{factory\_interface.IFFactoryCrossover}}
+
+
+Interfaz para la fábrica de operadores de cruce en algoritmos evolutivos.  
+
+
+
+
+Diagrama de herencia de factory\+\_\+interface.\+IFFactory\+Crossover
+% FIG 0
+
+
+Diagrama de colaboración de factory\+\_\+interface.\+IFFactory\+Crossover\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover}{Crossover}} \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_crossover_af2c954dab1eb110beaab79ccae6115c5}{create\+Crossover}} (\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_crossover_type}{Crossover\+Type}} Crossovertype)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Crea un operador de cruce según el tipo especificado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para la fábrica de operadores de cruce en algoritmos evolutivos. 
+
+\label{doc-func-members}
+\Hypertarget{interfacefactory__interface_1_1_i_f_factory_crossover_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{interfacefactory__interface_1_1_i_f_factory_crossover_af2c954dab1eb110beaab79ccae6115c5}\index{factory\_interface.IFFactoryCrossover@{factory\_interface.IFFactoryCrossover}!createCrossover@{createCrossover}}
+\index{createCrossover@{createCrossover}!factory\_interface.IFFactoryCrossover@{factory\_interface.IFFactoryCrossover}}
+\doxysubsubsection{\texorpdfstring{createCrossover()}{createCrossover()}}
+{\footnotesize\ttfamily \label{interfacefactory__interface_1_1_i_f_factory_crossover_af2c954dab1eb110beaab79ccae6115c5} 
+\mbox{\hyperlink{classevolutionary__algorithms_1_1complement_1_1_crossover}{Crossover}} factory\+\_\+interface.\+IFFactory\+Crossover.\+create\+Crossover (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumevolutionary__algorithms_1_1complement_1_1_crossover_type}{Crossover\+Type}}}]{Crossovertype}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception}
+
+
+
+Crea un operador de cruce según el tipo especificado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Crossovertype} & Tipo de operador de cruce a crear \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Una instancia del operador de cruce solicitado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si el argumento es inválido \\
+\hline
+{\em Security\+Exception} & Si hay una violación de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra la clase \\
+\hline
+{\em Instantiation\+Exception} & Si falla la instanciación \\
+\hline
+{\em Illegal\+Access\+Exception} & Si el acceso es ilegal \\
+\hline
+{\em Invocation\+Target\+Exception} & Si falla la invocación del método \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra el método \\
+\hline
+\end{DoxyExceptions}
+
+
+Implementado en \mbox{\hyperlink{classfactory__method_1_1_factory_crossover_ae361191d68e551e12a823f5956111a49}{factory\+\_\+method.\+Factory\+Crossover}}.
+
+
+
+La documentación de esta interface está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/factory\+\_\+interface/\mbox{\hyperlink{_i_f_factory_crossover_8java}{IFFactory\+Crossover.\+java}}\end{DoxyCompactItemize}

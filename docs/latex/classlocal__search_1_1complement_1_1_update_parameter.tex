@@ -1,0 +1,90 @@
+\doxysection{Referencia de la clase local\+\_\+search.\+complement.\+Update\+Parameter}
+\hypertarget{classlocal__search_1_1complement_1_1_update_parameter}{}\label{classlocal__search_1_1complement_1_1_update_parameter}\index{local\_search.complement.UpdateParameter@{local\_search.complement.UpdateParameter}}
+
+
+Clase que gestiona la actualización de parámetros y cambio de generadores.  
+
+
+
+
+Diagrama de colaboración de local\+\_\+search.\+complement.\+Update\+Parameter\+:
+% FIG 0
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static Integer \mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter_aa88a78351c0bc5de77f1ad05bee29e11}{update\+Parameter}} (Integer count\+Iterations\+Current)  throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception 
+\begin{DoxyCompactList}\small\item\em Actualiza parámetros y cambia generador según iteración. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos estáticos privados}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_generator}{IFFactory\+Generator}} \mbox{\hyperlink{classlocal__search_1_1complement_1_1_update_parameter_ad048d2f483314001ca573c5cff6395c2}{if\+Factory\+Generator}}
+\begin{DoxyCompactList}\small\item\em Fábrica para crear instancias de generadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que gestiona la actualización de parámetros y cambio de generadores. 
+
+Esta clase permite la actualización dinámica de parámetros durante la ejecución y el cambio automático entre diferentes generadores metaheurísticos según el número de iteraciones. 
+
+\label{doc-func-members}
+\Hypertarget{classlocal__search_1_1complement_1_1_update_parameter_doc-func-members}
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{classlocal__search_1_1complement_1_1_update_parameter_aa88a78351c0bc5de77f1ad05bee29e11}\index{local\_search.complement.UpdateParameter@{local\_search.complement.UpdateParameter}!updateParameter@{updateParameter}}
+\index{updateParameter@{updateParameter}!local\_search.complement.UpdateParameter@{local\_search.complement.UpdateParameter}}
+\doxysubsubsection{\texorpdfstring{updateParameter()}{updateParameter()}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1complement_1_1_update_parameter_aa88a78351c0bc5de77f1ad05bee29e11} 
+Integer local\+\_\+search.\+complement.\+Update\+Parameter.\+update\+Parameter (\begin{DoxyParamCaption}\item[{Integer}]{count\+Iterations\+Current}{}\end{DoxyParamCaption}) throws Illegal\+Argument\+Exception, Security\+Exception, Class\+Not\+Found\+Exception, Instantiation\+Exception, Illegal\+Access\+Exception, Invocation\+Target\+Exception, No\+Such\+Method\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Actualiza parámetros y cambia generador según iteración. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em count\+Iterations\+Current} & Número actual de iteraciones \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Integer Número de iteraciones incrementado 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em Illegal\+Argument\+Exception} & Si los argumentos son inválidos \\
+\hline
+{\em Security\+Exception} & Si hay problemas de seguridad \\
+\hline
+{\em Class\+Not\+Found\+Exception} & Si no se encuentra una clase \\
+\hline
+{\em Instantiation\+Exception} & Si hay problemas al instanciar \\
+\hline
+{\em Illegal\+Access\+Exception} & Si hay problemas de acceso \\
+\hline
+{\em Invocation\+Target\+Exception} & Si hay problemas en la invocación \\
+\hline
+{\em No\+Such\+Method\+Exception} & Si no se encuentra un método \\
+\hline
+\end{DoxyExceptions}
+Gráfico de llamadas de esta función\+:
+% FIG 1
+Gráfico de llamadas a esta función\+:
+% FIG 2
+
+
+\label{doc-variable-members}
+\Hypertarget{classlocal__search_1_1complement_1_1_update_parameter_doc-variable-members}
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{classlocal__search_1_1complement_1_1_update_parameter_ad048d2f483314001ca573c5cff6395c2}\index{local\_search.complement.UpdateParameter@{local\_search.complement.UpdateParameter}!ifFactoryGenerator@{ifFactoryGenerator}}
+\index{ifFactoryGenerator@{ifFactoryGenerator}!local\_search.complement.UpdateParameter@{local\_search.complement.UpdateParameter}}
+\doxysubsubsection{\texorpdfstring{ifFactoryGenerator}{ifFactoryGenerator}}
+{\footnotesize\ttfamily \label{classlocal__search_1_1complement_1_1_update_parameter_ad048d2f483314001ca573c5cff6395c2} 
+\mbox{\hyperlink{interfacefactory__interface_1_1_i_f_factory_generator}{IFFactory\+Generator}} local\+\_\+search.\+complement.\+Update\+Parameter.\+if\+Factory\+Generator\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Fábrica para crear instancias de generadores. 
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/local\+\_\+search/complement/\mbox{\hyperlink{_update_parameter_8java}{Update\+Parameter.\+java}}\end{DoxyCompactItemize}
