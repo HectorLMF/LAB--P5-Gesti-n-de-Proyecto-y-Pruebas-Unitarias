@@ -39,6 +39,20 @@
             <groupId>net.sourceforge.jexcelapi</groupId>
             <artifactId>jxl</artifactId>
             <version>2.6.12</version>
+            <exclusions>
+                <!-- Excluir log4j vulnerable (CVE-2019-17571, CVE-2020-9493, CVE-2022-23305, CVE-2022-23302, CVE-2022-23307, CVE-2023-26464) -->
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <!-- Reload4j: Reemplazo seguro de log4j 1.x (sin CVEs conocidos) -->
+        <dependency>
+            <groupId>ch.qos.reload4j</groupId>
+            <artifactId>reload4j</artifactId>
+            <version>1.2.25</version>
         </dependency>
 
         <!-- JUnit 5 para pruebas unitarias -->
