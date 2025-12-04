@@ -2,6 +2,16 @@
 
 Proyecto de algoritmos metaheurísticos y evolutivos para la resolución de problemas de optimización.
 
+## Despliegue con Docker
+
+ - Imagen multi-stage incluida: `Dockerfile` en la raíz del repo.
+ - Construcción (local): `docker build -t biciam:latest .`
+ - Ejecutar (local): `docker run --rm biciam:latest`
+ - Nota: la imagen ejecuta `java -jar /app/app.jar`. Si el JAR no contiene un `Main-Class` en el manifest la ejecución fallará con "no main manifest attribute". En ese caso hay dos opciones:
+	 - Ejecutar una clase concreta dentro del contenedor usando `docker run --rm biciam:latest java -cp /app/app.jar <MainClass>`
+	 - Añadir una clase `Main` y configurar el `pom.xml` para incluir `Main-Class` en el manifest antes de construir la imagen.
+
+
 ### Documentacion doxygen en Github Pages:
 https://hectorlmf.github.io/LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias/html/index.html
 
@@ -55,21 +65,76 @@ El reporte se generará en `target/site/jacoco/index.html`
 
 ## Estado de Cobertura (actual)
 
-- Cobertura global (líneas) según JaCoCo: `~88%` sobre los módulos cubiertos por tests.
-- Clases con cobertura de líneas mayor o igual al 80%:
-	- `config.SecureRandomGenerator` (≈100%)
-	- `problem.definition.Operator` (≈100%)
-	- `problem.definition.ObjetiveFunction` (≈100%)
-	- `problem.definition.Codification` (≈100%)
-	- `problem.definition.Problem` (≈95%)
-	- `problem.definition.State` (≈84%)
-	- `problem.extension.FactoresPonderados` (≈100%)
-	- `problem.extension.MultiObjetivoPuro` (≈100%)
-	- `problem.extension.MetricasMultiobjetivo` (≈98%)
-	- `problem.extension.SolutionMethod` (≈100%)
-	- `problem.extension.TypeSolutionMethod` (≈100%)
+	**Pruebas (archivos de test y clases objetivo)**
 
-Para regenerar el informe y verificar números exactos:
+	- `src/test/java/evolutionary_algorithms/complement/UniformCrossoverTest.java` : `evolutionary_algorithms.complement.UniformCrossover`
+	- `src/test/java/evolutionary_algorithms/complement/TruncationSelectionTest.java` : `evolutionary_algorithms.complement.TruncationSelection`
+	- `src/test/java/evolutionary_algorithms/complement/SteadyStateReplaceTest.java` : `evolutionary_algorithms.complement.SteadyStateReplace`
+	- `src/test/java/evolutionary_algorithms/complement/RangeTest.java` : `evolutionary_algorithms.complement.Range`
+	- `src/test/java/evolutionary_algorithms/complement/ProbabilityTest.java` : `evolutionary_algorithms.complement.Probability`
+	- `src/test/java/evolutionary_algorithms/complement/OnePointMutationTest.java` : `evolutionary_algorithms.complement.OnePointMutation`
+	- `src/test/java/evolutionary_algorithms/complement/OnePointCrossoverTest.java` : `evolutionary_algorithms.complement.OnePointCrossover`
+	- `src/test/java/evolutionary_algorithms/complement/GenerationalReplaceTest.java` : `evolutionary_algorithms.complement.GenerationalReplace`
+	- `src/test/java/metaheurictics/strategy/StrategyTest.java` : `metaheurictics.strategy.Strategy`
+	- `src/test/java/problem/definition/ProblemSettersExtraTest.java` : `problem.definition.Problem`
+	- `src/test/java/problem/definition/StateComparatorEqualTest.java` : `problem.definition.State`
+	- `src/test/java/problem/definition/StateConstructorsTest.java` : `problem.definition.State`
+	- `src/test/java/problem/definition/ProblemEvaluateWithMethodTest.java` : `problem.definition.Problem`
+	- `src/test/java/problem/definition/ProblemDefinitionExtraTest.java` : `problem.definition.Problem`
+	- `src/test/java/problem/definition/ProblemEvaluateCoverageTest.java` : `problem.definition.Problem`
+	- `src/test/java/problem/definition/ProblemCoverageTest.java` : `problem.definition.Problem`
+	- `src/test/java/problem/definition/ObjetiveFunctionCoverageTest.java` : `problem.definition.ObjetiveFunction`
+	- `src/test/java/problem/definition/OperatorCoverageTest.java` : `problem.definition.Operator`
+	- `src/test/java/problem/definition/StateCoverageTest.java` : `problem.definition.State`
+	- `src/test/java/problem/definition/ProblemNewSolutionMethodTest.java` : `problem.definition.Problem`
+	- `src/test/java/metaheuristics/generators/MultiGeneratorTest.java` : `metaheuristics.generators.MultiGenerator`
+	- `src/test/java/metaheuristics/generators/HillClimbingTest.java` : `metaheuristics.generators.HillClimbing`
+	- `src/test/java/metaheuristics/generators/GeneticAlgorithmTest.java` : `metaheuristics.generators.GeneticAlgorithm`
+	- `src/test/java/problem/definition/StateTest.java` : `problem.definition.State`
+	- `src/test/java/problem/definition/StateNullHandlingTest.java` : `problem.definition.State`
+	- `src/test/java/problem/definition/StateGetCopyTest.java` : `problem.definition.State`
+	- `src/test/java/metaheuristics/generators/ParticleSwarmOptimizationTest.java` : `metaheuristics.generators.ParticleSwarmOptimization`
+	- `src/test/java/metaheuristics/generators/TabuSearchTest.java` : `metaheuristics.generators.TabuSearch`
+	- `src/test/java/metaheuristics/generators/SimulatedAnnealingTest.java` : `metaheuristics.generators.SimulatedAnnealing`
+	- `src/test/java/config/SecureRandomGeneratorTest.java` : `config.SecureRandomGenerator`
+	- `src/test/java/problem/extension/MetricasMultiobjetivoTest.java` : `problem.extension.MetricasMultiobjetivo`
+	- `src/test/java/problem/extension/SolutionMethodsTest.java` : `problem.extension.SolutionMethod`
+	- `src/test/java/problem/extension/MultiObjetivoPuroMaxTest.java` : `problem.extension.MultiObjetivoPuro`
+	- `src/test/java/problem/extension/FactoresPonderadosTest.java` : `problem.extension.FactoresPonderados`
+	- `src/test/java/factory_method/FactoryAcceptCandidateTest.java` : `factory_method.FactoryAcceptCandidate`
+	- `src/test/java/factory_method/FactoryCandidateTest.java` : `factory_method.FactoryCandidate`
+	- `src/test/java/factory_method/FactorySolutionMethodTest.java` : `factory_method.FactorySolutionMethod`
+	- `src/test/java/factory_method/FactorySamplingTest.java` : `factory_method.FactorySampling`
+	- `src/test/java/factory_method/FactoryReplaceTest.java` : `factory_method.FactoryReplace`
+	- `src/test/java/factory_method/FactoryReplaceExtraTest.java` : `factory_method.FactoryReplace`
+	- `src/test/java/factory_method/FactoryMutationTest.java` : `factory_method.FactoryMutation`
+	- `src/test/java/factory_method/FactoryLoaderTest.java` : `factory_method.FactoryLoader`
+	- `src/test/java/factory_method/FactoryGeneratorTest.java` : `factory_method.FactoryGenerator`
+	- `src/test/java/factory_method/FactoryGeneratorExtraTest.java` : `factory_method.FactoryGenerator`
+	- `src/test/java/factory_method/FactoryFatherSelectionTest.java` : `factory_method.FactoryFatherSelection`
+	- `src/test/java/factory_method/FactoryDistributionTest.java` : `factory_method.FactoryDistribution`
+	- `src/test/java/factory_method/FactoryCrossoverTest.java` : `factory_method.FactoryCrossover`
+	- `src/test/java/local_search/acceptation_type/AcceptNotDominatedTest.java` : `local_search.acceptation_type.AcceptNotDominated`
+	- `src/test/java/local_search/acceptation_type/DominanceMaxTest.java` : `local_search.acceptation_type.DominanceMax`
+	- `src/test/java/local_search/complement/StopExecuteTest.java` : `local_search.complement.StopExecute`
+	- `src/test/java/local_search/acceptation_type/AcceptNotBadUTest.java` : `local_search.acceptation_type.AcceptNotBadU`
+	- `src/test/java/local_search/acceptation_type/AcceptNotBadTTest.java` : `local_search.acceptation_type.AcceptNotBadT`
+	- `src/test/java/local_search/acceptation_type/AcceptNotBadTest.java` : `local_search.acceptation_type.AcceptNotBad`
+	- `src/test/java/local_search/acceptation_type/AcceptBestTest.java` : `local_search.acceptation_type.AcceptBest`
+	- `src/test/java/local_search/acceptation_type/AcceptAnyoneTest.java` : `local_search.acceptation_type.AcceptAnyone`
+	- `src/test/java/local_search/candidate_type/SmallerCandidateTest.java` : `local_search.candidate_type.SmallerCandidate`
+	- `src/test/java/local_search/candidate_type/SearchCandidateTest.java` : `local_search.candidate_type.SearchCandidate`
+	- `src/test/java/local_search/candidate_type/RandomCandidateTest.java` : `local_search.candidate_type.RandomCandidate`
+	- `src/test/java/local_search/candidate_type/NotDominatedCandidateTest.java` : `local_search.candidate_type.NotDominatedCandidate`
+	- `src/test/java/local_search/acceptation_type/DominanceMinTest.java` : `local_search.acceptation_type.DominanceMin`
+	- `src/test/java/local_search/candidate_type/GreaterCandidateTest.java` : `local_search.candidate_type.GreaterCandidate`
+	- `src/test/java/local_search/acceptation_type/DominanceTest.java` : `local_search.acceptation_type.Dominance`
+
+	Total de archivos de prueba detectados: **62**.
+
+	Si quieres que incluya porcentajes de cobertura por clase (líneas cubiertas / totales), puedo parsear `target/site/jacoco/jacoco.xml` y añadirlos aquí.
+
+	Para regenerar el informe y verificar números exactos:
 
 ```powershell
 mvn clean test jacoco:report
