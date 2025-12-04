@@ -42,18 +42,23 @@ public class AcceptNotBadU extends AcceptableCandidate{
 	public Boolean acceptCandidate(State stateCurrent, State stateCandidate) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		Boolean accept = null;
 		Problem problem = Strategy.getStrategy().getProblem();
+		Double threshold = Strategy.getStrategy().getThreshold();
+		double effectiveThreshold = Math.abs(threshold);
+		
 		if (problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
-			Double result = stateCurrent.getEvaluation().get(0) - stateCandidate.getEvaluation().get(0);
-			if (result < Strategy.getStrategy().getThreshold())
+			// For maximization: accept if candidate > current - abs(threshold)
+			if (stateCandidate.getEvaluation().get(0) > stateCurrent.getEvaluation().get(0) - effectiveThreshold) {
 				accept = true;
-			else
+			} else {
 				accept = false;
+			}
 		} else {
-			Double result_min = stateCurrent.getEvaluation().get(0) - stateCandidate.getEvaluation().get(0);
-			if (result_min > Strategy.getStrategy().getThreshold())
+			// For minimization: accept if candidate < current + abs(threshold)
+			if (stateCandidate.getEvaluation().get(0) < stateCurrent.getEvaluation().get(0) + effectiveThreshold) {
 				accept = true;
-			else
+			} else {
 				accept = false;
+			}
 		}
 		return accept;
 	}

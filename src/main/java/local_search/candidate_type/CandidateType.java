@@ -17,11 +17,27 @@ package local_search.candidate_type;
  */
 public enum CandidateType{
 	/** @brief Selecciona el candidato con menor evaluación */
-	SMALLER_CANDIDATE,
+	SMALLER_CANDIDATE {
+		public String toString() {
+			return "SmallerCandidate";
+		}
+	},
 	/** @brief Selecciona el candidato con mayor evaluación */
-	GREATER_CANDIDATE,
+	GREATER_CANDIDATE {
+		public String toString() {
+			return "GreaterCandidate";
+		}
+	},
 	/** @brief Selecciona un candidato aleatorio */
-	RANDOM_CANDIDATE,
+	RANDOM_CANDIDATE {
+		public String toString() {
+			return "RandomCandidate";
+		}
+	},
 	/** @brief Selecciona candidatos no dominados (multiobjetivo) */
-	NOT_DOMINATED_CANDIDATE;
+	NOT_DOMINATED_CANDIDATE {
+		public String toString() {
+			return "NotDominatedCandidate";
+		}
+	};
 }

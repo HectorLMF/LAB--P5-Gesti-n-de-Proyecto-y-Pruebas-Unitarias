@@ -521,8 +521,11 @@ public class Strategy {
 	 * @brief Establece el problema de optimización
 	 * @param problem Nuevo problema a resolver
 	 */
-	public void setProblem(Problem problem) {
-		this.problem = problem;
+	public static void setProblem(Problem problem) {
+		if (strategy == null) {
+			strategy = new Strategy();
+		}
+		strategy.problem = problem;
 	}
 
 	/**
@@ -627,7 +630,8 @@ public class Strategy {
 	 */
 	public static void destroyExecute() {
 		strategy = null;
-		RandomSearch.listStateReference = null;
+		// Reset RandomSearch global list to an empty list instead of null to avoid NPEs
+		RandomSearch.listStateReference = new java.util.ArrayList<>();
 	}
 	
 	/**

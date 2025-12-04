@@ -41,8 +41,30 @@ public class FactoryFatherSelection implements IFFactoryFatherSelection{
 	 * @throws NoSuchMethodException Si no se encuentra el método
 	 */
 	public FatherSelection createSelectFather(SelectionType selectionType) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-    	String className = "evolutionary_algorithms.complement." + selectionType.toString();
+		if (selectionType == null) {
+			throw new IllegalArgumentException("selectionType cannot be null");
+		}
+		String className = "evolutionary_algorithms.complement." + enumToClassName(selectionType.toString());
 		selection = (FatherSelection) FactoryLoader.getInstance(className);
 		return selection;
+	}
+	
+	/**
+	 * @brief Convierte un nombre de enum en UPPER_CASE a nombre de clase CamelCase
+	 * @param enumName Nombre del enum (ej: "TRUNCATION_SELECTION")
+	 * @return Nombre de clase (ej: "TruncationSelection")
+	 */
+	private String enumToClassName(String enumName) {
+		String[] parts = enumName.toLowerCase().split("_");
+		StringBuilder sb = new StringBuilder();
+		for (String part : parts) {
+			if (!part.isEmpty()) {
+				sb.append(Character.toUpperCase(part.charAt(0)));
+				if (part.length() > 1) {
+					sb.append(part.substring(1));
+				}
+			}
+		}
+		return sb.toString();
 	}
 }

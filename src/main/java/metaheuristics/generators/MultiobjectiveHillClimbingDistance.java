@@ -276,6 +276,22 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 		State[] solutions = solution.toArray(new State[solution.size()]);
 		Double distance = 0.0;
 		List<Double>listDist=new ArrayList<Double>();
+		
+		//Si es el primer elemento, inicializar distanceSolution con 0.0
+		if (solutions.length == 1) {
+			distanceSolution.clear();
+			distanceSolution.add(0.0);
+			return distanceSolution;
+		}
+		
+		//Si distanceSolution está vacía o tiene menos elementos de los necesarios, inicializarla con ceros
+		if (distanceSolution.isEmpty() || distanceSolution.size() < solutions.length - 1) {
+			distanceSolution.clear();
+			for (int i = 0; i < solutions.length - 1; i++) {
+				distanceSolution.add(0.0);
+			}
+		}
+		
 		State lastSolution = solution.get(solution.size()-1);
 		//Actualizando las distancias de todos los elmentos excepto el nuevo insertando
 		for (int k = 0; k < solutions.length-1; k++) {
@@ -286,21 +302,15 @@ public class MultiobjectiveHillClimbingDistance extends Generator{
 		}
 		distance = 0.0;
 		//Calculando la distancia del �ltimo elemento (elemento insertado) respecto al resto de los elementos
-		if (solutions.length==1) {
-			return distanceSolution;
-		
-		}else {
-		
-			for (int l = 0; l < solutions.length-1; l++) {
-				State solB = solutions[l];
-				distance += lastSolution.Distance(solB);
-			}
-			listDist.add(distance);
-//			distanceSolution.add(distance);
-			distanceSolution=listDist;
-			
-			return distanceSolution;
+		for (int l = 0; l < solutions.length-1; l++) {
+			State solB = solutions[l];
+			distance += lastSolution.Distance(solB);
 		}
+		listDist.add(distance);
+//		distanceSolution.add(distance);
+		distanceSolution=listDist;
+		
+		return distanceSolution;
 
 	}
 

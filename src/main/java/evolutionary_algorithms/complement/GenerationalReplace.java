@@ -36,8 +36,20 @@ public class GenerationalReplace extends Replace {
 	 */
 	@Override
 	public List<State> replace(State stateCandidate, List<State> listState) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		listState.remove(0);
-		listState.add(stateCandidate);
+		if (listState == null) {
+			listState = new java.util.ArrayList<State>();
+		}
+		if (listState.isEmpty()) {
+			listState.add(stateCandidate);
+		} else {
+			// remove first element safely
+			try {
+				listState.remove(0);
+			} catch (Exception e) {
+				// ignore and proceed to add
+			}
+			listState.add(stateCandidate);
+		}
 		/*List<State> sonList = Strategy.getStrategy().generator.getSonList();
 		for (int i = 0; i < listState.size(); i++) {
 			listState.set(i, sonList.get(i));

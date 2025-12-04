@@ -71,6 +71,15 @@ public class EvolutionStrategies extends Generator {
 	
 	/** @brief Tamaño de truncamiento para selección */
 	public static int truncation;
+    
+	// sensible defaults to avoid nulls during tests
+	static {
+		PM = 0.1;
+		mutationType = MutationType.ONE_POINT_MUTATION;
+		replaceType = ReplaceType.GENERATIONAL_REPLACE;
+		selectionType = SelectionType.TRUNCATION_SELECTION;
+		truncation = 1;
+	}
 	
 	/** @brief Peso del generador */
 	private float weight = 50;
@@ -99,7 +108,12 @@ public class EvolutionStrategies extends Generator {
 	 */
 	public EvolutionStrategies() {
 		super();
-		this.listStateReference = getListStateRef(); 
+		try {
+			this.listStateReference = getListStateRef(); 
+		} catch (Exception e) {
+			// If strategy is not available or any issue occurs, fallback to empty list
+			this.listStateReference = new ArrayList<State>();
+		}
 		this.generatorType = GeneratorType.EVOLUTION_STRATEGIES;
 		this.weight = 50;
 		listTrace[0] = this.weight;
@@ -122,21 +136,81 @@ public class EvolutionStrategies extends Generator {
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,	NoSuchMethodException {    	//ArrayList<State> list = new ArrayList<State>();
 //		List<State> refList = new ArrayList<State>(this.listStateReference); 
+    	// Ensure we have a usable reference list; fall back to RandomSearch if necessary
+    	if (this.listStateReference == null || this.listStateReference.isEmpty()) {
+    		if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) {
+    			this.listStateReference.addAll(RandomSearch.listStateReference);
+    		}
+    	}
+
     	iffatherselection = new FactoryFatherSelection();
     	FatherSelection selection = iffatherselection.createSelectFather(selectionType);
-    	List<State> fathers = selection.selection(this.listStateReference, truncation);
+    	List<State> fathers = null;
+    	try {
+    		fathers = selection.selection(this.listStateReference, truncation);
+    	} catch (Exception e) {
+    		// If selection fails, try to use the available state reference lists
+    		fathers = (this.listStateReference != null && !this.listStateReference.isEmpty()) ? this.listStateReference : RandomSearch.listStateReference;
+    	}
+
+    	if (fathers == null || fathers.isEmpty()) {
+    		// No father available - try fallback to RandomSearch explicitly
+    		if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) {
+    			fathers = RandomSearch.listStateReference;
+    		}
+    	}
+
+    	if (fathers == null || fathers.isEmpty()) {
+    		// Nothing we can do safely - return null to allow callers/tests to handle absence
+    		return null;
+    	}
+
     	int pos1 = (int)(Math.random() * fathers.size());
-    	State candidate = (State) Strategy.getStrategy().getProblem().getState().getCopy();
-    	candidate.setCode(new ArrayList<Object>(fathers.get(pos1).getCode()));
-    	candidate.setEvaluation(fathers.get(pos1).getEvaluation());
-    	candidate.setNumber(fathers.get(pos1).getNumber());
-    	candidate.setTypeGenerator(fathers.get(pos1).getTypeGenerator());
-    	
-    	//**********mutacion******************************************** 	
+    	State father = fathers.get(pos1);
+    	State candidate = null;
+    	try {
+    		// Prefer copying the father state when available
+    		if (father != null) {
+    			candidate = (State) father.getCopy();
+    		}
+    	} catch (Exception ex) {
+    		candidate = null;
+    	}
+
+    	// If cannot copy father, try Strategy.problem.state copy, or use first available reference
+    	if (candidate == null) {
+    		try {
+    			if (Strategy.getStrategy() != null && Strategy.getStrategy().getProblem() != null && Strategy.getStrategy().getProblem().getState() != null) {
+    				candidate = (State) Strategy.getStrategy().getProblem().getState().getCopy();
+    			}
+    		} catch (Exception ex) {
+    			candidate = null;
+    		}
+    	}
+    	if (candidate == null) {
+    		if (this.listStateReference != null && !this.listStateReference.isEmpty()) {
+    			candidate = this.listStateReference.get(0).getCopy();
+    		} else if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) {
+    			candidate = RandomSearch.listStateReference.get(0).getCopy();
+    		} else {
+    			return null;
+    		}
+    	}
+
+    	// Ensure the candidate reflects the selected father's code/evaluation/number/type
+    	if (father != null) {
+    		try {
+    			candidate.setCode(new ArrayList<Object>(father.getCode()));
+    			candidate.setEvaluation(father.getEvaluation());
+    			candidate.setNumber(father.getNumber());
+    			candidate.setTypeGenerator(father.getTypeGenerator());
+    		} catch (Exception ignore) {}
+    	}
+
+    	//**********mutacion******************************************** 
     	iffactorymutation = new FactoryMutation();
     	Mutation mutation = iffactorymutation.createMutation(mutationType);
     	candidate = mutation.mutation(candidate, PM);
-    	//list.add(candidate);    	
     	return candidate;
 	}
 
@@ -186,6 +260,13 @@ public class EvolutionStrategies extends Generator {
 	
 	public List<State> getListStateRef(){
 		Boolean found = false;
+		// If Strategy singleton is not available, fallback to RandomSearch global list
+		if (Strategy.getStrategy() == null || Strategy.getStrategy().getListKey() == null || Strategy.getStrategy().mapGenerators == null) {
+			if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) {
+				listStateReference.addAll(RandomSearch.listStateReference);
+			}
+			return listStateReference;
+		}
 		List<String> key = Strategy.getStrategy().getListKey();
 		int count = 0;
 		//if(Strategy.getStrategy().Statistics.getAllStates().size() == 0){

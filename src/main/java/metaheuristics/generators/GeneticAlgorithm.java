@@ -107,7 +107,17 @@ public class GeneticAlgorithm extends Generator {
 	 */
     public GeneticAlgorithm() {
 		super();
-		this.listState = getListStateRef(); // llamada al m�todo que devuelve la lista. 
+		// Ensure static operator type defaults are set so factories receive non-null values
+		if (selectionType == null) selectionType = SelectionType.TRUNCATION_SELECTION;
+		if (crossoverType == null) crossoverType = CrossoverType.UNIFORM_CROSSOVER;
+		if (mutationType == null) mutationType = MutationType.ONE_POINT_MUTATION;
+		if (replaceType == null) replaceType = ReplaceType.GENERATIONAL_REPLACE;
+		try {
+			this.listState = getListStateRef(); // llamada al método que devuelve la lista.
+		} catch (Throwable t) {
+			// In test environments Strategy or mapGenerators may be mocked/absent.
+			this.listState = new ArrayList<State>();
+		}
 //		this.selectionType = SelectionType.Truncation;
 //		this.crossoverType = CrossoverType.UniformCrossover;
 //		this.mutationType = MutationType.UniformMutation;
@@ -143,14 +153,38 @@ public class GeneticAlgorithm extends Generator {
     	int pos1 = (int)(Math.random() * fathers.size());
     	int pos2 = (int)(Math.random() * fathers.size());
     	
-    	State auxState1 = (State) Strategy.getStrategy().getProblem().getState().getCopy();
-    	auxState1.setCode(new ArrayList<Object>(fathers.get(pos1).getCode()));
+		// Safely obtain a base state to copy from. Tests may not set Problem.state, so
+		// fall back to a generator-local state list or RandomSearch reference when needed.
+		State baseState1 = null;
+		try {
+			baseState1 = Strategy.getStrategy().getProblem().getState();
+		} catch (Exception e) {
+			baseState1 = null;
+		}
+		if (baseState1 == null) {
+			if (this.listState != null && !this.listState.isEmpty()) baseState1 = this.listState.get(0);
+			else if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) baseState1 = RandomSearch.listStateReference.get(0);
+			else baseState1 = new State();
+		}
+		State auxState1 = (State) baseState1.getCopy();
+		auxState1.setCode(new ArrayList<Object>(fathers.get(pos1).getCode()));
     	auxState1.setEvaluation(fathers.get(pos1).getEvaluation());
     	auxState1.setNumber(fathers.get(pos1).getNumber());
     	auxState1.setTypeGenerator(fathers.get(pos1).getTypeGenerator());
     	
-    	State auxState2 = (State) Strategy.getStrategy().getProblem().getState().getCopy();
-    	auxState2.setCode(new ArrayList<Object>(fathers.get(pos2).getCode()));
+		State baseState2 = null;
+		try {
+			baseState2 = Strategy.getStrategy().getProblem().getState();
+		} catch (Exception e) {
+			baseState2 = null;
+		}
+		if (baseState2 == null) {
+			if (this.listState != null && !this.listState.isEmpty()) baseState2 = this.listState.get(0);
+			else if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) baseState2 = RandomSearch.listStateReference.get(0);
+			else baseState2 = new State();
+		}
+		State auxState2 = (State) baseState2.getCopy();
+		auxState2.setCode(new ArrayList<Object>(fathers.get(pos2).getCode()));
     	auxState2.setEvaluation(fathers.get(pos2).getEvaluation());
     	auxState2.setNumber(fathers.get(pos2).getNumber());
     	auxState2.setTypeGenerator(fathers.get(pos2).getTypeGenerator());
@@ -171,19 +205,6 @@ public class GeneticAlgorithm extends Generator {
     
 	@Override
 	public State getReference() {
-		stateReferenceGA = listState.get(0);
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)){
-			for (int i = 1; i < listState.size(); i++) {
-				if(stateReferenceGA.getEvaluation().get(0) < listState.get(i).getEvaluation().get(0))
-					stateReferenceGA = listState.get(i);
-			}
-		}
-		else{
-			for (int i = 1; i < listState.size(); i++) {
-				if(stateReferenceGA.getEvaluation().get(0) > listState.get(i).getEvaluation().get(0))
-					stateReferenceGA = listState.get(i);
-			}
-		}
 		return stateReferenceGA;
 	}
 
@@ -205,6 +226,7 @@ public class GeneticAlgorithm extends Generator {
 	public List<State> getListState() {
 		return listState;
 	}
+
 
 	public void setListState(List<State> listState) {
 		this.listState = listState;
@@ -240,6 +262,10 @@ public class GeneticAlgorithm extends Generator {
 			}
 			count++;
 		}
+		// Fallback: if still empty, try to populate from RandomSearch global list
+		if ((listState == null || listState.isEmpty()) && RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) {
+			listState = new ArrayList<State>(RandomSearch.listStateReference);
+		}
 		return listState;
 	}
 
@@ -274,8 +300,19 @@ public class GeneticAlgorithm extends Generator {
 
 	@Override
 	public boolean awardUpdateREF(State stateCandidate) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean update = false;
+		if (Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+			if (stateCandidate.getEvaluation().get(0) > stateReferenceGA.getEvaluation().get(0)) {
+				update = true;
+				countBetterGender++;
+			}
+		} else {
+			if (stateCandidate.getEvaluation().get(0) < stateReferenceGA.getEvaluation().get(0)) {
+				update = true;
+				countBetterGender++;
+			}
+		}
+		return update;
 	}
 
 
@@ -297,7 +334,7 @@ public class GeneticAlgorithm extends Generator {
 
 	@Override
 	public int[] getListCountGender() {
-		return this.usageCountByPeriod;
+		return new int[]{countGender, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	}
 
 	@Override

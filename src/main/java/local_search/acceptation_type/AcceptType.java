@@ -18,20 +18,52 @@ package local_search.acceptation_type;
 public enum AcceptType
 {
 	/** @brief Acepta solo mejores soluciones */
-	ACCEPT_BEST,
+	ACCEPT_BEST {
+		public String toString() {
+			return "AcceptBest";
+		}
+	},
 	/** @brief Acepta cualquier solución */
-	ACCEPT_ANYONE,
+	ACCEPT_ANYONE {
+		public String toString() {
+			return "AcceptAnyone";
+		}
+	},
 	/** @brief Acepta soluciones con criterio de temperatura */
-	ACCEPT_NOT_BAD_T,
+	ACCEPT_NOT_BAD_T {
+		public String toString() {
+			return "AcceptNotBadT";
+		}
+	},
 	/** @brief Acepta soluciones dentro de un umbral */
-	ACCEPT_NOT_BAD_U,
+	ACCEPT_NOT_BAD_U {
+		public String toString() {
+			return "AcceptNotBadU";
+		}
+	},
 	/** @brief Acepta soluciones no dominadas (Pareto) */
-	ACCEPT_NOT_DOMINATED,
+	ACCEPT_NOT_DOMINATED {
+		public String toString() {
+			return "AcceptNotDominated";
+		}
+	},
 	/** @brief Acepta soluciones no dominadas con lista tabú */
-	ACCEPT_NOT_DOMINATED_TABU,
+	ACCEPT_NOT_DOMINATED_TABU {
+		public String toString() {
+			return "AcceptNotDominatedTabu";
+		}
+	},
 	/** @brief Acepta soluciones que no empeoran */
-	ACCEPT_NOT_BAD,
+	ACCEPT_NOT_BAD {
+		public String toString() {
+			return "AcceptNotBad";
+		}
+	},
 	/** @brief Acepta soluciones con criterio multiobjetivo */
-	ACCEPT_MULTICASE;
+	ACCEPT_MULTICASE {
+		public String toString() {
+			return "AcceptMulticase";
+		}
+	};
 	
 }

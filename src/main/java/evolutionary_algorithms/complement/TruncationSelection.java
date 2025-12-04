@@ -78,7 +78,8 @@ public class TruncationSelection extends FatherSelection {
 				listState = ascOrderBetter(listState);
 		}
 		int i = 0;
-		while(AuxList.size()< truncation){
+		int limit = Math.min(truncation, listState.size());
+		while(AuxList.size() < limit){
 			AuxList.add(listState.get(i));
 			i++;
 		}

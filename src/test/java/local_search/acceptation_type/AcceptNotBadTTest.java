@@ -43,7 +43,7 @@ public class AcceptNotBadTTest {
      */
     private State createState(double evaluation) {
         State state = new State();
-        List<Double> evaluationList = new ArrayList<>();
+        ArrayList<Double> evaluationList = new ArrayList<>();
         evaluationList.add(evaluation);
         state.setEvaluation(evaluationList);
         return state;

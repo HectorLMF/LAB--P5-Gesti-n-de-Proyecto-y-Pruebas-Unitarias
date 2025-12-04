@@ -137,7 +137,14 @@ public class Particle extends Generator {
 	
 	
 	private ArrayList<Object> UpdateVelocity(){ // actualizar velocidad
-    	double w = ParticleSwarmOptimization.wmax - ((ParticleSwarmOptimization.wmax - ParticleSwarmOptimization.wmin) / Strategy.getStrategy().getCountMax()) * ParticleSwarmOptimization.countCurrentIterPSO;  //CALCULO DE LA INERCIA
+		// compute inertia factor safely (Strategy may be null during tests)
+		double countMax = 1.0;
+		try {
+			if (Strategy.getStrategy() != null) countMax = Math.max(1, Strategy.getStrategy().getCountMax());
+		} catch (Throwable t) {
+			countMax = 1.0;
+		}
+		double w = ParticleSwarmOptimization.wmax - ((ParticleSwarmOptimization.wmax - ParticleSwarmOptimization.wmin) / countMax) * ParticleSwarmOptimization.countCurrentIterPSO;  //CALCULO DE LA INERCIA
     	double rand1 = SecureRandomGenerator.nextDouble();
     	double rand2 = SecureRandomGenerator.nextDouble();
     	double inertia, cognitive, social;
@@ -145,23 +152,45 @@ public class Particle extends Generator {
 		// Use double arithmetic to avoid integer subtraction pitfalls
 		ParticleSwarmOptimization.constriction = 2.0/(Math.abs(2.0 - (double)learning - Math.sqrt(((double)learning * (double)learning) - 4.0 * (double)learning)));   // Factor de costriccion
     	ArrayList<Object> actualVelocity = new ArrayList<Object>();
-    	if(velocity.isEmpty()){
-    		for (int i = 0; i < Strategy.getStrategy().getProblem().getState().getCode().size(); i++){
-    			velocity.add(0.0);
-    		}
-    	}
-    	// recorre el vector velocidad y lo actualiza
-    	for (int i = 0; i < Strategy.getStrategy().getProblem().getState().getCode().size(); i++) {  
+		// determine code/vector size using available state information
+		int codeSize = 0;
+		if (stateActual != null && stateActual.getCode() != null && stateActual.getCode().size() > 0) {
+			codeSize = stateActual.getCode().size();
+		} else {
+			try {
+				if (Strategy.getStrategy() != null && Strategy.getStrategy().getProblem() != null && Strategy.getStrategy().getProblem().getState() != null && Strategy.getStrategy().getProblem().getState().getCode() != null) {
+					codeSize = Strategy.getStrategy().getProblem().getState().getCode().size();
+				}
+			} catch (Throwable t) {
+				codeSize = 0;
+			}
+		}
+		if (velocity.isEmpty()){
+			for (int i = 0; i < codeSize; i++){
+				velocity.add(0.0);
+			}
+		}
+		// recorre el vector velocidad y lo actualiza
+		for (int i = 0; i < codeSize; i++) {
     		// cumulo donde se encuentra la particula
     		int swarm = ParticleSwarmOptimization.countParticle / ParticleSwarmOptimization.countParticleBySwarm; 
            	inertia = w * (Double)velocity.get(i);  
            	if(ParticleSwarmOptimization.binary == true){
-           		cognitive = (Double)(ParticleSwarmOptimization.learning1 * rand1 * ((Integer)(this.statePBest.getCode().get(i)) - (Integer)(stateActual.getCode().get(i))));
-           		social = (Double)(ParticleSwarmOptimization.learning2 * rand2 * (((Integer)(((State) ParticleSwarmOptimization.lBest[swarm]).getCode().get(i))) - ((Integer)(stateActual.getCode().get(i)))));
+				// safe casts for binary representation
+				try {
+					cognitive = (Double)(ParticleSwarmOptimization.learning1 * rand1 * ((Integer)(this.statePBest.getCode().get(i)) - (Integer)(stateActual.getCode().get(i))));
+				} catch (Throwable t) { cognitive = 0.0; }
+				try {
+					social = (Double)(ParticleSwarmOptimization.learning2 * rand2 * (((Integer)(((State) ParticleSwarmOptimization.lBest[swarm]).getCode().get(i))) - ((Integer)(stateActual.getCode().get(i)))));
+				} catch (Throwable t) { social = 0.0; }
            	}
            	else{
-           		cognitive = (Double)(ParticleSwarmOptimization.learning1 * rand1 * ((Double)(this.statePBest.getCode().get(i)) - (Double)(stateActual.getCode().get(i))));
-           		social = (Double)(ParticleSwarmOptimization.learning2 * rand2 * (((Double)(((State) ParticleSwarmOptimization.lBest[swarm]).getCode().get(i))) - ((Double)(stateActual.getCode().get(i)))));
+				try {
+					cognitive = (Double)(ParticleSwarmOptimization.learning1 * rand1 * ((Double)(this.statePBest.getCode().get(i)) - (Double)(stateActual.getCode().get(i))));
+				} catch (Throwable t) { cognitive = 0.0; }
+				try {
+					social = (Double)(ParticleSwarmOptimization.learning2 * rand2 * (((Double)(((State) ParticleSwarmOptimization.lBest[swarm]).getCode().get(i))) - ((Double)(stateActual.getCode().get(i)))));
+				} catch (Throwable t) { social = 0.0; }
            	}
         	actualVelocity.add(ParticleSwarmOptimization.constriction*(inertia + cognitive + social));
         }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import metaheurictics.strategy.Strategy;
+import problem.definition.ObjetiveFunction;
 import problem.definition.Problem;
 import problem.definition.State;
 import problem.definition.Problem.ProblemType;
@@ -31,8 +32,8 @@ class AcceptNotBadTest {
         problem = mock(Problem.class);
         strategy.setProblem(problem);
         
-        ArrayList<Object> functions = new ArrayList<>();
-        functions.add(new Object());
+        ArrayList<ObjetiveFunction> functions = new ArrayList<>();
+        functions.add(mock(ObjetiveFunction.class));
         when(problem.getFunction()).thenReturn(functions);
     }
 

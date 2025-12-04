@@ -41,9 +41,30 @@ public class FactoryCrossover implements IFFactoryCrossover {
 	 * @throws NoSuchMethodException Si no se encuentra el método
 	 */
 	public Crossover createCrossover(CrossoverType Crossovertype) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		
-		String className = "evolutionary_algorithms.complement." + Crossovertype.toString();
+		if (Crossovertype == null) {
+			throw new IllegalArgumentException("Crossovertype cannot be null");
+		}
+		String className = "evolutionary_algorithms.complement." + enumToClassName(Crossovertype.toString());
 		crossing = (Crossover) FactoryLoader.getInstance(className);
 		return crossing;
+	}
+	
+	/**
+	 * @brief Convierte un nombre de enum en UPPER_CASE a nombre de clase CamelCase
+	 * @param enumName Nombre del enum (ej: "ONE_POINT_CROSSOVER")
+	 * @return Nombre de clase (ej: "OnePointCrossover")
+	 */
+	private String enumToClassName(String enumName) {
+		String[] parts = enumName.toLowerCase().split("_");
+		StringBuilder sb = new StringBuilder();
+		for (String part : parts) {
+			if (!part.isEmpty()) {
+				sb.append(Character.toUpperCase(part.charAt(0)));
+				if (part.length() > 1) {
+					sb.append(part.substring(1));
+				}
+			}
+		}
+		return sb.toString();
 	}
 }

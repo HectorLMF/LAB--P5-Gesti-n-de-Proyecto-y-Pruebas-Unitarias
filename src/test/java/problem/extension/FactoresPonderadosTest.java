@@ -41,7 +41,7 @@ class FactoresPonderadosTest {
         state.setCode(code);
     }
 
-    private ObjetiveFunction createMockFunction(double evaluation, double weight, ProblemType type) {
+    private ObjetiveFunction createMockFunction(double evaluation, float weight, ProblemType type) {
         ObjetiveFunction function = mock(ObjetiveFunction.class);
         when(function.Evaluation(any(State.class))).thenReturn(evaluation);
         when(function.getWeight()).thenReturn(weight);
@@ -55,7 +55,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(10.0, 1.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(10.0, 1.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -71,8 +71,8 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(10.0, 0.5, ProblemType.MAXIMIZAR));
-        functions.add(createMockFunction(20.0, 0.5, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(10.0, 0.5f, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(20.0, 0.5f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -88,7 +88,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MINIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(10.0, 1.0, ProblemType.MINIMIZAR));
+        functions.add(createMockFunction(10.0, 1.0f, ProblemType.MINIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -111,8 +111,8 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(10.0, 0.3, ProblemType.MAXIMIZAR));
-        functions.add(createMockFunction(20.0, 0.7, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(10.0, 0.3f, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(20.0, 0.7f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -128,7 +128,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MINIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(0.8, 1.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(0.8, 1.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -144,7 +144,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(0.3, 1.0, ProblemType.MINIMIZAR));
+        functions.add(createMockFunction(0.3, 1.0f, ProblemType.MINIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -160,9 +160,9 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(10.0, 0.33, ProblemType.MAXIMIZAR));
-        functions.add(createMockFunction(20.0, 0.33, ProblemType.MAXIMIZAR));
-        functions.add(createMockFunction(30.0, 0.34, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(10.0, 0.33f, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(20.0, 0.33f, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(30.0, 0.34f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -178,7 +178,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(0.0, 1.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(0.0, 1.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -193,7 +193,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(-10.0, 1.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(-10.0, 1.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -208,7 +208,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(100.0, 0.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(100.0, 0.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -223,8 +223,8 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(0.6, 0.5, ProblemType.MAXIMIZAR));
-        functions.add(createMockFunction(0.4, 0.5, ProblemType.MINIMIZAR));
+        functions.add(createMockFunction(0.6, 0.5f, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(0.4, 0.5f, ProblemType.MINIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -240,8 +240,8 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MINIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(0.3, 0.5, ProblemType.MINIMIZAR));
-        functions.add(createMockFunction(0.7, 0.5, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(0.3, 0.5f, ProblemType.MINIMIZAR));
+        functions.add(createMockFunction(0.7, 0.5f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -257,7 +257,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(10.0, 1.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(10.0, 1.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -274,7 +274,7 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(1000000.0, 1.0, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(1000000.0, 1.0f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);
@@ -289,8 +289,8 @@ class FactoresPonderadosTest {
         when(problem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
         
         ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(createMockFunction(0.123456, 0.5, ProblemType.MAXIMIZAR));
-        functions.add(createMockFunction(0.654321, 0.5, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(0.123456, 0.5f, ProblemType.MAXIMIZAR));
+        functions.add(createMockFunction(0.654321, 0.5f, ProblemType.MAXIMIZAR));
         when(problem.getFunction()).thenReturn(functions);
         
         factoresPonderados.evaluationState(state);

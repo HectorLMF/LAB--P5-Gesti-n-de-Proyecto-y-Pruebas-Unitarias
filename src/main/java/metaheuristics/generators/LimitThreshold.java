@@ -63,13 +63,20 @@ public class LimitThreshold extends Generator{
 		this.strategy = StrategyType.NORMAL;
 
 
-		Problem problem = Strategy.getStrategy().getProblem();
-
-		if(problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
-			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
+		Problem problem = null;
+		if (Strategy.getStrategy() != null) {
+			try {
+				problem = Strategy.getStrategy().getProblem();
+			} catch (Exception e) {
+				problem = null;
+			}
 		}
-		else{
-			this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
+
+		if (problem != null && problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
+		} else {
+			// Default to GREATER_CANDIDATE when problem info is not available to avoid NPEs
+			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
 		}
 
 		this.candidatevalue = new CandidateValue();

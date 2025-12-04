@@ -82,15 +82,21 @@ public class HillClimbing extends Generator{
 		super();
 		this.typeAcceptation = AcceptType.ACCEPT_BEST;
 		this.strategy = StrategyType.NORMAL;
-		if(Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+		// Guard against Strategy or Problem being null during test setups
+		try {
+			if (Strategy.getStrategy() != null && Strategy.getStrategy().getProblem() != null &&
+				Strategy.getStrategy().getProblem().getTypeProblem() != null &&
+				Strategy.getStrategy().getProblem().getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
+				this.typeCandidate = CandidateType.GREATER_CANDIDATE;
+			} else {
+				this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
+			}
+		} catch (Exception e) {
 			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
-		}
-		else{
-			this.typeCandidate = CandidateType.SMALLER_CANDIDATE;
 		}
 		this.candidatevalue = new CandidateValue();
 		this.Generatortype = GeneratorType.HILL_CLIMBING;
-		this.weight = 50;
+		this.weight = 0;
 		listTrace[0] = this.weight;
 		betterCountByPeriod[0] = 0;
 		usageCountByPeriod[0] = 0;
@@ -166,13 +172,12 @@ public class HillClimbing extends Generator{
 
 	@Override
 	public float getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.weight;
 	}
 
 	@Override
 	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
+		this.weight = weight;
 		
 	}
 	
@@ -188,7 +193,6 @@ public class HillClimbing extends Generator{
 
 	@Override
 	public float[] getTrace() {
-		// TODO Auto-generated method stub
 		return this.listTrace;
 	}
 }

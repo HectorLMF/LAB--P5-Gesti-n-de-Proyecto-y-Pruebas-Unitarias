@@ -43,14 +43,12 @@ public class Dominance {
 			if(dominance(solutionX, list.get(i)) == true){
 				//Se elimina el elemento de la lista
 				list.remove(i);
-				if (i!=0) {
-					i--;	
-				}
+				i--;
 				if (Strategy.getStrategy().generator.getType().equals(GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_DISTANCE)&&list.size()!=0) {
 					MultiobjectiveHillClimbingDistance.DistanceCalculateAdd(list);
 				}
 			}
-			if (list.size()>0) {
+			else if (list.size() > i) {
 				if(dominance(list.get(i), solutionX) == true){
 					domain = true;
 				}
