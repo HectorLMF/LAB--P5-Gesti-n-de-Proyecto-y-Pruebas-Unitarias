@@ -12,7 +12,7 @@ COPY src ./src
 RUN mvn -B -DskipTests package
 
 # Stage 2: Create a lightweight runtime image
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
 # Copy artifact from builder stage. Adjust pattern if your artifact name differs.
