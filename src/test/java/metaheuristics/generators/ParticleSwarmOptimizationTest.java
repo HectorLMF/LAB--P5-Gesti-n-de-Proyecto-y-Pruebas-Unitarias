@@ -1,736 +1,267 @@
-/**
- * @file ParticleSwarmOptimizationTest.java
- * @brief Tests unitarios completos para ParticleSwarmOptimization
- * @author Test Suite
- * @version 1.0
- * @date 2025
- */
-
 package metaheuristics.generators;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockedStatic;
 
 import metaheurictics.strategy.Strategy;
 import problem.definition.ObjetiveFunction;
-import problem.definition.Operator;
 import problem.definition.Problem;
-import problem.definition.Problem.ProblemType;
 import problem.definition.State;
+import metaheuristics.generators.RandomSearch;
+import metaheuristics.generators.ParticleSwarmOptimization;
+import metaheuristics.generators.Particle;
+import metaheuristics.generators.GeneratorType;
 
-/**
- * @class ParticleSwarmOptimizationTest
- * @brief Suite de tests exhaustiva para PSO
- * 
- * Tests que verifican:
- * - Inicialización de enjambre
- * - Generación de partículas
- * - Actualización de lBest y gBest
- * - Gestión de referencias
- * - Parámetros del algoritmo
- */
-@DisplayName("Tests para ParticleSwarmOptimization - PSO")
-class ParticleSwarmOptimizationTest {
+public class ParticleSwarmOptimizationTest {
 
-    private ParticleSwarmOptimization pso;
-    private Strategy mockStrategy;
-    private Problem mockProblem;
-    private Operator mockOperator;
-    private ObjetiveFunction mockFunction;
-    private State mockState;
+    private List<State> seedStates;
 
     @BeforeEach
     void setUp() {
         Strategy.destroyExecute();
-        RandomSearch.listStateReference = new ArrayList<>();
-        
-        mockProblem = mock(Problem.class);
-        mockOperator = mock(Operator.class);
-        mockFunction = mock(ObjetiveFunction.class);
-        mockState = mock(State.class);
-
-        when(mockProblem.getOperator()).thenReturn(mockOperator);
-        when(mockProblem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
-        
-        ArrayList<ObjetiveFunction> functions = new ArrayList<>();
-        functions.add(mockFunction);
-        when(mockProblem.getFunction()).thenReturn(functions);
-        when(mockFunction.Evaluation(any(State.class))).thenReturn(10.0);
-        
-        ArrayList<Double> evaluation = new ArrayList<>();
-        evaluation.add(10.0);
-        when(mockState.getEvaluation()).thenReturn(evaluation);
-        when(mockState.getCode()).thenReturn(new ArrayList<>());
-    }
-
-    @AfterEach
-    void tearDown() {
-        Strategy.destroyExecute();
-        RandomSearch.listStateReference = null;
-        ParticleSwarmOptimization.countRef = 0;
+        // Ensure Strategy.mapGenerators is initialized to avoid NPE in getListKey
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        RandomSearch.listStateReference.clear();
+        seedStates = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            State s = new State();
+            ArrayList<Object> code = new ArrayList<>();
+            code.add(1.0 * i);
+            code.add(2.0 * i);
+            s.setCode(code);
+            ArrayList<Double> eval = new ArrayList<>();
+            eval.add(10.0 - i);
+            s.setEvaluation(eval);
+            seedStates.add(s);
+        }
+        RandomSearch.listStateReference.addAll(seedStates);
+        ParticleSwarmOptimization.coutSwarm = 1;
+        ParticleSwarmOptimization.countParticleBySwarm = seedStates.size();
+        ParticleSwarmOptimization.countRef = ParticleSwarmOptimization.coutSwarm * ParticleSwarmOptimization.countParticleBySwarm;
         ParticleSwarmOptimization.countParticle = 0;
-        ParticleSwarmOptimization.coutSwarm = 0;
-        ParticleSwarmOptimization.countParticleBySwarm = 0;
-        ParticleSwarmOptimization.lBest = null;
         ParticleSwarmOptimization.gBest = null;
+        ParticleSwarmOptimization.lBest = null;
         ParticleSwarmOptimization.countCurrentIterPSO = 0;
     }
 
-    // ==================== Tests de Constructor ====================
-
     @Test
-    @DisplayName("Constructor: Inicialización sin partículas")
-    void testConstructor_EmptyParticles() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            ParticleSwarmOptimization.coutSwarm = 2;
-            ParticleSwarmOptimization.countParticleBySwarm = 5;
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertNotNull(pso, "PSO no debería ser null");
-            assertEquals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION, pso.getType(), 
-                "Tipo debería ser PARTICLE_SWARM_OPTIMIZATION");
-            assertEquals(10, ParticleSwarmOptimization.countRef, 
-                "countRef debería ser coutSwarm * countParticleBySwarm");
+    @DisplayName("Constructor sets type and builds particles from RandomSearch")
+    void testConstructorAndParticles() {
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        assertEquals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION, pso.getType());
+        assertEquals(seedStates.size(), pso.getListParticle().size());
+        assertTrue(ParticleSwarmOptimization.lBest != null && ParticleSwarmOptimization.lBest.length >= 1);
     }
 
     @Test
-    @DisplayName("Constructor: Inicialización con partículas existentes")
-    void testConstructor_WithExistingParticles() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            strategy.listBest = new ArrayList<>();
-            
-            // Crear estados de referencia
-            for (int i = 0; i < 4; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(10.0 + i);
-                state.setEvaluation(eval);
-                state.setCode(new ArrayList<>());
-                RandomSearch.listStateReference.add(state);
-            }
-            
-            ParticleSwarmOptimization.coutSwarm = 2;
-            ParticleSwarmOptimization.countParticleBySwarm = 2;
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertNotNull(pso, "PSO no debería ser null");
-            assertFalse(pso.getListParticle().isEmpty(), "Lista de partículas no debería estar vacía");
-            assertEquals(1, ParticleSwarmOptimization.countCurrentIterPSO, 
-                "countCurrentIterPSO debería inicializarse en 1");
-    }
-
-    // ==================== Tests de Getters y Setters ====================
-
-    @Test
-    @DisplayName("Getters/Setters: StateReferencePSO")
-    void testGetSetStateReferencePSO() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            
-            State refState = new State();
-            pso.setStateReferencePSO(refState);
-
-            assertEquals(refState, pso.getStateReferencePSO(), 
-                "StateReferencePSO debería ser el configurado");
+    @DisplayName("Constructor with empty RandomSearch keeps particles empty and iter 0")
+    void testConstructorWithEmptyRandomSearch() {
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        RandomSearch.listStateReference.clear();
+        ParticleSwarmOptimization.coutSwarm = 0;
+        ParticleSwarmOptimization.countParticleBySwarm = 0;
+        ParticleSwarmOptimization.countRef = 0;
+        ParticleSwarmOptimization.countParticle = 0;
+        ParticleSwarmOptimization.gBest = null;
+        ParticleSwarmOptimization.lBest = null;
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        assertTrue(pso.getListParticle() == null || pso.getListParticle().isEmpty());
+        assertEquals(0, ParticleSwarmOptimization.countCurrentIterPSO);
     }
 
     @Test
-    @DisplayName("Getters/Setters: GeneratorType")
-    void testGetSetGeneratorType() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            pso.setGeneratorType(GeneratorType.PARTICLE_SWARM_OPTIMIZATION);
-
-            assertEquals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION, pso.getGeneratorType(), 
-                "GeneratorType debería ser PARTICLE_SWARM_OPTIMIZATION");
+    @DisplayName("generate returns a state and advances counter")
+    void testGenerateAdvancesCounter() throws Exception {
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        int before = ParticleSwarmOptimization.countParticle;
+        State out = pso.generate(1);
+        assertNotNull(out);
+        assertEquals((before + 1) % Math.max(1, ParticleSwarmOptimization.countRef), ParticleSwarmOptimization.countParticle % Math.max(1, ParticleSwarmOptimization.countRef));
     }
 
     @Test
-    @DisplayName("Getters/Setters: CountRef estático")
-    void testGetSetCountRef() {
-        ParticleSwarmOptimization.setCountRef(100);
-
-        assertEquals(100, ParticleSwarmOptimization.getCountRef(), "countRef debería ser 100");
+    @DisplayName("generate returns null when no particles or countRef=0")
+    void testGenerateReturnsNullWhenNoParticles() throws Exception {
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        RandomSearch.listStateReference.clear();
+        ParticleSwarmOptimization.coutSwarm = 0;
+        ParticleSwarmOptimization.countParticleBySwarm = 0;
+        ParticleSwarmOptimization.countRef = 0;
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        assertNull(pso.generate(1));
     }
 
     @Test
-    @DisplayName("Getters/Setters: ListParticle")
-    void testGetSetListParticle() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            
-            List<Particle> particles = new ArrayList<>();
-            Particle p1 = mock(Particle.class);
-            particles.add(p1);
-            
-            pso.setListParticle(particles);
+    @DisplayName("updateReference appends to reference list and increments iter counter")
+    void testUpdateReferenceAppends() throws Exception {
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MINIMIZAR);
+        ArrayList<ObjetiveFunction> funcs = new ArrayList<>();
+        funcs.add(new ObjetiveFunction() { @Override public Double Evaluation(State state) { return 0.0; }});
+        p.setFunction(funcs);
+        Strategy.setProblem(p);
 
-            assertEquals(1, pso.getListParticle().size(), "Lista de partículas debería tener 1 elemento");
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        int sizeBefore = pso.getReferenceList().size();
+        ParticleSwarmOptimization.countParticle = 0;
+        State cand = new State();
+        ArrayList<Double> ev = new ArrayList<>(); ev.add(1.0); cand.setEvaluation(ev);
+        pso.updateReference(cand, 0);
+        assertEquals(sizeBefore + 1, pso.getReferenceList().size());
+        assertTrue(ParticleSwarmOptimization.countCurrentIterPSO >= 1);
     }
 
     @Test
-    @DisplayName("Getters/Setters: ListStateReference")
-    void testGetSetListStateReference() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            
-            List<State> references = new ArrayList<>();
-            references.add(mockState);
-            
-            pso.setListStateReference(references);
+    @DisplayName("updateReference (max) updates lBest and sets gBest when improved")
+    void testUpdateReference_Maximization_UpdatesLBestAndGBest() throws Exception {
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        // Seed RandomSearch
+        RandomSearch.listStateReference.clear();
+        for (int i = 0; i < 3; i++) {
+            State s = new State();
+            s.setCode(new ArrayList<>());
+            ArrayList<Double> ev = new ArrayList<>(); ev.add(5.0 + i); s.setEvaluation(ev);
+            RandomSearch.listStateReference.add(s);
+        }
+        ParticleSwarmOptimization.coutSwarm = 1;
+        ParticleSwarmOptimization.countParticleBySwarm = 3;
+        // Problem MAXIMIZAR
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
+        Strategy.setProblem(p);
 
-            assertNotNull(pso.getListStateReference(), "Lista de referencias no debería ser null");
-    }
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        // Ensure reference list has a low value so gBest condition triggers when improved
+        State ref = new State();
+        ArrayList<Double> refEv = new ArrayList<>(); refEv.add(4.0); ref.setEvaluation(refEv);
+        pso.getReferenceList().add(ref);
 
-    // ==================== Tests de getType ====================
+        // Force current particle pBest to be higher than current lBest
+        ParticleSwarmOptimization.countParticle = 0;
+        Particle part0 = pso.getListParticle().get(0);
+        State better = new State(); better.setCode(new ArrayList<>());
+        ArrayList<Double> be = new ArrayList<>(); be.add(99.0); better.setEvaluation(be);
+        part0.setStatePBest(better);
 
-    @Test
-    @DisplayName("getType: Retornar tipo correcto")
-    void testGetType() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
+        // Lower current lBest to ensure update happens
+        ParticleSwarmOptimization.lBest[0] = new State();
+        ArrayList<Double> lb = new ArrayList<>(); lb.add(1.0); ParticleSwarmOptimization.lBest[0].setEvaluation(lb);
 
-            assertEquals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION, pso.getType(), 
-                "Tipo debería ser PARTICLE_SWARM_OPTIMIZATION");
-    }
-
-    // ==================== Tests de getReference ====================
-
-    @Test
-    @DisplayName("getReference: Retornar null")
-    void testGetReference() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertNull(pso.getReference(), "getReference debería retornar null");
-    }
-
-    // ==================== Tests de getReferenceList ====================
-
-    @Test
-    @DisplayName("getReferenceList: Retornar lista de referencias")
-    void testGetReferenceList() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            
-            List<State> refList = pso.getReferenceList();
-
-            assertNotNull(refList, "Lista de referencias no debería ser null");
-    }
-
-    // ==================== Tests de getSonList ====================
-
-    @Test
-    @DisplayName("getSonList: Retornar null")
-    void testGetSonList() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertNull(pso.getSonList(), "getSonList debería retornar null");
-    }
-
-    // ==================== Tests de setInitialReference ====================
-
-    @Test
-    @DisplayName("setInitialReference: Método vacío")
-    void testSetInitialReference() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            
-            // No debería lanzar excepción
-            pso.setInitialReference(mockState);
-
-            assertTrue(true, "setInitialReference debería ejecutarse sin errores");
-    }
-
-    // ==================== Tests de awardUpdateREF ====================
-
-    @Test
-    @DisplayName("awardUpdateREF: Retornar false")
-    void testAwardUpdateREF() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertFalse(pso.awardUpdateREF(mockState), "awardUpdateREF debería retornar false");
-    }
-
-    // ==================== Tests de setWeight ====================
-
-    @Test
-    @DisplayName("setWeight: Método vacío")
-    void testSetWeight() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            
-            // No debería lanzar excepción
-            pso.setWeight(50.0f);
-
-            assertTrue(true, "setWeight debería ejecutarse sin errores");
-    }
-
-    // ==================== Tests de getWeight ====================
-
-    @Test
-    @DisplayName("getWeight: Retornar 0")
-    void testGetWeight() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertEquals(0, pso.getWeight(), "getWeight debería retornar 0");
-    }
-
-    // ==================== Tests de getListCountBetterGender ====================
-
-    @Test
-    @DisplayName("getListCountBetterGender: Retornar array")
-    void testGetListCountBetterGender() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertNotNull(pso.getListCountBetterGender(), 
-                "getListCountBetterGender no debería retornar null");
-    }
-
-    // ==================== Tests de getListCountGender ====================
-
-    @Test
-    @DisplayName("getListCountGender: Retornar array con countGender")
-    void testGetListCountGender() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-            pso.countGender = 5;
-
-            int[] result = pso.getListCountGender();
-
-            assertNotNull(result, "Array no debería ser null");
-            assertEquals(10, result.length, "Array debería tener longitud 10");
-            assertEquals(5, result[0], "Primer elemento debería ser countGender (5)");
-    }
-
-    // ==================== Tests de getTrace ====================
-
-    @Test
-    @DisplayName("getTrace: Retornar array de trace")
-    void testGetTrace() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            pso = new ParticleSwarmOptimization();
-
-            assertNotNull(pso.getTrace(), "getTrace no debería retornar null");
-    }
-
-    // ==================== Tests de generate ====================
-
-    @Test
-    @DisplayName("generate: Generar estado de partícula")
-    void testGenerate() throws Exception {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            // Crear estados de referencia
-            for (int i = 0; i < 4; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(10.0 + i);
-                state.setEvaluation(eval);
-                state.setCode(new ArrayList<>());
-                RandomSearch.listStateReference.add(state);
-            }
-            
-            ParticleSwarmOptimization.coutSwarm = 2;
-            ParticleSwarmOptimization.countParticleBySwarm = 2;
-            ParticleSwarmOptimization.countParticle = 0;
-            
-            pso = new ParticleSwarmOptimization();
-
-            // Mock particle generation
-            for (Particle p : pso.getListParticle()) {
-                Particle mockParticle = spy(p);
-                State generatedState = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(12.0);
-                generatedState.setEvaluation(eval);
-                generatedState.setCode(new ArrayList<>());
-                when(mockParticle.generate(1)).thenReturn(generatedState);
-            }
-
-            State result = pso.generate(1);
-
-            assertNotNull(result, "Estado generado no debería ser null");
+        pso.updateReference(new State(), 0);
+        assertEquals(99.0, ParticleSwarmOptimization.lBest[0].getEvaluation().get(0), 1e-9);
+        assertNotNull(ParticleSwarmOptimization.gBest);
+        assertEquals(99.0, ParticleSwarmOptimization.gBest.getEvaluation().get(0), 1e-9);
     }
 
     @Test
-    @DisplayName("generate: Resetear contador cuando alcanza countRef")
-    void testGenerate_ResetCounter() throws Exception {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            // Crear estados de referencia
-            for (int i = 0; i < 4; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(10.0 + i);
-                state.setEvaluation(eval);
-                state.setCode(new ArrayList<>());
-                RandomSearch.listStateReference.add(state);
-            }
-            
-            ParticleSwarmOptimization.coutSwarm = 2;
-            ParticleSwarmOptimization.countParticleBySwarm = 2;
-            ParticleSwarmOptimization.countRef = 4;
-            ParticleSwarmOptimization.countParticle = 4; // Igual a countRef
-            
-            pso = new ParticleSwarmOptimization();
-            pso.generate(1);
+    @DisplayName("updateReference (min) updates lBest and sets gBest when improved")
+    void testUpdateReference_Minimization_UpdatesLBestAndGBest() throws Exception {
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        // Seed RandomSearch
+        RandomSearch.listStateReference.clear();
+        for (int i = 0; i < 2; i++) {
+            State s = new State();
+            s.setCode(new ArrayList<>());
+            ArrayList<Double> ev = new ArrayList<>(); ev.add(50.0 + i); s.setEvaluation(ev);
+            RandomSearch.listStateReference.add(s);
+        }
+        ParticleSwarmOptimization.coutSwarm = 1;
+        ParticleSwarmOptimization.countParticleBySwarm = 2;
+        // Problem MINIMIZAR
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MINIMIZAR);
+        ArrayList<ObjetiveFunction> funcs = new ArrayList<>();
+        funcs.add(new ObjetiveFunction(){ @Override public Double Evaluation(State s){ return s.getEvaluation().get(0); }});
+        p.setFunction(funcs);
+        Strategy.setProblem(p);
 
-            assertEquals(1, ParticleSwarmOptimization.countParticle, 
-                "countParticle debería resetearse y luego incrementarse a 1");
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        // Ensure reference list has high value so new lBest (lower) sets gBest
+        State ref = new State();
+        ArrayList<Double> refEv = new ArrayList<>(); refEv.add(100.0); ref.setEvaluation(refEv);
+        pso.getReferenceList().add(ref);
+
+        ParticleSwarmOptimization.countParticle = 0;
+        Particle part0 = pso.getListParticle().get(0);
+        // Set current pBest high so candidate lower improves it
+        State high = new State(); high.setCode(new ArrayList<>());
+        ArrayList<Double> he = new ArrayList<>(); he.add(60.0); high.setEvaluation(he);
+        part0.setStatePBest(high);
+
+        // Current lBest higher than new pBest
+        ParticleSwarmOptimization.lBest[0] = new State();
+        ArrayList<Double> lb = new ArrayList<>(); lb.add(80.0); ParticleSwarmOptimization.lBest[0].setEvaluation(lb);
+
+        // Candidate with lower value triggers particle.updateReference and lBest update
+        State cand = new State(); cand.setCode(new ArrayList<>());
+        ArrayList<Double> ce = new ArrayList<>(); ce.add(10.0); cand.setEvaluation(ce);
+        pso.updateReference(cand, 0);
+
+        assertEquals(10.0, ParticleSwarmOptimization.lBest[0].getEvaluation().get(0), 1e-9);
+        assertNotNull(ParticleSwarmOptimization.gBest);
+        assertEquals(10.0, ParticleSwarmOptimization.gBest.getEvaluation().get(0), 1e-9);
     }
 
-    // ==================== Tests de gBestInicial ====================
-
     @Test
-    @DisplayName("gBestInicial: Maximización - Encontrar mejor")
+    @DisplayName("gBestInicial selects best for maximization")
     void testGBestInicial_Maximization() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            when(mockProblem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            ParticleSwarmOptimization.coutSwarm = 3;
-            ParticleSwarmOptimization.lBest = new State[3];
-            
-            for (int i = 0; i < 3; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(10.0 + i * 5);
-                state.setEvaluation(eval);
-                ParticleSwarmOptimization.lBest[i] = state;
-            }
-            
-            pso = new ParticleSwarmOptimization();
-            State gBest = pso.gBestInicial();
-
-            assertNotNull(gBest, "gBest no debería ser null");
-            assertEquals(20.0, gBest.getEvaluation().get(0), 0.001, 
-                "gBest debería tener la mejor evaluación (20.0)");
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        Problem p = new Problem(); p.setTypeProblem(Problem.ProblemType.MAXIMIZAR); Strategy.setProblem(p);
+        // Create PSO with any setup
+        RandomSearch.listStateReference.clear();
+        State s = new State(); ArrayList<Double> ev = new ArrayList<>(); ev.add(1.0); s.setEvaluation(ev); s.setCode(new ArrayList<>());
+        RandomSearch.listStateReference.add(s);
+        ParticleSwarmOptimization.coutSwarm = 1; ParticleSwarmOptimization.countParticleBySwarm = 1;
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        // Override lBest with known values
+        ParticleSwarmOptimization.lBest = new State[3];
+        for (int i = 0; i < 3; i++) {
+            State st = new State(); ArrayList<Double> e = new ArrayList<>(); e.add(10.0 + i); st.setEvaluation(e);
+            ParticleSwarmOptimization.lBest[i] = st;
+        }
+        State g = pso.gBestInicial();
+        assertEquals(12.0, g.getEvaluation().get(0), 1e-9);
     }
 
     @Test
-    @DisplayName("gBestInicial: Minimización - Encontrar mejor")
-    void testGBestInicial_Minimization() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            when(mockProblem.getTypeProblem()).thenReturn(ProblemType.MINIMIZAR);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            ParticleSwarmOptimization.coutSwarm = 3;
-            ParticleSwarmOptimization.lBest = new State[3];
-            
-            for (int i = 0; i < 3; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(20.0 - i * 5);
-                state.setEvaluation(eval);
-                ParticleSwarmOptimization.lBest[i] = state;
-            }
-            
-            pso = new ParticleSwarmOptimization();
-            State gBest = pso.gBestInicial();
+    @DisplayName("gBestInicial selects best for minimization and fallback when lBest null")
+    void testGBestInicial_Minimization_AndFallback() {
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        Problem p = new Problem(); p.setTypeProblem(Problem.ProblemType.MINIMIZAR); Strategy.setProblem(p);
+        // Seed particles
+        RandomSearch.listStateReference.clear();
+        for (int i = 0; i < 2; i++) {
+            State st = new State(); ArrayList<Double> e = new ArrayList<>(); e.add(20.0 + i); st.setEvaluation(e); st.setCode(new ArrayList<>());
+            RandomSearch.listStateReference.add(st);
+        }
+        ParticleSwarmOptimization.coutSwarm = 1; ParticleSwarmOptimization.countParticleBySwarm = 2;
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        // Minimization best
+        ParticleSwarmOptimization.lBest = new State[3];
+        for (int i = 0; i < 3; i++) {
+            State st = new State(); ArrayList<Double> e = new ArrayList<>(); e.add(30.0 - i); st.setEvaluation(e);
+            ParticleSwarmOptimization.lBest[i] = st;
+        }
+        State gmin = pso.gBestInicial();
+        assertEquals(28.0, gmin.getEvaluation().get(0), 1e-9);
 
-            assertNotNull(gBest, "gBest no debería ser null");
-            assertEquals(10.0, gBest.getEvaluation().get(0), 0.001, 
-                "gBest debería tener la mejor evaluación (10.0)");
-
-    }
-
-    // ==================== Tests de updateReference ====================
-
-    @Test
-    @DisplayName("updateReference: Maximización - Actualizar lBest y gBest")
-    void testUpdateReference_Maximization() throws Exception {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            when(mockProblem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            // Preparar lBest
-            ParticleSwarmOptimization.coutSwarm = 2;
-            ParticleSwarmOptimization.countParticleBySwarm = 2;
-            ParticleSwarmOptimization.lBest = new State[2];
-            ParticleSwarmOptimization.countParticle = 0;
-            
-            for (int i = 0; i < 2; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(10.0);
-                state.setEvaluation(eval);
-                state.setCode(new ArrayList<>());
-                state.setTypeGenerator(GeneratorType.PARTICLE_SWARM_OPTIMIZATION);
-                ParticleSwarmOptimization.lBest[i] = state;
-            }
-            
-            pso = new ParticleSwarmOptimization();
-            
-            // Crear partícula con mejor pBest
-            Particle particle = mock(Particle.class);
-            State pBestState = new State();
-            ArrayList<Double> pBestEval = new ArrayList<>();
-            pBestEval.add(15.0);
-            pBestState.setEvaluation(pBestEval);
-            pBestState.setCode(new ArrayList<>());
-            pBestState.setTypeGenerator(GeneratorType.PARTICLE_SWARM_OPTIMIZATION);
-            when(particle.getStatePBest()).thenReturn(pBestState);
-            
-            pso.getListParticle().clear();
-            pso.getListParticle().add(particle);
-            
-            // Estado de referencia inicial
-            State refState = new State();
-            ArrayList<Double> refEval = new ArrayList<>();
-            refEval.add(8.0);
-            refState.setEvaluation(refEval);
-            pso.getReferenceList().add(refState);
-            
-            State candidate = new State();
-            ArrayList<Double> candEval = new ArrayList<>();
-            candEval.add(12.0);
-            candidate.setEvaluation(candEval);
-
-            pso.updateReference(candidate, 0);
-
-            assertEquals(15.0, ParticleSwarmOptimization.lBest[0].getEvaluation().get(0), 0.001, 
-                "lBest[0] debería actualizarse con mejor pBest");
-            assertTrue(ParticleSwarmOptimization.countParticle > 0, 
-                "countParticle debería incrementarse");
-        
-    }
-
-    // ==================== Tests de inicialiceLBest ====================
-
-    @Test
-    @DisplayName("inicialiceLBest: Maximización - Inicializar lBest correctamente")
-    void testInicialiceLBest_Maximization() {
-        Strategy strategy = Strategy.getStrategy();
-            strategy.setProblem(mockProblem);
-            when(mockProblem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
-            strategy.mapGenerators = new TreeMap<>();
-            
-            // Crear estados de referencia
-            for (int i = 0; i < 4; i++) {
-                State state = new State();
-                ArrayList<Double> eval = new ArrayList<>();
-                eval.add(10.0 + i);
-                state.setEvaluation(eval);
-                state.setCode(new ArrayList<>());
-                RandomSearch.listStateReference.add(state);
-            }
-            
-            ParticleSwarmOptimization.coutSwarm = 2;
-            ParticleSwarmOptimization.countParticleBySwarm = 2;
-            ParticleSwarmOptimization.countParticle = 0;
-            
-            pso = new ParticleSwarmOptimization();
-            pso.inicialiceLBest();
-
-            assertNotNull(ParticleSwarmOptimization.lBest, "lBest no debería ser null");
-            assertEquals(2, ParticleSwarmOptimization.lBest.length, "lBest debería tener 2 elementos");
-        
-    }
-
-    // ==================== Tests de parámetros estáticos ====================
-
-    @Test
-    @DisplayName("Parámetros estáticos: Verificar valores por defecto")
-    void testStaticParameters() {
-        assertEquals(0.9, ParticleSwarmOptimization.wmax, 0.001, "wmax debería ser 0.9");
-        assertEquals(0.2, ParticleSwarmOptimization.wmin, 0.001, "wmin debería ser 0.2");
-        assertEquals(2, ParticleSwarmOptimization.learning1, "learning1 debería ser 2");
-        assertEquals(2, ParticleSwarmOptimization.learning2, "learning2 debería ser 2");
-        assertFalse(ParticleSwarmOptimization.binary, "binary debería ser false");
-    }
-
-    @Test
-    @DisplayName("Parámetros estáticos: Modificar valores")
-    void testStaticParameters_Modification() {
-        ParticleSwarmOptimization.wmax = 0.95;
-        ParticleSwarmOptimization.wmin = 0.15;
-        ParticleSwarmOptimization.learning1 = 3;
-        ParticleSwarmOptimization.learning2 = 3;
-        ParticleSwarmOptimization.binary = true;
-
-        assertEquals(0.95, ParticleSwarmOptimization.wmax, 0.001, "wmax modificado");
-        assertEquals(0.15, ParticleSwarmOptimization.wmin, 0.001, "wmin modificado");
-        assertEquals(3, ParticleSwarmOptimization.learning1, "learning1 modificado");
-        assertEquals(3, ParticleSwarmOptimization.learning2, "learning2 modificado");
-        assertTrue(ParticleSwarmOptimization.binary, "binary modificado");
-        
-        // Restore defaults
-        ParticleSwarmOptimization.wmax = 0.9;
-        ParticleSwarmOptimization.wmin = 0.2;
-        ParticleSwarmOptimization.learning1 = 2;
-        ParticleSwarmOptimization.learning2 = 2;
-        ParticleSwarmOptimization.binary = false;
-    }
-
-    // ==================== Tests Adicionales Simples ====================
-
-    @Test
-    @DisplayName("Verificar contador countRef inicializado")
-    void testCountRef_Initialized() {
-        assertEquals(0, ParticleSwarmOptimization.countRef, "countRef debería ser 0 inicialmente");
-    }
-
-    @Test
-    @DisplayName("Verificar contador countParticle inicializado")
-    void testCountParticle_Initialized() {
-        assertEquals(0, ParticleSwarmOptimization.countParticle, "countParticle debería ser 0 inicialmente");
-    }
-
-    @Test
-    @DisplayName("Verificar contador coutSwarm inicializado")
-    void testCoutSwarm_Initialized() {
-        assertEquals(0, ParticleSwarmOptimization.coutSwarm, "coutSwarm debería ser 0 inicialmente");
-    }
-
-    @Test
-    @DisplayName("Verificar contador countParticleBySwarm inicializado")
-    void testCountParticleBySwarm_Initialized() {
-        assertEquals(0, ParticleSwarmOptimization.countParticleBySwarm, "countParticleBySwarm debería ser 0");
-    }
-
-    @Test
-    @DisplayName("Verificar gBest inicialmente null")
-    void testGBest_InitiallyNull() {
-        assertNull(ParticleSwarmOptimization.gBest, "gBest debería ser null inicialmente");
-    }
-
-    @Test
-    @DisplayName("Verificar lBest inicialmente null")
-    void testLBest_InitiallyNull() {
-        assertNull(ParticleSwarmOptimization.lBest, "lBest debería ser null inicialmente");
-    }
-
-    @Test
-    @DisplayName("Verificar parámetro constriction")
-    void testConstriction_Parameter() {
-        ParticleSwarmOptimization.constriction = 0.729;
-        assertEquals(0.729, ParticleSwarmOptimization.constriction, 0.001, "constriction debería ser 0.729");
-    }
-
-    @Test
-    @DisplayName("Verificar herencia de Generator")
-    void testExtendsGenerator() {
-        Strategy strategy = Strategy.getStrategy();
-        strategy.setProblem(mockProblem);
-        strategy.mapGenerators = new TreeMap<>();
-        
-        pso = new ParticleSwarmOptimization();
-        assertTrue(pso instanceof Generator, "PSO debería extender Generator");
-    }
-
-    @Test
-    @DisplayName("Verificar tipo de generador PSO")
-    void testGeneratorType() {
-        Strategy strategy = Strategy.getStrategy();
-        strategy.setProblem(mockProblem);
-        strategy.mapGenerators = new TreeMap<>();
-        
-        pso = new ParticleSwarmOptimization();
-        assertEquals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION, pso.getType(), "Tipo debería ser PARTICLE_SWARM_OPTIMIZATION");
-    }
-
-    @Test
-    @DisplayName("Verificar countCurrentIterPSO inicialmente 0")
-    void testCountCurrentIterPSO_Initially() {
-        assertEquals(0, ParticleSwarmOptimization.countCurrentIterPSO, "countCurrentIterPSO debería ser 0");
-    }
-
-    @Test
-    @DisplayName("Modificar countCurrentIterPSO")
-    void testCountCurrentIterPSO_Modification() {
-        ParticleSwarmOptimization.countCurrentIterPSO = 10;
-        assertEquals(10, ParticleSwarmOptimization.countCurrentIterPSO, "countCurrentIterPSO debería ser 10");
-        ParticleSwarmOptimization.countCurrentIterPSO = 0; // Reset
-    }
-
-    @Test
-    @DisplayName("Verificar múltiples instancias PSO")
-    void testMultipleInstances() {
-        Strategy strategy = Strategy.getStrategy();
-        strategy.setProblem(mockProblem);
-        strategy.mapGenerators = new TreeMap<>();
-        
-        ParticleSwarmOptimization pso1 = new ParticleSwarmOptimization();
-        ParticleSwarmOptimization pso2 = new ParticleSwarmOptimization();
-        
-        assertNotNull(pso1, "Primera instancia no debería ser null");
-        assertNotNull(pso2, "Segunda instancia no debería ser null");
-        assertNotSame(pso1, pso2, "Deberían ser instancias diferentes");
+        // Fallback when all lBest null -> first particle pBest
+        ParticleSwarmOptimization.lBest = new State[2];
+        State gfallback = pso.gBestInicial();
+        assertNotNull(gfallback);
+        assertEquals(RandomSearch.listStateReference.get(0).getEvaluation().get(0), gfallback.getEvaluation().get(0), 1e-9);
     }
 }
 

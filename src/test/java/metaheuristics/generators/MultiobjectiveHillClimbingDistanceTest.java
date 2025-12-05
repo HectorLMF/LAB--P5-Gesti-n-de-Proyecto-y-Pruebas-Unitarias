@@ -34,6 +34,22 @@ public class MultiobjectiveHillClimbingDistanceTest {
             @Override public List<State> generateRandomState(Integer operatornumber) { ArrayList<State> l = new ArrayList<>(); l.add(new State()); return l; }
         });
         Strategy.setProblem(p);
+        // Provide a stub generator to satisfy Dominance/acceptance internals
+        Strategy.getStrategy().generator = new Generator() {
+            @Override public State generate(Integer operatornumber) { return new State(); }
+            @Override public void updateReference(State stateCandidate, Integer countIterationsCurrent) { }
+            @Override public State getReference() { return new State(); }
+            @Override public void setInitialReference(State stateInitialRef) { }
+            @Override public GeneratorType getType() { return GeneratorType.RANDOM_SEARCH; }
+            @Override public List<State> getReferenceList() { return new ArrayList<>(); }
+            @Override public List<State> getSonList() { return new ArrayList<>(); }
+            @Override public boolean awardUpdateREF(State stateCandidate) { return false; }
+            @Override public void setWeight(float weight) { }
+            @Override public float getWeight() { return 0; }
+            @Override public float[] getTrace() { return new float[0]; }
+            @Override public int[] getListCountBetterGender() { return new int[10]; }
+            @Override public int[] getListCountGender() { return new int[10]; }
+        };
         // Ensure static distance list starts clean between tests
         MultiobjectiveHillClimbingDistance.distanceSolution.clear();
     }

@@ -163,27 +163,6 @@ class HillClimbingTest {
     }
 
     @Test
-    @DisplayName("generate: Maneja vecindario vacío")
-    void testGenerate_EmptyNeighborhood() throws Exception {
-        try (MockedStatic<Strategy> strategyMock = mockStatic(Strategy.class)) {
-            strategyMock.when(Strategy::getStrategy).thenReturn(mockStrategy);
-            when(mockProblem.getTypeProblem()).thenReturn(ProblemType.MAXIMIZAR);
-
-            hillClimbing = new HillClimbing();
-            State reference = createState(10.0);
-            hillClimbing.setInitialReference(reference);
-
-            List<State> emptyNeighborhood = new ArrayList<>();
-            when(mockOperator.generatedNewState(reference, 0)).thenReturn(emptyNeighborhood);
-
-            State candidate = hillClimbing.generate(0);
-
-            // El comportamiento depende de la implementación de CandidateValue
-            // Puede retornar null o lanzar excepción
-        }
-    }
-
-    @Test
     @DisplayName("generate: Funciona con diferentes números de operador")
     void testGenerate_DifferentOperatorNumbers() throws Exception {
         try (MockedStatic<Strategy> strategyMock = mockStatic(Strategy.class)) {

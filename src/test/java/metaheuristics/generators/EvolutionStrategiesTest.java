@@ -9,9 +9,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import metaheurictics.strategy.Strategy;
+import problem.definition.Codification;
 import problem.definition.Problem;
 import problem.definition.State;
 import problem.definition.Problem.ProblemType;
+import metaheuristics.generators.Generator;
+import metaheuristics.generators.GeneratorType;
 
 public class EvolutionStrategiesTest {
 
@@ -19,7 +22,15 @@ public class EvolutionStrategiesTest {
     public void setUp() {
         // ensure fresh strategy & a minimal Problem so methods using Strategy won't NPE
         Strategy.destroyExecute();
-        Strategy.setProblem(new Problem());
+        Problem problem = new Problem();
+        // Minimal codification to support mutation operators used by ES
+        problem.setCodification(new Codification() {
+            @Override public boolean validState(State state) { return true; }
+            @Override public Object getVariableAleatoryValue(int key) { return "B"; }
+            @Override public int getAleatoryKey() { return 0; }
+            @Override public int getVariableCount() { return 1; }
+        });
+        Strategy.setProblem(problem);
         Strategy.getStrategy().setCountMax(10);
 
         // install a minimal stub generator to avoid code paths that reference Strategy.generator
