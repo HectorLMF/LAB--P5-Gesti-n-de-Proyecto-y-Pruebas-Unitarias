@@ -43,8 +43,30 @@ public class FactoryGenerator implements IFFactoryGenerator {
 	 * @throws NoSuchMethodException Si no se encuentra el método
 	 */
 	public Generator createGenerator(GeneratorType generatorType) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		// Try direct enum name first (legacy behavior)
 		String className = "metaheuristics.generators." + generatorType.toString();
-		generator = (Generator) FactoryLoader.getInstance(className);
-		return generator;
+		Object inst = FactoryLoader.getInstance(className);
+		if (inst != null && inst instanceof Generator) {
+			generator = (Generator) inst;
+			return generator;
+		}
+
+		// Fallback: convert enum name like "GENETIC_ALGORITHM" to CamelCase class name "GeneticAlgorithm"
+		String enumName = generatorType.toString();
+		StringBuilder camel = new StringBuilder();
+		for (String part : enumName.toLowerCase().split("_")) {
+			if (part.length() == 0) continue;
+			camel.append(Character.toUpperCase(part.charAt(0)));
+			if (part.length() > 1) camel.append(part.substring(1));
+		}
+		String altClassName = "metaheuristics.generators." + camel.toString();
+		inst = FactoryLoader.getInstance(altClassName);
+		if (inst != null && inst instanceof Generator) {
+			generator = (Generator) inst;
+			return generator;
+		}
+
+		// If neither works, return null (same behavior as before when class cannot be loaded)
+		return null;
 	}
 }

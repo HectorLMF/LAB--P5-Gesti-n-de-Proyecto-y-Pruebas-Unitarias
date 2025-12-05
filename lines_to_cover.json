@@ -1,0 +1,20 @@
+{
+  "component": {
+    "id": null,
+    "key": null,
+    "measures": [
+      {
+        "metric": "lines_to_cover",
+        "value": "2846"
+      },
+      {
+        "metric": "uncovered_lines",
+        "value": "1304"
+      },
+      {
+        "metric": "coverage",
+        "value": "54.18"
+      }
+    ]
+  }
+}

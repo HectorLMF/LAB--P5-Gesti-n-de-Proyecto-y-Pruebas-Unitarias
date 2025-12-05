@@ -28,6 +28,7 @@ import problem.definition.Operator;
 import problem.definition.Problem;
 import problem.definition.Problem.ProblemType;
 import problem.definition.State;
+import problem.definition.Codification;
 
 /**
  * @class GeneticAlgorithmTest
@@ -74,6 +75,12 @@ class GeneticAlgorithmTest {
         when(mockState.getEvaluation()).thenReturn(evaluation);
         when(mockState.getCode()).thenReturn(new ArrayList<>());
         when(mockState.getCopy()).thenReturn(mockState);
+        // Provide a simple Codification mock so mutation/crossover code can call it safely
+        Codification mockCodif = mock(Codification.class);
+        when(mockCodif.getAleatoryKey()).thenReturn(0);
+        when(mockCodif.getVariableAleatoryValue(anyInt())).thenReturn(new Object());
+        when(mockCodif.getVariableCount()).thenReturn(1);
+        when(mockProblem.getCodification()).thenReturn(mockCodif);
     }
 
     @AfterEach

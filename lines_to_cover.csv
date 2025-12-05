@@ -1,0 +1,4 @@
+metric,value
+lines_to_cover,2846
+uncovered_lines,1304
+coverage,54.18

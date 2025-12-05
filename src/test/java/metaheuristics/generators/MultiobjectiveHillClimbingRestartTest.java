@@ -1,52 +1,70 @@
 package metaheuristics.generators;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Tests para MultiobjectiveHillClimbingRestart")
-class MultiobjectiveHillClimbingRestartTest {
+import java.util.ArrayList;
 
-    @Test
-    @DisplayName("Clase debe existir en el paquete correcto")
-    void testClassExists() {
-        assertEquals("MultiobjectiveHillClimbingRestart", 
-            MultiobjectiveHillClimbingRestart.class.getSimpleName());
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import metaheurictics.strategy.Strategy;
+import metaheuristics.generators.GeneratorType;
+import problem.definition.Problem;
+import problem.definition.State;
+
+public class MultiobjectiveHillClimbingRestartTest {
+
+    @BeforeEach
+    public void setUp() {
+        // ensure Strategy has a problem to avoid NPE in tests that touch Strategy
+        Strategy.setProblem(new Problem());
     }
 
     @Test
-    @DisplayName("Clase debe ser pública")
-    void testClassIsPublic() {
-        assertTrue(java.lang.reflect.Modifier.isPublic(
-            MultiobjectiveHillClimbingRestart.class.getModifiers()));
+    public void testConstructorAndType() {
+        MultiobjectiveHillClimbingRestart gen = new MultiobjectiveHillClimbingRestart();
+        assertNotNull(gen);
+        // default generator type set in constructor
+        assertEquals(GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_RESTART, gen.getType());
     }
 
     @Test
-    @DisplayName("Clase debe tener campos protegidos definidos")
-    void testProtectedFields() {
-        try {
-            MultiobjectiveHillClimbingRestart.class.getDeclaredField("candidatevalue");
-            MultiobjectiveHillClimbingRestart.class.getDeclaredField("typeAcceptation");
-            assertTrue(true);
-        } catch (NoSuchFieldException e) {
-            fail("Campos protegidos no encontrados");
-        }
+    public void testSetAndGetReferenceAndList() {
+        MultiobjectiveHillClimbingRestart gen = new MultiobjectiveHillClimbingRestart();
+
+        // build a simple state with evaluation and code
+        State s = new State();
+        ArrayList<Double> eval = new ArrayList<>();
+        eval.add(1.23);
+        eval.add(4.56);
+        s.setEvaluation(eval);
+        ArrayList<Object> code = new ArrayList<>();
+        code.add("id-1");
+        s.setCode(code);
+
+        // set as initial reference and verify
+        gen.setInitialReference(s);
+        assertSame(s, gen.getReference(), "getReference should return the same object passed to setInitialReference");
+
+        // getReferenceList should add a copy of the reference to its internal list
+        java.util.List<State> refs = gen.getReferenceList();
+        assertNotNull(refs);
+        assertTrue(refs.size() >= 1, "Reference list must contain at least one element after getReferenceList");
+        State copied = refs.get(refs.size() - 1);
+        assertNotSame(s, copied, "getReferenceList should store a copy, not the same instance");
+        assertEquals(s.getEvaluation().size(), copied.getEvaluation().size(), "Copied state must preserve evaluation size");
     }
 
     @Test
-    @DisplayName("Clase debe tener constructor público")
-    void testConstructorExists() {
-        try {
-            MultiobjectiveHillClimbingRestart.class.getConstructor();
-            assertTrue(true);
-        } catch (NoSuchMethodException e) {
-            fail("Constructor público no encontrado");
-        }
+    public void testSetStateRefAndGeneratorTypeAccessors() {
+        MultiobjectiveHillClimbingRestart gen = new MultiobjectiveHillClimbingRestart();
+        State s = new State();
+        gen.setStateRef(s);
+        assertSame(s, gen.getReference());
+
+        gen.setGeneratorType(GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_RESTART);
+        assertEquals(GeneratorType.MULTIOBJECTIVE_HILL_CLIMBING_RESTART, gen.getGeneratorType());
     }
 
-    @Test
-    @DisplayName("Clase debe extender Generator")
-    void testExtendsGenerator() {
-        assertTrue(Generator.class.isAssignableFrom(MultiobjectiveHillClimbingRestart.class));
-    }
 }
+
