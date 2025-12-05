@@ -1,9 +1,15 @@
 # BiCIAM - Algoritmos Metaheurísticos y Evolutivos
+
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias)
+
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias)
+
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias)
+
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias)
+
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=HectorLMF_LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias)
+
 Proyecto de algoritmos metaheurísticos y evolutivos para la resolución de problemas de optimización.
 
 ## Despliegue con Docker
