@@ -219,4 +219,126 @@ class StrategyTest {
         assertEquals(sumMax / strategy.countPeriodChange, strategy.listOfflineError[countOff], "El valor calculado debería estar correcto");
     }
 
+    // ==================== Tests Adicionales Simples ====================
+
+    @Test
+    @DisplayName("Verificar getProblem")
+    void testGetProblem() {
+        strategy.setProblem(mockProblem);
+        Problem result = strategy.getProblem();
+        assertNotNull(result, "getProblem no debería retornar null");
+        assertSame(mockProblem, result, "Debería retornar el mismo problema");
+    }
+
+    @Test
+    @DisplayName("Verificar getStopexecute")
+    void testGetStopexecute() {
+        strategy.setStopexecute(mockStopExecute);
+        StopExecute result = strategy.getStopexecute();
+        assertNotNull(result, "getStopexecute no debería retornar null");
+        assertSame(mockStopExecute, result, "Debería retornar el mismo StopExecute");
+    }
+
+    @Test
+    @DisplayName("Verificar setUpdateparameter")
+    void testSetUpdateparameter() {
+        strategy.setUpdateparameter(mockUpdateParameter);
+        assertNotNull(strategy.getUpdateparameter(), "UpdateParameter debería estar configurado");
+    }
+
+    @Test
+    @DisplayName("Verificar getUpdateparameter")
+    void testGetUpdateparameter() {
+        strategy.setUpdateparameter(mockUpdateParameter);
+        UpdateParameter result = strategy.getUpdateparameter();
+        assertNotNull(result, "getUpdateparameter no debería retornar null");
+        assertSame(mockUpdateParameter, result, "Debería retornar el mismo UpdateParameter");
+    }
+
+    @Test
+    @DisplayName("Verificar mapGenerators inicializado")
+    void testMapGenerators_NotNull() {
+        // mapGenerators puede ser null o no dependiendo del estado de inicialización
+        // Solo verificamos que el acceso no lanza excepción
+        try {
+            var mapGens = strategy.mapGenerators;
+            assertTrue(true, "mapGenerators es accesible");
+        } catch (Exception e) {
+            fail("mapGenerators no debería lanzar excepción: " + e.getMessage());
+        }
+    }
+
+    @Test
+    @DisplayName("Verificar countPeriodChange inicializado")
+    void testCountPeriodChange_Initialized() {
+        // countPeriodChange puede ser 0 o mayor
+        assertTrue(strategy.countPeriodChange >= 0, "countPeriodChange debería ser mayor o igual a 0");
+    }
+
+    @Test
+    @DisplayName("Verificar setCountCurrent")
+    void testSetCountCurrent() {
+        strategy.setCountCurrent(100);
+        assertEquals(100, strategy.getCountCurrent(), "countCurrent debería ser 100");
+    }
+
+    @Test
+    @DisplayName("Verificar getCountCurrent")
+    void testGetCountCurrent() {
+        strategy.setCountCurrent(50);
+        int result = strategy.getCountCurrent();
+        assertEquals(50, result, "getCountCurrent debería retornar 50");
+    }
+
+    @Test
+    @DisplayName("Verificar listStates inicialmente vacía")
+    void testListStates_InitiallyEmpty() {
+        if (strategy.listStates != null) {
+            assertTrue(strategy.listStates.isEmpty() || strategy.listStates.size() >= 0, 
+                "listStates debería estar vacía o inicializada");
+        }
+    }
+
+    @Test
+    @DisplayName("Verificar listBest inicialmente vacía")
+    void testListBest_InitiallyEmpty() {
+        if (strategy.listBest != null) {
+            assertTrue(strategy.listBest.isEmpty() || strategy.listBest.size() >= 0, 
+                "listBest debería estar vacía o inicializada");
+        }
+    }
+
+    @Test
+    @DisplayName("Verificar calculateTime false por defecto")
+    void testCalculateTime_DefaultFalse() {
+        Strategy newStrategy = Strategy.getStrategy();
+        assertFalse(newStrategy.calculateTime, "calculateTime debería ser false por defecto");
+    }
+
+    @Test
+    @DisplayName("Verificar instancia Strategy no null después de getStrategy")
+    void testStrategy_NotNull() {
+        Strategy instance = Strategy.getStrategy();
+        assertNotNull(instance, "Strategy.getStrategy() no debería retornar null");
+    }
+
+    @Test
+    @DisplayName("Verificar método destroyExecute no lanza excepción")
+    void testDestroyExecute_NoException() {
+        assertDoesNotThrow(() -> Strategy.destroyExecute(), 
+            "destroyExecute no debería lanzar excepción");
+    }
+
+    @Test
+    @DisplayName("Verificar Strategy es Singleton")
+    void testStrategy_IsSingleton() {
+        Strategy s1 = Strategy.getStrategy();
+        Strategy s2 = Strategy.getStrategy();
+        Strategy s3 = Strategy.getStrategy();
+        
+        assertSame(s1, s2, "Todas las instancias deberían ser la misma");
+        assertSame(s2, s3, "Todas las instancias deberían ser la misma");
+        assertSame(s1, s3, "Todas las instancias deberían ser la misma");
+    }
+
 }

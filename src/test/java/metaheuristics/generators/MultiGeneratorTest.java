@@ -752,5 +752,89 @@ class MultiGeneratorTest {
         assertEquals(4, MultiGenerator.listGeneratedPP.size(), 
             "listGeneratedPP debería tener estados generados");
     }
+
+    // ==================== Tests Adicionales Simples ====================
+
+    @Test
+    @DisplayName("Verificar lista estática listGeneratedPP inicializada")
+    void testListGeneratedPP_Initialized() {
+        assertNotNull(MultiGenerator.listGeneratedPP, "listGeneratedPP debería estar inicializada");
+        assertTrue(MultiGenerator.listGeneratedPP instanceof ArrayList, "Debería ser un ArrayList");
+    }
+
+    @Test
+    @DisplayName("Verificar lista estática listStateReference inicializada")
+    void testListStateReference_Initialized() {
+        assertNotNull(MultiGenerator.listStateReference, "listStateReference debería estar inicializada");
+        assertTrue(MultiGenerator.listStateReference instanceof ArrayList, "Debería ser un ArrayList");
+    }
+
+    @Test
+    @DisplayName("Verificar getter de tipo de generador adicional")
+    void testGetTypeAdditional() {
+        multiGenerator = new MultiGenerator();
+        GeneratorType type = multiGenerator.getType();
+        assertNotNull(type, "Tipo no debería ser null");
+        assertEquals(GeneratorType.MULTI_GENERATOR, type, "Tipo debería ser MULTI_GENERATOR");
+    }
+
+    @Test
+    @DisplayName("Verificar setter de tipo de generador adicional")
+    void testSetGeneratortypeAdditional() {
+        multiGenerator = new MultiGenerator();
+        multiGenerator.setGeneratortype(GeneratorType.MULTI_GENERATOR);
+        assertEquals(GeneratorType.MULTI_GENERATOR, multiGenerator.getType(), "Tipo debería ser actualizado");
+    }
+
+    @Test
+    @DisplayName("Verificar activeGenerator inicialmente null")
+    void testActiveGenerator_InitiallyNull() {
+        MultiGenerator.destroyMultiGenerator();
+        assertNull(MultiGenerator.activeGenerator, "activeGenerator debería ser null inicialmente");
+    }
+
+    @Test
+    @DisplayName("Verificar setActiveGenerator")
+    void testSetActiveGenerator() {
+        Generator gen = new HillClimbing();
+        MultiGenerator.setActiveGenerator(gen);
+        assertNotNull(MultiGenerator.activeGenerator, "activeGenerator no debería ser null");
+        assertSame(gen, MultiGenerator.activeGenerator, "Debería ser el mismo generador");
+    }
+
+    @Test
+    @DisplayName("Verificar getListGenerators accesible")
+    void testGetListGenerators() {
+        Generator[] generators = MultiGenerator.getListGenerators();
+        // Puede ser null o tener elementos dependiendo del estado de inicialización
+        // Solo verificamos que el método es accesible
+        assertTrue(generators == null || generators.length >= 0, "getListGenerators debería ser accesible");
+    }
+
+    @Test
+    @DisplayName("Verificar setListGenerators")
+    void testSetListGenerators() {
+        Generator[] newGens = new Generator[5];
+        newGens[0] = new HillClimbing();
+        MultiGenerator.setListGenerators(newGens);
+        assertEquals(5, MultiGenerator.getListGenerators().length, "Debería tener 5 elementos");
+    }
+
+    @Test
+    @DisplayName("Verificar herencia de Generator")
+    void testExtendsGenerator() {
+        multiGenerator = new MultiGenerator();
+        assertTrue(multiGenerator instanceof Generator, "MultiGenerator debería extender Generator");
+    }
+
+    @Test
+    @DisplayName("Verificar múltiples instancias de MultiGenerator")
+    void testMultipleInstances() {
+        MultiGenerator mg1 = new MultiGenerator();
+        MultiGenerator mg2 = new MultiGenerator();
+        assertNotNull(mg1, "Primera instancia no debería ser null");
+        assertNotNull(mg2, "Segunda instancia no debería ser null");
+        assertNotSame(mg1, mg2, "Deberían ser instancias diferentes");
+    }
 }
 

@@ -636,5 +636,101 @@ class ParticleSwarmOptimizationTest {
         ParticleSwarmOptimization.learning2 = 2;
         ParticleSwarmOptimization.binary = false;
     }
+
+    // ==================== Tests Adicionales Simples ====================
+
+    @Test
+    @DisplayName("Verificar contador countRef inicializado")
+    void testCountRef_Initialized() {
+        assertEquals(0, ParticleSwarmOptimization.countRef, "countRef debería ser 0 inicialmente");
+    }
+
+    @Test
+    @DisplayName("Verificar contador countParticle inicializado")
+    void testCountParticle_Initialized() {
+        assertEquals(0, ParticleSwarmOptimization.countParticle, "countParticle debería ser 0 inicialmente");
+    }
+
+    @Test
+    @DisplayName("Verificar contador coutSwarm inicializado")
+    void testCoutSwarm_Initialized() {
+        assertEquals(0, ParticleSwarmOptimization.coutSwarm, "coutSwarm debería ser 0 inicialmente");
+    }
+
+    @Test
+    @DisplayName("Verificar contador countParticleBySwarm inicializado")
+    void testCountParticleBySwarm_Initialized() {
+        assertEquals(0, ParticleSwarmOptimization.countParticleBySwarm, "countParticleBySwarm debería ser 0");
+    }
+
+    @Test
+    @DisplayName("Verificar gBest inicialmente null")
+    void testGBest_InitiallyNull() {
+        assertNull(ParticleSwarmOptimization.gBest, "gBest debería ser null inicialmente");
+    }
+
+    @Test
+    @DisplayName("Verificar lBest inicialmente null")
+    void testLBest_InitiallyNull() {
+        assertNull(ParticleSwarmOptimization.lBest, "lBest debería ser null inicialmente");
+    }
+
+    @Test
+    @DisplayName("Verificar parámetro constriction")
+    void testConstriction_Parameter() {
+        ParticleSwarmOptimization.constriction = 0.729;
+        assertEquals(0.729, ParticleSwarmOptimization.constriction, 0.001, "constriction debería ser 0.729");
+    }
+
+    @Test
+    @DisplayName("Verificar herencia de Generator")
+    void testExtendsGenerator() {
+        Strategy strategy = Strategy.getStrategy();
+        strategy.setProblem(mockProblem);
+        strategy.mapGenerators = new TreeMap<>();
+        
+        pso = new ParticleSwarmOptimization();
+        assertTrue(pso instanceof Generator, "PSO debería extender Generator");
+    }
+
+    @Test
+    @DisplayName("Verificar tipo de generador PSO")
+    void testGeneratorType() {
+        Strategy strategy = Strategy.getStrategy();
+        strategy.setProblem(mockProblem);
+        strategy.mapGenerators = new TreeMap<>();
+        
+        pso = new ParticleSwarmOptimization();
+        assertEquals(GeneratorType.PARTICLE_SWARM_OPTIMIZATION, pso.getType(), "Tipo debería ser PARTICLE_SWARM_OPTIMIZATION");
+    }
+
+    @Test
+    @DisplayName("Verificar countCurrentIterPSO inicialmente 0")
+    void testCountCurrentIterPSO_Initially() {
+        assertEquals(0, ParticleSwarmOptimization.countCurrentIterPSO, "countCurrentIterPSO debería ser 0");
+    }
+
+    @Test
+    @DisplayName("Modificar countCurrentIterPSO")
+    void testCountCurrentIterPSO_Modification() {
+        ParticleSwarmOptimization.countCurrentIterPSO = 10;
+        assertEquals(10, ParticleSwarmOptimization.countCurrentIterPSO, "countCurrentIterPSO debería ser 10");
+        ParticleSwarmOptimization.countCurrentIterPSO = 0; // Reset
+    }
+
+    @Test
+    @DisplayName("Verificar múltiples instancias PSO")
+    void testMultipleInstances() {
+        Strategy strategy = Strategy.getStrategy();
+        strategy.setProblem(mockProblem);
+        strategy.mapGenerators = new TreeMap<>();
+        
+        ParticleSwarmOptimization pso1 = new ParticleSwarmOptimization();
+        ParticleSwarmOptimization pso2 = new ParticleSwarmOptimization();
+        
+        assertNotNull(pso1, "Primera instancia no debería ser null");
+        assertNotNull(pso2, "Segunda instancia no debería ser null");
+        assertNotSame(pso1, pso2, "Deberían ser instancias diferentes");
+    }
 }
 
