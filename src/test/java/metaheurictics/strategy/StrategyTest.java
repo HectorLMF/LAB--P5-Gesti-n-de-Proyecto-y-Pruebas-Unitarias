@@ -590,7 +590,7 @@ class StrategyTest {
         assertNotNull(strategy.listBest, "listBest should be created");
         assertNotNull(strategy.getProblem().getState(), "initial state should be set on problem");
         assertNotNull(strategy.generator, "generator should be set");
-        assertNotNull(strategy.getCountCurrent(), "countCurrent should be accessible");
+        assertTrue(strategy.getCountCurrent() >= 0, "countCurrent should be non-negative and accessible");
     }
 
 }

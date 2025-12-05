@@ -496,7 +496,7 @@ class GeneticAlgorithmTest {
             
             ga = new GeneticAlgorithm();
             
-            State generated = ga.generate(1);
+            State generated = ga.generate(0);
 
             assertNotNull(generated, "Estado generado no debería ser null");}
     

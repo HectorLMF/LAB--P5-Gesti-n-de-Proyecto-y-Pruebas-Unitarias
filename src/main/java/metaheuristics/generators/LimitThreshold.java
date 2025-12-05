@@ -72,8 +72,11 @@ public class LimitThreshold extends Generator{
 			}
 		}
 
-		if (problem != null && problem.getTypeProblem().equals(ProblemType.MAXIMIZAR)) {
-			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
+		if (problem != null) {
+			// Use a different candidate type depending on the problem goal
+			this.typeCandidate = (problem.getTypeProblem() == ProblemType.MINIMIZAR)
+					? CandidateType.SMALLER_CANDIDATE
+					: CandidateType.GREATER_CANDIDATE;
 		} else {
 			// Default to GREATER_CANDIDATE when problem info is not available to avoid NPEs
 			this.typeCandidate = CandidateType.GREATER_CANDIDATE;
