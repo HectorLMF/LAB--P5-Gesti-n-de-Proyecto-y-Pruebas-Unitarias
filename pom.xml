@@ -151,16 +151,6 @@
                     <excludes>
                         <exclude>**/META-INF/**</exclude>
                         <exclude>**/config/tspDynamic/**</exclude>
-                        <!-- Excluir módulos no cubiertos por tests actuales -->
-                        <exclude>**/evolutionary_algorithms/**</exclude>
-                        <exclude>**/local_search/**</exclude>
-                        <exclude>**/metaheuristics/**</exclude>
-                        <exclude>**/metaheurictics/**</exclude>
-                        <exclude>**/problem_operators/**</exclude>
-                        <exclude>**/factory_interface/**</exclude>
-                        <!-- Excluir binarios o clases fuera de src/main -->
-                        <exclude>bin/**</exclude>
-                        <exclude>target/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
