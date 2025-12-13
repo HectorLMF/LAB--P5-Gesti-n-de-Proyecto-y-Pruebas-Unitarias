@@ -134,6 +134,9 @@ class StrategyExecuteUpdateCompleteTest {
         assertNotNull(s.listBest);
         assertFalse(s.listBest.isEmpty());
 
+        // saveListStates=false: listStates should not be populated by executeStrategy
+        assertTrue(s.listStates == null || s.listStates.isEmpty());
+
         State best = s.getBestState();
         assertNotNull(best);
     }
