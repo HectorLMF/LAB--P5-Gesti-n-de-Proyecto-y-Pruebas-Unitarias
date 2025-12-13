@@ -84,6 +84,17 @@ class StrategyExecuteUpdateCompleteTest {
         return p;
     }
 
+    private static StopExecute stopAfterOneLoopIteration() {
+        return new StopExecute() {
+            private int calls;
+
+            @Override
+            public Boolean stopIterations(int countCurrent, int countmaxIterations) {
+                return calls++ > 0;
+            }
+        };
+    }
+
 
     @Test
     @DisplayName("executeStrategy: calculateTime + saveListStates/saveListBestStates + MAXIMIZAR bestState update")
@@ -139,6 +150,55 @@ class StrategyExecuteUpdateCompleteTest {
 
         State best = s.getBestState();
         assertNotNull(best);
+    }
+
+    @Test
+    @DisplayName("executeStrategy: cubre while() rama 'no cambio' (else)")
+    void executeStrategy_coversWhile_noChangeBranch() throws Exception {
+        Strategy s = Strategy.getStrategy();
+        s.setStopexecute(stopAfterOneLoopIteration());
+
+        Problem p = problemWithDeterministicOperator(1.0, 2.0);
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
+        Strategy.setProblem(p);
+
+        s.calculateTime = false;
+        s.saveListStates = true;
+        s.saveListBestStates = true;
+        s.saveFreneParetoMonoObjetivo = false;
+
+        // countIterationsChange far from 0 so countCurrent(0) != countChange => else branch
+        s.executeStrategy(1, 999, 1, GeneratorType.RANDOM_SEARCH);
+
+        assertNotNull(s.getBestState());
+        assertNotNull(s.listStates);
+        assertFalse(s.listStates.isEmpty());
+        assertNotNull(s.listBest);
+    }
+
+    @Test
+    @DisplayName("executeStrategy: cubre while() rama 'cambio detectado' (if countCurrent==countChange)")
+    void executeStrategy_coversWhile_changeDetectedBranch() throws Exception {
+        Strategy s = Strategy.getStrategy();
+        s.setStopexecute(stopAfterOneLoopIteration());
+
+        Problem p = problemWithDeterministicOperator(10.0, 1.0);
+        p.setTypeProblem(Problem.ProblemType.MINIMIZAR);
+        Strategy.setProblem(p);
+
+        s.calculateTime = false;
+        s.saveListStates = true;
+        s.saveListBestStates = true;
+        s.saveFreneParetoMonoObjetivo = true;
+
+        // countIterationsChange=0 makes countChange=0 => countCurrent(0) == countChange => change branch
+        s.executeStrategy(1, 0, 1, GeneratorType.RANDOM_SEARCH);
+
+        assertNotNull(s.getBestState());
+        assertNotNull(s.notDominated);
+        assertNotNull(s.listStates);
+        assertFalse(s.listStates.isEmpty());
+        assertNotNull(s.listBest);
     }
 
     @Test
