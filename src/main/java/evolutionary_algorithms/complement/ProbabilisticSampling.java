@@ -60,26 +60,28 @@ public class ProbabilisticSampling extends Sampling {
 				sum = sum + count;
 				k++;
 			}
-			for (int l = 0; l < countInd; l++) {
-				boolean find = false;
-				int p = 0;
-				int random = SecureRandomGenerator.nextInt(Math.max(1, sum)) + 1;
-				while (p < arrOcc.length && !find) {
-					random = random - arrOcc[p];
-					if (random <= 0) {
-						staList.get(l).getCode().add(arrtemp[p]);
-						find = true;
-					} else {
-						p++;
-					}
+		for (int l = 0; l < countInd; l++) {
+			boolean find = false;
+			int p = 0;
+			int random = SecureRandomGenerator.nextInt(Math.max(1, sum)) + 1;
+			// Obtener el código actual del estado
+			ArrayList<Object> currentCode = staList.get(l).getCode();
+			while (p < arrOcc.length && !find) {
+				random = random - arrOcc[p];
+				if (random <= 0) {
+					currentCode.add(arrtemp[p]);
+					find = true;
+				} else {
+					p++;
 				}
-				if (!find) {
-					int bound = Math.max(1, Strategy.getStrategy().getProblem().getCodification().getVariableCount() * 10);
-					int value = SecureRandomGenerator.nextInt(bound);
-					staList.get(l).getCode().add(value);
-				}
-
 			}
+			if (!find) {
+				int bound = Math.max(1, Strategy.getStrategy().getProblem().getCodification().getVariableCount() * 10);
+				int value = SecureRandomGenerator.nextInt(bound);
+				currentCode.add(value);
+			}
+			// Guardar el código modificado de vuelta en el estado
+			staList.get(l).setCode(currentCode);			}
 		}
 		return staList;
 	}

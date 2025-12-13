@@ -41,7 +41,7 @@ public class Particle extends Generator {
 	 * Inicializa una partícula con estados y velocidad vacíos.
 	 */
 	public Particle() {
-		super()
+		super();
 		this.stateActual = new State();
 		this.statePBest = new State();
 		this.velocity = new ArrayList<Object>();
