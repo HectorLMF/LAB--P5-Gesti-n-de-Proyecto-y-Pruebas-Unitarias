@@ -146,20 +146,37 @@ class StrategyExecuteUpdateCompleteTest {
         s.initialize();
 
         // We only need to cover the conditional branches; use reflection to set countRef statics safely.
+        // Strategy.update uses independent if statements (not else-if). Ensure only one matches at a time.
+        setStaticInt(metaheuristics.generators.EvolutionStrategies.class, "countRef", 10);
+        setStaticInt(metaheuristics.generators.DistributionEstimationAlgorithm.class, "countRef", 10);
+        ParticleSwarmOptimization.countRef = 10;
+
         setStaticInt(metaheuristics.generators.GeneticAlgorithm.class, "countRef", 5);
         s.update(4);
         assertNotNull(Strategy.getStrategy().generator);
         assertEquals(GeneratorType.GENETIC_ALGORITHM, Strategy.getStrategy().generator.getType());
+
+        setStaticInt(metaheuristics.generators.GeneticAlgorithm.class, "countRef", 100);
+        setStaticInt(metaheuristics.generators.DistributionEstimationAlgorithm.class, "countRef", 100);
+        ParticleSwarmOptimization.countRef = 100;
 
         setStaticInt(metaheuristics.generators.EvolutionStrategies.class, "countRef", 7);
         s.update(6);
         assertNotNull(Strategy.getStrategy().generator);
         assertEquals(GeneratorType.EVOLUTION_STRATEGIES, Strategy.getStrategy().generator.getType());
 
+        setStaticInt(metaheuristics.generators.GeneticAlgorithm.class, "countRef", 100);
+        setStaticInt(metaheuristics.generators.EvolutionStrategies.class, "countRef", 100);
+        ParticleSwarmOptimization.countRef = 100;
+
         setStaticInt(metaheuristics.generators.DistributionEstimationAlgorithm.class, "countRef", 3);
         s.update(2);
         assertNotNull(Strategy.getStrategy().generator);
         assertEquals(GeneratorType.DISTRIBUTION_ESTIMATION_ALGORITHM, Strategy.getStrategy().generator.getType());
+
+        setStaticInt(metaheuristics.generators.GeneticAlgorithm.class, "countRef", 100);
+        setStaticInt(metaheuristics.generators.EvolutionStrategies.class, "countRef", 100);
+        setStaticInt(metaheuristics.generators.DistributionEstimationAlgorithm.class, "countRef", 100);
 
         ParticleSwarmOptimization.countRef = 9;
         s.update(8);
