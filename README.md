@@ -13,7 +13,7 @@
 Proyecto de algoritmos metaheurísticos y evolutivos para la resolución de problemas de optimización.
 
 ## Despliegue en Integración Continua
-
+[![CI](https://github.com/HectorLMF/LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias/actions/workflows/ci.yml/badge.svg)](https://github.com/HectorLMF/LAB--P5-Gesti-n-de-Proyecto-y-Pruebas-Unitarias/actions/workflows/ci.yml)
 - Se ha utilizado Github actions, script YML localizado en .github/workflows
 - Capturas de integracion continua en /Capturas:
   	- Fallada: Forzamos un error en Particle.java, eliminando un ciere de linea aleatorio.
