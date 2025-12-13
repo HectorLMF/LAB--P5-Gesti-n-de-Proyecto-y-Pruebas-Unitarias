@@ -47,6 +47,9 @@ class StrategyExecuteUpdateCompleteTest {
         funcs.add(new ObjetiveFunction() {
             @Override
             public Double Evaluation(State state) {
+                if (state == null) {
+                    return 0.0;
+                }
                 if (state.getEvaluation() != null && !state.getEvaluation().isEmpty()) {
                     return state.getEvaluation().get(0);
                 }
@@ -204,6 +207,11 @@ class StrategyExecuteUpdateCompleteTest {
         // Keep CI runs deterministic: avoid stale static/instance counters from other tests
         setPrivateInt(s, "countPeriodChange", 1);
         setPrivateInt(s, "countChange", 0);
+
+        // Avoid CI contamination where some other test left Strategy.generator as a population-based generator
+        // (updateRef() would call generator.getReference() and may throw if references are empty).
+        s.generator = new metaheuristics.generators.RandomSearch();
+        metaheuristics.generators.EvolutionStrategies.countRef = Integer.MAX_VALUE;
 
         // countIterationsChange=0 makes countChange=0 => countCurrent(0) == countChange => change branch
         s.executeStrategy(1, 0, 1, GeneratorType.RANDOM_SEARCH);
