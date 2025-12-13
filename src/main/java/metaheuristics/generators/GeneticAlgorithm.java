@@ -146,10 +146,17 @@ public class GeneticAlgorithm extends Generator {
     	
 		//******************selection*******************************
 		//ArrayList<State>list=new ArrayList<State>();
-		List<State> refList = new ArrayList<State>(this.listState); 
+		// Build reference list from available population; fallback to RandomSearch reference
+		List<State> refList = (this.listState != null && !this.listState.isEmpty())
+			? new ArrayList<State>(this.listState)
+			: new ArrayList<State>(RandomSearch.listStateReference != null ? RandomSearch.listStateReference : new ArrayList<State>());
     	iffatherselection = new FactoryFatherSelection();
     	FatherSelection selection = iffatherselection.createSelectFather(selectionType);
-    	List<State> fathers = selection.selection(refList, truncation);
+		List<State> fathers = selection.selection(refList, truncation);
+		if (fathers == null || fathers.isEmpty()) {
+			// Ensure we have candidates to avoid IndexOutOfBounds
+			fathers = refList;
+		}
     	int pos1 = (int)(Math.random() * fathers.size());
     	int pos2 = (int)(Math.random() * fathers.size());
     	
@@ -168,6 +175,9 @@ public class GeneticAlgorithm extends Generator {
 		}
 		State auxState1 = (State) baseState1.getCopy();
 		auxState1.setCode(new ArrayList<Object>(fathers.get(pos1).getCode()));
+		// Ensure code has at least one gene to avoid IndexOutOfBounds in mutation
+		if (auxState1.getCode() == null) auxState1.setCode(new ArrayList<Object>());
+		if (auxState1.getCode().isEmpty()) auxState1.getCode().add(0);
     	auxState1.setEvaluation(fathers.get(pos1).getEvaluation());
     	auxState1.setNumber(fathers.get(pos1).getNumber());
     	auxState1.setTypeGenerator(fathers.get(pos1).getTypeGenerator());
@@ -185,6 +195,8 @@ public class GeneticAlgorithm extends Generator {
 		}
 		State auxState2 = (State) baseState2.getCopy();
 		auxState2.setCode(new ArrayList<Object>(fathers.get(pos2).getCode()));
+		if (auxState2.getCode() == null) auxState2.setCode(new ArrayList<Object>());
+		if (auxState2.getCode().isEmpty()) auxState2.getCode().add(0);
     	auxState2.setEvaluation(fathers.get(pos2).getEvaluation());
     	auxState2.setNumber(fathers.get(pos2).getNumber());
     	auxState2.setTypeGenerator(fathers.get(pos2).getTypeGenerator());
