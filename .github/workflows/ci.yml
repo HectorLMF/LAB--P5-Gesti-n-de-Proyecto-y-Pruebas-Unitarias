@@ -27,6 +27,18 @@ jobs:
 
       - name: Build and run tests
         run: mvn -B clean verify
+      - name: Package JAR (on success)
+        if: ${{ success() }}
+        run: mvn -B -DskipTests package
+
+      - name: Publish JAR artifact
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: biciam-jar
+          path: |
+            target/*.jar
+          if-no-files-found: error
 
       - name: Archive Surefire reports on failure
         if: failure()
@@ -50,14 +62,24 @@ jobs:
           java-version: '11'
           cache: 'maven'
 
+      - name: Cache OWASP DC database
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.m2/repository/org/owasp/dependency-check-data
+            ~/.m2/repository/org/owasp/dependency-check
+          key: ${{ runner.os }}-dcdb-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-dcdb-
+
       - name: Static analysis (PMD, Checkstyle, SpotBugs)
         run: mvn -B -DskipTests=false pmd:check checkstyle:check spotbugs:check
 
-      - name: OWASP Dependency-Check
+      - name: OWASP Dependency-Check (no update on CI)
         run: |
           mvn -B org.owasp:dependency-check-maven:check \
             -DfailBuildOnCVSS=7.0 \
-            -Ddependency-check.skip=false
+            -Ddependency-check.skip=false \
+            -Ddependency-check.noupdate=true
 
       - name: Generate JaCoCo report
         run: mvn -B jacoco:prepare-agent test jacoco:report
