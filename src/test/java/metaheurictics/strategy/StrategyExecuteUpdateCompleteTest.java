@@ -95,6 +95,12 @@ class StrategyExecuteUpdateCompleteTest {
         };
     }
 
+    private static void setPrivateInt(Object target, String fieldName, int value) throws Exception {
+        java.lang.reflect.Field f = target.getClass().getDeclaredField(fieldName);
+        f.setAccessible(true);
+        f.setInt(target, value);
+    }
+
 
     @Test
     @DisplayName("executeStrategy: calculateTime + saveListStates/saveListBestStates + MAXIMIZAR bestState update")
@@ -167,6 +173,10 @@ class StrategyExecuteUpdateCompleteTest {
         s.saveListBestStates = true;
         s.saveFreneParetoMonoObjetivo = false;
 
+        // Keep CI runs deterministic: avoid stale static/instance counters from other tests
+        setPrivateInt(s, "countPeriodChange", 1);
+        setPrivateInt(s, "countChange", 999);
+
         // countIterationsChange far from 0 so countCurrent(0) != countChange => else branch
         s.executeStrategy(1, 999, 1, GeneratorType.RANDOM_SEARCH);
 
@@ -190,6 +200,10 @@ class StrategyExecuteUpdateCompleteTest {
         s.saveListStates = true;
         s.saveListBestStates = true;
         s.saveFreneParetoMonoObjetivo = true;
+
+        // Keep CI runs deterministic: avoid stale static/instance counters from other tests
+        setPrivateInt(s, "countPeriodChange", 1);
+        setPrivateInt(s, "countChange", 0);
 
         // countIterationsChange=0 makes countChange=0 => countCurrent(0) == countChange => change branch
         s.executeStrategy(1, 0, 1, GeneratorType.RANDOM_SEARCH);
