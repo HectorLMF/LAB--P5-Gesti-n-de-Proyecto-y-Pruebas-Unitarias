@@ -246,43 +246,52 @@ public class MultiGenerator extends Generator {
 			ClassNotFoundException, InstantiationException,
 			IllegalAccessException, InvocationTargetException,
 			NoSuchMethodException {
-		// TODO Auto-generated method stub
-		// Select a generator via roulette, then attempt to generate a non-null state.
 		if (Strategy.getStrategy() == null) return null;
-		Strategy.getStrategy().generator = roulette();
-		activeGenerator = Strategy.getStrategy().generator;
-		if (activeGenerator != null) activeGenerator.countGender++;
-		State state = null;
-		int attempts = 0;
-		int maxAttempts = (listGenerators != null) ? listGenerators.length : 4;
-		while ((state == null) && attempts < Math.max(1, maxAttempts)) {
-			try {
-				if (Strategy.getStrategy().generator != null)
-					state = Strategy.getStrategy().generator.generate(1);
-			} catch (Throwable t) {
-				state = null;
-			}
-			if (state == null) {
-				// try another generator from the portfolio sequentially
-				for (Generator g : listGenerators) {
-					if (g == null) continue;
-					try {
-						State s = g.generate(1);
-						if (s != null) {
-							Strategy.getStrategy().generator = g;
-							activeGenerator = g;
-							state = s;
-							break;
-						}
-					} catch (Throwable tt) {
-						// ignore and try next
-					}
-				}
-			}
-			attempts++;
+		selectActiveGenerator();
+		State state = tryGenerateWithActive();
+		if (state == null) state = tryGenerateWithPortfolio();
+		if (state == null) state = fallbackFromReferences();
+		return state;
+	}
+
+	private static void selectActiveGenerator() {
+		if (Strategy.getStrategy() != null) {
+			Strategy.getStrategy().generator = MultiGenerator.rouletteStatic();
+			activeGenerator = Strategy.getStrategy().generator;
+			if (activeGenerator != null) activeGenerator.countGender++;
 		}
-		// Final fallback: if no generator produced a state, try to return a copy of any generator's reference
-		if (state == null && listGenerators != null) {
+	}
+
+	private static State tryGenerateWithActive() {
+		try {
+			if (Strategy.getStrategy().generator != null)
+				return Strategy.getStrategy().generator.generate(1);
+		} catch (Throwable t) {
+			return null;
+		}
+		return null;
+	}
+
+	private static State tryGenerateWithPortfolio() {
+		if (listGenerators == null) return null;
+		for (Generator g : listGenerators) {
+			if (g == null) continue;
+			try {
+				State s = g.generate(1);
+				if (s != null) {
+					Strategy.getStrategy().generator = g;
+					activeGenerator = g;
+					return s;
+				}
+			} catch (Throwable tt) {
+				// ignore and try next
+			}
+		}
+		return null;
+	}
+
+	private static State fallbackFromReferences() {
+		if (listGenerators != null) {
 			for (Generator g : listGenerators) {
 				if (g == null) continue;
 				try {
@@ -292,10 +301,9 @@ public class MultiGenerator extends Generator {
 					// ignore
 				}
 			}
-			// last resort: try global listStateReference
-			if (listStateReference != null && !listStateReference.isEmpty()) return new State(listStateReference.get(0));
 		}
-		return state;
+		if (listStateReference != null && !listStateReference.isEmpty()) return new State(listStateReference.get(0));
+		return null;
 	}
 
 	@Override
@@ -385,15 +393,20 @@ public class MultiGenerator extends Generator {
 		return 0; // MultiGenerator itself has no meaningful weight
 	}
 	
-	public Generator roulette() {
+	public static Generator rouletteStatic() {
+		if (listGenerators == null || listGenerators.length == 0) return null;
 		float totalWeight = 0;
 		for (int i = 0; i < listGenerators.length; i++) {
-			totalWeight = listGenerators[i].getWeight() + totalWeight;
+			if (listGenerators[i] != null) totalWeight = listGenerators[i].getWeight() + totalWeight;
 		}
 		List<Float> listProb = new ArrayList<Float>();
 		for (int i = 0; i < listGenerators.length; i++) {
-			float probF = listGenerators[i].getWeight() / totalWeight;
-			listProb.add(probF);
+			if (listGenerators[i] != null) {
+				float probF = listGenerators[i].getWeight() / totalWeight;
+				listProb.add(probF);
+			} else {
+				listProb.add(0.0f);
+			}
 		}
 		List<LimitRoulette> listLimit = new ArrayList<LimitRoulette>();
 		float limitHigh = 0;
@@ -420,6 +433,10 @@ public class MultiGenerator extends Generator {
 			return listLimit.get(i).getGenerator();
 		}
 		else return listLimit.get(listLimit.size() - 1).getGenerator();
+	}
+	
+	public Generator roulette() {
+		return rouletteStatic();
 	}
 
 	@Override

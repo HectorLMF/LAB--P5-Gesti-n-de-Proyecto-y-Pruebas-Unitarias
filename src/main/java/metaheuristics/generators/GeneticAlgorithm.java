@@ -143,76 +143,71 @@ public class GeneticAlgorithm extends Generator {
 	 */
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-    	
-		//******************selection*******************************
-		//ArrayList<State>list=new ArrayList<State>();
-		// Build reference list from available population; fallback to RandomSearch reference
-		List<State> refList = (this.listState != null && !this.listState.isEmpty())
-			? new ArrayList<State>(this.listState)
-			: new ArrayList<State>(RandomSearch.listStateReference != null ? RandomSearch.listStateReference : new ArrayList<State>());
-    	iffatherselection = new FactoryFatherSelection();
-    	FatherSelection selection = iffatherselection.createSelectFather(selectionType);
+		List<State> reference = buildReferencePopulation();
+		if (reference.isEmpty()) {
+			return null;
+		}
+		List<State> fathers = selectParents(reference, truncation);
+		int pos1 = (int)(Math.random() * fathers.size());
+		int pos2 = (int)(Math.random() * fathers.size());
+
+		State auxState1 = copyFromParent(fathers.get(pos1), resolveBaseState());
+		State auxState2 = copyFromParent(fathers.get(pos2), resolveBaseState());
+
+		auxState1 = doCrossover(auxState1, auxState2, PC);
+		auxState1 = doMutation(auxState1, PM);
+		return auxState1;
+	}
+
+	private List<State> buildReferencePopulation() {
+		if (this.listState != null && !this.listState.isEmpty()) {
+			return new ArrayList<>(this.listState);
+		}
+		if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) {
+			return new ArrayList<>(RandomSearch.listStateReference);
+		}
+		return new ArrayList<>();
+	}
+
+	private List<State> selectParents(List<State> refList, int truncation) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+		iffatherselection = new FactoryFatherSelection();
+		FatherSelection selection = iffatherselection.createSelectFather(selectionType);
 		List<State> fathers = selection.selection(refList, truncation);
-		if (fathers == null || fathers.isEmpty()) {
-			// Ensure we have candidates to avoid IndexOutOfBounds
-			fathers = refList;
-		}
-    	int pos1 = (int)(Math.random() * fathers.size());
-    	int pos2 = (int)(Math.random() * fathers.size());
-    	
-		// Safely obtain a base state to copy from. Tests may not set Problem.state, so
-		// fall back to a generator-local state list or RandomSearch reference when needed.
-		State baseState1 = null;
+		if (fathers == null || fathers.isEmpty()) return refList;
+		return fathers;
+	}
+
+	private State resolveBaseState() {
 		try {
-			baseState1 = Strategy.getStrategy().getProblem().getState();
-		} catch (Exception e) {
-			baseState1 = null;
-		}
-		if (baseState1 == null) {
-			if (this.listState != null && !this.listState.isEmpty()) baseState1 = this.listState.get(0);
-			else if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) baseState1 = RandomSearch.listStateReference.get(0);
-			else baseState1 = new State();
-		}
-		State auxState1 = (State) baseState1.getCopy();
-		auxState1.setCode(new ArrayList<Object>(fathers.get(pos1).getCode()));
-		// Ensure code has at least one gene to avoid IndexOutOfBounds in mutation
-		if (auxState1.getCode() == null) auxState1.setCode(new ArrayList<Object>());
-		if (auxState1.getCode().isEmpty()) auxState1.getCode().add(0);
-    	auxState1.setEvaluation(fathers.get(pos1).getEvaluation());
-    	auxState1.setNumber(fathers.get(pos1).getNumber());
-    	auxState1.setTypeGenerator(fathers.get(pos1).getTypeGenerator());
-    	
-		State baseState2 = null;
-		try {
-			baseState2 = Strategy.getStrategy().getProblem().getState();
-		} catch (Exception e) {
-			baseState2 = null;
-		}
-		if (baseState2 == null) {
-			if (this.listState != null && !this.listState.isEmpty()) baseState2 = this.listState.get(0);
-			else if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) baseState2 = RandomSearch.listStateReference.get(0);
-			else baseState2 = new State();
-		}
-		State auxState2 = (State) baseState2.getCopy();
-		auxState2.setCode(new ArrayList<Object>(fathers.get(pos2).getCode()));
-		if (auxState2.getCode() == null) auxState2.setCode(new ArrayList<Object>());
-		if (auxState2.getCode().isEmpty()) auxState2.getCode().add(0);
-    	auxState2.setEvaluation(fathers.get(pos2).getEvaluation());
-    	auxState2.setNumber(fathers.get(pos2).getNumber());
-    	auxState2.setTypeGenerator(fathers.get(pos2).getTypeGenerator());
-    	
-	    //**********cruzamiento*************************************
-	    iffactorycrossover = new FactoryCrossover();
-    	Crossover crossover = iffactorycrossover.createCrossover(crossoverType);
-    	auxState1 = crossover.crossover(auxState1, auxState2, PC);
-	    
-    	//**********mutacion******************************************** 	
-    	iffactorymutation = new FactoryMutation();
-    	Mutation mutation =iffactorymutation.createMutation(mutationType);
-    	auxState1 = mutation.mutation(auxState1, PM);
-    	//list.add(auxState1);
-    	
-    	return auxState1;
+			State s = Strategy.getStrategy().getProblem().getState();
+			if (s != null) return s;
+		} catch (Exception ignore) { }
+		if (this.listState != null && !this.listState.isEmpty()) return this.listState.get(0);
+		if (RandomSearch.listStateReference != null && !RandomSearch.listStateReference.isEmpty()) return RandomSearch.listStateReference.get(0);
+		return new State();
+	}
+
+	private State copyFromParent(State parent, State base) {
+		State copy = (State) base.getCopy();
+		ArrayList<Object> code = parent.getCode() != null ? new ArrayList<>(parent.getCode()) : new ArrayList<>();
+		if (code.isEmpty()) code.add(0);
+		copy.setCode(code);
+		copy.setEvaluation(parent.getEvaluation());
+		copy.setNumber(parent.getNumber());
+		copy.setTypeGenerator(parent.getTypeGenerator());
+		return copy;
+	}
+
+	private State doCrossover(State a, State b, double pc) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+		iffactorycrossover = new FactoryCrossover();
+		Crossover crossover = iffactorycrossover.createCrossover(crossoverType);
+		return crossover.crossover(a, b, pc);
+	}
+
+	private State doMutation(State s, double pm) throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+		iffactorymutation = new FactoryMutation();
+		Mutation mutation = iffactorymutation.createMutation(mutationType);
+		return mutation.mutation(s, pm);
 	}
     
 	@Override

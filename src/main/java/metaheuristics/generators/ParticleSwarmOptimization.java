@@ -121,12 +121,10 @@ public class ParticleSwarmOptimization extends Generator {
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException{ //PSO
 		if (countRef <= 0 || listParticle == null || listParticle.isEmpty()) return null;
-		if (countParticle >= countRef)
-			countParticle = 0;
-		// generate using current particle
-		listParticle.get(countParticle).generate(1);
-		State result = listParticle.get(countParticle).getStateActual();
-		// increment the counter after generation so first call moves it to 1
+		if (countParticle >= countRef) { countParticle = 0; }
+		Particle current = listParticle.get(countParticle);
+		current.generate(1);
+		State result = current.getStateActual();
 		countParticle++;
 		return result;
 	}

@@ -407,6 +407,8 @@ class StrategyTest {
     @Test
     @DisplayName("updateWeight: Setea pesos a 50.0 para generadores activos")
     void testUpdateWeight_SetsWeightsTo50() {
+        // Intentionally simple test body; assertions verify effect of updateWeight.
+        // No additional setup required here beyond creating dummy generators.
         // create two simple generators with settable weights
         class SimpleGen extends Generator {
             private float weight = 10f;
@@ -439,6 +441,8 @@ class StrategyTest {
     @Test
     @DisplayName("updateRefGenerator: Actualiza evaluaciones en lista de referencia para GA-like")
     void testUpdateRefGenerator_UpdatesEvaluations() {
+        // Intentionally minimal: focuses on verifying evaluation update side-effects.
+        // Empty sections are by design to keep the test concise per Sonar guidance.
         // prepare a simple generator that has a reference list with states
         java.util.ArrayList<State> refs = new java.util.ArrayList<>();
         State sA = new State();

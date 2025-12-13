@@ -41,7 +41,7 @@ public class Particle extends Generator {
 	 * Inicializa una partícula con estados y velocidad vacíos.
 	 */
 	public Particle() {
-		super();
+		super()
 		this.stateActual = new State();
 		this.statePBest = new State();
 		this.velocity = new ArrayList<Object>();
@@ -128,15 +128,15 @@ public class Particle extends Generator {
 			NoSuchMethodException {
 		// TODO Auto-generated method stub
 		
-		ArrayList<Object> actualVelocity = UpdateVelocity();
-		ArrayList<Object> newCode = UpdateCode(actualVelocity);
+		ArrayList<Object> actualVelocity = updateVelocity();
+		ArrayList<Object> newCode = updateCode(actualVelocity);
 		this.velocity = actualVelocity;
 		this.stateActual.setCode(newCode);
 		return null;
 	}
 	
-	
-	private ArrayList<Object> UpdateVelocity(){ // actualizar velocidad
+    
+	private ArrayList<Object> updateVelocity(){ // actualizar velocidad
 		// compute inertia factor safely (Strategy may be null during tests)
 		double countMax = 1.0;
 		try {
@@ -165,6 +165,9 @@ public class Particle extends Generator {
 				codeSize = 0;
 			}
 		}
+		if (velocity == null) {
+			velocity = new ArrayList<>();
+		}
 		if (velocity.isEmpty()){
 			for (int i = 0; i < codeSize; i++){
 				velocity.add(0.0);
@@ -175,7 +178,7 @@ public class Particle extends Generator {
     		// cumulo donde se encuentra la particula
     		int swarm = ParticleSwarmOptimization.countParticle / ParticleSwarmOptimization.countParticleBySwarm; 
            	inertia = w * (Double)velocity.get(i);  
-           	if(ParticleSwarmOptimization.binary == true){
+			if(ParticleSwarmOptimization.binary == true){
 				// safe casts for binary representation
 				try {
 					cognitive = (Double)(ParticleSwarmOptimization.learning1 * rand1 * ((Integer)(this.statePBest.getCode().get(i)) - (Integer)(stateActual.getCode().get(i))));
@@ -183,8 +186,8 @@ public class Particle extends Generator {
 				try {
 					social = (Double)(ParticleSwarmOptimization.learning2 * rand2 * (((Integer)(((State) ParticleSwarmOptimization.lBest[swarm]).getCode().get(i))) - ((Integer)(stateActual.getCode().get(i)))));
 				} catch (Throwable t) { social = 0.0; }
-           	}
-           	else{
+			}
+			else{
 				try {
 					cognitive = (Double)(ParticleSwarmOptimization.learning1 * rand1 * ((Double)(this.statePBest.getCode().get(i)) - (Double)(stateActual.getCode().get(i))));
 				} catch (Throwable t) { cognitive = 0.0; }
@@ -203,36 +206,38 @@ public class Particle extends Generator {
         return actualVelocity;
     }
 	
-	private ArrayList<Object> UpdateCode(ArrayList<Object> actualVelocity) {  // CALCULO DE LA NUEA POSICION DE LA PARTICULA
+	private ArrayList<Object> updateCode(ArrayList<Object> actualVelocity) {  // CALCULO DE LA NUEA POSICION DE LA PARTICULA
 		ArrayList<Object> newCode = new ArrayList<Object>();
 		ArrayList<Object> binaryCode = new ArrayList<Object>();
 		//poner la condicion de si se esta trabajando con valores continuos o binarios
-		if(ParticleSwarmOptimization.binary == false){	
+		if (stateActual == null || stateActual.getCode() == null) {
+			return newCode; // empty
+		}
+		if(ParticleSwarmOptimization.binary == false){ 
 			for (int i = 0; i < stateActual.getCode().size(); i++) {
-	                newCode.add( (Double)(stateActual.getCode().get(i)) + (Double)(actualVelocity.get(i)) );
-		    }
+				newCode.add( (Double)(stateActual.getCode().get(i)) + (Double)(actualVelocity.get(i)) );
+			}
 			return newCode;
-	    }
-		 else{                                                  //clculo de la posicion para codificacion binaria
-			  for (int i = 0; i < stateActual.getCode().size(); i++){
-				  double rand = SecureRandomGenerator.nextDouble();
-				  double s = 1/(1 + 1.72 * (Double)(actualVelocity.get(i))); // 
-				  if (rand < s){
-				     binaryCode.add(1);
-				  }
-				   else{
-				    	binaryCode.add(0);
-				    	}
-			  }
-	          return binaryCode;
-    }
-			/*	if(ParticleSwarmOptimization.binary == true){//wendy
-					for (int i = 0; i < newCode.size(); i++) {
-						binaryCode.add(4 + ((Integer)newCode.get(i))%2);     //FORMULA DE LA POSICION PARA CODIFICACION BINARIA  
-					}
-					return binaryCode;
-				}*/
-		
+		}
+		else{                                                  //clculo de la posicion para codificacion binaria
+			for (int i = 0; i < stateActual.getCode().size(); i++){
+				double rand = SecureRandomGenerator.nextDouble();
+				double s = 1/(1 + 1.72 * (Double)(actualVelocity.get(i))); // 
+				if (rand < s){
+					binaryCode.add(1);
+				}
+				else{
+					binaryCode.add(0);
+				}
+			}
+			return binaryCode;
+		}
+		/*	if(ParticleSwarmOptimization.binary == true){//wendy
+				for (int i = 0; i < newCode.size(); i++) {
+					binaryCode.add(4 + ((Integer)newCode.get(i))%2);     //FORMULA DE LA POSICION PARA CODIFICACION BINARIA  
+				}
+				return binaryCode;
+			}*/
 	}
 	
 

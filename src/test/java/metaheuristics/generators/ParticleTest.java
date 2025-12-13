@@ -65,7 +65,7 @@ public class ParticleTest {
         actualVelocity.add(0.5);
         actualVelocity.add(-1.0);
 
-        Method m = Particle.class.getDeclaredMethod("UpdateCode", ArrayList.class);
+        Method m = Particle.class.getDeclaredMethod("updateCode", ArrayList.class);
         m.setAccessible(true);
         @SuppressWarnings("unchecked")
         ArrayList<Object> result = (ArrayList<Object>) m.invoke(p, actualVelocity);
@@ -96,7 +96,7 @@ public class ParticleTest {
         ParticleSwarmOptimization.learning1 = 0; // force cognitive/social to 0
         ParticleSwarmOptimization.learning2 = 0;
 
-        Method m = Particle.class.getDeclaredMethod("UpdateVelocity");
+        Method m = Particle.class.getDeclaredMethod("updateVelocity");
         m.setAccessible(true);
         @SuppressWarnings("unchecked")
         ArrayList<Object> actual = (ArrayList<Object>) m.invoke(p);
