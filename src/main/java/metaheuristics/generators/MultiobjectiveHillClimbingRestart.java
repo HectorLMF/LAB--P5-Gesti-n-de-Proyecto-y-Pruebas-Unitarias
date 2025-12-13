@@ -92,10 +92,11 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public State generate(Integer operatornumber) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		List<State> neighborhood = new ArrayList<State>();
-		neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
-		State statecandidate = candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
-		return statecandidate;
+		if (operatornumber == null || stateReferenceHC == null) {
+			throw new IllegalArgumentException("Operator number or state reference cannot be null");
+		}
+		List<State> neighborhood = Strategy.getStrategy().getProblem().getOperator().generatedNewState(stateReferenceHC, operatornumber);
+		return candidatevalue.stateCandidate(stateReferenceHC, typeCandidate, strategy, operatornumber, neighborhood);
 	}
 
 	/**
@@ -116,6 +117,13 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public void updateReference(State stateCandidate, Integer countIterationsCurrent) throws IllegalArgumentException, SecurityException, ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		if (stateCandidate == null || countIterationsCurrent == null) {
+			throw new IllegalArgumentException("State candidate or iteration count cannot be null");
+		}
+		if (visitedState == null) {
+			visitedState = new ArrayList<>();
+		}
+		visitedState.add(stateCandidate);
 		//Agregando la primera soluci�n a la lista de soluciones no dominadas
 
 		if(Strategy.getStrategy().listRefPoblacFinal.size() == 0){
@@ -246,15 +254,20 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 * @param state Estado a verificar
 	 * @return true si el estado ya fue visitado, false en caso contrario
 	 */
-	private boolean Contain(State state){
-		boolean found = false;
-		for (Iterator<State> iter = visitedState.iterator(); iter.hasNext();) {
-			State element = (State) iter.next();
-			if(element.Comparator(state)==true){
-				found = true;
+	protected boolean Contain(State state) {
+		if (state == null || visitedState == null) {
+			return false;
+		}
+		for (State element : visitedState) {
+			if (element == null) {
+				continue;
+			}
+			// Comparator compara por código
+			if (element.Comparator(state)) {
+				return true;
 			}
 		}
-		return found;
+		return false;
 	}
 
 	/**
@@ -274,8 +287,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public float getWeight() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.weight;
 	}
 
 	/**
@@ -284,8 +296,8 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public void setWeight(float weight) {
-		// TODO Auto-generated method stub
-
+		this.weight = weight;
+		listTrace.add(weight);
 	}
 
 	/**
@@ -294,8 +306,14 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public float[] getTrace() {
-		// TODO Auto-generated method stub
-		return null;
+		if (listTrace.isEmpty()) {
+			return new float[0];
+		}
+		float[] traceArray = new float[listTrace.size()];
+		for (int i = 0; i < listTrace.size(); i++) {
+			traceArray[i] = listTrace.get(i);
+		}
+		return traceArray;
 	}
 
 	/**
@@ -304,8 +322,7 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public int[] getListCountBetterGender() {
-		// TODO Auto-generated method stub
-		return null;
+		return new int[0]; // Return empty array instead of null
 	}
 
 	/**
@@ -314,7 +331,6 @@ public class MultiobjectiveHillClimbingRestart extends Generator{
 	 */
 	@Override
 	public int[] getListCountGender() {
-		// TODO Auto-generated method stub
-		return null;
+		return new int[0]; // Return empty array instead of null
 	}
 }

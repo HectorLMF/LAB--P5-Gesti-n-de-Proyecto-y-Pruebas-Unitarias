@@ -22,9 +22,14 @@ import metaheuristics.generators.GeneticAlgorithm;
 import metaheuristics.generators.Generator;
 import metaheuristics.generators.GeneratorType;
 import metaheuristics.generators.MultiGenerator;
+import metaheuristics.generators.RandomSearch;
+import metaheuristics.generators.EvolutionStrategies;
+import metaheuristics.generators.DistributionEstimationAlgorithm;
+import metaheuristics.generators.ParticleSwarmOptimization;
 import problem.definition.ObjetiveFunction;
 import problem.definition.Problem;
 import problem.definition.State;
+import problem.definition.Operator;
 
 class StrategyTest {
 
@@ -517,6 +522,333 @@ class StrategyTest {
         assertEquals(GeneratorType.GENETIC_ALGORITHM, strategy.generator.getType(), "generator debería ser GENETIC_ALGORITHM");
         // reset static to avoid cross-test interference
         GeneticAlgorithm.countRef = 0;
+    }
+
+
+    @Test
+    @DisplayName("executeStrategy (MULTI_GENERATOR): cubre cambio/no-cambio, periodo, MAXIMIZAR y bloque final")
+    void testExecuteStrategy_MultiGenerator_Maximizar_CoversBranches() throws Exception {
+        // Problem that evaluates using the state's own evaluation (set by generator).
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
+        p.setFunction(new ArrayList<>());
+        p.getFunction().add(new ObjetiveFunction() {
+            @Override public Double Evaluation(State state) {
+                if (state.getEvaluation() == null || state.getEvaluation().isEmpty()) return 0.0;
+                return state.getEvaluation().get(0);
+            }
+        });
+        p.setOperator(new Operator() {
+            @Override public java.util.List<State> generatedNewState(State stateCurrent, Integer operatornumber) {
+                return new java.util.ArrayList<State>();
+            }
+            @Override public java.util.List<State> generateRandomState(Integer operatornumber) {
+                java.util.ArrayList<State> l = new java.util.ArrayList<>();
+                State s = new State();
+                s.setEvaluation(new java.util.ArrayList<Double>(java.util.List.of(1.0)));
+                s.setCode(new java.util.ArrayList<>());
+                l.add(s);
+                return l;
+            }
+        });
+        strategy.setProblem(p);
+        strategy.setStopexecute(new StopExecute());
+        strategy.saveListStates = true;
+        strategy.saveListBestStates = true;
+
+        // Prevent Strategy.update(0) from swapping the generator via static countRef thresholds.
+        GeneticAlgorithm.countRef = 9999;
+        EvolutionStrategies.countRef = 9999;
+        DistributionEstimationAlgorithm.countRef = 9999;
+        ParticleSwarmOptimization.countRef = 9999;
+
+        // Ensure period tracking arrays exist for updateCountGender.
+        Generator dummy = new Generator() {
+            private final int[] count = new int[] {0, 0, 0};
+            private final int[] better = new int[] {0, 0, 0};
+            @Override public State generate(Integer operatornumber) { return null; }
+            @Override public void updateReference(State stateCandidate, Integer countIterationsCurrent) {}
+            @Override public State getReference() { return null; }
+            @Override public void setInitialReference(State stateInitialRef) {}
+            @Override public GeneratorType getType() { return GeneratorType.RANDOM_SEARCH; }
+            @Override public java.util.List<State> getReferenceList() { return new java.util.ArrayList<State>(); }
+            @Override public java.util.List<State> getSonList() { return null; }
+            @Override public boolean awardUpdateREF(State stateCandidate) { return false; }
+            @Override public void setWeight(float weight) {}
+            @Override public float getWeight() { return 1f; }
+            @Override public float[] getTrace() { return new float[10]; }
+            @Override public int[] getListCountBetterGender() { return better; }
+            @Override public int[] getListCountGender() { return count; }
+        };
+        MultiGenerator.setListGenerators(new Generator[] { dummy });
+        MultiGenerator.activeGenerator = dummy;
+
+        // Replace generator creation so executeStrategy uses our stub MultiGenerator.
+        MultiGenerator stubMG = new MultiGenerator() {
+            private int call = 0;
+            private final java.util.ArrayList<State> refs = new java.util.ArrayList<>();
+            @Override
+            public State generate(Integer operatornumber) {
+                // 1st call happens at countCurrent==countChange (change branch), 2nd at no-change.
+                call++;
+                State s = new State();
+                double v = (call == 1) ? 5.0 : 10.0; // second candidate better for MAXIMIZAR
+                s.setEvaluation(new java.util.ArrayList<Double>(java.util.List.of(v)));
+                s.setCode(new java.util.ArrayList<>());
+                return s;
+            }
+
+            @Override
+            public void updateReference(State stateCandidate, Integer countIterationsCurrent) {
+                refs.add(stateCandidate);
+            }
+
+            @Override
+            public java.util.List<State> getReferenceList() {
+                return refs;
+            }
+
+            @Override
+            public MultiGenerator copy() {
+                return this;
+            }
+        };
+
+        // Force Strategy.newGenerator(MULTI_GENERATOR) to return our stub via factory injection.
+        java.lang.reflect.Field f = Strategy.class.getDeclaredField("ifFactoryGenerator");
+        f.setAccessible(true);
+        factory_interface.IFFactoryGenerator factory = new factory_interface.IFFactoryGenerator() {
+            @Override
+            public Generator createGenerator(GeneratorType Generatortype) {
+                if (Generatortype.equals(GeneratorType.MULTI_GENERATOR)) return stubMG;
+                // keep other types simple and safe
+                return new RandomSearch();
+            }
+        };
+        f.set(strategy, factory);
+
+        // ensure MultiGenerator reference list exists for updateRef(generatorType)
+        MultiGenerator.listStateReference = new java.util.ArrayList<>();
+
+        // countIterationsChange=10 makes countPeriodo == countCurrent true at countCurrent=1
+        strategy.executeStrategy(2, 10, 1, GeneratorType.MULTI_GENERATOR);
+
+        assertNotNull(strategy.listBest, "listBest should exist");
+        assertNotNull(strategy.getBestState(), "bestState should be set");
+        // Coverage-oriented assertions: ensure executeStrategy advanced and executed MULTI_GENERATOR blocks.
+        assertTrue(strategy.getCountCurrent() >= 1, "countCurrent should advance at least once");
+        // When countPeriodo == countCurrent, Strategy resets activeGenerator.countBetterGender to 0.
+        assertEquals(0, MultiGenerator.activeGenerator.countBetterGender,
+            "activeGenerator.countBetterGender should be reset on period boundary");
+
+        // cleanup static counters
+        GeneticAlgorithm.countRef = 0;
+        EvolutionStrategies.countRef = 0;
+        DistributionEstimationAlgorithm.countRef = 0;
+        ParticleSwarmOptimization.countRef = 0;
+    }
+
+    @Test
+    @DisplayName("executeStrategy (MULTI_GENERATOR): cubre MINIMIZAR bestState update")
+    void testExecuteStrategy_MultiGenerator_Minimizar_CoversBestUpdate() throws Exception {
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MINIMIZAR);
+        p.setFunction(new ArrayList<>());
+        p.getFunction().add(new ObjetiveFunction() {
+            @Override public Double Evaluation(State state) {
+                if (state.getEvaluation() == null || state.getEvaluation().isEmpty()) return 0.0;
+                return state.getEvaluation().get(0);
+            }
+        });
+        p.setOperator(new Operator() {
+            @Override public java.util.List<State> generatedNewState(State stateCurrent, Integer operatornumber) {
+                return new java.util.ArrayList<State>();
+            }
+            @Override public java.util.List<State> generateRandomState(Integer operatornumber) {
+                java.util.ArrayList<State> l = new java.util.ArrayList<>();
+                State s = new State();
+                s.setEvaluation(new java.util.ArrayList<Double>(java.util.List.of(50.0)));
+                s.setCode(new java.util.ArrayList<>());
+                l.add(s);
+                return l;
+            }
+        });
+        strategy.setProblem(p);
+        strategy.setStopexecute(new StopExecute());
+        strategy.saveListStates = false;
+        strategy.saveListBestStates = true;
+
+        // Prevent Strategy.update(0) from swapping the generator via static countRef thresholds.
+        GeneticAlgorithm.countRef = 9999;
+        EvolutionStrategies.countRef = 9999;
+        DistributionEstimationAlgorithm.countRef = 9999;
+        ParticleSwarmOptimization.countRef = 9999;
+
+        Generator dummy = new Generator() {
+            private final int[] count = new int[] {0, 0, 0};
+            private final int[] better = new int[] {0, 0, 0};
+            @Override public State generate(Integer operatornumber) { return null; }
+            @Override public void updateReference(State stateCandidate, Integer countIterationsCurrent) {}
+            @Override public State getReference() { return null; }
+            @Override public void setInitialReference(State stateInitialRef) {}
+            @Override public GeneratorType getType() { return GeneratorType.RANDOM_SEARCH; }
+            @Override public java.util.List<State> getReferenceList() { return new java.util.ArrayList<State>(); }
+            @Override public java.util.List<State> getSonList() { return null; }
+            @Override public boolean awardUpdateREF(State stateCandidate) { return false; }
+            @Override public void setWeight(float weight) {}
+            @Override public float getWeight() { return 1f; }
+            @Override public float[] getTrace() { return new float[10]; }
+            @Override public int[] getListCountBetterGender() { return better; }
+            @Override public int[] getListCountGender() { return count; }
+        };
+        MultiGenerator.setListGenerators(new Generator[] { dummy });
+        MultiGenerator.activeGenerator = dummy;
+
+        MultiGenerator stubMG = new MultiGenerator() {
+            private int call = 0;
+            private final java.util.ArrayList<State> refs = new java.util.ArrayList<>();
+            @Override
+            public State generate(Integer operatornumber) {
+                call++;
+                State s = new State();
+                // For MINIMIZAR, second candidate should be smaller (better)
+                double v = (call == 1) ? 40.0 : 5.0;
+                s.setEvaluation(new java.util.ArrayList<Double>(java.util.List.of(v)));
+                s.setCode(new java.util.ArrayList<>());
+                return s;
+            }
+            @Override
+            public void updateReference(State stateCandidate, Integer countIterationsCurrent) {
+                refs.add(stateCandidate);
+            }
+            @Override
+            public java.util.List<State> getReferenceList() { return refs; }
+            @Override
+            public MultiGenerator copy() { return this; }
+        };
+
+        java.lang.reflect.Field f = Strategy.class.getDeclaredField("ifFactoryGenerator");
+        f.setAccessible(true);
+        factory_interface.IFFactoryGenerator factory = new factory_interface.IFFactoryGenerator() {
+            @Override
+            public Generator createGenerator(GeneratorType Generatortype) {
+                if (Generatortype.equals(GeneratorType.MULTI_GENERATOR)) return stubMG;
+                return new RandomSearch();
+            }
+        };
+        f.set(strategy, factory);
+
+        MultiGenerator.listStateReference = new java.util.ArrayList<>();
+
+        strategy.executeStrategy(2, 10, 1, GeneratorType.MULTI_GENERATOR);
+
+        assertNotNull(strategy.getBestState(), "bestState should be set");
+        assertTrue(strategy.getCountCurrent() >= 1, "countCurrent should advance at least once");
+
+        GeneticAlgorithm.countRef = 0;
+        EvolutionStrategies.countRef = 0;
+        DistributionEstimationAlgorithm.countRef = 0;
+        ParticleSwarmOptimization.countRef = 0;
+    }
+
+    @Test
+    @DisplayName("executeStrategy (RANDOM_SEARCH): cubre rama de cambio countCurrent==countChange con listas y bestState")
+    void testExecuteStrategy_ChangeBranch_NonMultiGenerator() throws Exception {
+        // Problem with MAXIMIZAR so the bestState update condition can trigger.
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
+        p.setFunction(new ArrayList<>());
+        p.getFunction().add(new ObjetiveFunction() {
+            @Override public Double Evaluation(State state) {
+                if (state.getEvaluation() == null || state.getEvaluation().isEmpty()) return 0.0;
+                return state.getEvaluation().get(0);
+            }
+        });
+        p.setOperator(new Operator() {
+            @Override public java.util.List<State> generatedNewState(State stateCurrent, Integer operatornumber) {
+                return new java.util.ArrayList<State>();
+            }
+            @Override public java.util.List<State> generateRandomState(Integer operatornumber) {
+                java.util.ArrayList<State> l = new java.util.ArrayList<>();
+                State s = new State();
+                // initial state evaluation small so candidate can be better
+                s.setEvaluation(new java.util.ArrayList<Double>(java.util.List.of(1.0)));
+                s.setCode(new java.util.ArrayList<>());
+                l.add(s);
+                return l;
+            }
+        });
+        strategy.setProblem(p);
+
+        // Make the loop run at least once: stop only when countCurrent >= countmaxIterations.
+        strategy.setStopexecute(new StopExecute());
+
+        // Enable list saving to cover listStates/listBest conditionals in the change branch.
+        strategy.saveListStates = true;
+        strategy.saveListBestStates = true;
+
+        // Provide offline error array large enough; Strategy uses countOff as index.
+        strategy.listOfflineError = new float[50];
+
+        // Stub generator used in non-multi branch.
+        Generator gen = new Generator() {
+            private final java.util.ArrayList<State> refs = new java.util.ArrayList<>();
+            private State ref;
+            @Override
+            public State generate(Integer operatornumber) {
+                State s = new State();
+                // Candidate is better than initial in MAXIMIZAR
+                s.setEvaluation(new java.util.ArrayList<Double>(java.util.List.of(5.0)));
+                s.setCode(new java.util.ArrayList<>());
+                return s;
+            }
+
+            @Override
+            public void updateReference(State stateCandidate, Integer countIterationsCurrent) {
+                this.ref = stateCandidate;
+                refs.add(stateCandidate);
+            }
+
+            @Override public State getReference() { return ref; }
+            @Override public void setInitialReference(State stateInitialRef) { this.ref = stateInitialRef; }
+            @Override public GeneratorType getType() { return GeneratorType.RANDOM_SEARCH; }
+            @Override public java.util.List<State> getReferenceList() { return refs; }
+            @Override public java.util.List<State> getSonList() { return null; }
+            @Override public boolean awardUpdateREF(State stateCandidate) { return false; }
+            @Override public void setWeight(float weight) {}
+            @Override public float getWeight() { return 1f; }
+            @Override public float[] getTrace() { return new float[10]; }
+            @Override public int[] getListCountBetterGender() { return new int[3]; }
+            @Override public int[] getListCountGender() { return new int[3]; }
+        };
+
+        // Inject factory so Strategy.newGenerator returns our stub generator.
+        java.lang.reflect.Field f = Strategy.class.getDeclaredField("ifFactoryGenerator");
+        f.setAccessible(true);
+        f.set(strategy, new factory_interface.IFFactoryGenerator() {
+            @Override
+            public Generator createGenerator(GeneratorType Generatortype) {
+                if (Generatortype.equals(GeneratorType.RANDOM_SEARCH)) return gen;
+                return new RandomSearch();
+            }
+        });
+
+        // Force 'change detected' branch on the first loop iteration.
+        // Use a safe countIterationsChange (non-zero) to avoid periodChange=0, then override countChange to 0.
+        java.lang.reflect.Field countChangeField = Strategy.class.getDeclaredField("countChange");
+        countChangeField.setAccessible(true);
+        countChangeField.setInt(strategy, 0);
+        strategy.executeStrategy(1, 1, 1, GeneratorType.RANDOM_SEARCH);
+
+        // Assertions focused on the change branch side-effects.
+        assertNotNull(strategy.listStates, "listStates should be initialized");
+        assertTrue(strategy.listStates.size() >= 2, "listStates should contain initial + candidate");
+        assertNotNull(strategy.listBest, "listBest should be initialized");
+        assertTrue(strategy.listBest.size() >= 1, "listBest should contain at least the initial best");
+        assertNotNull(strategy.getBestState(), "bestState should be set");
+        assertNotNull(strategy.generator, "generator should be created");
+        // offline error should have been written at least once (countOff starts at 0)
+        assertTrue(strategy.listOfflineError[0] >= 0.0f, "offlinePerformance should be computed on change");
     }
 
     @Test

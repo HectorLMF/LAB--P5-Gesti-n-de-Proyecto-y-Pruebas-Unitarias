@@ -17,6 +17,9 @@ import metaheuristics.generators.RandomSearch;
 import metaheuristics.generators.ParticleSwarmOptimization;
 import metaheuristics.generators.Particle;
 import metaheuristics.generators.GeneratorType;
+import java.lang.reflect.Method;
+import java.util.TreeMap;
+import static org.mockito.Mockito.*;
 
 public class ParticleSwarmOptimizationTest {
 
@@ -27,7 +30,8 @@ public class ParticleSwarmOptimizationTest {
         Strategy.destroyExecute();
         // Ensure Strategy.mapGenerators is initialized to avoid NPE in getListKey
         Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
-        RandomSearch.listStateReference.clear();
+        // Use a fresh list instance to avoid accidental aliasing across tests
+        RandomSearch.listStateReference = new ArrayList<>();
         seedStates = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             State s = new State();
@@ -40,7 +44,8 @@ public class ParticleSwarmOptimizationTest {
             s.setEvaluation(eval);
             seedStates.add(s);
         }
-        RandomSearch.listStateReference.addAll(seedStates);
+        // add a copy so RandomSearch holds its own independent list
+        RandomSearch.listStateReference.addAll(new ArrayList<>(seedStates));
         ParticleSwarmOptimization.coutSwarm = 1;
         ParticleSwarmOptimization.countParticleBySwarm = seedStates.size();
         ParticleSwarmOptimization.countRef = ParticleSwarmOptimization.coutSwarm * ParticleSwarmOptimization.countParticleBySwarm;
@@ -87,6 +92,18 @@ public class ParticleSwarmOptimizationTest {
     }
 
     @Test
+    @DisplayName("generate resets countParticle when it reaches countRef")
+    void testGenerateResetsCountParticleWhenReachesCountRef() throws Exception {
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        assertTrue(ParticleSwarmOptimization.countRef > 0);
+        // put countParticle at countRef to trigger reset branch
+        ParticleSwarmOptimization.countParticle = ParticleSwarmOptimization.countRef;
+        State out = pso.generate(1);
+        assertNotNull(out);
+        assertEquals(1, ParticleSwarmOptimization.countParticle);
+    }
+
+    @Test
     @DisplayName("generate returns null when no particles or countRef=0")
     void testGenerateReturnsNullWhenNoParticles() throws Exception {
         Strategy.destroyExecute();
@@ -97,6 +114,90 @@ public class ParticleSwarmOptimizationTest {
         ParticleSwarmOptimization.countRef = 0;
         ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
         assertNull(pso.generate(1));
+    }
+
+    @Test
+    @DisplayName("inicialiceLBest handles null pBest and still sets lBest entries")
+    void testInicialiceLBest_NullReference_AndFallbacks() {
+        // Build PSO with seeded particles
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        assertFalse(pso.getListParticle().isEmpty());
+
+        // Force first particle pBest to null so reference==null branch executes
+        pso.getListParticle().get(0).setStatePBest(null);
+        ParticleSwarmOptimization.coutSwarm = 1;
+        ParticleSwarmOptimization.countParticleBySwarm = Math.max(1, pso.getListParticle().size());
+        ParticleSwarmOptimization.lBest = new State[Math.max(1, ParticleSwarmOptimization.coutSwarm)];
+
+        pso.inicialiceLBest();
+        assertNull(ParticleSwarmOptimization.lBest[0]);
+    }
+
+    @Test
+    @DisplayName("inicialiceLBest picks best pBest based on ProblemType MAX/MIN")
+    void testInicialiceLBest_PicksBestAccordingToProblemType() {
+        // Ensure Strategy and problem exist
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new TreeMap<>();
+
+        // Seed RandomSearch with 2 states
+        RandomSearch.listStateReference.clear();
+        State s1 = new State(); s1.setCode(new ArrayList<>()); s1.setEvaluation(new ArrayList<>(List.of(10.0)));
+        State s2 = new State(); s2.setCode(new ArrayList<>()); s2.setEvaluation(new ArrayList<>(List.of(5.0)));
+        RandomSearch.listStateReference.add(s1);
+        RandomSearch.listStateReference.add(s2);
+
+        ParticleSwarmOptimization.coutSwarm = 1;
+        ParticleSwarmOptimization.countParticleBySwarm = 2;
+        ParticleSwarmOptimization.lBest = new State[1];
+
+        // MAX picks 10
+        Problem pMax = new Problem();
+        pMax.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
+        Strategy.setProblem(pMax);
+        ParticleSwarmOptimization psoMax = new ParticleSwarmOptimization();
+        psoMax.inicialiceLBest();
+        assertNotNull(ParticleSwarmOptimization.lBest[0]);
+        assertEquals(10.0, ParticleSwarmOptimization.lBest[0].getEvaluation().get(0), 1e-9);
+
+        // MIN picks 5
+        Problem pMin = new Problem();
+        pMin.setTypeProblem(Problem.ProblemType.MINIMIZAR);
+        Strategy.setProblem(pMin);
+        ParticleSwarmOptimization psoMin = new ParticleSwarmOptimization();
+        psoMin.inicialiceLBest();
+        assertNotNull(ParticleSwarmOptimization.lBest[0]);
+        assertEquals(5.0, ParticleSwarmOptimization.lBest[0].getEvaluation().get(0), 1e-9);
+    }
+
+    @Test
+    @DisplayName("updateReference resizes lBest and initializes null lBest[swarm]")
+    void testUpdateReference_ResizesLBest_AndInitializesNullEntry() throws Exception {
+        // MIN or MAX doesn't matter for resizing/null init; keep MAX for simplicity
+        Problem p = new Problem();
+        p.setTypeProblem(Problem.ProblemType.MAXIMIZAR);
+        Strategy.setProblem(p);
+
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        assertFalse(pso.getListParticle().isEmpty());
+
+        // Force swarm index to be out of bounds and lBest small
+        ParticleSwarmOptimization.coutSwarm = 2;
+        ParticleSwarmOptimization.countParticleBySwarm = 1;
+        ParticleSwarmOptimization.countParticle = 1; // swarm=1
+        ParticleSwarmOptimization.lBest = new State[1]; // too small
+        // Ensure particle has pBest
+        Particle part = pso.getListParticle().get(1 % pso.getListParticle().size());
+        State pb = new State(); pb.setCode(new ArrayList<>()); pb.setEvaluation(new ArrayList<>(List.of(7.0)));
+        part.setStatePBest(pb);
+
+        // Need a reference list to avoid NPE in gBest creation branch checks
+        State ref = new State(); ref.setEvaluation(new ArrayList<>(List.of(0.0))); ref.setCode(new ArrayList<>());
+        pso.getReferenceList().add(ref);
+
+        pso.updateReference(new State(), 0);
+        assertTrue(ParticleSwarmOptimization.lBest.length >= 2);
+        assertNotNull(ParticleSwarmOptimization.lBest[1]);
     }
 
     @Test
@@ -262,6 +363,35 @@ public class ParticleSwarmOptimizationTest {
         State gfallback = pso.gBestInicial();
         assertNotNull(gfallback);
         assertEquals(RandomSearch.listStateReference.get(0).getEvaluation().get(0), gfallback.getEvaluation().get(0), 1e-9);
+    }
+
+    @Test
+    @DisplayName("Counters/trace getters return expected arrays")
+    void testCountersAndTraceGetters() {
+        Strategy.destroyExecute();
+        Strategy.getStrategy().mapGenerators = new java.util.TreeMap<>();
+        RandomSearch.listStateReference.clear();
+        State s = new State();
+        ArrayList<Double> ev = new ArrayList<>(); ev.add(1.0);
+        s.setEvaluation(ev);
+        ArrayList<Object> code = new ArrayList<>(); code.add(0);
+        s.setCode(code);
+        RandomSearch.listStateReference.add(s);
+        ParticleSwarmOptimization.coutSwarm = 1;
+        ParticleSwarmOptimization.countParticleBySwarm = 1;
+        ParticleSwarmOptimization.countRef = 1;
+
+        ParticleSwarmOptimization pso = new ParticleSwarmOptimization();
+        pso.countGender = 7;
+        pso.listCountBetterGender = new int[] { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+        assertSame(pso.listCountBetterGender, pso.getListCountBetterGender());
+        int[] usage = pso.getListCountGender();
+        assertEquals(10, usage.length);
+        assertEquals(7, usage[0]);
+        float[] trace1 = pso.getTrace();
+        float[] trace2 = pso.getTrace();
+        assertNotNull(trace1);
+        assertSame(trace1, trace2);
     }
 }
 

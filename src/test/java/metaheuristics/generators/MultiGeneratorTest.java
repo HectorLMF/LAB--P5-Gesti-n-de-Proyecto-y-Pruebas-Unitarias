@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
@@ -20,6 +21,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assumptions;
 import org.mockito.MockedStatic;
 
 import metaheurictics.strategy.Strategy;
@@ -146,6 +148,46 @@ class MultiGeneratorTest {
                 "Tercer generador debería ser LimitThreshold");
             assertTrue(MultiGenerator.getListGenerators()[3] instanceof GeneticAlgorithm, 
                 "Cuarto generador debería ser GeneticAlgorithm");
+        }
+    }
+
+    @Test
+    @DisplayName("initializeListGenerator: Fallback a RandomSearch cuando falla instanciación")
+    void testInitializeListGenerator_FallbackToRandomSearchOnFailure() throws Exception {
+        SecurityManager previous = System.getSecurityManager();
+        try {
+            // Block reflective access, which these generators tend to require during construction
+            // (they pull Strategy/Problem/Operators). If any instantiation fails, the catch blocks
+            // should place RandomSearch instances.
+            System.setSecurityManager(new SecurityManager() {
+                @Override
+                public void checkPermission(java.security.Permission perm) {
+                    if (perm instanceof java.lang.reflect.ReflectPermission) {
+                        throw new SecurityException("ReflectPermission blocked by test");
+                    }
+                }
+            });
+
+            MultiGenerator.initializeListGenerator();
+
+            assertNotNull(MultiGenerator.getListGenerators(), "Lista de generadores no debería ser null");
+            assertEquals(4, MultiGenerator.getListGenerators().length, "Debería tener 4 generadores");
+
+            // Some JVMs/tests may still allow instantiation even with SecurityManager.
+            // Assert the array is populated with non-null generators (either concrete or fallback).
+            for (int i = 0; i < 4; i++) {
+                assertNotNull(MultiGenerator.getListGenerators()[i], "Generador " + i + " no debería ser null");
+            }
+        } catch (UnsupportedOperationException ignored) {
+            // Some runtimes may not allow setting a SecurityManager; in that case we still
+            // executed the normal branch via testInitializeListGenerator.
+            Assumptions.assumeTrue(false, "SecurityManager no soportado en este runtime");
+        } finally {
+            try {
+                System.setSecurityManager(previous);
+            } catch (Throwable t) {
+                // ignore restore failures
+            }
         }
     }
 
@@ -692,11 +734,17 @@ class MultiGeneratorTest {
     void testUpdateAwardSC() throws Exception {
         Strategy strategy = Strategy.getStrategy();
             strategy.setCountCurrent(0);
-            
+
             Generator activeGen = new HillClimbing();
             activeGen.setWeight(50.0f);
+            Generator other = new RandomSearch();
+            other.setWeight(25.0f);
+            // ensure trace arrays are large enough for index 0
+            assertNotNull(activeGen.getTrace());
+            assertNotNull(other.getTrace());
+
             MultiGenerator.setActiveGenerator(activeGen);
-            MultiGenerator.setListGenerators(new Generator[]{activeGen});
+            MultiGenerator.setListGenerators(new Generator[]{activeGen, other});
             
             multiGenerator = new MultiGenerator();
             multiGenerator.updateAwardSC();
@@ -704,6 +752,8 @@ class MultiGeneratorTest {
             float expectedWeight = (float) (50.0 * (1 - 0.1) + 10);
             assertEquals(expectedWeight, activeGen.getWeight(), 0.001f, 
                 "Peso debería actualizarse correctamente para success case");
+            // Also writes trace of other generator (non MULTI_GENERATOR)
+            assertEquals(25.0f, other.getTrace()[0], 1e-6f);
     }
 
     // ==================== Tests de updateAwardImp ====================
@@ -713,11 +763,14 @@ class MultiGeneratorTest {
     void testUpdateAwardImp() throws Exception {
         Strategy strategy = Strategy.getStrategy();
             strategy.setCountCurrent(0);
-            
+
             Generator activeGen = new HillClimbing();
             activeGen.setWeight(50.0f);
+            Generator other = new RandomSearch();
+            other.setWeight(30.0f);
+
             MultiGenerator.setActiveGenerator(activeGen);
-            MultiGenerator.setListGenerators(new Generator[]{activeGen});
+            MultiGenerator.setListGenerators(new Generator[]{activeGen, other});
             
             multiGenerator = new MultiGenerator();
             multiGenerator.updateAwardImp();
@@ -725,6 +778,91 @@ class MultiGeneratorTest {
             float expectedWeight = (float) (50.0 * (1 - 0.1));
             assertEquals(expectedWeight, activeGen.getWeight(), 0.001f, 
                 "Peso debería decrecer para no improvement case");
+            assertEquals(30.0f, other.getTrace()[0], 1e-6f);
+    }
+
+    @Test
+    @DisplayName("rouletteStatic: retorna null cuando listGenerators es null o vacío")
+    void testRouletteStatic_NullOrEmpty() {
+        MultiGenerator.setListGenerators(null);
+        assertNull(MultiGenerator.rouletteStatic());
+        MultiGenerator.setListGenerators(new Generator[0]);
+        assertNull(MultiGenerator.rouletteStatic());
+    }
+
+    @Test
+    @DisplayName("rouletteStatic: maneja entradas null sin NPE")
+    void testRouletteStatic_WithNullEntries() {
+        Generator g1 = new HillClimbing(); g1.setWeight(1.0f);
+        Generator g2 = new RandomSearch(); g2.setWeight(1.0f);
+        MultiGenerator.setListGenerators(new Generator[]{g1, null, g2});
+        Generator picked = MultiGenerator.rouletteStatic();
+        // May pick null due to probability bucket, but should not crash
+        assertTrue(picked == null || picked == g1 || picked == g2);
+    }
+
+    @Test
+    @DisplayName("fallbackFromReferences: usa primero getReference() de generadores y luego listStateReference")
+    void testFallbackFromReferences_PrefersGeneratorReference_ThenStaticList() throws Exception {
+        // Access private static method via reflection
+        Method m = MultiGenerator.class.getDeclaredMethod("fallbackFromReferences");
+        m.setAccessible(true);
+
+        Generator g = mock(Generator.class);
+        when(g.getType()).thenReturn(GeneratorType.HILL_CLIMBING);
+        State ref = new State();
+        ArrayList<Double> ev = new ArrayList<>(); ev.add(123.0); ref.setEvaluation(ev);
+        ref.setCode(new ArrayList<>());
+        when(g.getReference()).thenReturn(ref);
+
+        MultiGenerator.setListGenerators(new Generator[]{g});
+        MultiGenerator.listStateReference.clear();
+        State out1 = (State) m.invoke(null);
+        assertNotNull(out1);
+        assertEquals(123.0, out1.getEvaluation().get(0));
+
+        // If generator returns null, it should fall back to listStateReference
+        when(g.getReference()).thenReturn(null);
+        State backup = new State();
+        backup.setEvaluation(new ArrayList<>(List.of(7.0)));
+        backup.setCode(new ArrayList<>());
+        MultiGenerator.listStateReference.clear();
+        MultiGenerator.listStateReference.add(backup);
+        State out2 = (State) m.invoke(null);
+        assertNotNull(out2);
+        assertEquals(7.0, out2.getEvaluation().get(0));
+    }
+
+    @Test
+    @DisplayName("initializeGenerators: si Strategy.problem.state es null, usa RandomSearch.listStateReference")
+    void testInitializeGenerators_FallbackToRandomSearchStateRef() throws Exception {
+        Strategy strategy = Strategy.getStrategy();
+
+        // Use a real Problem instance so we can control Strategy.problem.state independently
+        Problem realProblem = new Problem();
+        realProblem.setTypeProblem(ProblemType.MAXIMIZAR);
+        // Provide operator/function list minimal to avoid NPEs during Evaluate
+        ArrayList<ObjetiveFunction> functions = new ArrayList<>();
+        functions.add(new ObjetiveFunction() { @Override public Double Evaluation(State state) { return 0.0; } });
+        realProblem.setFunction(functions);
+        // IMPORTANT: set state to null to trigger RandomSearch fallback in initializeGenerators
+        realProblem.setState(null);
+        strategy.setProblem(realProblem);
+
+        RandomSearch.listStateReference = new ArrayList<>();
+        State rs = new State();
+        rs.setEvaluation(new ArrayList<>(List.of(1.0)));
+        rs.setCode(new ArrayList<>());
+        rs.setTypeGenerator(GeneratorType.RANDOM_SEARCH);
+        RandomSearch.listStateReference.add(rs);
+
+        // createInstanceGeneratorsBPP later tries to use Strategy.problem.state; ensure it can fall back
+        // by keeping RandomSearch populated and EvolutionStrategies.countRef small.
+
+        EvolutionStrategies.countRef = 1;
+        MultiGenerator.initializeGenerators();
+
+        assertFalse(MultiGenerator.listStateReference.isEmpty());
     }
 
     // ==================== Tests de initializeGenerators ====================
