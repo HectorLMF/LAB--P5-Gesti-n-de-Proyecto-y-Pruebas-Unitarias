@@ -12,6 +12,14 @@
 
 Proyecto de algoritmos metaheurísticos y evolutivos para la resolución de problemas de optimización.
 
+## Despliegue en Integración Continua
+
+- Se ha utilizado Github actions, script YML localizado en .github/workflows
+- Capturas de integracion continua en /Capturas:
+  	- Fallada: Forzamos un error en Particle.java, eliminando un ciere de linea aleatorio.
+  	- Pasada: Comprobamos que todos los reportes pasan.
+
+
 ## Despliegue con Docker
 
  - Imagen multi-stage incluida: `Dockerfile` en la raíz del repo.
